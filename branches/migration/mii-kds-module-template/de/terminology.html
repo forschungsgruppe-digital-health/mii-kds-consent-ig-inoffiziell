@@ -1,0 +1,2035 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+
+
+<html xml:lang="de" xmlns="http://www.w3.org/1999/xhtml" lang="de" dir="ltr">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Terminologie - MII Implementation Guide Consent v2026.0.1</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+    <link href="assets/css/project.css" rel="stylesheet"/>
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- MII branding override for the fhir2.base.template CSS placeholder
+     (base ships includes/fragment-css.html as a single comment; it is included
+     in <head> AFTER all base stylesheets, so mii.css wins the cascade). -->
+<link href="assets/css/mii.css" rel="stylesheet"/>
+
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+    <script type="text/javascript" src="assets/js/direction-management.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"6"}
+    h3,h4,h5,h6{--heading-prefix:"6"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <!-- MII branding override for the fhir2.base.template header placeholder
+     (base ships includes/fragment-header.html as a single comment; it is included
+     inside "#segment-header > .container", before the #ig-status block).
+     Language handling: only the asset and its descriptive alt text switch on
+     include.lang (the pattern kerndatensatz-basis uses); no translatable UI
+     strings are hard-coded.
+     Two logos, mirroring kerndatensatz-basis: the HL7 FHIR logo (links to the
+     FHIR spec) in #family-nav, and the MII logo in #project-nav. fhir-logo-www.png
+     is shipped by fhir2.base.template (content/assets/images/), so it resolves
+     from the inherited assets without shipping it here. -->
+<div id="family-nav">
+  <a id="family-logo" no-external="true" href="https://hl7.org/fhir">
+    <img height="50" alt="HL7 FHIR" src="assets/images/fhir-logo-www.png"/>
+  </a>
+</div>
+<div id="project-nav">
+  <a id="project-logo" no-external="true" href="https://www.medizininformatik-initiative.de/">
+
+    <img height="50" alt="Medizininformatik-Initiative (MII)" src="assets/images/logo-de.svg"/>
+
+  </a>
+</div>
+
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">MII Implementierungsleitfaden Consent</span>
+            <br/>
+            <span style="display:inline-block;">2026.0.1 - 
+
+
+
+  <img alt="Germany Flagge" src="assets/images/deu.svg" height="16" title="Germany"/>
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- German translation of input/includes/menu.xml.
+     Keep the href targets IDENTICAL to the source menu; translate only labels. -->
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li><a href="index.html">Startseite</a></li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="guidance.html" class="dropdown-toggle">Anleitung<b class="caret"> </b></a>
+    <ul class="dropdown-menu">
+      <li><a href="guidance.html">Anleitung</a></li>
+      <li><a href="researcher-guidance.html">Anleitung für Forschende</a></li>
+      <li><a href="implementer-guidance.html">Anleitung für Implementierende</a></li>
+      <li><a href="datasets-and-descriptions.html">Datensätze und Beschreibungen</a></li>
+      <li><a href="uml-diagrams.html">UML-Diagramme</a></li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="conformance.html" class="dropdown-toggle">Konformität<b class="caret"> </b></a>
+    <ul class="dropdown-menu">
+      <li><a href="conformance.html">Konformität</a></li>
+      <li><a href="general-requirements.html">Allgemeine Anforderungen</a></li>
+      <li><a href="must-support.html">Must-Support</a></li>
+      <li><a href="missing-data.html">Umgang mit fehlenden Daten</a></li>
+      <li><a href="security-and-privacy.html">Sicherheit und Datenschutz</a></li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="artifacts.html" class="dropdown-toggle">Artefakte<b class="caret"> </b></a>
+    <ul class="dropdown-menu">
+      <li><a href="artifacts.html">Artefakt-Übersicht</a></li>
+      <li><a href="profiles-and-extensions.html">Profile und Extensions</a></li>
+      <li><a href="terminology.html">Terminologie</a></li>
+      <li><a href="capability-statements.html">CapabilityStatements</a></li>
+      <li><a href="search-parameters-and-operations.html">Suchparameter und Operationen</a></li>
+      <li><a href="logical-models.html">Logische Modelle</a></li>
+      <li><a href="examples.html">Beispiele</a></li>
+    </ul>
+  </li>
+  <li><a href="downloads.html">Downloads</a></li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="version-history.html" class="dropdown-toggle">Versionierung<b class="caret"> </b></a>
+    <ul class="dropdown-menu">
+      <li><a href="version-history.html">Versionierung</a></li>
+      <li><a href="changes.html">Änderungshistorie</a></li>
+    </ul>
+  </li>
+  <li><a href="metadata.html">Metadaten</a></li>
+</ul>
+
+            </div>  <!-- /.nav-collapse -->
+
+              
+
+
+<div style="float: var(--ig-right);padding: 8px 0px;" id="language">
+  <div id="select_flg" class="flaglist" style="background-image: url(assets/images/icon_arrow_down.png);background-position: 133px 3px;">
+    <div><img class="flag" alt="flag en" src="assets/images/lang-de.png"/>Deutsch</div>
+  </div>
+  <div style="float: var(--ig-right); margin: 2px 0px; padding: 1px 0;color: var(--btn-text-color);font-size:12px">Language:</div>
+ 	<div id="flaglist" class="flaglist" style="display: none;position: absolute;right: 0;z-index: 100;background-image: url(assets/images/icon_arrow_up.png);background-position: 133px 3px;">
+    <div><img class="flag" alt="flag de" src="assets/images/lang-de.png"/>Deutsch</div>
+
+    <div><a href="../en/terminology.html"><img class="flag" src="assets/images/lang-en.png" alt="flag en"/>English</a></div>
+
+  </div>
+</div>
+
+
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Inhaltsverzeichnis</b></a></li><li><b>Terminologie</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">MII Implementation Guide Consent - Local Development build (v2026.0.1) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://www.medizininformatik-initiative.de/fhir/modul-consent/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+  <h2>Terminologie</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#valuesets" id="markdown-toc-valuesets">ValueSets</a></li>
+  <li><a href="#mii-vs-consent-signaturetypes" id="markdown-toc-mii-vs-consent-signaturetypes">mii-vs-consent-signaturetypes</a></li>
+  <li><a href="#mii-vs-consent-answer" id="markdown-toc-mii-vs-consent-answer">mii-vs-consent-answer</a></li>
+  <li><a href="#codesysteme" id="markdown-toc-codesysteme">CodeSysteme</a>    <ul>
+      <li><a href="#mii-cs-consent-version-and-modules" id="markdown-toc-mii-cs-consent-version-and-modules">MII CS Consent Version and Modules</a></li>
+      <li><a href="#mii_cs_consent_answer" id="markdown-toc-mii_cs_consent_answer">MII_CS_Consent_Answer</a></li>
+      <li><a href="#mii-cs-consent-policy" id="markdown-toc-mii-cs-consent-policy">MII CS Consent Policy</a></li>
+    </ul>
+  </li>
+</ul>
+
+</div>
+<!-- markdownlint-disable MD041 -->
+<!--
+  MIGRATED NARRATIVE. Source: the Simplifier-rendered guide
+  miiigmodulconsent, PUBLISHED version 2026.0.0 (Default, Read-only,
+  Public, 2025-12-18), harvested 2026-08-06 by the mii-ig-migration
+  skill (spec 5.1c discovery + 5.1d harvest). Source pages:
+    https://simplifier.net/guide/miiigmodulconsent/MIIIGModulConsent/TechnischeImplementierung/Terminologien?version=2026.0.0
+  TODO:REVIEW at Gate B — mapped onto the template page set per spec 9.
+-->
+
+<h3 id="valuesets">ValueSets</h3>
+
+<p>This value set includes codes from the following code systems:Import all codes from CodeSystem <code class="language-plaintext highlighter-rouge">[MII CS Consent Policy](https://simplifier.net/resolve?scope=project:MedizininformatikInitiative-ModulConsent&amp;filepath=terminologie/codesystems/CodeSystem-MiiConsentPolicyCodeSystem.xml)</code></p>
+
+<p>Erweiterungen des PolicyValueSets im ART-DECOR werden zeitnah durch die TFCU in diesem IG eingepflegt. Eine erneute Ballotierung ist nicht erforderlich.</p>
+
+<h3 id="mii-vs-consent-signaturetypes">mii-vs-consent-signaturetypes</h3>
+
+<p>Gemäß HL7-D AG Einwilligungsmanagement-Empfehlung</p>
+
+<p><a href="https://www.medizininformatik-initiative.de/fhir/modul-consent/ValueSet/mii-vs-consent-signaturetypes">https://www.medizininformatik-initiative.de/fhir/modul-consent/ValueSet/mii-vs-consent-signaturetypes</a></p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Art der Unterschrift</td>
+      <td>System</td>
+      <td>Code</td>
+      <td>Display</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>| — | — | — | — |</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Unterschrift der einwilligenden Person</td>
+      <td>urn:iso-astm:E1762-95:2013</td>
+      <td>1.2.840.10065.1.12.1.7</td>
+      <td>Consent Signature</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Unterschrift der (gesetzlich) vertretenden Person</td>
+      <td>urn:iso-astm:E1762-95:2013</td>
+      <td>1.2.840.10065.1.12.1.11</td>
+      <td>Consent Witness Signature</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Unterschrift der aufklärenden Person</td>
+      <td>urn:iso-astm:E1762-95:2013</td>
+      <td>1.2.840.10065.1.12.1.5</td>
+      <td>Verification Signature</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="mii-vs-consent-answer">mii-vs-consent-answer</h3>
+
+<p>This value set includes codes from the following code systems:The following codes from system: <code class="language-plaintext highlighter-rouge">[MII\_CS\_Consent\_Answer](https://simplifier.net/resolve?scope=project:MedizininformatikInitiative-ModulConsent&amp;filepath=terminologie/codesystems/CodeSystem-MiiConsentAnswerCodeSystem.xml)</code>CodeDisplaySynonym (de-DE)Synonym (en-US)<a href="https://simplifier.net/resolve?scope=project:MedizininformatikInitiative-ModulConsent&amp;filepath=terminologie/codesystems/CodeSystem-MiiConsentAnswerCodeSystem.xml">2.16.840.1.113883.3.1937.777.24.5.2.3</a>unbekanntunbekanntunknown<a href="https://simplifier.net/resolve?scope=project:MedizininformatikInitiative-ModulConsent&amp;filepath=terminologie/codesystems/CodeSystem-MiiConsentAnswerCodeSystem.xml">2.16.840.1.113883.3.1937.777.24.5.2.2</a>nicht gültignicht gültignot valid<a href="https://simplifier.net/resolve?scope=project:MedizininformatikInitiative-ModulConsent&amp;filepath=terminologie/codesystems/CodeSystem-MiiConsentAnswerCodeSystem.xml">2.16.840.1.113883.3.1937.777.24.5.2.1</a>gültiggültigvalid</p>
+
+<p>Dieses ValueSet findet ausschließlich im Kontext von Questionnaires Verwendung.</p>
+
+<h2 id="codesysteme">CodeSysteme</h2>
+
+<h3 id="mii-cs-consent-version-and-modules">MII CS Consent Version and Modules</h3>
+
+<p>Dieses Code System <code class="language-plaintext highlighter-rouge">urn:oid:2.16.840.1.113883.3.1937.777.24.5.27</code> enthält die folgenden Codes: PropertiesThis code system defines the following properties for its concepts:CodeURITypeDescriptionstatushttp://hl7.org/fhir/concept-properties#statusCodeA code that indicates the status of the concept. Values found in this version of the code system are: draftparenthttp://hl7.org/fhir/concept-properties#parentCodeThe concept identified in this property is a parent of the concept on which it is a property. The property type will be 'code'. The meaning of 'parent' is defined by the hierarchyMeaning attributechildhttp://hl7.org/fhir/concept-properties#childCodeThe concept identified in this property is a child of the concept on which it is a property. The property type will be 'code'. The meaning of 'child' is defined by the hierarchyMeaning attributeConceptsThis code system <code class="language-plaintext highlighter-rouge">https://www.medizininformatik-initiative.de/fhir/modul-consent/CodeSystem/mii-cs-consent-version-modules</code> defines the following codes:CodeDisplayDefinitionstatuschildparent2.16.840.1.113883.3.1937.777.24.2.184MII Broad Consent Dieser Code (OID) kennzeichnet den Broad Consent der Medizininformatik Initiative (MII).draft2.16.840.1.113883.3.1937.777.24.2.17902.16.840.1.113883.3.1937.777.24.2.1790Version 1.6d des MII Broad Consent Version 1.6d des MII Broad Consentdraft2.16.840.1.113883.3.1937.777.24.2.1842.16.840.1.113883.3.1937.777.24.2.4053Version 1.6d Ablehnungdraft2.16.840.1.113883.3.1937.777.24.2.1842.16.840.1.113883.3.1937.777.24.2.2718Version 1.6d Komplettwiderrufdraft2.16.840.1.113883.3.1937.777.24.2.1842.16.840.1.113883.3.1937.777.24.2.2719Version 1.6d Teilwiderrufdraft2.16.840.1.113883.3.1937.777.24.2.1842.16.840.1.113883.3.1937.777.24.2.1791Version 1.6f des MII Broad Consentdraft2.16.840.1.113883.3.1937.777.24.2.1842.16.840.1.113883.3.1937.777.24.2.2720Version 1.6f Komplettwiderrufdraft2.16.840.1.113883.3.1937.777.24.2.1842.16.840.1.113883.3.1937.777.24.2.2721Version 1.6f Teilwiderrufdraft2.16.840.1.113883.3.1937.777.24.2.1842.16.840.1.113883.3.1937.777.24.2.2079Version 1.7.2 des MII Broad Consentdraft2.16.840.1.113883.3.1937.777.24.2.1842.16.840.1.113883.3.1937.777.24.2.4054Version 1.7.2 Ablehnungdraft2.16.840.1.113883.3.1937.777.24.2.1842.16.840.1.113883.3.1937.777.24.2.2722Version 1.7.2 Komplettwiderrufdraft2.16.840.1.113883.3.1937.777.24.2.1842.16.840.1.113883.3.1937.777.24.2.2723Version 1.7.2 Teilwiderrufdraft2.16.840.1.113883.3.1937.777.24.2.1842.16.840.1.113883.3.1937.777.24.2.3542Version 1.7.2 Eltern und Sorgeberechtigte für Minderjährige v1.1draft2.16.840.1.113883.3.1937.777.24.2.1842.16.840.1.113883.3.1937.777.24.2.3543Version 1.7.2 7-11 Minderjährige v1.1draft2.16.840.1.113883.3.1937.777.24.2.1842.16.840.1.113883.3.1937.777.24.2.3544Version 1.7.2 12-17 Minderjährige v1.1draft2.16.840.1.113883.3.1937.777.24.2.1842.16.840.1.113883.3.1937.777.24.2.4052Zusatzmodule des MII Broad Consent Dieser Code (OID) gruppiert die Zusatzmodule des MII Broad Consent.draft2.16.840.1.113883.3.1937.777.24.2.40312.16.840.1.113883.3.1937.777.24.2.4031Zusatzmodul ACRIBiS (Z2)draft2.16.840.1.113883.3.1937.777.24.2.40522.16.840.1.113883.3.1937.777.24.2.4036Zusatzmodul Patientenbefragung (Z3)draft2.16.840.1.113883.3.1937.777.24.2.40522.16.840.1.113883.3.1937.777.24.2.4037Zusatzmodul Fachnetzwerk Infektion - SNID (Z4)draft2.16.840.1.113883.3.1937.777.24.2.40522.16.840.1.113883.3.1937.777.24.2.4048Zusatzmodul Deutsche Zentrum für Psychische Gesundheit - DZPG (Z5)draft2.16.840.1.113883.3.1937.777.24.2.4052Additional Language DisplaysCodeDeutsch (Deutschland) (German (Germany), de)2.16.840.1.113883.3.1937.777.24.2.184MII Broad Consent2.16.840.1.113883.3.1937.777.24.2.1790Version 1.6d des MII Broad Consent2.16.840.1.113883.3.1937.777.24.2.4053Version 1.6d Ablehnung2.16.840.1.113883.3.1937.777.24.2.2718Version 1.6d Komplettwiderruf2.16.840.1.113883.3.1937.777.24.2.2719Version 1.6d Teilwiderruf2.16.840.1.113883.3.1937.777.24.2.1791Version 1.6f des MII Broad Consent2.16.840.1.113883.3.1937.777.24.2.2720Version 1.6f Komplettwiderruf2.16.840.1.113883.3.1937.777.24.2.2721Version 1.6f Teilwiderruf2.16.840.1.113883.3.1937.777.24.2.2079Version 1.7.2 des MII Broad Consent2.16.840.1.113883.3.1937.777.24.2.4054Version 1.7.2 Ablehnung2.16.840.1.113883.3.1937.777.24.2.2722Version 1.7.2 Komplettwiderruf2.16.840.1.113883.3.1937.777.24.2.2723Version 1.7.2 Teilwiderruf2.16.840.1.113883.3.1937.777.24.2.3542Version 1.7.2 Eltern und Sorgeberechtigte für Minderjährige v1.12.16.840.1.113883.3.1937.777.24.2.3543Version 1.7.2 7-11 Minderjährige v1.12.16.840.1.113883.3.1937.777.24.2.3544Version 1.7.2 12-17 Minderjährige v1.12.16.840.1.113883.3.1937.777.24.2.4052Zusatzmodule des MII Broad Consent2.16.840.1.113883.3.1937.777.24.2.4031Zusatzmodul ACRIBiS (Z2)2.16.840.1.113883.3.1937.777.24.2.4036Zusatzmodul Patientenbefragung (Z3)2.16.840.1.113883.3.1937.777.24.2.4037Zusatzmodul Fachnetzwerk Infektion - SNID (Z4)2.16.840.1.113883.3.1937.777.24.2.4048Zusatzmodul Deutsche Zentrum für Psychische Gesundheit - DZPG (Z5)</p>
+
+<h3 id="mii_cs_consent_answer">MII_CS_Consent_Answer</h3>
+
+<p>ConceptsThis code system <code class="language-plaintext highlighter-rouge">urn:oid:2.16.840.1.113883.3.1937.777.24.5.2</code> defines the following codes:CodeDisplay2.16.840.1.113883.3.1937.777.24.5.2.3unbekannt2.16.840.1.113883.3.1937.777.24.5.2.2nicht gültig2.16.840.1.113883.3.1937.777.24.5.2.1gültigAdditional Language DisplaysCodeDeutsch (Deutschland) (German (Germany), de)English (United States) (English (United States), en)2.16.840.1.113883.3.1937.777.24.5.2.3unbekanntunknown2.16.840.1.113883.3.1937.777.24.5.2.2nicht gültignot valid2.16.840.1.113883.3.1937.777.24.5.2.1gültigvalid</p>
+
+<h3 id="mii-cs-consent-policy">MII CS Consent Policy</h3>
+
+<p><strong>Hinweis</strong>: Das Konzept der <strong>Verschachtelte Provision-Elemente</strong> im MII-Kontext arbeite mit zwei Level. Das übergeordnete Provision-Element, die Level1-Provision, repräsentiert eine Frage in der Einwilligung und legt über den Provision.Type=DENY (Out-In-Modell) fest, dass alles verboten ist, außer es ist in Form von untergeordneten Provision-Elementen, die Level2-Provision, explizit erlaubt. D.h. für die Interpretation, ob ein Erlaubnis für eine bestimmte Nutzung (erheben, speichern, nutzen) von spetifischen Daten (IDAT, MADT, BIOMAT, …) vorliegt, müssen die Elemete der Level2-Provisions ausgewertet werden.</p>
+
+<p>Teilwiderrufe können ebenfalls auf den Level2-Provisions Änderungen hervor rufen. Z.B. kann die Erhebung untersagt werden, aber die Speicherung und Nutzung kann davon unbetroffen bleiben ("MDAT erheben"="deny", aber "MDAT wissenschaftlich nutzen EU DSGVO NIVEAU"="permit").</p>
+
+<p><strong>Achtung: Für die Nutzung in Level2-Provisions sind ausschließlich Policy-Codes vorgesehen. (Siehe nachstehende Tabelle, Spalte Lvl mit Wert 2)</strong></p>
+
+<p>Policies, die den Status "deprecated/inactive" haben, sollen zukünftig nicht mehr neu erzeugten Consent-Ressourcen hinzugefügt werden. Diese Policies sollten zukünftig auch nicht mehr ausgewertet werden (Enforcement).</p>
+
+<p>Dieses Code System <code class="language-plaintext highlighter-rouge">urn:oid:2.16.840.1.113883.3.1937.777.24.5.3</code> enthält die folgenden Codes:</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Lvl</td>
+      <td>Art</td>
+      <td>Display</td>
+      <td>Code</td>
+      <td>Gültigkeit</td>
+      <td>Status</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>| — | — | — | — | — | — |</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Modul</td>
+      <td>PATDAT erheben, speichern, nutzen</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.1</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>Policy</td>
+      <td>IDAT erheben</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.2</td>
+      <td>30</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>Policy</td>
+      <td>IDAT speichern, verarbeiten</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.3</td>
+      <td>30</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>Policy</td>
+      <td>IDAT zusammenführen mit Dritten</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.4</td>
+      <td>30</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>Policy</td>
+      <td>IDAT bereitstellen</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.5</td>
+      <td>30</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>Policy</td>
+      <td>MDAT erheben</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.6</td>
+      <td>5</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>Policy</td>
+      <td>MDAT speichern, verarbeiten</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.7</td>
+      <td>30</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>Policy</td>
+      <td>MDAT wissenschaftlich nutzen</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.8</td>
+      <td>30</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>Policy</td>
+      <td>MDAT zusammenführen mit Dritten</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.9</td>
+      <td>30</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>Policy</td>
+      <td>Rekontaktierung von Ergebnissen mit erheblicher Bedeutung</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.37</td>
+      <td>30</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Modul</td>
+      <td>Patientendaten retrospektiv verarbeiten, nutzen</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.44</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>Policy</td>
+      <td>MDAT retrospektiv speichern, verarbeiten</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.45</td>
+      <td>30</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>Policy</td>
+      <td>MDAT retrospektiv wissenschaftlich nutzen</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.46</td>
+      <td>30</td>
+      <td>inactive</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>Policy</td>
+      <td>MDAT retrospektiv zusammenführen mit Dritten</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.47</td>
+      <td>30</td>
+      <td>inactive</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Modul</td>
+      <td>Patientendaten Weitergabe ohne EU-DSGVO NIVEAU</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.48</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>Policy</td>
+      <td>MDAT wissenschaftlich nutzen ohne EU DSGVO NIVEAU</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.49</td>
+      <td>30</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Modul</td>
+      <td>Krankenkassendaten retrospektiv übertragen, speichern, nutzen</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.10</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>Policy</td>
+      <td>KKDAT 5 Jahre retrospektiv übertragen</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.11</td>
+      <td>EINMALIG</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>Policy</td>
+      <td>KKDAT 5 Jahre retrospektiv speichern, verarbeiten</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.12</td>
+      <td>30</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>Policy</td>
+      <td>KKDAT 5 Jahre retrospektiv wissenschaftlich nutzen</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.13</td>
+      <td>30</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>Policy</td>
+      <td>KKDAT 5 Jahre retrospektiv übertragen KVNR</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.38</td>
+      <td>EINMALIG</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Modul</td>
+      <td>Krankenkassendaten prospektiv übertragen, speichern, nutzen</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.14</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>Policy</td>
+      <td>KKDAT 5 Jahre prospektiv übertragen</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.15</td>
+      <td>5</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>Policy</td>
+      <td>KKDAT 5 Jahre prospektiv speichern, verarbeiten</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.16</td>
+      <td>30</td>
+      <td>inactive</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>Policy</td>
+      <td>KKDAT 5 Jahre prospektiv wissenschaftlich nutzen</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.17</td>
+      <td>30</td>
+      <td>inactive</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>Policy</td>
+      <td>KKDAT 5 Jahre prospektiv übertragen KVNR</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.39</td>
+      <td>5</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Modul</td>
+      <td>Biomaterial erheben, lagern, nutzen</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.18</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>Policy</td>
+      <td>BIOMAT erheben</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.19</td>
+      <td>5</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>Policy</td>
+      <td>BIOMAT lagern, verarbeiten</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.20</td>
+      <td>30</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>Policy</td>
+      <td>BIOMAT Eigentum übertragen</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.21</td>
+      <td>5</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>Policy</td>
+      <td>BIOMAT wissenschaftlich nutzen</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.22</td>
+      <td>30</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>Policy</td>
+      <td>BIOMAT Analysedaten zusammenführen Dritte</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.23</td>
+      <td>30</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Modul</td>
+      <td>Biomaterial Zusatzentnahme</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.24</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>Policy</td>
+      <td>BIOMAT Zusatzmengen entnehmen</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.25</td>
+      <td>5</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Modul</td>
+      <td>Biomaterial retrospektiv speichern, nutzen</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.50</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>Policy</td>
+      <td>BIOMAT retrospektiv lagern, verarbeiten</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.51</td>
+      <td>30</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>Policy</td>
+      <td>BIOMAT retrospektiv wissenschaftlich nutzen</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.52</td>
+      <td>30</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>Policy</td>
+      <td>BIOMAT retrospektiv Analysedaten zusammenführen mit Dritten</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.53</td>
+      <td>30</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Modul</td>
+      <td>Biomaterial Weitergabe ohne EU-DSGVO NIVEAU</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.54</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>Policy</td>
+      <td>BIOMAT bereitstellen ohne EU DSGVO NIVEAU</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.55</td>
+      <td>30</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Modul</td>
+      <td>Rekontaktierung Ergänzungen</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.26</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>Policy</td>
+      <td>Rekontaktierung Verknüpfung mit anderen Datenbanken</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.27</td>
+      <td>30</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>Policy</td>
+      <td>Rekontaktierung weitere Erhebung</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.28</td>
+      <td>30</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>Policy</td>
+      <td>Rekontaktierung weitere Studien</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.29</td>
+      <td>30</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Modul</td>
+      <td>Rekontaktierung Zusatzbefund</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.30</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>Policy</td>
+      <td>Rekontaktierung Zusatzbefund</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.31</td>
+      <td>30</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Modul</td>
+      <td>Z1 GECCO83 Nutzung NUM/CODEX</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.32</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>Policy</td>
+      <td>MDAT GECCO83 komplettieren einmalig</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.40</td>
+      <td>einmalig</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>Policy</td>
+      <td>MDAT GECC083 erheben</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.43</td>
+      <td>30</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>Policy</td>
+      <td>MDAT GECCO83 bereitstellen NUM/CODEX</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.33</td>
+      <td>einmalig</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>Policy</td>
+      <td>MDAT GECCO83 speichern, verarbeiten NUM/CODEX</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.34</td>
+      <td>30</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>Policy</td>
+      <td>MDAT GECCO83 wissenschaftlich nutzen zur COVID-19 Forschung EU DSGVO konform</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.41</td>
+      <td>30</td>
+      <td>inactive</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>Policy</td>
+      <td>MDAT GECCO83 wissenschaftlich nutzen zur Pandemie-Forschung EU DSGVO konform</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.42</td>
+      <td>30</td>
+      <td>inactive</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>Policy</td>
+      <td>MDAT GECCO83 wissenschaftlich nutzen NUM/CODEX</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.56</td>
+      <td>30</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Modul</td>
+      <td>Z1 GECCO83 Weitergabe NUM/CODEX non-EU-DSGVO NIVEAU</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.35</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>Policy</td>
+      <td>MDAT GECCO83 bereitstellen NUM/CODEX ohne EU DSGVO NIVEAU</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.36</td>
+      <td>30</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Modul</td>
+      <td>Z2 PATDAT erheben nutzen kontakt (ACRIBIS)</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.57</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>Policy</td>
+      <td>PATDAT erheben nutzen kontakt (ACRIBIS)</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.58</td>
+      <td>5</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Modul</td>
+      <td>Z2 IDAT Melderegister abfragen speichern verarbeiten (ACRIBIS)</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.59</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>Policy</td>
+      <td>IDAT Melderegister abfragen speichern verarbeiten (ACRIBIS)</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.60</td>
+      <td>5</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Modul</td>
+      <td>Z2 MDAT Hausarzt erheben speichern verarbeiten nutzen (ACRIBIS)</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.61</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>Policy</td>
+      <td>MDAT Hausarzt erheben speichern verarbeiten nutzen (ACRIBIS)</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.62</td>
+      <td>5</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Modul</td>
+      <td>Z3 PROMDAT Patientenbefragung</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.63</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>Policy</td>
+      <td>PROMDAT erheben</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.64</td>
+      <td>5</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>Policy</td>
+      <td>PROMDAT wissenschaftlich nutzen</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.65</td>
+      <td>30</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>Policy</td>
+      <td>Rekontaktierung PROM Studien</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.66</td>
+      <td>30</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Modul</td>
+      <td>Z4 Datenschutzerklärung</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.67</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>Policy</td>
+      <td>IDAT speichern verabeiten (SNID)</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.68</td>
+      <td>30</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>Policy</td>
+      <td>CONSENT speichern verarbeiten (SNID)</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.69</td>
+      <td>30</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>Policy</td>
+      <td>IDAT Einsicht Monitoring (SNID)</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.70</td>
+      <td>30</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>Policy</td>
+      <td>MDAT erheben (SNID)</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.71</td>
+      <td>5</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>Policy</td>
+      <td>MDAT speichern verarbeiten (SNID)</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.72</td>
+      <td>30</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>Policy</td>
+      <td>MDAT bereitstellen (SNID)</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.73</td>
+      <td>30</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>Policy</td>
+      <td>MDAT Einsicht Monitoring (SNID)</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.74</td>
+      <td>30</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>Policy</td>
+      <td>BIOMAT Eigentum uebertragen NUM (SNID)</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.75</td>
+      <td>30</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>Policy</td>
+      <td>CONSENT BC bereitstellen (SNID)</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.76</td>
+      <td>30</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>Policy</td>
+      <td>CONSENT BC speichern verarbeiten (SNID)</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.77</td>
+      <td>30</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Modul</td>
+      <td>Z4 Einsicht ePa</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.78</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>Policy</td>
+      <td>IDAT ePA bereitstellen (SNID)</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.79</td>
+      <td>5</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>Policy</td>
+      <td>MDAT ePA erheben (SNID)</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.80</td>
+      <td>5</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>Policy</td>
+      <td>MDAT ePA speichern verarbeiten (SNID)</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.81</td>
+      <td>30</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Modul</td>
+      <td>Z4 Krebsregister</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.82</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>Policy</td>
+      <td>MDAT KReg speichern verarbeiten (SNID)</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.83</td>
+      <td>30</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>Policy</td>
+      <td>IDAT KReg KVNR speichern verarbeiten (SNID)</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.84</td>
+      <td>30</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Modul</td>
+      <td>Z4 KRegDAT retrospektiv</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.85</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>Policy</td>
+      <td>IDAT KVNR KReg bereitstellen retrospektiv (SNID)</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.86</td>
+      <td>einmalig</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>Policy</td>
+      <td>MDAT KReg erheben retrospektiv (SNID)</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.87</td>
+      <td>einmalig</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Modul</td>
+      <td>Z4 KRegDAT</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.88</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>Policy</td>
+      <td>IDAT KVNR KReg bereitstellen prospektiv (SNID)</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.89</td>
+      <td>5</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>Policy</td>
+      <td>MDAT KReg erheben prospektiv (SNID)</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.90</td>
+      <td>5</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Modul</td>
+      <td>Z4 Weitergabe Dritte</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.91</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>Policy</td>
+      <td>MDAT SNID bereitstellen Dritte</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.92</td>
+      <td>30</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>Policy</td>
+      <td>BIOMAT SNID bereitstellen Dritte</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.93</td>
+      <td>30</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Modul</td>
+      <td>Z4 Rekontaktierung Patient</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.94</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>Policy</td>
+      <td>Rekontaktierung Gesundheitszustand nach Studienabschluss (SNID)</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.95</td>
+      <td>30</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Modul</td>
+      <td>Z4 Rekontaktierung FU</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.96</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>Policy</td>
+      <td>Rekontaktierung weitere Studien (SNID)</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.97</td>
+      <td>30</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>Policy</td>
+      <td>IDAT SNID bereitstellen OE</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.98</td>
+      <td>30</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Modul</td>
+      <td>Z4 Erhebung Hausarzt</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.99</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>Policy</td>
+      <td>MDAT Hausarzt erheben speichern verarbeiten nutzen (SNID)</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.100</td>
+      <td>30</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>Policy</td>
+      <td>IDAT bereitstellen Hausarzt</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.101</td>
+      <td>30</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Modul</td>
+      <td>Z5 PATDAT BIOMAT PHENO erheben speichern gewinnen lagern zusaetzlich nutzen (DZPG)</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.102</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>Policy</td>
+      <td>MDAT Zusatzdaten PHAENO erheben (DZPG)</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.103</td>
+      <td>5</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>Policy</td>
+      <td>MDAT speichern verarbeiten (DZPG)</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.104</td>
+      <td>30</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>Policy</td>
+      <td>MDAT wissenschaftlich nutzen (DZPG)</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.105</td>
+      <td>30</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>Policy</td>
+      <td>MDAT zusammenführen mit Dritten (DZPG)</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.106</td>
+      <td>30</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>Policy</td>
+      <td>BIOMAT Zusatzmaterial entnehmen (DZPG)</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.107</td>
+      <td>5</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>Policy</td>
+      <td>BIOMAT Zusatzmaterial lagern verarbeiten (DZPG)</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.108</td>
+      <td>30</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>Policy</td>
+      <td>BIOMAT wissenschaftlich nutzen (DZPG)</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.109</td>
+      <td>30</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>Policy</td>
+      <td>BIOMAT zusammenfuehren mit Dritten (DZPG)</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.110</td>
+      <td>30</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Modul</td>
+      <td>Z5 NEURODAT IMGDAT erheben speichern zusaetzlich nutzen (DZPG)</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.111</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>Policy</td>
+      <td>IMGDAT erheben (DZPG)</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.112</td>
+      <td>5</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>Policy</td>
+      <td>IMGDAT speichern verarbeiten (DZPG)</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.113</td>
+      <td>30</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>Policy</td>
+      <td>IMGDAT wissenschaftlich nutzen (DZPG)</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.114</td>
+      <td>30</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>Policy</td>
+      <td>IMGDAT zusammenfuehren mit Dritten (DZPG)</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.115</td>
+      <td>30</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>Policy</td>
+      <td>NEURODAT erheben (DZPG)</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.116</td>
+      <td>5</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>Policy</td>
+      <td>NEURODAT speichern verarbeiten (DZPG)</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.117</td>
+      <td>30</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>Policy</td>
+      <td>NEURODAT wissenschaftlich nutzen (DZPG)</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.118</td>
+      <td>30</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>Policy</td>
+      <td>NEURODAT zusammenfuehren mit Dritten (DZPG)</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.119</td>
+      <td>30</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Modul</td>
+      <td>Z5 IPSC Verbunddaten gewinnen speichern nutzen (DZPG)</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.120</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>Policy</td>
+      <td>IPSC Verbunddaten gewinnen (DZPG)</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.121</td>
+      <td>5</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>Policy</td>
+      <td>IPSC Verbunddaten speichern verarbeiten (DZPG)</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.122</td>
+      <td>30</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>Policy</td>
+      <td>IPSC Verbunddaten wissenschaftlich nutzen (DZPG)</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.123</td>
+      <td>30</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>Policy</td>
+      <td>IPSC Verbunddaten zusammenfuehren mit Dritten (DZPG)</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.3.124</td>
+      <td>30</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+  <script type="text/javascript" src="assets/js/flags.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+
+
+
+          IG © 2019+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de">Medical Informatics Initiative (MII)</a>.  
+          Package de.medizininformatikinitiative.kerndatensatz.consent#2026.0.1 basiert auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
+          Erstellt <span title="Thu, Aug 6, 2026 15:50+0000">2026-08-06</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+            <!-- MII branding override for the fhir2.base.template footer fragment.
+     Unlike header/css, the base footer fragment is NOT an empty placeholder: it
+     renders "Links: Table of Contents | QA Report [| feedback dashboards]".
+     The base uses site.data.stringsBase[include.lang][...] for the labels. The
+     reason this override supplies its own is the Imprint label: the base ships no
+     stringsBase key for it and a child template cannot add one (docs/styleguide.md
+     section 6), and the same include.lang branch then has to carry the other
+     labels too. (The blank-label problem that first motivated this is separately
+     mitigated: this repo vendors the base's own German catalogs into
+     translations/ — see translations/README.md.) The override preserves the base
+     links (TOC, QA, feedback dashboards) and appends the MII information links.
+     Imprint: the MII website has separate German (/de/impressum) and English
+     (/en/legal-notice) imprint pages (both verified HTTP 200 on 2026-07-22). -->
+
+          Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Inhaltsverzeichnis</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="../qa.html">QA-Bericht</a>
+                 
+                 | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://www.medizininformatik-initiative.de/">medizininformatik-initiative.de</a>
+                 | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://www.medizininformatik-initiative.de/de/impressum">Impressum</a>
+
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

@@ -1,14 +1,42 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8">
 <title>mii-kds-consent-ig-inoffiziell — unofficial sandbox previews</title>
-<style>body{font-family:system-ui,sans-serif;max-width:44rem;margin:4rem auto;padding:0 1rem;line-height:1.5}
-.warn{background:#fff3cd;border:1px solid #ffe69c;padding:.75rem 1rem;border-radius:.5rem}</style></head>
+<style>body{font-family:system-ui,sans-serif;max-width:46rem;margin:4rem auto;padding:0 1rem;line-height:1.55}
+.warn{background:#fff3cd;border:1px solid #ffe69c;padding:.75rem 1rem;border-radius:.5rem}
+code{background:#f2f2f2;padding:.1rem .3rem;border-radius:.25rem}</style></head>
 <body>
 <h1>MII KDS Modul Consent — unofficial sandbox previews</h1>
 <p class="warn"><strong>Unofficial build preview.</strong> This is a test-migration sandbox
 (<em>inoffiziell</em>) of the FGDH — <strong>not</strong> a publication of the
 Medizininformatik-Initiative. The canonical module lives at
-<a href="https://github.com/medizininformatik-initiative/kerndatensatzmodul-consent">medizininformatik-initiative/kerndatensatzmodul-consent</a>.</p>
-<p>No preview is currently published. Branch previews appear under <code>branches/&lt;branch&gt;/</code>
-when the repository's <em>IG build and preview</em> workflow runs on a working branch.</p>
+<a href="https://github.com/medizininformatik-initiative/kerndatensatzmodul-consent">medizininformatik-initiative/kerndatensatzmodul-consent</a>,
+which was read read-only throughout.</p>
+
+<h2>Review preview — branch <code>migration/mii-kds-module-template</code></h2>
+<ul>
+<li><a href="branches/migration/mii-kds-module-template/index.html">IG preview (default entry)</a></li>
+<li><a href="branches/migration/mii-kds-module-template/en/index.html">IG preview (English — the IG&rsquo;s default language)</a></li>
+<li><a href="branches/migration/mii-kds-module-template/de/index.html">IG-Vorschau (Deutsch — die Übersetzung)</a></li>
+<li><a href="branches/migration/mii-kds-module-template/qa.html">QA report (IG Publisher 2.2.11)</a></li>
+</ul>
+
+<p>Migrated with the <code>mii-ig-migration</code> skill at
+<a href="https://github.com/forschungsgruppe-digital-health/agent-skills/tree/v0.13.0">agent-skills v0.13.0</a>
+onto module template
+<a href="https://github.com/forschungsgruppe-digital-health/mii-kds-module-template/releases/tag/v0.6.0">v0.6.0</a>,
+from source commit <code>4d44dbe</code> of the upstream <code>develop</code> branch.</p>
+
+<p><strong>The narrative IS migrated.</strong> The module&rsquo;s guide text exists only as a rendered
+Simplifier guide; it was discovered from an organization key and a module name, pinned to the
+published read-only version <code>2026.0.0</code>, and harvested — 18 pages discovered, 18 harvested,
+0 skipped — then mapped onto the module template&rsquo;s fixed page set. German is the authored
+source language; the English default pages are machine translations marked <code>TODO:REVIEW</code>.</p>
+
+<p>This preview was built <strong>locally</strong> with the pinned toolchain rather than by CI: the
+build depends on a locally rebuilt, snapshot-bearing
+<code>de.einwilligungsmanagement@2.0.3-snapshots</code>, which resolves only from a local FHIR package
+cache. Carrying that rebuild into CI is an open Gate-A decision in the migration report.</p>
+
+<p>Open review items, the full audit trail and the three reviewer queues:
+<a href="https://github.com/forschungsgruppe-digital-health/mii-kds-consent-ig-inoffiziell/pull/2">PR&nbsp;#2</a>.</p>
 </body></html>
