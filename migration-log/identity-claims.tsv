@@ -1,0 +1,14 @@
+2026-08-06T08:40:08Z	packageId	P	package/package.json	de.medizininformatikinitiative.kerndatensatz.consent	2.1	package-identity
+2026-08-06T08:40:08Z	version	P	package/package.json	2026.0.0	2.1	package-identity
+2026-08-06T08:40:08Z	description	P	package/package.json	KDS Modul Consent Release 2026.0.0	2.1	package-identity
+2026-08-06T08:40:08Z	fhirVersions	P	package/package.json	["4.0.1"]	2.1	package-identity
+2026-08-06T08:40:08Z	jurisdiction	P	package/package.json	urn:iso:std:iso:3166#DE	2.1	package-identity
+2026-08-06T08:40:08Z	dependency:de.einwilligungsmanagement	P	package/package.json (source pin)	2.0.2	2.1	package-identity
+2026-08-06T08:40:08Z	dependency:hl7.fhir.r4.core	P	package/package.json (source pin)	4.0.1	2.1	package-identity
+2026-08-06T08:40:08Z	canonical	P	packaged resource urls (13 of 13 agree)	https://www.medizininformatik-initiative.de/fhir/modul-consent	2.1	package-identity
+2026-08-06T08:40:15Z	title	R	README.md first heading	Medizininformatik Initiative - Modul Consent	2.1	repo-identity
+2026-08-06T08:40:15Z	license	R	LICENSE (text matched)	CC-BY-4.0	2.1	repo-identity
+2026-08-06T08:40:16Z	description	R	GitHub repository description	Kerndatensatzmodul Consent	2.1	repo-identity
+2026-08-06T08:40:16Z	license	R	GitHub license.spdx_id	CC-BY-4.0	2.1	repo-identity
+2026-08-06T08:40:30Z	version	G	sushi-config.gofsh-derived.yaml (goFSH output -- NOT identity)	1.0.8	5.1b.2	gofsh-config
+2026-08-06T08:40:30Z	dependency:de.einwilligungsmanagement	G	sushi-config.gofsh-derived.yaml (resolved via dist-tags.latest in run 1)	2.0.3	5.1b.2	gofsh-config

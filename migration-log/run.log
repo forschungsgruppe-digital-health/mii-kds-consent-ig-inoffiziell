@@ -260,3 +260,248 @@
     Gate A now decides three fields (title, license, publisher) and confirms the recovered
     seven, instead of supplying everything. No file in this repository was modified by
     this run except migration-log/run.log itself.
+2026-08-06T08:40:08Z  INFO   log  run-boundary  ===== run 4 starts  run=4 label=run 3 — multi-source identity recovery (tiers P/R/H) + parent-snapshot generation cwd=/tmp/consent-mig/target log=migration-log/run.log
+    Every line below belongs to run 4; the lines above are earlier invocations.
+    Per-step raw logs (migration-log/<ACTION>.log) hold THIS run only -- `run`
+    truncates each one and rolls the previous attempt over to <ACTION>.prev.log.
+2026-08-06T08:40:08Z  INFO   2.1  package-identity  params  package=de.medizininformatikinitiative.kerndatensatz.consent version=2026.0.0 registry=https://packages.simplifier.net work=/var/folders/d6/s255vt4x5pq9fy738bv7cs0h0000gq/T/tmp.ncTkV9og3a
+    Reporting only: no file in the module repository is read or written here.
+    Recovered values are Gate-A evidence, never applied to existing metadata.
+2026-08-06T08:40:08Z  INFO   2.1  package-identity  version supplied by the operator  version=2026.0.0 source=--version package=de.medizininformatikinitiative.kerndatensatz.consent
+2026-08-06T08:40:08Z  INFO   2.1  package-identity  fetched  cmd=`curl -sfL https://packages.simplifier.net/de.medizininformatikinitiative.kerndatensatz.consent/2026.0.0 -o pkg.tgz && tar xzf pkg.tgz`  bytes=12053 json_files=22 manifest=package/package.json
+2026-08-06T08:40:08Z  INFO   2.1  package-identity  manifest field  name=de.medizininformatikinitiative.kerndatensatz.consent  -- = packageId (spec §2.1)
+2026-08-06T08:40:08Z  INFO   2.1  package-identity  identity-claim  field=packageId value=de.medizininformatikinitiative.kerndatensatz.consent tier=P source=package/package.json
+2026-08-06T08:40:08Z  INFO   2.1  package-identity  manifest field  version=2026.0.0  -- the module version -- authoritative for this RELEASE
+2026-08-06T08:40:08Z  INFO   2.1  package-identity  identity-claim  field=version value=2026.0.0 tier=P source=package/package.json
+2026-08-06T08:40:08Z  INFO   2.1  package-identity  manifest field  description=KDS Modul Consent Release 2026.0.0
+2026-08-06T08:40:08Z  INFO   2.1  package-identity  identity-claim  field=description value=KDS Modul Consent Release 2026.0.0 tier=P source=package/package.json
+2026-08-06T08:40:08Z  INFO   2.1  package-identity  manifest field  fhirVersions=["4.0.1"]
+2026-08-06T08:40:08Z  INFO   2.1  package-identity  identity-claim  field=fhirVersions value=["4.0.1"] tier=P source=package/package.json
+2026-08-06T08:40:08Z  INFO   2.1  package-identity  manifest field  jurisdiction=urn:iso:std:iso:3166#DE
+2026-08-06T08:40:08Z  INFO   2.1  package-identity  identity-claim  field=jurisdiction value=urn:iso:std:iso:3166#DE tier=P source=package/package.json
+2026-08-06T08:40:08Z  INFO   2.1  package-identity  manifest field  author=sebastianstubert  -- a REGISTRY ACCOUNT, not `publisher`
+2026-08-06T08:40:08Z  INFO   2.1  package-identity  manifest read  package/package.json  recovered=6 absent=5 fields=name,version,description,fhirVersions,jurisdiction,author
+2026-08-06T08:40:08Z  WARN   2.1  package-identity  not-in-a-package-manifest: title, license, publisher
+    A FHIR package manifest has no field for these, so the published package
+    cannot supply them and no other field substitutes -- `author` is the
+    registry account that pushed the package, never a publishing organisation.
+    They stay Gate-A items: a human supplies them (spec §2.1).
+2026-08-06T08:40:08Z  INFO   2.1  package-identity  manifest fields absent (optional in this format)  canonical, homepage
+2026-08-06T08:40:08Z  INFO   2.1  package-identity  identity-claim  field=dependency:de.einwilligungsmanagement value=2.0.2 tier=P source=package/package.json (source pin)
+2026-08-06T08:40:08Z  INFO   2.1  package-identity  identity-claim  field=dependency:hl7.fhir.r4.core value=4.0.1 tier=P source=package/package.json (source pin)
+2026-08-06T08:40:08Z  INFO   2.1  package-identity  dependency pins from the SOURCE package  de.einwilligungsmanagement@2.0.2 hl7.fhir.r4.core@4.0.1
+    SOURCE EVIDENCE, and it outranks the registry's dist-tags.latest for the
+    same package (spec §2.1 floating-pin rule, §5.1b.2 step 1): this is what
+    the module was actually published against. Use these for goFSH's `-d` set
+    and record any divergence from a previously assumed pin in the report.
+2026-08-06T08:40:08Z  INFO   2.1  package-identity  packaged ImplementationGuide  file=ImplementationGuide.json url=/guide/mii-ig-modul-consent-2026?version=current version=2026.0.0 name=MII IG Consent v2026 title=<absent> publisher=<absent> license=<absent>
+2026-08-06T08:40:08Z  WARN   2.1  package-identity  ig-url-not-canonical: the packaged ImplementationGuide's url is not an absolute http(s) URL  url=/guide/mii-ig-modul-consent-2026?version=current
+    A Simplifier-rendered guide carries its own relative guide path here.
+    It is a rendering address, not the module's canonical base, and it is
+    excluded from the derivation below.
+2026-08-06T08:40:08Z  INFO   2.1  package-identity  urls excluded from the canonical derivation  count=3
+      CodeSystem-MiiConsentAnswerCodeSystem.json -> urn:oid:2.16.840.1.113883.3.1937.777.24.5.2 (not an absolute http(s) URL)
+      CodeSystem-MiiConsentPolicyCodeSystem.json -> urn:oid:2.16.840.1.113883.3.1937.777.24.5.3 (not an absolute http(s) URL)
+      ImplementationGuide.json -> /guide/mii-ig-modul-consent-2026?version=current (not an absolute http(s) URL)
+2026-08-06T08:40:08Z  INFO   2.1  package-identity  packaged resources carrying no url  count=6
+      examples/Example_MII_Consent_DocumentReference.json [DocumentReference]
+      examples/Example_MII_Consent_Einwilligung.json [Consent]
+      examples/Example_MII_Consent_Einwilligung_1.json [Consent]
+      examples/Example_MII_Consent_Einwilligung_2.json [Consent]
+      examples/Example_MII_Consent_Provenance.json [Provenance]
+      examples/Example_MII_Consent_ResultType_ConsentStatus.json [Consent]
+2026-08-06T08:40:08Z  INFO   2.1  package-identity  identity-claim  field=canonical value=https://www.medizininformatik-initiative.de/fhir/modul-consent tier=P source=packaged resource urls (13 of 13 agree)
+2026-08-06T08:40:08Z  INFO   2.1  package-identity  canonical derived by common prefix  canonical=https://www.medizininformatik-initiative.de/fhir/modul-consent agree=13 of 13
+    Unanimous: every packaged resource with an absolute canonical url shares
+    this base. Carried over UNCHANGED -- guardrail 1. It is not written
+    anywhere by this script; a human records it at Gate A.
+2026-08-06T08:40:08Z  INFO   2.1  package-identity  done  package=de.medizininformatikinitiative.kerndatensatz.consent version=2026.0.0  canonical=derived exit=0
+    Identity RECOVERED, not applied: record it at Gate A against the module's
+    own existing metadata, and change nothing that already carries a value.
+2026-08-06T08:40:15Z  INFO   2.1  repo-identity  params  dir=. repo=medizininformatik-initiative/kerndatensatzmodul-consent rendered=https://simplifier.net/medizininformatikinitiative-modulconsent
+    Tier R (the source repository) and tier H (the rendered guide), spec §2.1.
+    Reporting only: no file in the module repository is written by this script.
+2026-08-06T08:40:15Z  INFO   2.1  repo-identity  identity-claim  field=title value=Medizininformatik Initiative - Modul Consent tier=R source=README.md first heading
+    A CANDIDATE, confirmed at Gate A -- a README heading is written for human
+    readers, and a module's `title` is a conformance-artefact field.
+2026-08-06T08:40:16Z  INFO   2.1  repo-identity  identity-claim  field=license value=CC-BY-4.0 tier=R source=LICENSE (text matched)
+    REAL licence evidence, and the field a migration must never let default:
+    the template ships `license: CC-BY-4.0` as a literal that no placeholder
+    check flags, and MII modules commonly declare CC0-1.0 (spec §2.2).
+2026-08-06T08:40:16Z  INFO   2.1  repo-identity  release tags in the local checkout (newest last)  tags=1.0.7 2025.0.0 2025.0.0-alpha 2025.0.3 2026.0.0
+    Tags are evidence for WHICH RELEASE a commit corresponds to; the module's
+    version still comes from the published package (§2.1.1).
+2026-08-06T08:40:16Z  INFO   2.1  repo-identity  identity-claim  field=description value=Kerndatensatzmodul Consent tier=R source=GitHub repository description
+    A repository blurb, not the module's `description`; it is a candidate.
+2026-08-06T08:40:16Z  WARN   2.1  repo-identity  identity-contradiction: field=description  now=Kerndatensatzmodul Consent (tier R, GitHub repository description)  vs  description=KDS Modul Consent Release 2026.0.0 (tier P, package/package.json)
+    Two sources disagree about the same identity field. This is REPORTED, not
+    resolved: the tier ranking (spec §2.1) says which value a human should
+    probably adopt, and adopting one here would silently rename, re-license or
+    re-version a published module. Both readings stand in the ledger; Gate A
+    decides, and nothing in the repository is rewritten either way.
+2026-08-06T08:40:16Z  INFO   2.1  repo-identity  identity-claim  field=license value=CC-BY-4.0 tier=R source=GitHub license.spdx_id
+    GitHub's own detection of the same LICENSE file. Recorded separately so
+    that a disagreement with the text match becomes a visible contradiction.
+2026-08-06T08:40:16Z  WARN   2.1  repo-identity  not-recoverable-from-a-repository: publisher  owner=medizininformatik-initiative
+    The GitHub owner is an ACCOUNT that hosts the repository, not the
+    publishing organisation of a conformance artefact -- the same reason the
+    registry `author` is not a publisher (§2.1.1). `publisher` stays a Gate-A
+    field: a human names the organisation.
+2026-08-06T08:40:16Z  INFO   2.1  repo-identity  release tags on GitHub (newest first)  tags=2026.0.0 2025.0.3 2025.0.0 2025.0.0-alpha 1.0.7
+    Cross-check: the tag matching the published package's version is what
+    ties that RELEASE to the commit being migrated (§2.1.1, which version).
+2026-08-06T08:40:17Z  INFO   2.1  repo-identity  rendered guide probed  cmd=`curl -sL https://simplifier.net/medizininformatikinitiative-modulconsent`  http=200 bytes=55956 script_markers=52 identity_markers=0
+2026-08-06T08:40:17Z  WARN   2.1  repo-identity  client-rendered-page: the guide is a HUMAN reference, not a scrape target  http=200 bytes=55956 script_markers=52 identity_markers=0
+    The delivered HTML carries the application, not the metadata: the identity
+    is fetched by scripts after load. Nothing is extracted from it here.
+    Its legitimate use is the opposite direction -- a HUMAN reads the rendered
+    guide at Gate A for the fields no machine source carries (title, publisher)
+    and records what they read. An agent inventing a value 'from the guide'
+    would be fabricating with a URL attached (guardrail 3).
+2026-08-06T08:40:17Z  INFO   2.1  repo-identity  done  fields_recovered=4 exit=0
+    Recovered, not applied: every value above is Gate-A evidence, recorded in
+    the identity ledger beside the other tiers' readings (spec §2.1).
+2026-08-06T08:40:30Z  INFO   5.1b.2  gofsh-config  identity-claim  field=version value=1.0.8 tier=G source=sushi-config.gofsh-derived.yaml (goFSH output -- NOT identity)
+    goFSH takes the version from one arbitrary artefact; here the DocumentReference profile's.
+2026-08-06T08:40:30Z  WARN   5.1b.2  gofsh-config  identity-contradiction: field=version  now=1.0.8 (tier G, sushi-config.gofsh-derived.yaml (goFSH output -- NOT identity))  vs  version=2026.0.0 (tier P, package/package.json)
+    Two sources disagree about the same identity field. This is REPORTED, not
+    resolved: the tier ranking (spec §2.1) says which value a human should
+    probably adopt, and adopting one here would silently rename, re-license or
+    re-version a published module. Both readings stand in the ledger; Gate A
+    decides, and nothing in the repository is rewritten either way.
+2026-08-06T08:40:30Z  INFO   5.1b.2  gofsh-config  identity-claim  field=dependency:de.einwilligungsmanagement value=2.0.3 tier=G source=sushi-config.gofsh-derived.yaml (resolved via dist-tags.latest in run 1)
+2026-08-06T08:40:30Z  WARN   5.1b.2  gofsh-config  identity-contradiction: field=dependency:de.einwilligungsmanagement  now=2.0.3 (tier G, sushi-config.gofsh-derived.yaml (resolved via dist-tags.latest in run 1))  vs  dependency:de.einwilligungsmanagement=2.0.2 (tier P, package/package.json (source pin))
+    Two sources disagree about the same identity field. This is REPORTED, not
+    resolved: the tier ranking (spec §2.1) says which value a human should
+    probably adopt, and adopting one here would silently rename, re-license or
+    re-version a published module. Both readings stand in the ledger; Gate A
+    decides, and nothing in the repository is rewritten either way.
+2026-08-06T08:40:42Z  INFO   5.1b.3  sushi-before  measuring the CURRENT state in a scratch copy  scratch=/tmp/run3/fsh config=sushi-config.gofsh-derived.yaml parent_pin=2.0.3
+    The repository is not modified: the derived config keeps its recorded pin (spec §2.1.4).
+2026-08-06T08:40:42Z  INFO   5.1b.3  sushi-before  start  cmd=`bash -c 'cd /tmp/run3/fsh && npx --yes fsh-sushi@3.20.0 .'`  raw_log=migration-log/sushi-before.log prev_raw_log=migration-log/sushi-before.prev.log
+2026-08-06T08:40:48Z  WARN   5.1b.3  sushi-before  anticipated-nonzero-exit: shape B: the unresolvable-parent errors are the documented outcome (§5.1b.4)  cmd=`bash -c 'cd /tmp/run3/fsh && npx --yes fsh-sushi@3.20.0 .'`  exit=5 raw_log=migration-log/sushi-before.log raw_log_lines=65
+    This non-zero status is this step's ANTICIPATED, documented outcome, not a
+    failure to fix -- the acceptance criterion is met AS QUALIFIED (spec
+    §5.1b.4). Escalated, not ignored: every item behind it belongs in the
+    report's ① decision queue, named individually (spec §10.3, §10.6).
+2026-08-06T08:41:03Z  INFO   5.1b.3  sushi-before  errors=5  cause=3x missing-parent-snapshot + 2x consequential InstanceOf-not-found
+2026-08-06T08:41:03Z  INFO   5.1b.5  parent-snapshots  params  mode=detect package=de.einwilligungsmanagement version=2.0.2 registry=https://packages.simplifier.net fhir_version=4.0.1
+    cmd=`curl -sfL https://packages.simplifier.net/de.einwilligungsmanagement/2.0.2 -o p.tgz && tar xzf p.tgz`
+2026-08-06T08:41:03Z  INFO   5.1b.5  parent-snapshots  surveyed  structure_definitions=21 with_snapshot=0 without_snapshot=21
+2026-08-06T08:41:03Z  WARN   5.1b.5  parent-snapshots  parent-without-snapshots: 21 of 21 StructureDefinitions carry NO snapshot
+    This is the condition behind SUSHI's `is missing a snapshot. Snapshot is
+    required for import.` Every profile deriving from one of these, and every
+    instance declaring InstanceOf such a profile, fails to export. Another
+    version of the same package usually does NOT help -- measured, two
+    consecutive releases of the reference parent both ship 0 snapshots.
+    Next: `parent-snapshots.sh build …` (spec §5.1b.5). Never hand-roll one.
+2026-08-06T08:41:03Z  INFO   5.1b.5  parent-snapshots  derivation chain is flat: every SD derives directly from outside this package  count=21
+    So each can be snapshotted independently, in any order.
+2026-08-06T08:41:03Z  INFO   5.1b.5  parent-snapshots  done  mode=detect missing_snapshots=21 of 21 exit=1
+    The condition IS present. It is not a post-processing task and not a
+    reason to invent a parent: generate the snapshots with `build` (spec
+    §5.1b.5), or record the dependent profiles as blocked and migrate the rest.
+2026-08-06T08:41:11Z  INFO   5.1b.5  parent-snapshots  params  mode=build package=de.einwilligungsmanagement version=2.0.2 registry=https://packages.simplifier.net fhir_version=4.0.1
+    cmd=`curl -sfL https://packages.simplifier.net/de.einwilligungsmanagement/2.0.2 -o p.tgz && tar xzf p.tgz`
+2026-08-06T08:41:12Z  INFO   5.1b.5  parent-snapshots  surveyed  structure_definitions=21 with_snapshot=0 without_snapshot=21
+2026-08-06T08:41:12Z  WARN   5.1b.5  parent-snapshots  parent-without-snapshots: 21 of 21 StructureDefinitions carry NO snapshot
+    This is the condition behind SUSHI's `is missing a snapshot. Snapshot is
+    required for import.` Every profile deriving from one of these, and every
+    instance declaring InstanceOf such a profile, fails to export. Another
+    version of the same package usually does NOT help -- measured, two
+    consecutive releases of the reference parent both ship 0 snapshots.
+    Next: `parent-snapshots.sh build …` (spec §5.1b.5). Never hand-roll one.
+2026-08-06T08:41:12Z  INFO   5.1b.5  parent-snapshots  derivation chain is flat: every SD derives directly from outside this package  count=21
+    So each can be snapshotted independently, in any order.
+2026-08-06T08:41:12Z  INFO   5.1b.5  parent-snapshots  base package for the element-count floor  base_dir=/Users/marcel/.fhir/packages/hl7.fhir.r4.core#4.0.1/package
+2026-08-06T08:41:12Z  INFO   5.1b.5  parent-snapshots  generating with the OFFICIAL HL7 generator  validator=/tmp/snapwork/validator_cli.jar java="openjdk version "25.0.2" 2026-01-20" fhir_version=4.0.1
+    cmd=`java -jar /tmp/snapwork/validator_cli.jar snapshot <sd.json> -version 4.0.1 -tx n/a -ig /var/folders/d6/s255vt4x5pq9fy738bv7cs0h0000gq/T/tmp.Uvuu9xvzms/src/package -output <out.json>`
+    One invocation PER FILE: a batch run aborts at the first failure and silently
+    skips the rest. Nothing here merges a differential by hand (script header).
+2026-08-06T08:44:13Z  WARN   5.1b.5  parent-snapshots  generator-refused: profile-ConsentManagement-TemplateFrame.json  url=http://fhir.de/ConsentManagement/StructureDefinition/TemplateFrame reason=Exception generating snapshot for http://fhir.de/ConsentManagement/StructureDefinition/TemplateFrame|2.0.2: The element Questionnaire.item.text.extension:renderingMarkdown.value[x]:valueMarkdown launches straight into slicing without the slicing being set up properly first
+    The generator declining a differential is EVIDENCE ABOUT THE PARENT, not a
+    gap to work around: an upstream differential the official merge cannot
+    process is malformed. Do not hand-finish it. Check whether the module's FSH
+    names this profile as a Parent or InstanceOf; if it does, this is a Gate-A
+    escalation for the upstream package's maintainers (spec §5.1b.4).
+2026-08-06T08:44:23Z  WARN   5.1b.5  parent-snapshots  generator-refused: profile-ConsentManagement-TemplateModule.json  url=http://fhir.de/ConsentManagement/StructureDefinition/TemplateModule reason=Exception generating snapshot for http://fhir.de/ConsentManagement/StructureDefinition/TemplateModule|2.0.2: The element Questionnaire.item.text.extension:renderingMarkdown.value[x]:valueMarkdown launches straight into slicing without the slicing being set up properly first
+    The generator declining a differential is EVIDENCE ABOUT THE PARENT, not a
+    gap to work around: an upstream differential the official merge cannot
+    process is malformed. Do not hand-finish it. Check whether the module's FSH
+    names this profile as a Parent or InstanceOf; if it does, this is a Gate-A
+    escalation for the upstream package's maintainers (spec §5.1b.4).
+2026-08-06T08:44:33Z  WARN   5.1b.5  parent-snapshots  generator-refused: profile-ConsentManagementQuestionnaireComposed.json  url=http://fhir.de/ConsentManagement/StructureDefinition/QuestionnaireComposed reason=Exception generating snapshot for http://fhir.de/ConsentManagement/StructureDefinition/QuestionnaireComposed|2.0.2: The element Questionnaire.item.text.extension:renderingMarkdown.value[x]:valueMarkdown launches straight into slicing without the slicing being set up properly first
+    The generator declining a differential is EVIDENCE ABOUT THE PARENT, not a
+    gap to work around: an upstream differential the official merge cannot
+    process is malformed. Do not hand-finish it. Check whether the module's FSH
+    names this profile as a Parent or InstanceOf; if it does, this is a Gate-A
+    escalation for the upstream package's maintainers (spec §5.1b.4).
+2026-08-06T08:44:44Z  INFO   5.1b.5  parent-snapshots  snapshot verified and merged  file=extension-ConsentManagement-ConsentMode.json snapshot=12 differential=5 base=5
+2026-08-06T08:44:44Z  INFO   5.1b.5  parent-snapshots  snapshot verified and merged  file=extension-ConsentManagement-ContextIdentifier.json snapshot=20 differential=12 base=5
+2026-08-06T08:44:44Z  INFO   5.1b.5  parent-snapshots  snapshot verified and merged  file=extension-ConsentManagement-DomainReference.json snapshot=22 differential=11 base=5
+2026-08-06T08:44:44Z  INFO   5.1b.5  parent-snapshots  snapshot verified and merged  file=extension-ConsentManagement-Logo.json snapshot=5 differential=2 base=5
+2026-08-06T08:44:44Z  INFO   5.1b.5  parent-snapshots  snapshot verified and merged  file=extension-ConsentManagement-OrganizationDescription.json snapshot=5 differential=2 base=5
+2026-08-06T08:44:44Z  INFO   5.1b.5  parent-snapshots  snapshot verified and merged  file=extension-ConsentManagement-SignatureLocation.json snapshot=5 differential=2 base=5
+2026-08-06T08:44:44Z  INFO   5.1b.5  parent-snapshots  snapshot verified and merged  file=extension-ConsentManagement-SourceDocument.json snapshot=15 differential=4 base=5
+2026-08-06T08:44:44Z  INFO   5.1b.5  parent-snapshots  snapshot verified and merged  file=extension-ConsentManagement-SubQuestionnaire.json snapshot=11 differential=6 base=5
+2026-08-06T08:44:44Z  INFO   5.1b.5  parent-snapshots  snapshot verified and merged  file=extension-ConsentManagement-VersionFormat.json snapshot=15 differential=10 base=5
+2026-08-06T08:44:44Z  INFO   5.1b.5  parent-snapshots  snapshot verified and merged  file=extension-ConsentManagement-Xacml.json snapshot=5 differential=2 base=5
+2026-08-06T08:44:44Z  INFO   5.1b.5  parent-snapshots  snapshot verified and merged  file=extension-ConsentManagement-XacmlTemplate.json snapshot=15 differential=9 base=5
+2026-08-06T08:44:44Z  INFO   5.1b.5  parent-snapshots  snapshot verified and merged  file=profile-ConsentManagement-Consent.json snapshot=132 differential=32 base=57
+2026-08-06T08:44:44Z  INFO   5.1b.5  parent-snapshots  snapshot verified and merged  file=profile-ConsentManagement-DocumentReference.json snapshot=61 differential=8 base=45
+2026-08-06T08:44:44Z  INFO   5.1b.5  parent-snapshots  snapshot verified and merged  file=profile-ConsentManagement-Domain-Organization.json snapshot=91 differential=23 base=26
+2026-08-06T08:44:44Z  INFO   5.1b.5  parent-snapshots  snapshot verified and merged  file=profile-ConsentManagement-Domain-ResearchStudy.json snapshot=104 differential=23 base=44
+2026-08-06T08:44:44Z  INFO   5.1b.5  parent-snapshots  snapshot verified and merged  file=profile-ConsentManagement-Patient.json snapshot=64 differential=7 base=45
+2026-08-06T08:44:44Z  INFO   5.1b.5  parent-snapshots  snapshot verified and merged  file=profile-ConsentManagement-Provenance.json snapshot=65 differential=20 base=32
+2026-08-06T08:44:44Z  INFO   5.1b.5  parent-snapshots  snapshot verified and merged  file=profile-ConsentManagementQuestionnaireResponse.json snapshot=39 differential=14 base=33
+2026-08-06T08:44:44Z  INFO   5.1b.5  parent-snapshots  rebuild written  dir=/var/folders/d6/s255vt4x5pq9fy738bv7cs0h0000gq/T/tmp.Uvuu9xvzms/rebuilt/package merged=18 refused=0
+    Only the `snapshot` property was added; every other field is the upstream
+    bytes re-serialized. Do not diff this against upstream expecting byte
+    equality -- key order and indentation are the serializer's.
+2026-08-06T08:44:44Z  INFO   5.1b.5  parent-snapshots  generated 18 of 21 snapshots  expected=21 actual=18
+2026-08-06T08:44:44Z  WARN   5.1b.5  parent-snapshots  silent-partial-success: generated 18 of 21 snapshots
+    Exit status is not evidence of completeness; these two counts are.
+    Reconcile against the step-1 inventory before continuing.
+2026-08-06T08:44:44Z  INFO   5.1b.5  parent-snapshots  required parent snapshotted  require=http://fhir.de/ConsentManagement/StructureDefinition/DocumentReference file=profile-ConsentManagement-DocumentReference.json
+2026-08-06T08:44:44Z  INFO   5.1b.5  parent-snapshots  required parent snapshotted  require=http://fhir.de/ConsentManagement/StructureDefinition/DomainReference file=extension-ConsentManagement-DomainReference.json
+2026-08-06T08:44:44Z  INFO   5.1b.5  parent-snapshots  required parent snapshotted  require=http://fhir.de/ConsentManagement/StructureDefinition/Provenance file=profile-ConsentManagement-Provenance.json
+2026-08-06T08:44:44Z  INFO   5.1b.5  parent-snapshots  installed as a NEW cache entry  dest=/Users/marcel/.fhir/packages/de.einwilligungsmanagement#2.0.2-snapshots version=2.0.2-snapshots
+    Upstream de.einwilligungsmanagement#2.0.2 is untouched. Depend on it by pinning
+    `de.einwilligungsmanagement: 2.0.2-snapshots` in sushi-config.yaml -- and note that this entry is
+    LOCAL: CI and every other machine need this same build step, or the pin
+    fails to resolve there (spec §5.1b.5, 'carrying it upstream').
+2026-08-06T08:44:44Z  WARN   5.1b.5  parent-snapshots  rebuild-incomplete: the generator refused 3 of 21 StructureDefinition(s)  files=profile-ConsentManagement-TemplateFrame.json profile-ConsentManagement-TemplateModule.json profile-ConsentManagementQuestionnaireComposed.json
+    Each refusal is named above with the generator's own reason. Decide per file
+    whether the module's FSH depends on it; those that it does are Gate-A
+    escalations for the upstream maintainers.
+2026-08-06T08:44:44Z  INFO   5.1b.5  parent-snapshots  done  mode=build generated=18 of 21 required=all-snapshotted exit=0
+    Re-run SUSHI now and compare the error count against the run BEFORE this
+    step; that difference is the evidence, not this script's exit status.
+2026-08-06T08:44:51Z  INFO   5.1b.5  upstream-integrity  upstream re-counted AFTER the install  2.0.2=[sds snaps]:21 0 2.0.3=[sds snaps]:21 0 rebuild=[sds snaps]:21 18
+    The rebuild is an ADDITIVE cache entry; neither shared upstream package was
+    modified in place. Re-counted rather than assumed.
+2026-08-06T08:44:51Z  INFO   5.1b.5  sushi-after  re-pinned in a SCRATCH copy only  scratch=/tmp/run3/fsh-after pin=2.0.2-snapshots repo_config=unchanged(2.0.3)
+2026-08-06T08:44:51Z  INFO   5.1b.5  sushi-after  start  cmd=`bash -c 'cd /tmp/run3/fsh-after && npx --yes fsh-sushi@3.20.0 .'`  raw_log=migration-log/sushi-after-snapshots.log
+2026-08-06T08:44:58Z  INFO   5.1b.5  sushi-after  done  cmd=`bash -c 'cd /tmp/run3/fsh-after && npx --yes fsh-sushi@3.20.0 .'`  exit=0 raw_log=migration-log/sushi-after-snapshots.log raw_log_lines=68
+2026-08-06T08:44:58Z  INFO   5.1b.5  sushi-after  errors=0 (was 5)  warnings=8 (was 2) resolved=5 missing-snapshot-errors=0 instanceof-not-found=0 exit=0
+    The evidence is the pair of counts, not the exit status. More warnings is the
+    expected direction: rules dropped while the parent was unresolvable now resolve
+    and get evaluated.
+2026-08-06T08:45:25Z  INFO   2.1  identity-summary  run 3 done: 11 claims across tiers P and R, 3 contradictions reported, 0 applied  fields=9 distinct tiers=P,R,G gate_a_remaining=publisher
+    Gate A narrows again: run 1 said every identity field was a human's to supply;
+    tier P (run 2) narrowed it to title, license, publisher; tier R now supplies a
+    title CANDIDATE (README heading) and license=CC-BY-4.0 as REAL evidence (the
+    LICENSE text and GitHub's own detection, independently). publisher alone has no
+    machine source: a GitHub owner account is not a publishing organisation.
+    The Simplifier project page is client-rendered (200, 55956 bytes, 52 script
+    markers, 0 identity markers) -- a human reference at Gate A, not a scrape target.
+2026-08-06T08:45:25Z  WARN   2.1  gate-a-remaining  publisher has no machine source in any tier  recovered=9 candidates=2 unrecovered=1
+    A human names the publishing organisation and confirms the title/description
+    candidates and license=CC-BY-4.0 against the rendered guide. Nothing in this
+    repository was rewritten from a recovered value (spec §2.1.4).
+2026-08-06T08:45:25Z  WARN   5.1b.5  carry-upstream  the snapshot-bearing parent exists ONLY in the local FHIR cache  entry=de.einwilligungsmanagement#2.0.2-snapshots
+    A committed pin on 2.0.2-snapshots would fail on a clean checkout and in CI.
+    Gate A decides: a CI prebuild step, vendoring the rebuilt package, an internal
+    registry, or not repinning and leaving the three profiles blocked. The durable
+    fix is upstream publishing snapshot-bearing releases. NOT decided here, and the
+    committed sushi-config.gofsh-derived.yaml keeps its recorded 2.0.3 pin.
