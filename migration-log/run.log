@@ -147,3 +147,116 @@
     {DocumentReference,DomainReference,Provenance} is missing a snapshot.' => Gate A.
     Options: obtain a snapshot-bearing build of the parent package, or record the three
     profiles as blocked. A parent is never invented (guardrail 4).
+2026-08-06T07:48:08Z  INFO   log  run-boundary  ===== run 3 starts  run=3 label=run 3 — identity recovered from the published package (spec §2.1.1) cwd=/tmp/consent-ig-migration/mii-kds-consent-ig-inoffiziell log=migration-log/run.log
+    Every line below belongs to run 3; the lines above are earlier invocations.
+    Per-step raw logs (migration-log/<ACTION>.log) hold THIS run only -- `run`
+    truncates each one and rolls the previous attempt over to <ACTION>.prev.log.
+2026-08-06T07:48:08Z  INFO   2.1  package-identity  params  package=de.medizininformatikinitiative.kerndatensatz.consent version=2026.0.0 registry=https://packages.simplifier.net work=/var/folders/d6/s255vt4x5pq9fy738bv7cs0h0000gq/T/tmp.F62gywMcNn
+    Reporting only: no file in the module repository is read or written here.
+    Recovered values are Gate-A evidence, never applied to existing metadata.
+2026-08-06T07:48:08Z  INFO   2.1  package-identity  version supplied by the operator  version=2026.0.0 source=--version package=de.medizininformatikinitiative.kerndatensatz.consent
+2026-08-06T07:48:08Z  INFO   2.1  package-identity  fetched  cmd=`curl -sfL https://packages.simplifier.net/de.medizininformatikinitiative.kerndatensatz.consent/2026.0.0 -o pkg.tgz && tar xzf pkg.tgz`  bytes=12053 json_files=22 manifest=package/package.json
+2026-08-06T07:48:08Z  INFO   2.1  package-identity  manifest field  name=de.medizininformatikinitiative.kerndatensatz.consent  -- = packageId (spec §2.1)
+2026-08-06T07:48:08Z  INFO   2.1  package-identity  manifest field  version=2026.0.0  -- the module version -- authoritative for this RELEASE
+2026-08-06T07:48:08Z  INFO   2.1  package-identity  manifest field  description=KDS Modul Consent Release 2026.0.0
+2026-08-06T07:48:08Z  INFO   2.1  package-identity  manifest field  fhirVersions=["4.0.1"]
+2026-08-06T07:48:08Z  INFO   2.1  package-identity  manifest field  jurisdiction=urn:iso:std:iso:3166#DE
+2026-08-06T07:48:08Z  INFO   2.1  package-identity  manifest field  author=sebastianstubert  -- a REGISTRY ACCOUNT, not `publisher`
+2026-08-06T07:48:08Z  INFO   2.1  package-identity  manifest read  package/package.json  recovered=6 absent=5 fields=name,version,description,fhirVersions,jurisdiction,author
+2026-08-06T07:48:08Z  WARN   2.1  package-identity  not-in-a-package-manifest: title, license, publisher
+    A FHIR package manifest has no field for these, so the published package
+    cannot supply them and no other field substitutes -- `author` is the
+    registry account that pushed the package, never a publishing organisation.
+    They stay Gate-A items: a human supplies them (spec §2.1).
+2026-08-06T07:48:08Z  INFO   2.1  package-identity  manifest fields absent (optional in this format)  canonical, homepage
+2026-08-06T07:48:08Z  INFO   2.1  package-identity  dependency pins from the SOURCE package  de.einwilligungsmanagement@2.0.2 hl7.fhir.r4.core@4.0.1
+    SOURCE EVIDENCE, and it outranks the registry's dist-tags.latest for the
+    same package (spec §2.1 floating-pin rule, §5.1b.2 step 1): this is what
+    the module was actually published against. Use these for goFSH's `-d` set
+    and record any divergence from a previously assumed pin in the report.
+2026-08-06T07:48:08Z  INFO   2.1  package-identity  packaged ImplementationGuide  file=ImplementationGuide.json url=/guide/mii-ig-modul-consent-2026?version=current version=2026.0.0 name=MII IG Consent v2026 title=<absent> publisher=<absent> license=<absent>
+2026-08-06T07:48:09Z  WARN   2.1  package-identity  ig-url-not-canonical: the packaged ImplementationGuide's url is not an absolute http(s) URL  url=/guide/mii-ig-modul-consent-2026?version=current
+    A Simplifier-rendered guide carries its own relative guide path here.
+    It is a rendering address, not the module's canonical base, and it is
+    excluded from the derivation below.
+2026-08-06T07:48:09Z  INFO   2.1  package-identity  urls excluded from the canonical derivation  count=3
+      CodeSystem-MiiConsentAnswerCodeSystem.json -> urn:oid:2.16.840.1.113883.3.1937.777.24.5.2 (not an absolute http(s) URL)
+      CodeSystem-MiiConsentPolicyCodeSystem.json -> urn:oid:2.16.840.1.113883.3.1937.777.24.5.3 (not an absolute http(s) URL)
+      ImplementationGuide.json -> /guide/mii-ig-modul-consent-2026?version=current (not an absolute http(s) URL)
+2026-08-06T07:48:09Z  INFO   2.1  package-identity  packaged resources carrying no url  count=6
+      examples/Example_MII_Consent_DocumentReference.json [DocumentReference]
+      examples/Example_MII_Consent_Einwilligung.json [Consent]
+      examples/Example_MII_Consent_Einwilligung_1.json [Consent]
+      examples/Example_MII_Consent_Einwilligung_2.json [Consent]
+      examples/Example_MII_Consent_Provenance.json [Provenance]
+      examples/Example_MII_Consent_ResultType_ConsentStatus.json [Consent]
+2026-08-06T07:48:09Z  INFO   2.1  package-identity  canonical derived by common prefix  canonical=https://www.medizininformatik-initiative.de/fhir/modul-consent agree=13 of 13
+    Unanimous: every packaged resource with an absolute canonical url shares
+    this base. Carried over UNCHANGED -- guardrail 1. It is not written
+    anywhere by this script; a human records it at Gate A.
+2026-08-06T07:48:09Z  INFO   2.1  package-identity  done  package=de.medizininformatikinitiative.kerndatensatz.consent version=2026.0.0  canonical=derived exit=0
+    Identity RECOVERED, not applied: record it at Gate A against the module's
+    own existing metadata, and change nothing that already carries a value.
+2026-08-06T07:48:31Z  INFO   2.1  identity-version-evidence  the migrated source commit corresponds to RELEASE 2026.0.0, not to the higher-sorting prerelease 2026.0.1-rc-3  release=2026.0.0 rejected=2026.0.1-rc-3 evidence=resource-content
+    Evidence, read from the source at 792f9f3e: Profile_MII_Consent_Einwilligung carries the
+    Consent.category:loinc slice, which 2026.0.0 has and 2026.0.1-rc-3 REPLACED with
+    :consentCategory; the repo also carries CodeSystem-MiiConsentVersionModuleCodeSystem, which
+    rc-3 dropped. Artefact versions agree with 2026.0.0 throughout (1.0.9/1.0.8/1.0.8,
+    6x 1.0.7, 1.6.0, 1.1.0, 0.2.0, 1.6.0, 1.0.3, 1.0.1). dist-tags.latest=2026.0.0 agrees.
+2026-08-06T07:48:31Z  WARN   2.1  identity-read  CORRECTION to the run-1 line above (2026-08-06T00:11:35Z): identity was NOT unrecoverable -- the PUBLISHED PACKAGE carries most of it (spec §2.1.1)
+    That line read the registry ENTRY (the npm-style metadata), which indeed names no
+    canonical/title/fhirVersions, and concluded that a human must supply id/name/title/
+    publisher/packageId/license/version. The package TARBALL was not read. It carries:
+    packageId=de.medizininformatikinitiative.kerndatensatz.consent, version=2026.0.0,
+    description, fhirVersions=[4.0.1], jurisdiction=urn:iso:std:iso:3166#DE, and the
+    dependency pins; the packaged resources' own urls give the canonical, 13 of 13
+    agreeing on https://www.medizininformatik-initiative.de/fhir/modul-consent.
+    The earlier line is left standing (run logs are append-only, spec §10.1); this one
+    supersedes it. NOTHING in the repository was rewritten from a recovered value.
+2026-08-06T07:48:31Z  WARN   2.1  gate-a-narrowed  Gate A narrowed: THREE identity fields are genuinely missing, not seven  missing=title,license,publisher recovered=packageId,version,description,fhirVersions,jurisdiction,dependencies,canonical
+    A FHIR package manifest has no field for title, license or publisher, so their absence
+    is a property of the format rather than of this package, and no adjacent field
+    substitutes -- author=sebastianstubert is the registry account that pushed the release.
+    The packaged ImplementationGuide narrows nothing further: name="MII IG Consent v2026"
+    (a computer name, not a title), title/publisher/license all null, and its url is the
+    RELATIVE Simplifier guide path /guide/mii-ig-modul-consent-2026?version=current -- a
+    rendering address, not a canonical base.
+    license is the one a human must NOT default: the template ships CC-BY-4.0 as a literal,
+    MII modules commonly declare CC0-1.0, and no placeholder check flags the difference
+    (spec §2.2). id/name remain template-derivable (mii-ig-<slug>); version is confirmed
+    at 2026.0.0 by the line above.
+2026-08-06T07:49:01Z  WARN   5.1b.2  resolve-parent  CORRECTION: the foreign parent pin is de.einwilligungsmanagement@2.0.2, not @2.0.3  was=2.0.3 is=2.0.2 evidence=source-package-manifest
+    Run 1 resolved the parent canonical to the package, then took the version from the
+    registry's dist-tags.latest (2.0.3) because no source evidence was reachable. The
+    source package de.medizininformatikinitiative.kerndatensatz.consent@2026.0.0 pins
+    de.einwilligungsmanagement@2.0.2 in its manifest, and source evidence outranks
+    dist-tags.latest (spec §2.1 floating-pin rule, §5.1b.2 step 1). The rule was not
+    broken by the run; it was unreachable until the package was read.
+2026-08-06T07:49:01Z  INFO   5.1b.2  gofsh-reconvert  measured: the corrected pin changes NO derived artefact  cmd=`npx --yes gofsh@2.6.1 <src> -o <out> -s file-per-definition -t json-and-xml -d de.einwilligungsmanagement@2.0.2 -d hl7.fhir.r4.core@4.0.1`  exit=0 fsh_diff=0 files
+    Both pins were re-run into fresh scratch directories and diffed raw against raw:
+    input/fsh is BYTE-IDENTICAL, 0 files differing, 0 goFSH errors and the same 2
+    warnings each. The only difference is line 8 of the sushi-config.yaml goFSH writes
+    (de.einwilligungsmanagement: 2.0.3 -> 2.0.2). So the committed input/fsh needs no
+    regeneration and is NOT regenerated here.
+2026-08-06T07:49:01Z  WARN   5.1b.2  gofsh-derived-config  sushi-config.gofsh-derived.yaml still records the superseded pin 2.0.3 -- LEFT AS IT IS, not rewritten  file=sushi-config.gofsh-derived.yaml line=8 recorded=2.0.3 source-evidence=2.0.2
+    A recovered value is reported, never written over existing content. The file is
+    goFSH's derived output (its name says so) and is not identity: its version=1.0.8 is
+    the DocumentReference profile's, and its dependencies are whatever -d set was passed.
+    Whoever takes the Gate-A decision records the pin; nothing here pre-empts it.
+2026-08-06T07:49:01Z  INFO   5.1b.4  unresolvable-parent  the pin correction does NOT unblock the three profiles  package_2.0.2=0-of-21-snapshots package_2.0.3=0-of-21-snapshots
+    Both parent releases were fetched and counted: 21 StructureDefinitions each, none
+    carrying a snapshot. SUSHI cannot import either, so DocumentReference, DomainReference
+    and Provenance stay blocked and the §5.1b.4 escalation stands unchanged.
+2026-08-06T07:49:01Z  WARN   5.1  source-vs-package-inventory  the published package ships ONE example the source repository does not  package=6 repo=5 extra=Example_MII_Consent_Einwilligung_1.json
+    Consent/89f494a3-cd75-44f5-a78a-581dfdd47a94, meta.profile mii-pr-consent-einwilligung,
+    is in de.medizininformatikinitiative.kerndatensatz.consent@2026.0.0 but in neither the
+    mirror at 792f9f3e nor the upstream tree at that commit (verified read-only against
+    medizininformatik-initiative/kerndatensatzmodul-consent). The other five match 1:1 by
+    resource id. No file was added, removed or altered here: the migration carries the
+    REPOSITORY's artefacts, and the surplus is a question for the module owners -- was the
+    example published from an unpushed working copy, or withdrawn from git after release?
+    => report queue ③ (triage), and the human-review issue.
+2026-08-06T07:49:01Z  INFO   2.1  identity-summary  run 2 done: identity RECOVERED from the published package, nothing applied  recovered=7 missing=3 pin_corrected=1 artefacts_changed=0
+    Gate A now decides three fields (title, license, publisher) and confirms the recovered
+    seven, instead of supplying everything. No file in this repository was modified by
+    this run except migration-log/run.log itself.
