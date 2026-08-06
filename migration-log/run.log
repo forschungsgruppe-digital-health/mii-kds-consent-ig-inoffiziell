@@ -955,3 +955,7 @@
 2026-08-06T13:25:21Z  INFO   5.6  ci-build  CI build after the narrative migration: err = 83, warn = 137, info = 465, Broken Links: 0  run=31105388740 conclusion=success
     Against the pre-narrative CI build (83/137/466/0): errors and warnings unchanged, info -1 — the same delta the local build shows.
     'FHIR validation' stays red for the same environmental reason as before (MII's reusable Simplifier QC workflow needs SIMPLIFIER_USERNAME/SIMPLIFIER_PASSWORD; this repository has neither). No secret was added.
+2026-08-06T13:28:46Z  WARN   5.6  preview-lagging  the gh-pages BRANCH carries the new build, but the public Pages URL still served the previous one at the end of this run
+    Verified on the branch, not on the CDN: GET /contents/branches/migration/mii-kds-module-template/de/index.html?ref=gh-pages = 25029 bytes, contains the migrated German narrative ('MII Taskforce Consent Umsetzung' x2), 0 hits for the old starter-page banner.
+    GitHub Pages build for gh-pages commit c1af85a9 was still 'building' after ~25 min; the two Pages builds before it are 'errored' (Page build failed). Environmental, not a migration finding — the workflow job 'IG build and preview' is green and pushed the content.
+    A reviewer opening the preview URL may therefore still see the OLD pages for a while. Re-check, or read the build from the gh-pages branch.
