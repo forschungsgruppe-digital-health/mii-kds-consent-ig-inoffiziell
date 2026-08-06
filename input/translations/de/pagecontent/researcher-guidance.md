@@ -1,18 +1,9 @@
 <!-- markdownlint-disable MD041 -->
-<div class="mii-highlight mii-highlight-orange" markdown="0">
-<h5>TODO:REVIEW (Gate B) &mdash; Startseiten-Vorlage, Narrativ noch nicht migriert</h5>
-<p>Dies ist die <strong>Vorlagenseite des MII-KDS-Modul-Templates</strong>, unveraendert
-uebernommen. Es ist <strong>nicht</strong> das Narrativ des MII-KDS-Moduls Consent.</p>
-<p>Der Leitfadentext des Moduls existiert nur als gerenderter Simplifier-Guide
-(<code>simplifier.net/guide/miiigmodulconsent</code>) und liegt <strong>nicht im
-Quell-Repository</strong>. Es gab daher nichts, was in diese Seite haette migriert werden
-koennen, und es wurde nichts erfunden. Seitenstruktur, Menue und Artefakt-Rendering sind
-echt; der Fliesstext ist ein Platzhalter, bis das Narrativ von Simplifier migriert ist.</p>
-</div>
-
 ### Anleitung für Forschende
 
 Hinweise für Forschende, die die Daten des Moduls **Consent** für Forschungszwecke nutzen — z. B. welche Datenelemente für welche Fragestellungen relevant sind und wie sie interpretiert werden.
 
-> [TODO: Beschreiben Sie die forschungsrelevanten Aspekte des Moduls.]
-{: .mii-highlight .mii-highlight-grey}
+<div class="mii-highlight mii-highlight-grey" markdown="0">
+<h5>TODO:REVIEW (Gate B) &mdash; der Quell-Leitfaden enth&auml;lt keine Hinweise speziell f&uuml;r Forschende</h5>
+<p>Der migrierte Quell-Leitfaden hat keinen Abschnitt, der sich an Forschende richtet; in diese Seite wurde daher nichts migriert und nichts erfunden. Am n&auml;chsten kommt die Beschreibung der Anwendungsf&auml;lle &mdash; Fallzahl-Sch&auml;tzung, Feasibility-Abfragen, Data Sharing &mdash; unter <a href="general-requirements.html">Allgemeine Anforderungen</a>. (Das MII-Referenzmodul <code>kerndatensatz-basis</code> ist an dieser Stelle selbst unvollst&auml;ndig.) Im Migrationsbericht vermerkt.</p>
+</div>

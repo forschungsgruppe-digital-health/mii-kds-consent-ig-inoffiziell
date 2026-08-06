@@ -1,18 +1,63 @@
 <!-- markdownlint-disable MD041 -->
-<div class="mii-highlight mii-highlight-orange" markdown="0">
-<h5>TODO:REVIEW (Gate B) &mdash; Startseiten-Vorlage, Narrativ noch nicht migriert</h5>
-<p>Dies ist die <strong>Vorlagenseite des MII-KDS-Modul-Templates</strong>, unveraendert
-uebernommen. Es ist <strong>nicht</strong> das Narrativ des MII-KDS-Moduls Consent.</p>
-<p>Der Leitfadentext des Moduls existiert nur als gerenderter Simplifier-Guide
-(<code>simplifier.net/guide/miiigmodulconsent</code>) und liegt <strong>nicht im
-Quell-Repository</strong>. Es gab daher nichts, was in diese Seite haette migriert werden
-koennen, und es wurde nichts erfunden. Seitenstruktur, Menue und Artefakt-Rendering sind
-echt; der Fliesstext ist ein Platzhalter, bis das Narrativ von Simplifier migriert ist.</p>
-</div>
+<!--
+  UML-DIAGRAMME — DEUTSCHE FASSUNG (Quelltext, massgeblich).
+  Herkunft (Migration 2026-08-06, spec 5.1c):
+    .../AnwendungsflleInformationsmodell/UML?version=2026.0.0
+  Abbildung: figures/information-model_UML-Diagramm_MII-spez.png des Quell-
+  Repositoriums, uebernommen nach input/images/ (Quelle des Diagramms:
+  input/images-source/information-model_UML-Diagramm_MII-spez.graphml).
+  Die Verweise auf die Simplifier-Profilseiten wurden auf die vom IG Publisher
+  erzeugten Artefaktseiten umgestellt (Direktiven-Crosswalk).
+-->
 
 ### UML-Diagramme
 
-UML-Übersichten der Datenmodelle des Moduls **Consent** und ihrer Beziehungen. Editierbare Quellen (z. B. PlantUML) gehören nach `input/images-source/`, die gerenderten Bilder nach `input/images/`.
+#### [Consent](StructureDefinition-e0e166b4-0f77-478d-9062-de0034d98ce0.html)
 
-> [TODO: Fügen Sie die UML-Diagramme Ihres Moduls ein, oder entfernen Sie diese Seite, wenn keine vorhanden sind.]
-{: .mii-highlight .mii-highlight-grey}
+Die Consent-Resource stellt eine rein maschinenlesbare Repräsentation der real
+existierenden Einwilligung einer Person dar und wird für das Enforcement
+(Durchsetzung, Umsetzung) der Consent-Policies verwendet.
+
+Die Einwilligung wird in einem konkreten Kontext (z. B. MII) erhoben, was in FHIR
+in Form einer Referenz auf die verantwortliche Organisation
+([Organization](https://ig.fhir.de/einwilligungsmanagement/stable/Organization.html))
+und/oder zu einem Forschungsprojekt
+([ResearchStudy](https://ig.fhir.de/einwilligungsmanagement/stable/ResearchStudy.html))
+modelliert wird.
+
+#### [Provenance](StructureDefinition-f675b1e8-9f3f-44e8-bb59-9681f78eb464.html)
+
+Die Provenance-Resource beschreibt die Herkunft der Einwilligungsinhalte (u. a.
+Unterschriften) und verknüpft diese mit den beteiligten Personen
+([Patient](https://ig.fhir.de/einwilligungsmanagement/stable/Patient.html),
+Consent Witness) und eventuell vorhandenen Dokumenten-Scans
+([DocumentReference](StructureDefinition-56375452-bfa1-4111-af7c-5b5ba9a1857c.html)).
+Ebenso können die für die Erhebung genutzten Anwendungssysteme genannt (display)
+bzw. referenziert werden, sowie im Anwendungssystem geltende
+Patienten-Identifier.
+
+#### Abbildung von Fragebögen
+
+Der Einsatz *aller* in der AG Einwilligungsmanagement entwickelten Profile ist
+*nicht verpflichtend*. Für die Abbildung der Questionnaire-basierten Inhalte
+(siehe [Fragebögen](implementer-guidance.html)) sind die Empfehlungen der TFCU zu
+berücksichtigen.
+
+#### Relevante Profile
+
+Hinweise zum UML-Klassendiagramm des Erweiterungsmoduls Consent:
+
+- *Blau* eingefärbte Klassen werden bei der Abbildung und Profilierung in FHIR
+  berücksichtigt, sind in diesem IG profiliert und bei der MII-Umsetzung
+  erforderlich.
+- *Orange* eingefärbte Klassen sind im IG der AG Einwilligungsmanagement
+  profiliert und erforderlich für die MII-Umsetzung.
+- *Grau* eingefärbte Klassen sind im IG der AG Einwilligungsmanagement profiliert
+  und optional für die MII-Umsetzung.
+- *Hellgrau* eingefärbte Klassen werden referenziert. Diese werden jedoch nicht
+  bei der Abbildung und Profilierung in FHIR berücksichtigt.
+
+Die in den Klassen des Diagramms hinterlegten Attribute sind verpflichtend.
+Darüber hinaus können weitere optionale Attribute angegeben werden.
+
+![UML-Klassendiagramm des Informationsmodells, MII-spezifisch](information-model_UML-Diagramm_MII-spez.png)

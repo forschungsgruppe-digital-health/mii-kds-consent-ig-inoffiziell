@@ -1,15 +1,4 @@
 <!-- markdownlint-disable MD041 -->
-<div class="mii-highlight mii-highlight-orange" markdown="0">
-<h5>TODO:REVIEW (Gate B) &mdash; Startseiten-Vorlage, Narrativ noch nicht migriert</h5>
-<p>Dies ist die <strong>Vorlagenseite des MII-KDS-Modul-Templates</strong>, unveraendert
-uebernommen. Es ist <strong>nicht</strong> das Narrativ des MII-KDS-Moduls Consent.</p>
-<p>Der Leitfadentext des Moduls existiert nur als gerenderter Simplifier-Guide
-(<code>simplifier.net/guide/miiigmodulconsent</code>) und liegt <strong>nicht im
-Quell-Repository</strong>. Es gab daher nichts, was in diese Seite haette migriert werden
-koennen, und es wurde nichts erfunden. Seitenstruktur, Menue und Artefakt-Rendering sind
-echt; der Fliesstext ist ein Platzhalter, bis das Narrativ von Simplifier migriert ist.</p>
-</div>
-
 <!-- Deutsche Übersetzung der Standardsprachseite
      input/pagecontent/missing-data.md — beide Dateien müssen dasselbe aussagen.
      Die Fallunterscheidung nach Binding-Stärke ist normativ und folgt wörtlich
@@ -149,11 +138,17 @@ Für Elemente mit `required`-Binding (Datentypen `CodeableConcept`, `Coding` ode
 2. Andernfalls MUSS ein Konzept aus dem ValueSet verwendet werden — die Instanz
    wäre sonst **nicht konform**.
 
-> [TODO: Nur ergänzen, falls Ihr Modul modul-spezifische Sonderfälle hat — etwa
-> ein Element, dessen ValueSet einen eigenen „unbekannt"-Code mitbringt, oder
-> eine Datenkategorie, für die das Modul eine abweichende Darstellung vorgibt.
-> Löschen Sie diesen Hinweis anschließend.]
-{: .mii-highlight .mii-highlight-grey}
+<div class="mii-highlight mii-highlight-grey" markdown="0">
+<h5>TODO:REVIEW (Gate B) &mdash; der Quell-Leitfaden sagt nichts zu fehlenden Daten</h5>
+<p>Der migrierte Quell-Leitfaden hat keinen Abschnitt zum Umgang mit fehlenden oder
+unbekannten Werten; in diese Seite wurde daher nichts migriert und nichts erfunden, die
+MII-weiten Regeln oben bleiben unver&auml;ndert. Hinweis f&uuml;r die Pr&uuml;fung: Das
+<a href="terminology.html">Answer-ValueSet</a> des Moduls f&uuml;hrt f&uuml;r eine nicht
+angekreuzte Checkbox ein eigenes Konzept (<code>unbekannt</code>,
+<code>2.16.840.1.113883.3.1937.777.24.5.2.3</code>), das die Quelle als Fragebogen-Antwort
+erl&auml;utert, nicht als Regel zu fehlenden Daten &mdash; diese Lesart wurde hier nicht zu
+einer Regel ausgeweitet.</p>
+</div>
 
 #### Siehe auch
 

@@ -1,15 +1,4 @@
 <!-- markdownlint-disable MD041 -->
-<div class="mii-highlight mii-highlight-orange" markdown="0">
-<h5>TODO:REVIEW (Gate B) &mdash; starter page, narrative not yet migrated</h5>
-<p>This is the <strong>MII KDS module template's starter page</strong>, carried over as-is.
-It is <strong>not</strong> the narrative of the MII KDS Modul Consent.</p>
-<p>The module's guide text exists only as a rendered Simplifier guide
-(<code>simplifier.net/guide/miiigmodulconsent</code>); it is <strong>not in the source
-repository</strong>, so there was nothing to migrate into this page and nothing was
-invented for it. The page <em>structure</em>, the menu and the artifact rendering below are
-real; the prose is a placeholder until the narrative is migrated from Simplifier.</p>
-</div>
-
 <!-- Source: kerndatensatz-basis input/pagecontent/guidance.md (MII module page set).
      "Guidance" overview page. Replace the [TODO] prompts; the sub-page structure
      follows kerndatensatz-basis. German mirror:
@@ -32,9 +21,13 @@ This section collects the domain guidance for implementing and using the
 * **[Guidance for Implementers](implementer-guidance.html)** — technical
   guidance for DIC implementers.
 
-> [TODO: Add the module-specific guidance that is relevant to all audiences —
-> e.g. the domain scope or its delimitations.]
-{: .mii-highlight .mii-highlight-grey}
+The module's focus is the operationalisation (enforcement) of the consent filled
+in by the patient, on the basis of the consent policies. The delimitation the
+source guide draws: using *all* of the profiles developed in the AG
+Einwilligungsmanagement is not mandatory, and the FHIR Consent resource carries
+neither person-identifying information nor document scans or signatures. See
+[Guidance for Implementers](implementer-guidance.html) and
+[Security and Privacy](security-and-privacy.html).
 
 ---
 For conformance requirements see [Conformance](conformance.html); for the

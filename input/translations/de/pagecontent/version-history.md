@@ -1,15 +1,4 @@
 <!-- markdownlint-disable MD041 -->
-<div class="mii-highlight mii-highlight-orange" markdown="0">
-<h5>TODO:REVIEW (Gate B) &mdash; Startseiten-Vorlage, Narrativ noch nicht migriert</h5>
-<p>Dies ist die <strong>Vorlagenseite des MII-KDS-Modul-Templates</strong>, unveraendert
-uebernommen. Es ist <strong>nicht</strong> das Narrativ des MII-KDS-Moduls Consent.</p>
-<p>Der Leitfadentext des Moduls existiert nur als gerenderter Simplifier-Guide
-(<code>simplifier.net/guide/miiigmodulconsent</code>) und liegt <strong>nicht im
-Quell-Repository</strong>. Es gab daher nichts, was in diese Seite haette migriert werden
-koennen, und es wurde nichts erfunden. Seitenstruktur, Menue und Artefakt-Rendering sind
-echt; der Fliesstext ist ein Platzhalter, bis das Narrativ von Simplifier migriert ist.</p>
-</div>
-
 <!-- Deutsche Übersetzung der Standardsprachseite
      input/pagecontent/version-history.md — beide Dateien müssen dasselbe
      aussagen. Quelle: kerndatensatz-basis input/pagecontent/version-history.md
@@ -99,8 +88,12 @@ Die Repository-Variable `ENABLE_VERSION_COMPARISON=false` schaltet das
 gesamte Feature ab — den Publisher-Vergleich in allen Build-Workflows ebenso
 wie diese Demonstration; ein erstelltes Modul rendert die Demonstration nie.
 
-> [TODO: Falls Ihr Modul über das MII-Schema hinaus eine eigene
-> Versionierungs-Politik hat — etwa einen Unterstützungszeitraum für ältere
-> Versionen oder eine Abkündigungs-Politik für Profile —, beschreiben Sie sie
-> hier. Löschen Sie diesen Hinweis anschließend.]
-{: .mii-highlight .mii-highlight-grey}
+<div class="mii-highlight mii-highlight-grey" markdown="0">
+<h5>TODO:REVIEW (Gate B) &mdash; der Quell-Leitfaden nennt keine eigene Versionierungs-Policy</h5>
+<p>Der migrierte Quell-Leitfaden hat &uuml;ber seine Release Notes hinaus keinen Abschnitt zur
+Versionierung; diese stehen unter <a href="changes.html">Changelog</a>. Es wurde nichts
+erfunden. Er markiert einzelne Policy-Codes allerdings als veraltet, statt sie zu entfernen
+(siehe den Eintrag zu 2026.0.0 und die Properties <code>status</code>/<code>inactive</code>
+unter <a href="terminology.html">Terminologie</a>) &mdash; eine faktische Deprecation-Praxis,
+die die Modulverantwortlichen hier ausdr&uuml;cklich festhalten k&ouml;nnten.</p>
+</div>

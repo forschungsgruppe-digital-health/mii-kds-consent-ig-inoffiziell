@@ -1,15 +1,4 @@
 <!-- markdownlint-disable MD041 -->
-<div class="mii-highlight mii-highlight-orange" markdown="0">
-<h5>TODO:REVIEW (Gate B) &mdash; Startseiten-Vorlage, Narrativ noch nicht migriert</h5>
-<p>Dies ist die <strong>Vorlagenseite des MII-KDS-Modul-Templates</strong>, unveraendert
-uebernommen. Es ist <strong>nicht</strong> das Narrativ des MII-KDS-Moduls Consent.</p>
-<p>Der Leitfadentext des Moduls existiert nur als gerenderter Simplifier-Guide
-(<code>simplifier.net/guide/miiigmodulconsent</code>) und liegt <strong>nicht im
-Quell-Repository</strong>. Es gab daher nichts, was in diese Seite haette migriert werden
-koennen, und es wurde nichts erfunden. Seitenstruktur, Menue und Artefakt-Rendering sind
-echt; der Fliesstext ist ein Platzhalter, bis das Narrativ von Simplifier migriert ist.</p>
-</div>
-
 <!-- Deutsche Übersetzung der Standardsprachseite
      input/pagecontent/general-requirements.md — beide Dateien müssen dasselbe
      aussagen. Quellen: kerndatensatz-basis
@@ -89,10 +78,23 @@ insbesondere relevant:
 Wo dieses Modul ein Profil von einer dieser Spezifikationen abweichend anpasst,
 wird die Notwendigkeit auf der jeweiligen Profilseite in Textform begründet.
 
-> [TODO: Nennen Sie die Standards und Spezifikationen, an denen sich IHR Modul
-> tatsächlich ausrichtet (sie sollten zu den `dependencies` in
-> `sushi-config.yaml` passen), und löschen Sie die oben nicht zutreffenden
-> Einträge.]
+**Woran sich dieses Modul tatsächlich orientiert**, gemäß Quell-Leitfaden und
+`dependencies`: die
+[FHIR-R4-Profile der AG Einwilligungsmanagement des Interop-Forums](https://ig.fhir.de/einwilligungsmanagement/stable/)
+(Paket `de.einwilligungsmanagement`, die einzige fachliche Abhängigkeit des
+Moduls), die [HL7-FHIR-Kernspezifikation](http://hl7.org/fhir/) mit der Ressource
+[Consent](http://hl7.org/fhir/consent.html), die Deutschen Basisprofile in
+[STU3](https://simplifier.net/basisprofilde) und
+[R4](https://simplifier.net/basisprofil-de-r4), die
+[Kerndatensatzbeschreibung im ART-DECOR](https://art-decor.org/art-decor/decor-datasets--mide-?conceptId=2.16.840.1.113883.3.1937.777.24.2.184)
+sowie IHE BPPC über die Policies. Die vollständige Referenzliste steht unter
+[Hinweise für Implementierende](implementer-guidance.html).
+
+> **TODO:REVIEW (Gate B) — zur allgemeinen Liste oben.** Die Aufzählung oben ist
+> die MII-weite Liste aus dem Modul-Template (IPS, Basisprofil DE, KBV, gematik,
+> ISiK). Der Quell-Leitfaden nennt für dieses Modul keinen dieser Punkte. Sie
+> wurde stehen gelassen und nicht gekürzt, weil das Kürzen eine redaktionelle
+> Entscheidung über MII-weite Konventionen wäre, kein Migrationsbefund.
 {: .mii-highlight .mii-highlight-grey}
 
 #### Beanspruchen von Konformität
@@ -247,10 +249,43 @@ Implementierende SOLLTEN die Profilseiten aufmerksam lesen, um zu erkennen,
 welche Elemente Modifier sind und wie sie die Interpretation einer Ressource
 beeinflussen.
 
-> [TODO: Ergänzen Sie die allgemeinen Anforderungen, die für IHR Modul
-> spezifisch sind — etwa zusätzliche Erwartungen an die FHIR-RESTful-API, an
-> Suchparameter oder an die Verwendung von Codes in Ihren Profilen. Löschen Sie
-> diesen Hinweis anschließend.]
+#### Beschreibung von Szenarien für die Anwendung des Moduls
+
+*Aus dem Quell-Leitfaden migriert (Stand 2026.0.0, geerntet am 2026-08-06):
+`.../AnwendungsflleInformationsmodell/BeschreibungvonSzenarienfrdieAnwendungdesModuls`.
+Dieser Abschnitt ist der maßgebliche Text; die englische Seite ist seine
+Übersetzung.*
+
+Das Erweiterungsmodul Consent stellt die elektronische Abbildung des
+[MII Consent](https://www.medizininformatik-initiative.de/de/mustertext-zur-patienteneinwilligung)
+bereit, kann darüber hinaus aber auch die Abbildung weiterer Einwilligungen
+ermöglichen. Dies ist eine Voraussetzung für die Berücksichtigung des
+Patientenwillens bei der Verwendung der im Rahmen der Versorgung erfassten
+medizinischen Daten des Patienten für Forschungszwecke. Die Einwilligung ist vor
+allem dann erforderlich, wenn der Nutzungszweck über die Forschungsklauseln der
+jeweiligen anwendbaren Gesetze hinausgeht.
+
+Eine wichtige Maßzahl für die medizinische Forschung ist u. a., wie viele
+Patienten bestimmten Kriterien genügen (Fallzahl) und ob diese Patienten der
+Verwendung ihrer Daten für Forschungszwecke zugestimmt haben. Entsprechende
+Anfragen können nur effizient elektronisch verarbeitet bzw. beantwortet werden,
+wenn der Einwilligungsstatus elektronisch geprüft werden kann. Derartige
+Fallzahlabfragen unter Berücksichtigung des Einwilligungsstatus sind essenziell
+für Anwendungsfälle wie ‚Fallzahl-Schätzung‘, ‚Feasibility-Abfragen‘ und ‚Data
+Sharing‘, für die MII-übergreifenden Use Cases CORD und POLAR, sowie für die
+[Use Cases](https://www.medizininformatik-initiative.de/de/use-cases-und-projekte)
+der [MII-Konsortien](https://www.medizininformatik-initiative.de/index.php/de/konsortien).
+
+Die standardisierte Abbildung der Consent-Informationen im Kerndatensatz ist
+erforderlich, damit diese als Suchkriterium insbesondere bei
+standortübergreifenden Anfragen einbezogen werden können.
+
+> **TODO:REVIEW (Gate B) — Verortung dieses Abschnitts.** Der Quell-Leitfaden
+> führt die Szenarien auf einer eigenen Seite. Der Seitenbestand des Templates
+> kennt keine solche Seite; gemäß der Abschnitts-Zuordnung der
+> Migrationsspezifikation steht das Szenario-Narrativ daher hier unter den
+> allgemeinen Anforderungen. [Hinweise für Implementierende](implementer-guidance.html)
+> wäre die vertretbare Alternative.
 {: .mii-highlight .mii-highlight-grey}
 
 #### Siehe auch

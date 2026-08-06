@@ -1,13 +1,13 @@
 <!-- markdownlint-disable MD041 -->
 <div class="mii-highlight mii-highlight-orange" markdown="0">
-<h5>TODO:REVIEW (Gate B) &mdash; starter page, narrative not yet migrated</h5>
-<p>This is the <strong>MII KDS module template's starter page</strong>, carried over as-is.
-It is <strong>not</strong> the narrative of the MII KDS Modul Consent.</p>
-<p>The module's guide text exists only as a rendered Simplifier guide
-(<code>simplifier.net/guide/miiigmodulconsent</code>); it is <strong>not in the source
-repository</strong>, so there was nothing to migrate into this page and nothing was
-invented for it. The page <em>structure</em>, the menu and the artifact rendering below are
-real; the prose is a placeholder until the narrative is migrated from Simplifier.</p>
+<h5>TODO:REVIEW (Gate C) &mdash; unreviewed machine translation</h5>
+<p>The authoritative text of this module is <strong>German</strong>. This English page is an
+<strong>unreviewed machine translation</strong> of
+<code>input/translations/de/pagecontent/changes.md</code>, migrated from the Simplifier-rendered
+guide (version 2026.0.0, harvested 2026-08-06). Consent policy wording, policy display names
+and the names of the MII Broad Consent form modules are <strong>deliberately left in
+German</strong>: they are legally binding text and identifiers, not prose. Where the two
+language variants differ, the German page applies.</p>
 </div>
 
 <!-- Default-language (English) page. Structure ported from kerndatensatz-basis
@@ -86,17 +86,111 @@ section, so the prose explanation and the technical diff sit side by side.</p>
 
 #### Version 2026.0.0
 
-**Date:** 2026-08-06
+**Date:** 2025-12-18
 
-##### Added
+* ValueSet *MII\_VS\_Consent\_SignatureTypes* extended by the code
+  `1.2.840.10065.1.12.1.5` "Verification Signature"
+* CodeSystem *MII Consent: Policy CodeSystem*
+  * validity period added per policy (property `period-of-validity` with an ISO
+    8601:2004 date string, or 'einmalig')
+  * policy `2.16.840.1.113883.3.1937.777.24.5.3.46` "MDAT retrospektiv
+    wissenschaftlich nutzen" is now marked deprecated and should no longer be
+    used
+  * policy `2.16.840.1.113883.3.1937.777.24.5.3.47` "MDAT retrospektiv
+    zusammenfuehren Dritte" is now marked deprecated and should no longer be used
+  * policy `2.16.840.1.113883.3.1937.777.24.5.3.16` "KKDAT 5J prospektiv
+    speichern verarbeiten" is now marked deprecated and should no longer be used
+  * policy `2.16.840.1.113883.3.1937.777.24.5.3.17` "KKDAT 5J prospektiv
+    wissenschaftlich nutzen" is now marked deprecated and should no longer be
+    used
+  * a Markdown representation of the code system as a table was created under
+    'Terminologie' in the IG
+* CodeSystem *mii-cs-consent-version-modules* created for the BC versions and
+  additional modules
+  * OIDs for refusals added (BC v1.6d and v1.7.2)
+* `Consent.provision.period.end` and `Consent.provision.provision.period.end` now
+  have cardinality `0..1`, i.e. they are no longer mandatory
+* examples revised and extended
+* IG: editorial revision, explanations improved
+  * new page *Empfehlungen zur praktischen Anwendung* added (ResultType)
+  * handling of withdrawals for consents of minors (validity period / expiry of
+    the consent)
+  * notes on use in the Modellvorhaben Genomsequenzierung (§ 64e)
+  * explanation of the new search parameters added
 
-* First publication of the **Consent** module.
+Full changelog:
+[2025.0.3…2026.0.0](https://github.com/medizininformatik-initiative/kerndatensatzmodul-consent/compare/2025.0.3...2026.0.0)
 
-> [TODO: Replace this section with the real entries of your first release, and
-> add a new section on top for every subsequent version. For a module with
-> several sub-domains, `kerndatensatz-basis` groups the entries of a version by
-> topic (for example *Documentation*, *Terminology updates*, and one heading per
-> sub-module) and prefixes each bullet with **Added:** / **Changed:** /
-> **Removed:** — use whichever of the two groupings suits your module, but keep
-> it the same across versions and identical in both languages.]
+#### Version 2025.0.4
+
+**Date:** 2025-06-16
+
+* Terminologies:
+  * policy CodeSystem resource: `display` adjusted (abbreviation → meaningful
+    designator)
+* Bugfix:
+  * pagelink error fixed
+
+#### Version 2025.0.3
+
+**Date:** 2025-06-12
+
+* IG/Consent:
+  * support for the additional module Fachnetzwerk Infektion – SNID (Z4) added
+  * support for the additional module Deutsches Zentrum für Psychische
+    Gesundheit – DZPG (Z5) added
+  * Consent: list of available MII consents for use in `Consent.policy.uri`
+    updated
+  * terminologies: policy CodeSystem extended by the SNID and DZPG policies
+
+Full changelog:
+[2025.0.0…2025.0.3](https://github.com/medizininformatik-initiative/kerndatensatzmodul-consent/compare/2025.0.0...2025.0.3)
+
+#### Version 2025.0.2
+
+**Date:** 2025-06-11
+
+* IG/Consent:
+  * support for the additional module Fachnetzwerk Infektion – SNID (Z4) added
+    * Consent: list of available MII consents for use in `Consent.policy.uri`
+      updated
+    * terminologies: policy CodeSystem extended by the SNID policies
+
+#### Version 2025.0.1
+
+**Date:** 2025-01-21
+
+* IG/Consent:
+  * list of available MII consents for use in `Consent.policy.uri` updated:
+    * Zusatzmodul ACRIBiS (Z2)
+    * Zusatzmodul Patientenbefragung (Z3)
+
+#### Version 2025.0.0
+
+**Date:** 2024-12-17
+
+* Consent resource
+  * `Consent.category` → max value `*`
+  * `Consent.provision.type` → fixedCode `deny` removed
+  * `Consent.provision.provision.type` → fixedCode `permit` removed
+  * IG/Consent adjusted accordingly
+* IG/Consent
+  * list of available MII consents for use in `Consent.policy.uri` updated
+    (withdrawals and minors)
+* policy CodeSystem: acribis and PROM policies added
+* IG/terminology:
+  * level information corrected
+  * formatting of the note text corrected
+  * note 1 (FHIR + policies) corrected
+
+Full changelog:
+[1.0.7…2025.0.0](https://github.com/medizininformatik-initiative/kerndatensatzmodul-consent/compare/1.0.7...2025.0.0)
+
+> **TODO:REVIEW (Gate B) — scope and shape of this changelog.** The source guide
+> lists exactly these six versions on its *Release Notes* page; older versions
+> (up to 1.0.7) are not on it and were therefore not added here either. The
+> entries are taken over unchanged and were **not** re-sorted into the Keep a
+> Changelog categories (Added/Changed/…): re-sorting would be an editorial
+> interpretation. The migration itself is deliberately not a changelog entry — it
+> is not a change to the module.
 {: .mii-highlight .mii-highlight-grey}

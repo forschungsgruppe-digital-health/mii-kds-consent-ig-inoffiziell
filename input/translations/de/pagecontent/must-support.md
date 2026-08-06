@@ -1,15 +1,4 @@
 <!-- markdownlint-disable MD041 -->
-<div class="mii-highlight mii-highlight-orange" markdown="0">
-<h5>TODO:REVIEW (Gate B) &mdash; Startseiten-Vorlage, Narrativ noch nicht migriert</h5>
-<p>Dies ist die <strong>Vorlagenseite des MII-KDS-Modul-Templates</strong>, unveraendert
-uebernommen. Es ist <strong>nicht</strong> das Narrativ des MII-KDS-Moduls Consent.</p>
-<p>Der Leitfadentext des Moduls existiert nur als gerenderter Simplifier-Guide
-(<code>simplifier.net/guide/miiigmodulconsent</code>) und liegt <strong>nicht im
-Quell-Repository</strong>. Es gab daher nichts, was in diese Seite haette migriert werden
-koennen, und es wurde nichts erfunden. Seitenstruktur, Menue und Artefakt-Rendering sind
-echt; der Fliesstext ist ein Platzhalter, bis das Narrativ von Simplifier migriert ist.</p>
-</div>
-
 <!-- Deutsche Übersetzung der Standardsprachseite
      input/pagecontent/must-support.md — beide Dateien müssen dasselbe aussagen.
      Definition und die Erwartungen an daten-erzeugende bzw. daten-verarbeitende
@@ -183,10 +172,20 @@ Identifier-Arten, sind nur die ausdrücklich gekennzeichneten Slices gefordert:
 * MÜSSEN Clients diese verarbeiten können,
 * KÖNNEN Systeme weitere Slices unterstützen, ohne dass dies gefordert ist.
 
-> [TODO: Nur ergänzen, falls Ihr Modul zusätzliche oder abweichende
-> Must-Support-Regeln definiert — und die Abweichung begründen. Löschen Sie
-> diesen Hinweis anschließend.]
-{: .mii-highlight .mii-highlight-grey}
+#### Aussagen dieses Moduls zu Must Support
+
+*Aus dem Quell-Leitfaden migriert (Stand 2026.0.0, geerntet am 2026-08-06):
+`.../TechnischeImplementierung/FHIRProfile`. Dieser Abschnitt ist der maßgebliche
+Text; die englische Seite ist seine Übersetzung.*
+
+Für **verpflichtende** oder als **must-support** markierte Elemente sei an dieser
+Stelle auf die entsprechenden
+[Regeln der IPS](https://build.fhir.org/ig/HL7/fhir-ips/design.html#must-support)
+verwiesen, die auch für diesen ImplementationGuide gelten.
+
+Die elementweisen Must-Support-Aussagen der drei Profile des Moduls stehen auf
+den Profilseiten selbst — siehe
+[Profile und Extensions](profiles-and-extensions.html).
 
 #### Siehe auch
 

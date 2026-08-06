@@ -3,13 +3,33 @@
 ## L0 — Read this first (for everyone)
 
 This module was moved from **Simplifier/Forge** onto the **MII KDS module template v0.6.0**.
-**State:** complete through skeleton, build and rendered preview; the **narrative is deliberately
-not migrated** (it exists only on Simplifier, not in the repository).
+**State:** complete through skeleton, artefacts, **narrative**, build and rendered preview.
+**The narrative WAS migrated on 2026-08-06** — see the correction note below; the earlier claim that
+it could not be was wrong.
 **Build:** sushi **0 errors** · qa **84 errors / 157 warnings / 0 broken links** (local, `-tx n/a`;
-CI with `tx.fhir.org`: 83/137/0) · preview:
+unchanged by the narrative migration; CI with `tx.fhir.org` before it: 83/137/0) · preview:
 <https://forschungsgruppe-digital-health.github.io/mii-kds-consent-ig-inoffiziell/branches/migration/mii-kds-module-template/>
 **Your job as reviewer:** work the three queues below in order — ① decide, ② review, ③ triage.
 Nothing is published until Gate D (a human merge decision); everything here is reversible.
+
+> ### Correction, 2026-08-06 — the narrative is migrated after all
+>
+> An earlier version of this report said the module's guide "exists only as a rendered Simplifier
+> guide, which is client-rendered and was **not** scraped", and shipped **the module template's
+> starter pages** under this module's name. **That claim was false.** It was measured on the
+> Simplifier **project** page (`simplifier.net/MedizininformatikInitiative-ModulConsent/` — genuinely
+> a client-rendered app shell) and wrongly generalised to the **guide** pages, which are a different
+> URL space and **are server-rendered**.
+>
+> Re-measured on 2026-08-06 with the corrected `mii-ig-migration` skill: the guide root
+> `simplifier.net/guide/miiigmodulconsent/MIIIGModulConsent?version=2026.0.0` returns HTTP 200 with
+> the whole page tree, and each leaf page returns its real German narrative. `guide-harvest.sh`
+> harvested **18 of 18 discovered pages, 0 skipped, 0 narrative pages short**. Those 18 pages are now
+> mapped onto the template's fixed page set, and **no page of this guide is a template starter page
+> any more**.
+>
+> The lesson is now guardrail 9/10 of the skill: *a negative capability finding is only valid for the
+> artefact it was measured on, and is never generalised to a sibling URL.*
 
 ## ① Decision queue (Gate A — someone must choose)
 
@@ -33,7 +53,14 @@ Nothing is published until Gate D (a human merge decision); everything here is r
 
 | Where | What to check | Suggested action | Gate |
 |---|---|---|---|
-| all 22 `input/pagecontent/*.md` **and** all 22 `input/translations/de/pagecontent/*.md` | each carries a `TODO:REVIEW` banner saying it is the **template's starter page**, not the module's narrative | migrate the narrative from the Simplifier guide (its page tree is in the packaged `ImplementationGuide`: *Release Notes*, *Beschreibung Modul Consent*, *Kontext im Gesamtprojekt*, *Referenzen*, …), then remove the banners | B |
+| **the German pages** `input/translations/de/pagecontent/*.md` + `input/translations/de/intro-notes/*.md` | this is the **authoritative text** — it is the harvested German narrative, re-flowed and with the Simplifier render directives resolved. Read it against the rendered source guide, page by page. | confirm each section landed in the right template page (the content map below says where), then drop the `TODO:REVIEW` markers you have checked | B |
+| **the English pages** `input/pagecontent/*.md` + `input/intro-notes/*.md` | every page carrying migrated content says at the top that it is an **unreviewed machine translation** of the German page. **Nothing on the English side has been read by a human.** | translate/proof-read properly, or have the module owners do it; keep the banner until then | C |
+| **consent wording specifically** | policy display names, MII Broad Consent module/version labels (`1.6d Komplettwiderruf`, `Zusatzmodul ACRIBiS (Z2)`, …), the answer designators `gültig`/`nicht gültig`/`unbekannt`, and the signature-kind descriptions were **deliberately left in German on every English page**, because they are legally binding text and identifiers rather than prose | confirm that this is what the module owners want, and that no English sentence around them reads as if it were the binding version | C |
+| `input/intro-notes/StructureDefinition-e0e166b4-…-notes.md` (+ German mirror) | the source's element table lists **two rows under the same slice name** `Consent.category:templateType.coding`, and this profile in fact slices `category` into `loinc`/`mii` | both rows are reproduced unchanged with a `TODO:REVIEW`; get the source corrected rather than the copy | B |
+| `input/pagecontent/general-requirements.md` (+ German mirror) | the source guide's page "Beschreibung von Szenarien für die Anwendung des Moduls" was routed **here** rather than onto Guidance for Implementers | confirm the routing (the migration spec calls this one out as a case reviewers disagree on) | B |
+| `input/pagecontent/terminology.md` (+ German mirror) | the source's ~124-row policy table was **replaced by a link** to the generated CodeSystem page, and one parenthetical was re-pointed at it | the generated page was checked and does render level/display/code/`P30Y`/`Deprecated`; re-check after any CodeSystem change | B |
+| `input/pagecontent/examples.md` (+ German mirror) | the source guide renders a Consent example, `89f494a3-cd75-44f5-a78a-581dfdd47a94`, that **the module does not ship** | ask the module owners for the instance, or drop the example from the source guide — not recreated here | B |
+| pages with **no** source content: `researcher-guidance`, `capability-statements`, `logical-models`, `missing-data`, the risk/residual-risk sections of `security-and-privacy` | each now states explicitly that the source guide has nothing on this, instead of carrying a template prompt | decide whether to write the missing content (out of scope for a migration) or delete the page | B |
 | `sushi-config.yaml` | the `TODO:REVIEW` markers on `publisher`, `title`, `date`, `copyrightYear`, `releaseLabel`, `artifact-topic` | replace with real values, delete the marker | A |
 | `parent-snapshots/README.md` | the vendored parent: provenance, 18 of 21 generated, 3 refused | confirm the vendoring decision (D4) | A |
 | `input/translations/de/ImplementationGuide-mii-ig-consent.po` | 23 page-title units, **0 untranslated**; verified on the built site (`/de/` renders *Startseite*, *Profile und Extensions*) | spot-check wording | C |
@@ -60,20 +87,79 @@ Nothing is published until Gate D (a human merge decision); everything here is r
 
 ## Content map (where every source page went)
 
-| Source page | Target page | Anything lost? |
-|---|---|---|
-| *(none in the repository)* | — | — |
+**Narrative source (spec §5.1c):** ② **the guide harvest** — anonymous, verified, and a *rendering*.
+① the authenticated project download was **not** used: `…/$actions/downloading` requires a Simplifier
+login (re-measured 2026-08-06: anonymous access redirects to `/login?ReturnUrl=…`) and no credentials
+were offered in this run — logged as `project-download-unavailable:`. A later run with credentials
+would get the authored Markdown instead of a rendering and should redo the mapping against it.
 
-The source repository contains **no narrative at all**: no `implementation-guides/`, no page tree —
-the guide exists only as a rendered Simplifier guide (`simplifier.net/guide/miiigmodulconsent`),
-which is client-rendered and was **not** scraped. The packaged `ImplementationGuide` preserves the
-Simplifier page *titles* (Release Notes · Beschreibung Modul Consent · Kontext im Gesamtprojekt /
-Bezüge zu anderen Modulen · Referenzen · …) and they are the migration list for Gate B.
-The module's own `README.md` (43 lines, German) is the one narrative-bearing text file and was
-**kept unchanged**.
+**Harvest:** `guide-harvest.sh --guide-url https://simplifier.net/guide/miiigmodulconsent/MIIIGModulConsent?version=2026.0.0`
+→ **discovered 18, harvested 18, skipped 0, narrative pages short 0**, 14 `narrative` + 4
+`artefact-view`, 3 referenced assets. Per-page account:
+`migration-log/guide-harvest.tsv`; the harvested Markdown: `migration-log/guide-harvest/pagecontent/`.
 
-**Template pages without source content (kept as stubs — gaps, not errors):** all 22 English pages
-and all 22 German mirrors, each carrying the `TODO:REVIEW` banner.
+| Source page (guide 2026.0.0) | kind | Target | Anything lost? |
+|---|---|---|---|
+| `MIIIGModulConsent` (root) | narrative | `index.md` — intro, publication table, Impressum, Autoren/Ansprechpartner, Copyright, Disclaimer | the page's own *Inhaltsverzeichnis* — the IG Publisher generates menu + ToC (directive crosswalk) |
+| `Release-Notes` | narrative | `changes.md` (all six versions, verbatim) | no |
+| `Beschreibung-Modul-Consent` | narrative | `index.md` § *Beschreibung Modul Consent*, incl. the module figure | no — figure transferred to `input/images/` |
+| `KontextimGesamtprojektBezgezuanderenModulen` | narrative | `implementer-guidance.md` § *Kontext im Gesamtprojekt* (spec §9: this is its primary home) | no |
+| `Referenzen` | narrative | `implementer-guidance.md` § *Referenzen*; short link list on `index.md` § *Verwandte Leitfäden* (spec §9) | no |
+| `AnwendungsflleInformationsmodell` | narrative | — (the source page says only "Diese Seite wurde absichtlich leer gelassen"; its children were routed individually) | nothing to lose |
+| `…/BeschreibungvonSzenarienfrdieAnwendungdesModuls` | narrative | `general-requirements.md` § *Beschreibung von Szenarien* (spec §9 default; flagged for Gate B) | no |
+| `…/Datenstzeinkl.Beschreibungen` | narrative | `datasets-and-descriptions.md` | no |
+| `…/UML` | narrative | `uml-diagrams.md`, incl. the class diagram | no — diagram + its GraphML source transferred |
+| `…/Fragebgen` | narrative | `implementer-guidance.md` § *Fragebögen* (incl. the checkbox→code table, which is **not** in the ValueSet) | no |
+| `TechnischeImplementierung` | narrative | `conformance.md` § *Technische Implementierung*; the FHIR-search paragraph also on `search-parameters-and-operations.md` | no |
+| `…/FHIRProfile` | narrative | `profiles-and-extensions.md` intro; the must-support paragraph also on `must-support.md` | no |
+| `…/FHIRProfile/Consent` | **artefact-view** | prose → `input/intro-notes/StructureDefinition-e0e166b4-…-intro.md` + `-notes.md`; *Datenschutz-Aspekte* → `security-and-privacy.md`; *Suchparameter* → `search-parameters-and-operations.md`; *Beispielhafte Consent-Ressourcen* → `examples.md` | the rendered element tree and the inline XML dumps — regenerated by the IG Publisher on the artefact page (crosswalk) |
+| `…/FHIRProfile/Provenance` | **artefact-view** | prose + element table → `…-f675b1e8-…-intro.md` / `-notes.md`; example → `examples.md` | element tree, as above. The source's own example embed had **failed on Simplifier** ("File not found") — here it is a working link |
+| `…/FHIRProfile/DocumentReference` | **artefact-view** | prose + element table → `…-56375452-…-intro.md` / `-notes.md`; example → `examples.md` | element tree, as above |
+| `…/FHIRProfile/WeitererelevanteProfile` | narrative | `profiles-and-extensions.md` § *Weitere relevante Profile* (both tables) | no |
+| `…/FHIRProfile/Empfehlungen-zur-praktischen-Anwendung` | narrative | `implementer-guidance.md` § *Empfehlungen zur praktischen Anwendung* | no |
+| `…/Terminologien` | **artefact-view** | `terminology.md` — all prose, the signature-types table kept (its first column is not in the ValueSet) | the ~124-row policy table and the generated ValueSet/CodeSystem expansions → replaced by links; **verified on the built page** that level, display, code, `period-of-validity` and `Deprecated` all render there |
+
+**Conversion losses measured by the harvester:** 22 text runs across the 4 `artefact-view` pages
+(`generated-view-lossy:` WARNs). All 22 were inspected: every one is inside a generated element tree
+or property table — none is authored narrative. One Terminologien run straddles the boundary (an
+authored parenthetical joined to generated table text); its content is migrated and re-pointed, and
+that is flagged on `terminology.md`.
+
+**Package reconciliation (spec §5.1c.3):** 15 of 15 module conformance artefacts (3 profiles,
+3 ValueSets, 3 CodeSystems, 6 SearchParameters) are documented by a harvested page or section. The
+CRMI expansion manifest `Parameters-mii-param-consent-manifest` has no guide page and none is
+expected — template machinery. *(A `silent-partial-success: documented 15 of 16` WARN is in the log
+because I first counted the manifest as an expected artefact; the correcting INFO follows it.)*
+
+**Assets transferred** (from `migration-log/guide-harvest-assets.tsv`, the module's own `figures/`):
+`MII-KDS_de_Consent.jpg`, `information-model_UML-Diagramm_MII-spez.png` (+ its `.graphml` source to
+`input/images-source/`), and `MII-KDS_en_Consent.jpg` for the English index page. The CC-BY badge
+stays an absolute link to `licensebuttons.net`, as in the source.
+
+**Directive residues:** the harvest is a *rendering*, so `fql-scan.sh` finds 0 directives by design.
+What it cannot see are Simplifier's **own** render-failure messages, of which the source carries 5:
+4× `Command 'pagelink' could not render: Page not found` on the Consent page (resolved per the
+crosswalk to links to the Policy ValueSet artefact page — the link text named it) and 1× `Command
+'xml' could not render: File not found` on the Provenance page (resolved to a link to the Provenance
+example). No literal was left in the tree.
+
+**Template pages that received no source content — recorded gaps, each stated on the page itself:**
+`researcher-guidance` (the source has no researcher-facing section; so does the MII reference module
+`kerndatensatz-basis`), `capability-statements` (the module ships none), `logical-models` (the module
+ships none; the model lives in ART-DECOR), `missing-data` (the source says nothing about it), and the
+risk/conformance-statement/residual-risk sections of `security-and-privacy`. `downloads` and
+`metadata` describe this repository's own publication machinery; their remaining prompts are template
+setup items for the module owners and now say so.
+
+**Not created:** no page outside the template's fixed page set (spec §9). 18 source pages → sections
+within the existing 22 pages plus 6 `intro-notes` files per language.
+
+**Language direction (spec §4.2):** German is the source and stays the **authoritative** text under
+`input/translations/de/`; the English `input/pagecontent/*.md` are **machine translations marked
+`TODO:REVIEW` for Gate C**. Legally binding consent wording — policy displays, Broad-Consent version
+and module labels, the answer designators — is **not** translated anywhere; it stays German with a
+note saying why. `translationinfo.md` states the whole arrangement in both languages.
+
 **Source files retained for Gate-D retirement (listed, not removed):** `ressourcen-profile/`,
 `terminologie/`, `searchparameters/`, `examples/`, `figures/`, `sushi-config.gofsh-derived.yaml`.
 **Template artefacts deleted (guardrail 5):** `input/fsh/profiles/example-patient.fsh`,
@@ -131,8 +217,8 @@ module), SUSHI **5 → 0** errors. **How the rebuild reaches CI:** vendored + an
 
 ## Protocol (what was executed — for auditors; keep last)
 
-Generated from `migration-log/run.log` (this run = run 5; runs 1–4 are earlier invocations and
-remain in the log).
+Generated from `migration-log/run.log` (the narrative re-migration = **run 6**; runs 1–5 are earlier
+invocations and remain in the log).
 
 | Step | What ran (`cmd=` from the log) | Measured outcome | Raw log | WARN/ERROR → queue | Acceptance |
 |---|---|---|---|---|---|
@@ -146,12 +232,21 @@ remain in the log).
 | 5.5 | `gen-page-title-po.py fsh-generated/resources/ImplementationGuide-mii-ig-consent.json migration-log/menu-titles-de.txt de input/translations/de/ImplementationGuide-mii-ig-consent.po` | 23 pages / 23 units / **0 untranslated**; 1 unit dropped (the deleted demo page) | `gen-page-title-po.log` | 4 seed/unit WARNs → ② (informational) | met |
 | 5.4 | `fql-scan.sh --strict` | 22 files scanned, **0 directives**, exit 0 | `fql-scan.log` | none | met (no Simplifier/FQL directives — there is no migrated narrative) |
 | 5.6 | `docker run … kds-ig-toolchain:v0.4.0 java -Xmx6g -jar /opt/publisher.jar -ig ig.ini -tx n/a` | `err = 84, warn = 157, info = 543, Broken Links: 0` | `qa-build.log` | none | met-as-qualified — every error classified in ③ |
+| **5.1c** | `guide-harvest.sh --guide-url https://simplifier.net/guide/miiigmodulconsent/MIIIGModulConsent?version=2026.0.0 --out migration-log/guide-harvest/pagecontent --keep-html …` | `discovered=18 harvested=18 skipped=0 short=0 artefact_views=4 assets=3`, exit 0 | `guide-harvest.tsv` | 4 × `generated-view-lossy:` → ② (all 22 runs inspected; none is narrative) | **met** |
+| **5.4** | `fql-scan.sh --strict input/pagecontent input/intro-notes input/translations/de/pagecontent input/translations/de/intro-notes` | **56 files scanned**, 0 directives, 0 unknown, exit 0 | `fql-scan.log` | none | met |
+| **7** | `npx --yes fsh-sushi@3.20.0 .` after the narrative migration | **0 errors**, 5 warnings, 21 resources | `sushi-verify.log` | none | met |
+| **5.6** | `docker run … kds-ig-toolchain:v0.4.0 java -Xmx6g -jar /opt/publisher.jar -ig ig.ini -tx n/a` after the narrative migration | `err = 84, warn = 157, info = 542, Broken Links: 0` — **errors and warnings unchanged**, info −1 | `qa-build.log` | none | met-as-qualified — same classification as ③ |
+| **5.6** | rendered-output checks (German breadcrumbs, per-language intro-notes, the CodeSystem pointer, images) | `de/…` breadcrumb *Inhaltsverzeichnis \| Terminologie*; `en/…` *Table of Contents \| Terminology*; no cross-language leakage on any of the 3 profile pages; the policy CodeSystem page renders level/display/code/`P30Y`/`Deprecated`; 3 images at the output root | `run.log` | none | **met** |
 | 5.6 | the repository's own `.github/workflows/ig-publisher.yml` (run 31094166701) | green in 3 m 8 s; `err = 83, warn = 137, info = 466`; preview pushed to `gh-pages/branches/migration/mii-kds-module-template/` | GitHub Actions | `validation-workflow` environment WARN → ③ | met |
 
-**Log:** `migration-log/run.log` — 842 lines, 55 WARN, 1 ERROR, 5 runs; the ERROR is run 2’s
-`sushi-before` (41 errors, the pre-post-processing baseline), long since resolved.
-**Silent-partial-success WARNs:** one — `generated 18 of 21 snapshots` (the 3 generator refusals,
-→ ① D8). The run-2 goFSH conversion reported `converted 20 of 20`.
+**Log:** `migration-log/run.log` — 6 runs; the one ERROR is run 2’s `sushi-before` (41 errors, the
+pre-post-processing baseline), long since resolved.
+**Silent-partial-success WARNs:** two. `generated 18 of 21 snapshots` (run 5, the 3 generator
+refusals → ① D8), and `documented 15 of 16 package artefacts` (run 6) — the second has **no finding
+behind it**: I passed the CRMI expansion manifest as an expected artefact when it is template
+machinery with no guide page. The log is append-only, so the WARN stands and its correcting INFO
+follows it. The run-2 goFSH conversion reported `converted 20 of 20`; the run-6 harvest reported
+`harvested 18 of 18`.
 **Deviations from the skill or the template, with justification:**
 1. **One step added to the vendored `.github/workflows/ig-publisher.yml`** — it unpacks
    `parent-snapshots/*.tgz` into the FHIR package cache before SUSHI. Without it the
@@ -160,8 +255,17 @@ remain in the log).
 2. **`first-run-bootstrap.sh` step 1 did not run** — see the protocol row; this is an existing
    repository with `master` as its default branch, and the skill says the module repository's own
    convention wins (spec §5.8). No branch was created and no protection was changed.
-3. **The narrative was not migrated and nothing was written in its place** (guardrail 3). The
-   template's starter pages are used verbatim plus a `TODO:REVIEW` banner.
+3. ~~The narrative was not migrated…~~ **Superseded on 2026-08-06** — see the correction note at
+   the top. The narrative *was* migrated, from the server-rendered Simplifier guide; the starter
+   pages are gone.
+4. **Four harvested pages are committed truncated.** `migration-log/guide-harvest/pagecontent/` holds
+   the 14 narrative pages in full, but the 4 `kind=artefact-view` pages (425 / 103 / 102 / 23 KB of
+   element trees the IG Publisher regenerates) keep only their provenance header, and the
+   `--keep-html` output was not committed at all. Both are reproducible by re-running
+   `guide-harvest.sh` against the same pinned URL, and the manifest keeps their character counts.
+5. **The English pages are unreviewed machine translations** — the one exception guardrail 3 grants
+   (spec §4.2), because every translated page traces to the source page it renders. Every such page
+   says so at the top; Gate C is where that stops being true.
 
 ## Mini-glossary (novices start here)
 
@@ -175,3 +279,12 @@ remain in the log).
 - **TODO:REVIEW** — an in-tree marker meaning "a human must look here"; queue ② lists them all.
 - **Run log** — `migration-log/run.log`, the timestamped record of every step, the command it ran and
   what that command measurably produced. The protocol above is generated from it.
+- **Guide harvest** — reading a published guide's own rendered pages and converting them to Markdown,
+  when the narrative is not in the repository. Anonymous and verified: every discovered page is
+  accounted for in `migration-log/guide-harvest.tsv` as harvested-with-counts or skipped-with-a-reason.
+- **artefact-view** — a harvested page that is Simplifier's *rendering of a resource this module
+  ships* (a profile's element tree, a code system's concept table) rather than prose. The prose above
+  the tree is migrated; the rendering is not, because the IG Publisher generates it.
+- **intro-notes** — `input/intro-notes/<Type>-<id>-intro.md` / `-notes.md`: prose that renders on an
+  artefact's own page, above and below the generated tables. Used here for the three profiles, so the
+  per-profile narrative sits where a reader of that profile is looking.

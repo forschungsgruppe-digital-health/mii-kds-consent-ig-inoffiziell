@@ -1,13 +1,13 @@
 <!-- markdownlint-disable MD041 -->
 <div class="mii-highlight mii-highlight-orange" markdown="0">
-<h5>TODO:REVIEW (Gate B) &mdash; starter page, narrative not yet migrated</h5>
-<p>This is the <strong>MII KDS module template's starter page</strong>, carried over as-is.
-It is <strong>not</strong> the narrative of the MII KDS Modul Consent.</p>
-<p>The module's guide text exists only as a rendered Simplifier guide
-(<code>simplifier.net/guide/miiigmodulconsent</code>); it is <strong>not in the source
-repository</strong>, so there was nothing to migrate into this page and nothing was
-invented for it. The page <em>structure</em>, the menu and the artifact rendering below are
-real; the prose is a placeholder until the narrative is migrated from Simplifier.</p>
+<h5>TODO:REVIEW (Gate C) &mdash; mixed page: MII-wide English text plus an unreviewed machine translation</h5>
+<p>The MII-wide requirements on this page were authored in English (the German mirror
+<code>input/translations/de/pagecontent/conformance.md</code> is their translation). The section(s)
+marked <em>&#8220;migrated from the source guide&#8221;</em> below are the opposite direction: their
+authoritative text is <strong>German</strong>, migrated from the Simplifier-rendered guide
+(version 2026.0.0, harvested 2026-08-06), and the English wording of those sections is an
+<strong>unreviewed machine translation</strong>. Where the two differ, the German page applies
+for those sections.</p>
 </div>
 
 <!-- Default-language (English) page. Overview of the Conformance section. The
@@ -43,24 +43,39 @@ Support and Handling Missing Data restate them for this module; where the two
 differ, the wiki wins. Security and Privacy is an additional page of this guide,
 following HL7's IG best-practice guidance.
 
+#### Technical implementation
+
+*Migrated from the source guide — source of record: the German page, harvested
+from `.../TechnischeImplementierung` (version 2026.0.0, 2026-08-06).*
+
+This section describes the syntactic and semantic requirements for implementing
+the Consent module.
+
+Search parameters are also defined, which the respective systems have to
+implement when using the FHIR RESTful API. Logical AND and OR combinations of
+FHIR search are supported in principle, cf.
+[hl7.org/fhir/search.html](http://www.hl7.org/fhir/search.html). The module's own
+search parameters are listed on
+[Search Parameters and Operations](search-parameters-and-operations.html).
+
+At the time this implementation guide was written, the fundamentals and further
+details on search and on the FHIR RESTful API were being worked out within the
+base modules and may supplement the requirements made here at a later point. A
+new version of this guide may then be published.
+
 For implementation guidance see the [Guidance](guidance.html) section; for the
 technical artifacts see the [Artifacts](artifacts.html) section.
 
-> [TODO: Add the conformance statements that are specific to your module.
->
-> How the list below is produced: conformance statements are **not** detected
-> automatically. Every normative sentence on the English pages is wrapped in an
-> explicit marker — an id, a colon and the statement text, delimited by section
-> signs — and the table at the end of this page is generated from those markers.
-> `input/pagecontent/general-requirements.md` shows the syntax in place: copy a
-> marked sentence from there and give yours the next free id on its page. The
-> German mirror deliberately carries no markers; the list is produced from the
-> English pages only.
->
-> Keep the set **curated** — mark real obligations, not every sentence that
-> happens to contain a bold verb — and keep each marked sentence
-> self-contained: the table shows it out of context.]
-{: .mii-highlight .mii-highlight-grey}
+<div class="mii-highlight mii-highlight-grey" markdown="0">
+<h5>TODO:REVIEW (Gate B) &mdash; no conformance statements were marked</h5>
+<p>The migrated source guide phrases its requirements as prose and as
+must-support/not-supported entries in the element tables; it marks no sentence as a
+conformance statement. <b>No sentence of the migration was turned into one</b> &mdash; wrapping
+migrated prose in conformance markers would change how binding it reads, which is a decision
+for the module owners, not for a migration. The table below is therefore empty by design. How
+the markers work is documented in <code>input/pagecontent/general-requirements.md</code>, which
+carries the MII-wide statements the template ships.</p>
+</div>
 
 ---
 

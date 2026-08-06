@@ -1,13 +1,13 @@
 <!-- markdownlint-disable MD041 -->
 <div class="mii-highlight mii-highlight-orange" markdown="0">
-<h5>TODO:REVIEW (Gate B) &mdash; starter page, narrative not yet migrated</h5>
-<p>This is the <strong>MII KDS module template's starter page</strong>, carried over as-is.
-It is <strong>not</strong> the narrative of the MII KDS Modul Consent.</p>
-<p>The module's guide text exists only as a rendered Simplifier guide
-(<code>simplifier.net/guide/miiigmodulconsent</code>); it is <strong>not in the source
-repository</strong>, so there was nothing to migrate into this page and nothing was
-invented for it. The page <em>structure</em>, the menu and the artifact rendering below are
-real; the prose is a placeholder until the narrative is migrated from Simplifier.</p>
+<h5>TODO:REVIEW (Gate C) &mdash; mixed page: MII-wide English text plus an unreviewed machine translation</h5>
+<p>The MII-wide requirements on this page were authored in English (the German mirror
+<code>input/translations/de/pagecontent/must-support.md</code> is their translation). The section(s)
+marked <em>&#8220;migrated from the source guide&#8221;</em> below are the opposite direction: their
+authoritative text is <strong>German</strong>, migrated from the Simplifier-rendered guide
+(version 2026.0.0, harvested 2026-08-06), and the English wording of those sections is an
+<strong>unreviewed machine translation</strong>. Where the two differ, the German page applies
+for those sections.</p>
 </div>
 
 <!-- Default-language (English) page. Ported from kerndatensatz-basis
@@ -175,10 +175,17 @@ several identifier types, only the explicitly flagged slices are required:
 * clients **SHALL** be capable of processing them,
 * systems **MAY** support further slices, but are not required to.
 
-> [TODO: Only add anything here if YOUR module defines additional or deviating
-> Must Support rules — and state the reason for the deviation. Delete this
-> prompt afterwards.]
-{: .mii-highlight .mii-highlight-grey}
+#### What this module states about Must Support
+
+*Migrated from the source guide — source of record: the German page, harvested
+from `.../TechnischeImplementierung/FHIRProfile` (version 2026.0.0, 2026-08-06).*
+
+For elements marked **mandatory** or **must-support**, the source guide refers to
+the [rules of the IPS](https://build.fhir.org/ig/HL7/fhir-ips/design.html#must-support),
+which apply to this implementation guide as well.
+
+The per-element Must Support statements of the module's three profiles are on the
+profile pages themselves — see [Profiles and Extensions](profiles-and-extensions.html).
 
 #### See also
 

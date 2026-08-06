@@ -1,15 +1,4 @@
 <!-- markdownlint-disable MD041 -->
-<div class="mii-highlight mii-highlight-orange" markdown="0">
-<h5>TODO:REVIEW (Gate B) &mdash; Startseiten-Vorlage, Narrativ noch nicht migriert</h5>
-<p>Dies ist die <strong>Vorlagenseite des MII-KDS-Modul-Templates</strong>, unveraendert
-uebernommen. Es ist <strong>nicht</strong> das Narrativ des MII-KDS-Moduls Consent.</p>
-<p>Der Leitfadentext des Moduls existiert nur als gerenderter Simplifier-Guide
-(<code>simplifier.net/guide/miiigmodulconsent</code>) und liegt <strong>nicht im
-Quell-Repository</strong>. Es gab daher nichts, was in diese Seite haette migriert werden
-koennen, und es wurde nichts erfunden. Seitenstruktur, Menue und Artefakt-Rendering sind
-echt; der Fliesstext ist ein Platzhalter, bis das Narrativ von Simplifier migriert ist.</p>
-</div>
-
 <!-- Übersichtsseite "Anleitung". Ersetzen Sie die [TODO]-Hinweise; die
      Unterseiten-Struktur folgt kerndatensatz-basis. -->
 
@@ -30,9 +19,14 @@ Moduls **Consent**.
 * **[Anleitung für Implementierende](implementer-guidance.html)** — technische
   Hinweise für DIZ-Implementierende.
 
-> [TODO: Ergänzen Sie modul-spezifische Hinweise, die für alle Zielgruppen
-> relevant sind — z. B. den fachlichen Geltungsbereich oder Abgrenzungen.]
-{: .mii-highlight .mii-highlight-grey}
+Fokus des Moduls liegt auf der Umsetzung (Enforcement) der vom Patienten
+ausgefüllten Einwilligung auf Basis der Einwilligungs-Policies. Die Abgrenzung,
+die der Quell-Leitfaden zieht: Der Einsatz *aller* in der AG
+Einwilligungsmanagement entwickelten Profile ist nicht verpflichtend, und die
+FHIR-Consent-Ressource enthält weder personenidentifizierende Informationen noch
+Dokumenten-Scans oder Unterschriften. Siehe
+[Hinweise für Implementierende](implementer-guidance.html) und
+[Sicherheit und Datenschutz](security-and-privacy.html).
 
 ---
 Für Konformitätsanforderungen siehe [Konformität](conformance.html); für die

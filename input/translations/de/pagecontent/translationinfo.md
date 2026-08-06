@@ -1,15 +1,4 @@
 <!-- markdownlint-disable MD041 -->
-<div class="mii-highlight mii-highlight-orange" markdown="0">
-<h5>TODO:REVIEW (Gate B) &mdash; Startseiten-Vorlage, Narrativ noch nicht migriert</h5>
-<p>Dies ist die <strong>Vorlagenseite des MII-KDS-Modul-Templates</strong>, unveraendert
-uebernommen. Es ist <strong>nicht</strong> das Narrativ des MII-KDS-Moduls Consent.</p>
-<p>Der Leitfadentext des Moduls existiert nur als gerenderter Simplifier-Guide
-(<code>simplifier.net/guide/miiigmodulconsent</code>) und liegt <strong>nicht im
-Quell-Repository</strong>. Es gab daher nichts, was in diese Seite haette migriert werden
-koennen, und es wurde nichts erfunden. Seitenstruktur, Menue und Artefakt-Rendering sind
-echt; der Fliesstext ist ein Platzhalter, bis das Narrativ von Simplifier migriert ist.</p>
-</div>
-
 <!-- Deutsche Übersetzung der Quellseite input/pagecontent/translationinfo.md
      (Englisch ist die Standardsprache der IG). Mechanik: siehe
      docs/recipes/add-translation.md. -->
@@ -25,6 +14,24 @@ Dateiname wie die englische Seite); Ressourcen-Übersetzungen als `.po`-Dateien
 unter `input/translations/de/`. Details:
 `docs/recipes/add-translation.md` in diesem Repository.
 
-> [TODO: Vermerken Sie, welche Teile des Moduls bereits ins Deutsche übersetzt
-> sind.]
-{: .mii-highlight .mii-highlight-grey}
+<div class="mii-highlight mii-highlight-orange" markdown="0">
+<h5>TODO:REVIEW (Gate C) &mdash; die Sprachrichtung dieses Moduls ist umgekehrt</h5>
+<p>Englisch ist die Standardsprache dieses Leitfadens, der <b>ma&szlig;gebliche Text dieses
+Moduls ist jedoch Deutsch</b>: Das Narrativ wurde aus dem deutschen Simplifier-Leitfaden
+migriert (Stand 2026.0.0, geerntet am 2026-08-06). Die deutschen Seiten unter
+<code>input/translations/de/pagecontent/</code> sind damit die <b>Quelle</b>; die englischen
+Seiten mit migriertem Inhalt sind <b>ungepr&uuml;fte maschinelle &Uuml;bersetzungen</b> davon
+und weisen das jeweils oben aus.</p>
+<p>Einwilligungs- und Policy-Wortlaute, Policy-Bezeichner, die Namen der
+Broad-Consent-Formularmodule und die Code-Bezeichner (<code>g&uuml;ltig</code> /
+<code>nicht g&uuml;ltig</code> / <code>unbekannt</code>) bleiben durchg&auml;ngig deutsch: Sie
+sind rechtlich verbindlicher Text bzw. Bezeichner.</p>
+<p>Seiten mit MII-weitem Vorlagentext statt migriertem Narrativ &mdash; Allgemeine
+Anforderungen, Must-Support, Umgang mit fehlenden Daten, Metadaten, Downloads, Versionierung
+&mdash; laufen in der normalen Richtung (englisch verfasst, deutsch &uuml;bersetzt); gemischte
+Seiten weisen das in ihrem eigenen Hinweis aus. Die Seitentitel der Navigation werden &uuml;ber
+den IG-Katalog <code>input/translations/de/ImplementationGuide-mii-ig-consent.po</code>
+&uuml;bersetzt.</p>
+<p><b>Die englische Seite ist bislang von keinem Menschen gepr&uuml;ft.</b> Diese Pr&uuml;fung
+ist Gate C der Migration.</p>
+</div>

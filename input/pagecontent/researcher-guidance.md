@@ -1,20 +1,11 @@
 <!-- markdownlint-disable MD041 -->
-<div class="mii-highlight mii-highlight-orange" markdown="0">
-<h5>TODO:REVIEW (Gate B) &mdash; starter page, narrative not yet migrated</h5>
-<p>This is the <strong>MII KDS module template's starter page</strong>, carried over as-is.
-It is <strong>not</strong> the narrative of the MII KDS Modul Consent.</p>
-<p>The module's guide text exists only as a rendered Simplifier guide
-(<code>simplifier.net/guide/miiigmodulconsent</code>); it is <strong>not in the source
-repository</strong>, so there was nothing to migrate into this page and nothing was
-invented for it. The page <em>structure</em>, the menu and the artifact rendering below are
-real; the prose is a placeholder until the narrative is migrated from Simplifier.</p>
-</div>
-
 <!-- Source: kerndatensatz-basis input/pagecontent/researcher-guidance.md.
      German mirror: input/translations/de/pagecontent/researcher-guidance.md. -->
 ### Guidance for Researchers
 
 Guidance for researchers using the data of the **Consent** module for research purposes — e.g. which data elements are relevant to which research questions, and how they are to be interpreted.
 
-> [TODO: Describe the research-relevant aspects of your module.]
-{: .mii-highlight .mii-highlight-grey}
+<div class="mii-highlight mii-highlight-grey" markdown="0">
+<h5>TODO:REVIEW (Gate B) &mdash; the source guide carries no researcher-specific guidance</h5>
+<p>The migrated source guide has no section addressed to researchers, so this page has nothing migrated into it and nothing was invented. The nearest content the guide does carry is the use-case description &mdash; case-number estimation, feasibility queries, data sharing &mdash; which is on <a href="general-requirements.html">General Requirements</a>. (The MII reference module <code>kerndatensatz-basis</code> is itself incomplete here and says its researcher guidance "will be added in a future version", so this gap is not unusual.) Recorded in the migration report.</p>
+</div>

@@ -1,15 +1,4 @@
 <!-- markdownlint-disable MD041 -->
-<div class="mii-highlight mii-highlight-orange" markdown="0">
-<h5>TODO:REVIEW (Gate B) &mdash; starter page, narrative not yet migrated</h5>
-<p>This is the <strong>MII KDS module template's starter page</strong>, carried over as-is.
-It is <strong>not</strong> the narrative of the MII KDS Modul Consent.</p>
-<p>The module's guide text exists only as a rendered Simplifier guide
-(<code>simplifier.net/guide/miiigmodulconsent</code>); it is <strong>not in the source
-repository</strong>, so there was nothing to migrate into this page and nothing was
-invented for it. The page <em>structure</em>, the menu and the artifact rendering below are
-real; the prose is a placeholder until the narrative is migrated from Simplifier.</p>
-</div>
-
 <!-- Default-language (English) page. Ported from kerndatensatz-basis
      input/pagecontent/missing-data.md (branch main); the case split by binding
      strength follows the MII meta wiki page "Conformance", section "Fehlende Daten"
@@ -135,11 +124,16 @@ datatypes):
 1. Use the appropriate "unknown" concept from the ValueSet if one exists.
 2. §missing-data-4:If the ValueSet has no such concept, a concept from the ValueSet **SHALL** nevertheless be used — otherwise the instance is **not conformant**§
 
-> [TODO: Only add anything here if YOUR module has module-specific special cases
-> — for example an element whose ValueSet carries its own "unknown" concept, or
-> a data category for which the module prescribes a different representation.
-> Delete this prompt afterwards.]
-{: .mii-highlight .mii-highlight-grey}
+<div class="mii-highlight mii-highlight-grey" markdown="0">
+<h5>TODO:REVIEW (Gate B) &mdash; the source guide states nothing on missing data</h5>
+<p>The migrated source guide has no section on handling missing or unknown values, so nothing
+was migrated into this page and nothing was invented; the MII-wide rules above stand
+unchanged. Note for the reviewer: the module's <a href="terminology.html">answer
+ValueSet</a> does carry its own concept for an unticked checkbox
+(<code>unbekannt</code>, <code>2.16.840.1.113883.3.1937.777.24.5.2.3</code>), which the
+source explains as a questionnaire answer rather than as a missing-data rule &mdash; that
+reading was not extended into a rule here.</p>
+</div>
 
 #### See also
 

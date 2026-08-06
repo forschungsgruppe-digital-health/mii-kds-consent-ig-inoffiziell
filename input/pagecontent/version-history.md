@@ -1,15 +1,4 @@
 <!-- markdownlint-disable MD041 -->
-<div class="mii-highlight mii-highlight-orange" markdown="0">
-<h5>TODO:REVIEW (Gate B) &mdash; starter page, narrative not yet migrated</h5>
-<p>This is the <strong>MII KDS module template's starter page</strong>, carried over as-is.
-It is <strong>not</strong> the narrative of the MII KDS Modul Consent.</p>
-<p>The module's guide text exists only as a rendered Simplifier guide
-(<code>simplifier.net/guide/miiigmodulconsent</code>); it is <strong>not in the source
-repository</strong>, so there was nothing to migrate into this page and nothing was
-invented for it. The page <em>structure</em>, the menu and the artifact rendering below are
-real; the prose is a placeholder until the narrative is migrated from Simplifier.</p>
-</div>
-
 <!-- Default-language (English) page. Ported from kerndatensatz-basis
      input/pagecontent/version-history.md (branch main); the release process is
      the MII meta wiki page "Module Release Workflow"
@@ -94,7 +83,12 @@ The repository variable `ENABLE_VERSION_COMPARISON=false` switches the whole
 feature off — the publisher's comparison in every build workflow and this
 demonstration alike; a created module never renders the demonstration.
 
-> [TODO: If your module has a versioning policy of its own beyond the MII scheme
-> — for example a support window for older versions, or a deprecation policy for
-> profiles — describe it here. Delete this prompt afterwards.]
-{: .mii-highlight .mii-highlight-grey}
+<div class="mii-highlight mii-highlight-grey" markdown="0">
+<h5>TODO:REVIEW (Gate B) &mdash; the source guide states no versioning policy of its own</h5>
+<p>The migrated source guide has no section on versioning beyond its release notes, which are
+on <a href="changes.html">Changelog</a>. Nothing was invented. It does, however, deprecate
+individual policy codes rather than removing them (see the 2026.0.0 entry and the
+<code>status</code>/<code>inactive</code> properties on
+<a href="terminology.html">Terminology</a>) &mdash; a de-facto deprecation practice that the
+module owners may want to write down here explicitly.</p>
+</div>

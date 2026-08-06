@@ -1,15 +1,4 @@
 <!-- markdownlint-disable MD041 -->
-<div class="mii-highlight mii-highlight-orange" markdown="0">
-<h5>TODO:REVIEW (Gate B) &mdash; starter page, narrative not yet migrated</h5>
-<p>This is the <strong>MII KDS module template's starter page</strong>, carried over as-is.
-It is <strong>not</strong> the narrative of the MII KDS Modul Consent.</p>
-<p>The module's guide text exists only as a rendered Simplifier guide
-(<code>simplifier.net/guide/miiigmodulconsent</code>); it is <strong>not in the source
-repository</strong>, so there was nothing to migrate into this page and nothing was
-invented for it. The page <em>structure</em>, the menu and the artifact rendering below are
-real; the prose is a placeholder until the narrative is migrated from Simplifier.</p>
-</div>
-
 <!-- Default-language (English) page. Ported from kerndatensatz-basis
      input/pagecontent/downloads.md (branch main).
      German mirror: input/translations/de/pagecontent/downloads.md — both files
@@ -23,6 +12,12 @@ real; the prose is a placeholder until the narrative is migrated from Simplifier
      the published output, not in a local preview of this Markdown file. -->
 
 ### Downloads
+
+{:.bg-info}
+**Migration note (2026-08-06):** the source guide has no downloads page; everything on this
+page is generated from this repository's own publication metadata. The `[TODO ...]` prompts
+below are **template setup items for the module owners**, not missing narrative.
+
 
 This page links the downloadable artifacts of the **Consent** module.
 
