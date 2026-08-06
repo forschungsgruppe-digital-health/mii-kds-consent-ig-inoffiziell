@@ -1,0 +1,149 @@
+2026-08-06T00:09:57Z  INFO   log  run-boundary  ===== run 1 starts  run=1 label=Consent migration — preconditions cwd=/tmp/consent-mig/target log=migration-log/run.log
+    Every line below belongs to run 1; the lines above are earlier invocations.
+    Per-step raw logs (migration-log/<ACTION>.log) hold THIS run only -- `run`
+    truncates each one and rolls the previous attempt over to <ACTION>.prev.log.
+2026-08-06T00:09:57Z  INFO   pre.1  source-inputs  rendered=https://simplifier.net/guide/miiigmodulconsent repo=medizininformatik-initiative/kerndatensatzmodul-consent  decided-by=human
+2026-08-06T00:09:57Z  INFO   pre.2  classify-source  shape=B sushi_config=no ig_ini=no input_fsh=no fhir_resources_by_content=20
+2026-08-06T00:09:59Z  INFO   pre.5  toolchain  gofsh=goFSH v2.6.1 (implements FHIR Shorthand specification v2.0.0) sushi=SUSHI v3.20.0 (implements FHIR Shorthand specification v3.0.0) node=v22.22.3
+2026-08-06T00:10:27Z  INFO   5.1b.2  resolve-parent  canonical=http://fhir.de/ConsentManagement/StructureDefinition/* package=de.einwilligungsmanagement version=2.0.3 source=packages.fhir.org/catalog
+2026-08-06T00:10:39Z  INFO   log  run-boundary  ===== run 2 starts  run=2 label=step 2b — Path B on /tmp/consent-mig/target cwd=/tmp/consent-mig/target log=migration-log/run.log
+    Every line below belongs to run 2; the lines above are earlier invocations.
+    Per-step raw logs (migration-log/<ACTION>.log) hold THIS run only -- `run`
+    truncates each one and rolls the previous attempt over to <ACTION>.prev.log.
+2026-08-06T00:10:39Z  INFO   5.1b.2  gofsh-input  inputs=20 src=/tmp/consent-mig/target
+2026-08-06T00:10:39Z  INFO   5.1b.2  gofsh-convert  start  cmd=`npx --yes gofsh@2.6.1 /tmp/consent-mig/target -o /tmp/consent-mig/fsh -s file-per-definition -t json-and-xml -d de.einwilligungsmanagement@2.0.3 -d hl7.fhir.r4.core@4.0.1`  raw_log=migration-log/gofsh.log
+2026-08-06T00:10:43Z  INFO   5.1b.2  gofsh-convert  done  cmd=`npx --yes gofsh@2.6.1 /tmp/consent-mig/target -o /tmp/consent-mig/fsh -s file-per-definition -t json-and-xml -d de.einwilligungsmanagement@2.0.3 -d hl7.fhir.r4.core@4.0.1`  exit=0 raw_log=migration-log/gofsh.log raw_log_lines=98
+2026-08-06T00:10:43Z  INFO   5.1b.2  gofsh-convert  goFSH RESULTS table (of 1 in the log, the last) profiles=3 extensions=0 logicals=0 resources=0 valuesets=3 codesystems=3 instances=11 invariants=0 mappings=0 aliases=8  converted=20 counted=profiles+extensions+logicals+resources+valuesets+codesystems+instances not_counted=invariants,mappings,aliases  gofsh_log=migration-log/gofsh.log
+2026-08-06T00:10:43Z  INFO   5.1b.2  gofsh-convert  converted 20 of 20 inputs  expected=20 actual=20 exit=0
+    goFSH warnings: 2, none of them bearing on completeness.
+2026-08-06T00:10:43Z  INFO   5.1b.3  sushi-before  start  cmd=`bash -c 'cd '\''/tmp/consent-mig/fsh'\'' && npx --yes fsh-sushi@3.20.0 .'`  raw_log=migration-log/sushi-before.log
+2026-08-06T00:10:48Z  ERROR  5.1b.3  sushi-before  failed  cmd=`bash -c 'cd '\''/tmp/consent-mig/fsh'\'' && npx --yes fsh-sushi@3.20.0 .'`  exit=41 raw_log=migration-log/sushi-before.log raw_log_lines=173
+    The exit status is preserved and returned -- this step did NOT meet its
+    acceptance criterion. Read migration-log/sushi-before.log, then either fix and re-run or take it
+    to the report's decision queue (spec §10.3).
+2026-08-06T00:10:48Z  INFO   5.1b.3  sushi-before  errors=41
+2026-08-06T00:10:48Z  INFO   5.1b.3  postprocess-gofsh  start  cmd=`python3 /tmp/consent-mig/skill/skills/mii-ig-migration/scripts/postprocess-gofsh.py /tmp/consent-mig/fsh/input/fsh --gofsh-log migration-log/gofsh.log`  raw_log=migration-log/postprocess-gofsh.log
+2026-08-06T00:10:48Z  INFO   5.1b.3  postprocess-gofsh  params  fsh_dir=/tmp/consent-mig/fsh/input/fsh dry_run=False drop_comments=False
+2026-08-06T00:10:48Z  INFO   5.1b.3  postprocess-gofsh  scan  files=21 entities_declared=28 gofsh_log=migration-log/gofsh.log renames_reported=1
+    goFSH reported: 'MII CS Consent Policy' -> 'MII_CS_Consent_Policy'
+2026-08-06T00:10:48Z  INFO   5.1b.3  postprocess-gofsh  /tmp/consent-mig/fsh/input/fsh/instances/34150a23-b1c8-404f-874f-e042a30435d2.fsh  changes=34
+    line 10: fhir_comments rule on extension.fhir_comments -> FSH comment
+    line 12: fhir_comments rule on status.fhir_comments -> FSH comment
+    line 14: fhir_comments rule on scope.fhir_comments -> FSH comment
+    line 16: fhir_comments rule on category[=].fhir_comments -> FSH comment
+    line 18: fhir_comments rule on category[=].fhir_comments -> FSH comment
+    line 20: fhir_comments rule on category[=].fhir_comments -> FSH comment
+    line 22: fhir_comments rule on category[=].fhir_comments -> FSH comment
+    line 24: fhir_comments rule on patient.fhir_comments -> FSH comment
+    line 26: fhir_comments rule on dateTime.fhir_comments -> FSH comment
+    line 28: fhir_comments rule on organization.display.fhir_comments -> FSH comment
+    line 30: fhir_comments rule on policy.uri.fhir_comments -> FSH comment
+    line 31: fhir_comments rule on policy.fhir_comments -> FSH comment
+    line 35: fhir_comments rule on policyRule.fhir_comments -> FSH comment
+    line 37: fhir_comments rule on provision.type.fhir_comments -> FSH comment
+    line 40: fhir_comments rule on provision.period.fhir_comments -> FSH comment
+    line 42: fhir_comments rule on provision.provision[=].type.fhir_comments -> FSH comment
+    line 45: fhir_comments rule on provision.provision[=].period.fhir_comments -> FSH comment
+    line 46: code reference 'MII CS Consent Policy' -> 'MII_CS_Consent_Policy'
+    line 48: fhir_comments rule on provision.provision[=].type.fhir_comments -> FSH comment
+    line 51: fhir_comments rule on provision.provision[=].period.fhir_comments -> FSH comment
+    line 52: code reference 'MII CS Consent Policy' -> 'MII_CS_Consent_Policy'
+    line 54: fhir_comments rule on provision.provision[=].type.fhir_comments -> FSH comment
+    line 57: fhir_comments rule on provision.provision[=].period.fhir_comments -> FSH comment
+    line 58: code reference 'MII CS Consent Policy' -> 'MII_CS_Consent_Policy'
+    line 60: fhir_comments rule on provision.provision[=].type.fhir_comments -> FSH comment
+    line 63: fhir_comments rule on provision.provision[=].period.fhir_comments -> FSH comment
+    line 64: code reference 'MII CS Consent Policy' -> 'MII_CS_Consent_Policy'
+    line 66: fhir_comments rule on provision.provision[=].type.fhir_comments -> FSH comment
+    line 69: fhir_comments rule on provision.provision[=].period.fhir_comments -> FSH comment
+    line 70: code reference 'MII CS Consent Policy' -> 'MII_CS_Consent_Policy'
+    line 72: fhir_comments rule on provision.provision[=].type.fhir_comments -> FSH comment
+    line 75: fhir_comments rule on provision.provision[=].period.fhir_comments -> FSH comment
+    line 76: code reference 'MII CS Consent Policy' -> 'MII_CS_Consent_Policy'
+    line 77: fhir_comments rule on provision.fhir_comments -> FSH comment
+2026-08-06T00:10:48Z  INFO   5.1b.3  postprocess-gofsh  /tmp/consent-mig/fsh/input/fsh/instances/5143266b-8d60-4b28-8ee9-635140ffa5bb.fsh  changes=27
+    line 25: code reference 'MII CS Consent Policy' -> 'MII_CS_Consent_Policy'
+    line 29: code reference 'MII CS Consent Policy' -> 'MII_CS_Consent_Policy'
+    line 33: code reference 'MII CS Consent Policy' -> 'MII_CS_Consent_Policy'
+    line 37: code reference 'MII CS Consent Policy' -> 'MII_CS_Consent_Policy'
+    line 41: code reference 'MII CS Consent Policy' -> 'MII_CS_Consent_Policy'
+    line 45: code reference 'MII CS Consent Policy' -> 'MII_CS_Consent_Policy'
+    line 49: code reference 'MII CS Consent Policy' -> 'MII_CS_Consent_Policy'
+    line 53: code reference 'MII CS Consent Policy' -> 'MII_CS_Consent_Policy'
+    line 57: code reference 'MII CS Consent Policy' -> 'MII_CS_Consent_Policy'
+    line 61: code reference 'MII CS Consent Policy' -> 'MII_CS_Consent_Policy'
+    line 65: code reference 'MII CS Consent Policy' -> 'MII_CS_Consent_Policy'
+    line 69: code reference 'MII CS Consent Policy' -> 'MII_CS_Consent_Policy'
+    line 73: code reference 'MII CS Consent Policy' -> 'MII_CS_Consent_Policy'
+    line 77: code reference 'MII CS Consent Policy' -> 'MII_CS_Consent_Policy'
+    line 81: code reference 'MII CS Consent Policy' -> 'MII_CS_Consent_Policy'
+    line 85: code reference 'MII CS Consent Policy' -> 'MII_CS_Consent_Policy'
+    line 89: code reference 'MII CS Consent Policy' -> 'MII_CS_Consent_Policy'
+    line 93: code reference 'MII CS Consent Policy' -> 'MII_CS_Consent_Policy'
+    line 97: code reference 'MII CS Consent Policy' -> 'MII_CS_Consent_Policy'
+    line 101: code reference 'MII CS Consent Policy' -> 'MII_CS_Consent_Policy'
+    line 105: code reference 'MII CS Consent Policy' -> 'MII_CS_Consent_Policy'
+    line 109: code reference 'MII CS Consent Policy' -> 'MII_CS_Consent_Policy'
+    line 113: code reference 'MII CS Consent Policy' -> 'MII_CS_Consent_Policy'
+    line 117: code reference 'MII CS Consent Policy' -> 'MII_CS_Consent_Policy'
+    line 121: code reference 'MII CS Consent Policy' -> 'MII_CS_Consent_Policy'
+    line 125: code reference 'MII CS Consent Policy' -> 'MII_CS_Consent_Policy'
+    line 129: code reference 'MII CS Consent Policy' -> 'MII_CS_Consent_Policy'
+2026-08-06T00:10:48Z  INFO   5.1b.3  postprocess-gofsh  /tmp/consent-mig/fsh/input/fsh/instances/55219d12-6245-4de4-8b50-ddf6f16a789b.fsh  changes=8
+    line 6: fhir_comments rule on target.fhir_comments -> FSH comment
+    line 8: fhir_comments rule on recorded.fhir_comments -> FSH comment
+    line 11: fhir_comments rule on agent.fhir_comments -> FSH comment
+    line 14: fhir_comments rule on entity.fhir_comments -> FSH comment
+    line 19: fhir_comments rule on signature[=].data.fhir_comments -> FSH comment
+    line 20: fhir_comments rule on signature[=].fhir_comments -> FSH comment
+    line 26: fhir_comments rule on signature[=].data.fhir_comments -> FSH comment
+    line 27: fhir_comments rule on signature[=].fhir_comments -> FSH comment
+2026-08-06T00:10:48Z  INFO   5.1b.3  postprocess-gofsh  /tmp/consent-mig/fsh/input/fsh/instances/8a3d1799-2463-405e-b49c-6a16c8692b01.fsh  changes=3
+    line 6: fhir_comments rule on status.fhir_comments -> FSH comment
+    line 8: fhir_comments rule on subject.reference.fhir_comments -> FSH comment
+    line 9: fhir_comments rule on subject.fhir_comments -> FSH comment
+2026-08-06T00:10:48Z  INFO   5.1b.3  postprocess-gofsh  /tmp/consent-mig/fsh/input/fsh/instances/Example-MII-Consent-ResultType-document.fsh  changes=20
+    line 10: fhir_comments rule on extension.fhir_comments -> FSH comment
+    line 12: fhir_comments rule on status.fhir_comments -> FSH comment
+    line 14: fhir_comments rule on scope.fhir_comments -> FSH comment
+    line 16: fhir_comments rule on category[=].fhir_comments -> FSH comment
+    line 18: fhir_comments rule on category[=].fhir_comments -> FSH comment
+    line 20: fhir_comments rule on category[=].fhir_comments -> FSH comment
+    line 22: fhir_comments rule on category[=].fhir_comments -> FSH comment
+    line 24: fhir_comments rule on patient.fhir_comments -> FSH comment
+    line 26: fhir_comments rule on dateTime.fhir_comments -> FSH comment
+    line 28: fhir_comments rule on organization.display.fhir_comments -> FSH comment
+    line 30: fhir_comments rule on policy.uri.fhir_comments -> FSH comment
+    line 31: fhir_comments rule on policy.fhir_comments -> FSH comment
+    line 35: fhir_comments rule on policyRule.fhir_comments -> FSH comment
+    line 42: code reference 'MII CS Consent Policy' -> 'MII_CS_Consent_Policy'
+    line 43: code reference 'MII CS Consent Policy' -> 'MII_CS_Consent_Policy'
+    line 44: code reference 'MII CS Consent Policy' -> 'MII_CS_Consent_Policy'
+    line 48: code reference 'MII CS Consent Policy' -> 'MII_CS_Consent_Policy'
+    line 52: code reference 'MII CS Consent Policy' -> 'MII_CS_Consent_Policy'
+    line 53: code reference 'MII CS Consent Policy' -> 'MII_CS_Consent_Policy'
+    line 54: fhir_comments rule on provision.fhir_comments -> FSH comment
+2026-08-06T00:10:48Z  INFO   5.1b.3  postprocess-gofsh  result  fhir_comments=53 (preserved as FSH comments) code_references=39 changed=5 of 21 file(s)  exit=0
+2026-08-06T00:10:48Z  INFO   5.1b.3  postprocess-gofsh  next: run `npx --yes fsh-sushi@3.20.0 .`; remaining errors are NOT mechanical
+    A foreign parent IG that ships no snapshots cannot be imported at all,
+    and that is a Gate-A escalation (obtain a snapshot-bearing package build,
+    or record the affected profiles as blocked). Never invent a parent.
+2026-08-06T00:10:48Z  INFO   5.1b.3  postprocess-gofsh  done  cmd=`python3 /tmp/consent-mig/skill/skills/mii-ig-migration/scripts/postprocess-gofsh.py /tmp/consent-mig/fsh/input/fsh --gofsh-log migration-log/gofsh.log`  exit=0 raw_log=migration-log/postprocess-gofsh.log raw_log_lines=105
+2026-08-06T00:10:48Z  INFO   5.1b.3  sushi-after  start  cmd=`bash -c 'cd '\''/tmp/consent-mig/fsh'\'' && npx --yes fsh-sushi@3.20.0 .'`  raw_log=migration-log/sushi-after.log
+2026-08-06T00:10:53Z  WARN   5.1b.3  sushi-after  anticipated-nonzero-exit: shape B: unresolvable parents are a Gate-A escalation (§5.1b.4)  cmd=`bash -c 'cd '\''/tmp/consent-mig/fsh'\'' && npx --yes fsh-sushi@3.20.0 .'`  exit=5 raw_log=migration-log/sushi-after.log raw_log_lines=65
+    This non-zero status is this step's ANTICIPATED, documented outcome, not a
+    failure to fix -- the acceptance criterion is met AS QUALIFIED (spec
+    §5.1b.4). Escalated, not ignored: every item behind it belongs in the
+    report's ① decision queue, named individually (spec §10.3, §10.6).
+2026-08-06T00:10:53Z  INFO   5.1b.3  sushi-after  errors=5 resolved=36  before=41
+2026-08-06T00:11:35Z  WARN   2.1  identity-read  no authoritative identity source in the repository  sushi_config=absent package_json=absent generated_ig=absent
+    All three tiers of the identity chain are absent. goFSH's derived config must NOT be
+    used as identity (its version=1.0.8 is one profile's version, not the module's).
+    Registry package de.medizininformatikinitiative.kerndatensatz.consent@2026.0.0 carries
+    no canonical/title/fhirVersions. => Gate A: a human must supply id/name/title/publisher/
+    packageId/license/version. Nothing invented.
+2026-08-06T00:11:35Z  WARN   5.1b.4  unresolvable-parent  3 profiles blocked: parent package ships no snapshots  package=de.einwilligungsmanagement@2.0.3
+    SUSHI: 'Structure Definition http://fhir.de/ConsentManagement/StructureDefinition/
+    {DocumentReference,DomainReference,Provenance} is missing a snapshot.' => Gate A.
+    Options: obtain a snapshot-bearing build of the parent package, or record the three
+    profiles as blocked. A parent is never invented (guardrail 4).

@@ -1,0 +1,9 @@
+canonical: https://www.medizininformatik-initiative.de/fhir/modul-consent
+fhirVersion: 4.0.1
+FSHOnly: true
+applyExtensionMetadataToRoot: false
+status: active
+version: 1.0.8
+dependencies:
+  de.einwilligungsmanagement: 2.0.3
+  hl7.fhir.r4.core: 4.0.1
