@@ -1,0 +1,238 @@
+{
+  "schema": "mii-ig-migration/source-inventory/1",
+  "source": {
+    "repo": "medizininformatik-initiative/kerndatensatzmodul-consent",
+    "branch": "develop",
+    "commit": "4d44dbe9753807e24adc1c42b64e29ec9e95e24b",
+    "shape": "B",
+    "classified_by": "content (resourceType / FHIR xmlns), never by folder name — spec 5.1b.1"
+  },
+  "published_package": {
+    "packageId": "de.medizininformatikinitiative.kerndatensatz.consent",
+    "version": "2026.0.1-rc-4",
+    "how_chosen": "Consent.category slice shape matched against 2026.0.0 / rc-3 / rc-4; corroborated by the manifest description 'resync from github branch develop'"
+  },
+  "rendered_guide": {
+    "key": "miiigmodulconsent",
+    "version": "2026.0.0",
+    "flags": "Default,Read-only,Public",
+    "published": "2025-12-18 01:17",
+    "root": "MIIIGModulConsent",
+    "url": "https://simplifier.net/guide/miiigmodulconsent/MIIIGModulConsent?version=2026.0.0",
+    "other_keys_discovered": [
+      {
+        "key": "mii-ig-modul-consent-2025",
+        "version": "2025.0.4",
+        "pages": 16,
+        "disposition": "historical version tree, retained"
+      },
+      {
+        "key": "mii-ig-modul-consent-2026",
+        "version": "2026.0.0",
+        "pages": 18,
+        "disposition": "identical 18-page slug set to the chosen key; a second key onto the same content"
+      }
+    ]
+  },
+  "resources": [
+    {
+      "path": "examples/Example_MII_Consent_DocumentReference.xml",
+      "resourceType": "DocumentReference",
+      "id": "8a3d1799-2463-405e-b49c-6a16c8692b01",
+      "url": null,
+      "disposition": "converted to FSH by goFSH 2.6.1 and transferred to input/fsh/"
+    },
+    {
+      "path": "examples/Example_MII_Consent_Einwilligung.xml",
+      "resourceType": "Consent",
+      "id": "34150a23-b1c8-404f-874f-e042a30435d2",
+      "url": null,
+      "disposition": "converted to FSH by goFSH 2.6.1 and transferred to input/fsh/"
+    },
+    {
+      "path": "examples/Example_MII_Consent_Einwilligung_2.xml",
+      "resourceType": "Consent",
+      "id": "Example-MII-Consent-ResultType-document",
+      "url": null,
+      "disposition": "converted to FSH by goFSH 2.6.1 and transferred to input/fsh/"
+    },
+    {
+      "path": "examples/Example_MII_Consent_Provenance.xml",
+      "resourceType": "Provenance",
+      "id": "55219d12-6245-4de4-8b50-ddf6f16a789b",
+      "url": null,
+      "disposition": "converted to FSH by goFSH 2.6.1 and transferred to input/fsh/"
+    },
+    {
+      "path": "examples/Example_MII_Consent_ResultType_ConsentStatus.xml",
+      "resourceType": "Consent",
+      "id": "5143266b-8d60-4b28-8ee9-635140ffa5bb",
+      "url": null,
+      "disposition": "converted to FSH by goFSH 2.6.1 and transferred to input/fsh/"
+    },
+    {
+      "path": "ressourcen-profile/Profile_MII_Consent_DocumentReference.xml",
+      "resourceType": "StructureDefinition",
+      "id": "56375452-bfa1-4111-af7c-5b5ba9a1857c",
+      "url": "https://www.medizininformatik-initiative.de/fhir/modul-consent/StructureDefinition/mii-pr-consent-documentreference",
+      "disposition": "converted to FSH by goFSH 2.6.1 and transferred to input/fsh/"
+    },
+    {
+      "path": "ressourcen-profile/Profile_MII_Consent_Einwilligung.xml",
+      "resourceType": "StructureDefinition",
+      "id": "e0e166b4-0f77-478d-9062-de0034d98ce0",
+      "url": "https://www.medizininformatik-initiative.de/fhir/modul-consent/StructureDefinition/mii-pr-consent-einwilligung",
+      "disposition": "converted to FSH by goFSH 2.6.1 and transferred to input/fsh/"
+    },
+    {
+      "path": "ressourcen-profile/Profile_MII_Consent_Provenance.xml",
+      "resourceType": "StructureDefinition",
+      "id": "f675b1e8-9f3f-44e8-bb59-9681f78eb464",
+      "url": "https://www.medizininformatik-initiative.de/fhir/modul-consent/StructureDefinition/mii-pr-consent-provenance",
+      "disposition": "converted to FSH by goFSH 2.6.1 and transferred to input/fsh/"
+    },
+    {
+      "path": "searchparameters/SearchParameter_MII_Consent_Einwilligung_policyUri.xml",
+      "resourceType": "SearchParameter",
+      "id": null,
+      "url": "https://www.medizininformatik-initiative.de/fhir/modul-consent/SearchParameter/mii-sp-consent-policyuri",
+      "disposition": "converted to FSH by goFSH 2.6.1 and transferred to input/fsh/"
+    },
+    {
+      "path": "searchparameters/SearchParameter_MII_Consent_Einwilligung_provisionCode.xml",
+      "resourceType": "SearchParameter",
+      "id": null,
+      "url": "https://www.medizininformatik-initiative.de/fhir/modul-consent/SearchParameter/mii-sp-consent-provisioncode",
+      "disposition": "converted to FSH by goFSH 2.6.1 and transferred to input/fsh/"
+    },
+    {
+      "path": "searchparameters/SearchParameter_MII_Consent_Einwilligung_provisionPeriod.xml",
+      "resourceType": "SearchParameter",
+      "id": null,
+      "url": "https://www.medizininformatik-initiative.de/fhir/modul-consent/SearchParameter/mii-sp-consent-provisionperiod",
+      "disposition": "converted to FSH by goFSH 2.6.1 and transferred to input/fsh/"
+    },
+    {
+      "path": "searchparameters/SearchParameter_MII_Consent_Einwilligung_provisionProvisionCodePeriod.xml",
+      "resourceType": "SearchParameter",
+      "id": null,
+      "url": "https://www.medizininformatik-initiative.de/fhir/modul-consent/SearchParameter/mii-sp-consent-provisioncodeperiod",
+      "disposition": "converted to FSH by goFSH 2.6.1 and transferred to input/fsh/"
+    },
+    {
+      "path": "searchparameters/SearchParameter_MII_Consent_Einwilligung_provisionProvisionCodeType.xml",
+      "resourceType": "SearchParameter",
+      "id": null,
+      "url": "https://www.medizininformatik-initiative.de/fhir/modul-consent/SearchParameter/mii-sp-consent-provisioncodetype",
+      "disposition": "converted to FSH by goFSH 2.6.1 and transferred to input/fsh/"
+    },
+    {
+      "path": "searchparameters/SearchParameter_MII_Consent_Einwilligung_provisionType.xml",
+      "resourceType": "SearchParameter",
+      "id": null,
+      "url": "https://www.medizininformatik-initiative.de/fhir/modul-consent/SearchParameter/mii-sp-consent-provisiontype",
+      "disposition": "converted to FSH by goFSH 2.6.1 and transferred to input/fsh/"
+    },
+    {
+      "path": "terminologie/codesystems/CodeSystem-MiiConsentAnswerCodeSystem.xml",
+      "resourceType": "CodeSystem",
+      "id": "2.16.840.1.113883.3.1937.777.24.5.2--20210423105554",
+      "url": "urn:oid:2.16.840.1.113883.3.1937.777.24.5.2",
+      "disposition": "converted to FSH by goFSH 2.6.1 and transferred to input/fsh/"
+    },
+    {
+      "path": "terminologie/codesystems/CodeSystem-MiiConsentPolicyCodeSystem.xml",
+      "resourceType": "CodeSystem",
+      "id": "2.16.840.1.113883.3.1937.777.24.5.3--20251211153003",
+      "url": "urn:oid:2.16.840.1.113883.3.1937.777.24.5.3",
+      "disposition": "converted to FSH by goFSH 2.6.1 and transferred to input/fsh/"
+    },
+    {
+      "path": "terminologie/codesystems/CodeSystem-MiiConsentVersionModuleCodeSystem.json",
+      "resourceType": "CodeSystem",
+      "id": "mii-cs-consent-version-modules",
+      "url": "http://hl7.org/fhir/StructureDefinition/resource-effectivePeriod",
+      "disposition": "converted to FSH by goFSH 2.6.1 and transferred to input/fsh/"
+    },
+    {
+      "path": "terminologie/valuesets/ValueSet-MiiConsentAnswerValueSet.xml",
+      "resourceType": "ValueSet",
+      "id": "2.16.840.1.113883.3.1937.777.24.11.30--20210323234509",
+      "url": "https://www.medizininformatik-initiative.de/fhir/modul-consent/ValueSet/mii-vs-consent-answer",
+      "disposition": "converted to FSH by goFSH 2.6.1 and transferred to input/fsh/"
+    },
+    {
+      "path": "terminologie/valuesets/ValueSet-MiiConsentPolicyValueSet.xml",
+      "resourceType": "ValueSet",
+      "id": "2.16.840.1.113883.3.1937.777.24.11.36--20230331232804",
+      "url": "https://www.medizininformatik-initiative.de/fhir/modul-consent/ValueSet/mii-vs-consent-policy",
+      "disposition": "converted to FSH by goFSH 2.6.1 and transferred to input/fsh/"
+    },
+    {
+      "path": "terminologie/valuesets/ValueSet-MiiConsentSignatureTypes.xml",
+      "resourceType": "ValueSet",
+      "id": "88464c5b-5338-4c2b-9c07-b42fef2ada64",
+      "url": "https://www.medizininformatik-initiative.de/fhir/modul-consent/ValueSet/mii-vs-consent-signaturetypes",
+      "disposition": "converted to FSH by goFSH 2.6.1 and transferred to input/fsh/"
+    }
+  ],
+  "narrative_bearing_text": [
+    {
+      "path": "LICENSE",
+      "lines": 395,
+      "disposition": "RETAINED; its text is the tier-R licence evidence (CC-BY-4.0)"
+    },
+    {
+      "path": "README.md",
+      "lines": 43,
+      "disposition": "RETAINED as repository documentation (a README stays a README); its first heading is the tier-R title candidate"
+    },
+    {
+      "path": "terminologie/codesystems/CodeSystem-MiiConsentPolicy.md",
+      "lines": 127,
+      "disposition": "SUPERSEDED by a generated artefact page — the IG Publisher renders the CodeSystem from the resource itself; retained in place, not migrated into a narrative page"
+    }
+  ],
+  "binary_assets": [
+    {
+      "path": "figures/MII-KDS_de_Consent.jpg",
+      "disposition": "RETAINED in the repository; the guide references two of them by absolute URL (see migration-log/guide-harvest-assets.tsv) — vendoring them is a Gate-B decision"
+    },
+    {
+      "path": "figures/MII-KDS_de_Consent_2022-02-21.jpg",
+      "disposition": "RETAINED in the repository; the guide references two of them by absolute URL (see migration-log/guide-harvest-assets.tsv) — vendoring them is a Gate-B decision"
+    },
+    {
+      "path": "figures/MII-KDS_de_Consent_highres.tiff",
+      "disposition": "RETAINED in the repository; the guide references two of them by absolute URL (see migration-log/guide-harvest-assets.tsv) — vendoring them is a Gate-B decision"
+    },
+    {
+      "path": "figures/MII-KDS_en_Consent.jpg",
+      "disposition": "RETAINED in the repository; the guide references two of them by absolute URL (see migration-log/guide-harvest-assets.tsv) — vendoring them is a Gate-B decision"
+    },
+    {
+      "path": "figures/MII_BC_Access.graphml",
+      "disposition": "RETAINED in the repository; the guide references two of them by absolute URL (see migration-log/guide-harvest-assets.tsv) — vendoring them is a Gate-B decision"
+    },
+    {
+      "path": "figures/information-model.png",
+      "disposition": "RETAINED in the repository; the guide references two of them by absolute URL (see migration-log/guide-harvest-assets.tsv) — vendoring them is a Gate-B decision"
+    },
+    {
+      "path": "figures/information-model_UML-Diagramm_MII-spez.graphml",
+      "disposition": "RETAINED in the repository; the guide references two of them by absolute URL (see migration-log/guide-harvest-assets.tsv) — vendoring them is a Gate-B decision"
+    },
+    {
+      "path": "figures/information-model_UML-Diagramm_MII-spez.png",
+      "disposition": "RETAINED in the repository; the guide references two of them by absolute URL (see migration-log/guide-harvest-assets.tsv) — vendoring them is a Gate-B decision"
+    }
+  ],
+  "counts": {
+    "resources": 20,
+    "narrative_bearing_text": 3,
+    "binary_assets": 8,
+    "guide_pages_discovered": 18,
+    "guide_pages_harvested": 18,
+    "guide_pages_skipped": 0
+  }
+}

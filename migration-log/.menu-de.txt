@@ -1,0 +1,26 @@
+Startseite
+Anleitung
+Anleitung
+Anleitung für Forschende
+Anleitung für Implementierende
+Datensätze und Beschreibungen
+UML-Diagramme
+Konformität
+Konformität
+Allgemeine Anforderungen
+Must-Support
+Umgang mit fehlenden Daten
+Sicherheit und Datenschutz
+Artefakte
+Artefakt-Übersicht
+Profile und Extensions
+Terminologie
+CapabilityStatements
+Suchparameter und Operationen
+Logische Modelle
+Beispiele
+Downloads
+Versionierung
+Versionierung
+Änderungshistorie
+Metadaten

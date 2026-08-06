@@ -1,43 +1,99 @@
-## Medizininformatik Initiative - Modul Consent
+# mii-kds-module-template
 
-### Übersicht
+A **GitHub template repository** for building an **MII Kerndatensatz (KDS) module
+Implementation Guide**. Click *Use this template* and you get a working IG project
+— FHIR tooling, CI, bilingual previews and the MII release process already wired
+up — so you can start with profiles and content instead of setup.
 
-Ziel der Medizininformatik-Initiative (MII) ist es, Patientendaten für die Forschung bereitzustellen. Dazu ist in bestimmten Konstellationen das Einverständnis des Patienten notwendig. Daher wurde im Rahmen der MII AG Consent ein Verfahren entwickelt, wie man Patienten über die Nutzung ihrer Patientendaten für die Forschung aufklären und ihr Einverständnis einholen kann. Mit Hilfe des dazugehörigen Einwilligungsdokuments kann der Patient nach Aufklärung durch eine geeignete Fachkraft sein Einverständnis zur Nutzung verschiedener Daten zu verschiedenen Zwecken ausdrücken.
+The MII look comes from the separate IG template
+[`ig-template-mii-kds`](https://github.com/forschungsgruppe-digital-health/ig-template-mii-kds),
+which this scaffold references (and keeps up to date automatically).
 
-Dies ist eine Voraussetzung für die Berücksichtigung des Patientenwillens bei der Verwendung der im Rahmen der Versorgung erfassten medizinischen Daten des Patienten für Forschungszwecke. Die Einwilligung ist vor allem dann erforderlich, wenn der Nutzungszweck über die Forschungsklauseln der jeweiligen anwendbaren Gesetze hinausgeht.  
-Die Einwilligungsinformationen (Einwilligungsformular, vom Patienten ausgefüllte Einwilligung, maschinell auswertbare Form der Einwilligung) sollen an den DIZ Standorten möglichst in einer MII-weit abgestimmten Form gespeichert und verarbeitet werden.
+See what it renders as before you start:
+<https://forschungsgruppe-digital-health.github.io/mii-kds-module-template/> — the
+demo module of the current release, plus two real MII KDS modules migrated onto
+this template.
 
-Das **Erweiterungsmodul Consent** beschreibt, wie die Einwilligungsinformationen in Form von FHIR Ressourcen für die Verarbeitung in einer lokalen Treuhandstelle und/oder einem DIZ einheitlich abgebildet werden. Die hier veröffentlichten FHIR Profile und ImplemenationGuides dienen als zentrale und verbindliche Spezifikation für die syntaktische und semantische Kodierung der Modulinhalte.
+> **Status: prototype.** Usable and released, but pending discussion in the MII
+> Taskforce Kerndatensatz — see [docs/project-status.md](docs/project-status.md).
 
-### Status
+> **⚠️ When you click *Use this template*, tick “Include all branches”.**
+> Otherwise you get `main` only, without the `dev` branch this scaffold works
+> with. The first-run bootstrap in step 2 creates `dev` for you if you forgot.
 
-Alle veröffentlichen FHIR Artefakte innerhalb des Projektes verfügen über einen Status durch welchen der jeweilige Reifegrad abgeleitet werden kann.
-Profile mit dem Status 'Draft' wurden noch nicht ballotiert und können noch diversen und substantiellen Änderungen unterliegen. Verpflichtende und ballotierte Ergebnisse sind unter dem Tab 'Packages' zu finden.
+## Quickstart
 
-### Kurzzusammenfassung
+1. **Create your repo** — *Use this template*, tick *Include all branches*.
+2. **Run the first-run bootstrap** — `bash scripts/first-run-bootstrap.sh` (dry
+   run), then `--apply`. It protects both branches and removes the template's
+   own SemVer release automation, which a CalVer module must not carry. Run it
+   even if you ticked *Include all branches*.
+3. **Open it in the dev container** (VS Code → *Reopen in Container*). It brings
+   Java, Node, SUSHI, Jekyll and Graphviz.
+   → [details](docs/recipes/first-build-in-devcontainer.md)
+4. **Fill in your module's values** — start in `sushi-config.yaml`, whose header
+   lists all 19 placeholders and the files each one occurs in, then work through
+   `ig.ini`, `publication-request.json`, `.github/workflows/go-publish.yml`,
+   `qc/custom.rules.yaml`, `tests/`, the pages and the FSH sources. **Also rename
+   `input/translations/de/ImplementationGuide-mii-ig-{{MODULE_SLUG}}.po`** to your
+   IG's id — it is the one file *name* that carries a placeholder, and the
+   publisher ignores it silently if it does not match.
+   [Create a new module](docs/recipes/create-a-new-module.md) step 5 has the two
+   sweeps that prove you missed none.
+5. **Write a profile** in `input/fsh/` (an example is included to copy) and
+   replace the English starter pages in `input/pagecontent/` (and their German
+   counterparts in `input/translations/de/pagecontent/`).
+   → [add a profile](docs/recipes/add-a-profile.md)
+6. **Build it**: `sushi .`, then run the IG Publisher, then read `output/qa.html`.
+   Or push a branch — CI builds it and comments the preview URL on your PR
+   (one-time: enable GitHub Pages and set `PAGES_ACTIONS_ENABLED` to match the
+   Pages mode you chose — [first-run setup](docs/recipes/first-run-setup.md),
+   checklist item 2 — else every preview URL 404s).
+7. **Release** with CalVer via the MII Module Release Workflow.
+   → [cut a release](docs/recipes/cut-a-release.md)
 
-Das **Erweiterungsmodul Consent** beschreibt, wie die Einwilligungsinformationen in Form von FHIR Ressourcen für die Verarbeitung in einer lokalen Treuhandstelle und/oder einem DIZ einheitlich abgebildet werden können. Dabei basiert das Erweiterungsmodul Consent auf dem [Implementierungsleitfaden bzw. den FHIR Profilen zum Einwilligungsmanagement](https://ig.fhir.de/einwilligungsmanagement/stable/), die vom **HL7-DE/IHE-DE Interop-Forum (AG Einwilliungungsmanagement)** unter Mitwirkung der **MII Taskforce Consent Umsetzung** erstellt und im September 2021 ballotiert wurden. Das Erweiterungsmodul Consent präzisiert diese bewusst flexibel spezifizierten FHIR Profile (insbesondere das FHIR-Profil "Consent"), sodass sie 
-1. den **Anforderungen der MII** genügen und 
-2. die **Anwendung an den Standorten der MII vereinfachen**.
+The full walkthrough is [create a new module](docs/recipes/create-a-new-module.md).
+Unfamiliar terms are in the [glossary](docs/glossary.md).
 
-Unter anderem werden MII-spezifische ValueSets festgelegt und die IG-seitigen Vorgaben der MII KDS Governance umgesetzt.
+## Where things live
 
-### Wichtige Dokumente und Links
-* [Beschreibung des MII-Kerndatensatzes in der Version 1.0 vom 10.3.2017 (PDF)](https://www.medizininformatik-initiative.de/sites/default/files/inline-files/MII_04_Kerndatensatz_1-0.pdf)
-* [Datenmodellbeschreibung des MII-Kerndatensatzes in ART-DECOR](https://art-decor.org/art-decor/decor-project--mide-)
-* [Implementierungsleitfaden und FHIR Profilen der AG Einwilligungsmanagement](https://ig.fhir.de/einwilligungsmanagement/stable/)
-* [Simplifier-Projekt MII KDS Modul Consent](https://simplifier.net/medizininformatikinitiative-modulconsent)
-* [IG MII KDS Modul Consent](https://simplifier.net/guide/MedizininformatikInitiative-ModulConsent-ImplementationGuide/IGMIIKDSModulConsent)
-* [Übersicht der KDS Module (Wiki github/kerndatensatz-meta)](https://github.com/medizininformatik-initiative/kerndatensatz-meta/wiki)
+| Path | What it is |
+| --- | --- |
+| `sushi-config.yaml` | Your module's metadata — the file you edit first |
+| `input/fsh/` | Profiles, extensions, value sets (FHIR Shorthand) |
+| `input/pagecontent/` | The narrative pages — English, the IG's default language |
+| `input/translations/de/` | German translations of pages, menu and resources |
+| `input/includes/menu.xml` | The navigation menu (one file per language) |
+| `qc/custom.rules.yaml`, `advisor.json` | What the MII reusable validation reads: naming-convention rules and tolerated validator messages |
+| `ig-template/` | The MII IG template, mirrored automatically — don't edit |
+| `docs/` | Guides and step-by-step recipes |
+| `tests/` | FHIR validation test cases the build runs — see [tests/README.md](tests/README.md) |
+| `scripts/` | Helper scripts (first-run bootstrap, template sync, convention check, …) — see [scripts/README.md](scripts/README.md) |
+| `skills/` | Reusable instructions for recurring maintenance tasks — see [`AGENTS.md`](AGENTS.md) |
+| `.github/workflows/` | CI: build, preview, validation, release — see [docs/workflows.md](docs/workflows.md) |
 
-### Autoren und Ansprechpartner
+## Documentation
 
-Leitung des Moduls:
+**[docs/](docs/README.md) is the index** — every guide, with a reading order for
+newcomers. The three you are most likely to want first:
 
-* Martin Bialke
-* [Sebastian Stäubert](https://github.com/SebStaeubert)
+- [Recipes](docs/recipes/) — step-by-step for the common tasks
+- [Create a new module](docs/recipes/create-a-new-module.md) — the path from *Use this template* to a module that builds
+- [Project status](docs/project-status.md) — prototype; what that means in practice
 
-Technische Umsetzung:
+Contributing and policies: [CONTRIBUTING.md](CONTRIBUTING.md) ·
+[CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) · [SECURITY.md](SECURITY.md)
 
-* Stefan Lang (Technische Umsetzung FHIR Profile und ImplemenationGuides)
-* Martin Bialke (ImplemenationGuides)
+## Getting help
+
+- **FHIR and profiling questions** — HL7 FHIR Zulip <https://chat.fhir.org>,
+  stream `german/mi-initiative`. Free to join; this is where the MII KDS IGs
+  point their readers.
+- **MII coordination** — MII Zulip <https://mii.zulipchat.com/>, stream
+  `MII-Kerndatensatz`. Access via the MII Geschäftsstelle
+  (<office@medizininformatik-initiative.de>).
+- **Problems with this template** — open an [issue](../../issues).
+
+## Licence
+
+[CC-BY-4.0](LICENSE), matching MII IG content.

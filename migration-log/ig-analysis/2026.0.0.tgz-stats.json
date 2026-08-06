@@ -1,0 +1,310 @@
+{
+  "schemaVersion": "1.4",
+  "tool": "ig-stats.py",
+  "mode": "reduced",
+  "analyzed": {
+    "path": "/private/tmp/consent-mig-57425/consent-migration/migration-log/ig-analysis/_sources/2026.0.0.tgz",
+    "label": "source-package-2026.0.0",
+    "git_commit": "4d44dbe",
+    "timestamp": "2026-08-06T15:55:05Z",
+    "input": "file:///tmp/consent-pkgcmp/2026.0.0.tgz",
+    "resolved_from": "Package-Download (.tgz)"
+  },
+  "identity": {
+    "id": null,
+    "canonical": null,
+    "packageId": null,
+    "name": null,
+    "title": null,
+    "version": null,
+    "calver": false,
+    "status": null,
+    "fhirVersion": null,
+    "license": null,
+    "publisher": null
+  },
+  "artifacts": {
+    "profiles": 3,
+    "extensions": 0,
+    "valuesets": 3,
+    "codesystems": 3,
+    "logicals": 0,
+    "capabilitystatements": 0,
+    "questionnaires": 0,
+    "searchparameters": 6,
+    "operations": 0,
+    "examples": 0,
+    "rulesets": 0,
+    "invariants": 0,
+    "mappings": 0,
+    "total": 15,
+    "_source": "package (Package, reduziert)"
+  },
+  "artifacts_detail": [
+    {
+      "type": "CodeSystem",
+      "name": "2.16.840.1.113883.3.1937.777.24.5.2--20210423105554",
+      "instanceOf": null,
+      "category": "codesystems",
+      "path": "package/CodeSystem-MiiConsentAnswerCodeSystem.json",
+      "line": null
+    },
+    {
+      "type": "CodeSystem",
+      "name": "2.16.840.1.113883.3.1937.777.24.5.3--20251211153003",
+      "instanceOf": null,
+      "category": "codesystems",
+      "path": "package/CodeSystem-MiiConsentPolicyCodeSystem.json",
+      "line": null
+    },
+    {
+      "type": "CodeSystem",
+      "name": "mii-cs-consent-version-modules",
+      "instanceOf": null,
+      "category": "codesystems",
+      "path": "package/CodeSystem-MiiConsentVersionModuleCodeSystem.json",
+      "line": null
+    },
+    {
+      "type": "StructureDefinition",
+      "name": "56375452-bfa1-4111-af7c-5b5ba9a1857c",
+      "instanceOf": null,
+      "category": "profiles",
+      "path": "package/Profile_MII_Consent_DocumentReference.json",
+      "line": null
+    },
+    {
+      "type": "StructureDefinition",
+      "name": "e0e166b4-0f77-478d-9062-de0034d98ce0",
+      "instanceOf": null,
+      "category": "profiles",
+      "path": "package/Profile_MII_Consent_Einwilligung.json",
+      "line": null
+    },
+    {
+      "type": "StructureDefinition",
+      "name": "f675b1e8-9f3f-44e8-bb59-9681f78eb464",
+      "instanceOf": null,
+      "category": "profiles",
+      "path": "package/Profile_MII_Consent_Provenance.json",
+      "line": null
+    },
+    {
+      "type": "SearchParameter",
+      "name": null,
+      "instanceOf": null,
+      "category": "searchparameters",
+      "path": "package/SearchParameter_MII_Consent_Einwilligung_policyUri.json",
+      "line": null
+    },
+    {
+      "type": "SearchParameter",
+      "name": null,
+      "instanceOf": null,
+      "category": "searchparameters",
+      "path": "package/SearchParameter_MII_Consent_Einwilligung_provisionCode.json",
+      "line": null
+    },
+    {
+      "type": "SearchParameter",
+      "name": null,
+      "instanceOf": null,
+      "category": "searchparameters",
+      "path": "package/SearchParameter_MII_Consent_Einwilligung_provisionPeriod.json",
+      "line": null
+    },
+    {
+      "type": "SearchParameter",
+      "name": null,
+      "instanceOf": null,
+      "category": "searchparameters",
+      "path": "package/SearchParameter_MII_Consent_Einwilligung_provisionProvisionCodePeriod.json",
+      "line": null
+    },
+    {
+      "type": "SearchParameter",
+      "name": null,
+      "instanceOf": null,
+      "category": "searchparameters",
+      "path": "package/SearchParameter_MII_Consent_Einwilligung_provisionProvisionCodeType.json",
+      "line": null
+    },
+    {
+      "type": "SearchParameter",
+      "name": null,
+      "instanceOf": null,
+      "category": "searchparameters",
+      "path": "package/SearchParameter_MII_Consent_Einwilligung_provisionType.json",
+      "line": null
+    },
+    {
+      "type": "ValueSet",
+      "name": "2.16.840.1.113883.3.1937.777.24.11.30--20210323234509",
+      "instanceOf": null,
+      "category": "valuesets",
+      "path": "package/ValueSet-MiiConsentAnswerValueSet.json",
+      "line": null
+    },
+    {
+      "type": "ValueSet",
+      "name": "2.16.840.1.113883.3.1937.777.24.11.36--20230331232804",
+      "instanceOf": null,
+      "category": "valuesets",
+      "path": "package/ValueSet-MiiConsentPolicyValueSet.json",
+      "line": null
+    },
+    {
+      "type": "ValueSet",
+      "name": "88464c5b-5338-4c2b-9c07-b42fef2ada64",
+      "instanceOf": null,
+      "category": "valuesets",
+      "path": "package/ValueSet-MiiConsentSignatureTypes.json",
+      "line": null
+    }
+  ],
+  "dependencies": {
+    "count": 0,
+    "pinned": 0,
+    "floating": 0,
+    "items": {},
+    "floating_items": [],
+    "_source": "sushi-config.yaml: dependencies"
+  },
+  "narrative": {
+    "format": "leer",
+    "pages": 0,
+    "pages_all": 0,
+    "translation_pages": 0,
+    "translation_words": 0,
+    "words": 0,
+    "words_all_incl_stubs": 0,
+    "images": 0,
+    "mandatory_present": [],
+    "mandatory_missing_in_target": [],
+    "files": []
+  },
+  "linguistics": {
+    "content_pages": 0,
+    "words_total": 0,
+    "words_avg": 0,
+    "words_median": 0,
+    "words_min": 0,
+    "words_max": 0,
+    "longest_page": null,
+    "shortest_page": null,
+    "per_page": []
+  },
+  "duplication": {
+    "duplicate_block_count": 0,
+    "duplicate_blocks": [],
+    "duplicate_file_groups": []
+  },
+  "hygiene": {
+    "images_total": 0,
+    "unreferenced_images": [],
+    "examples_total": 0,
+    "examples_not_in_narrative": [],
+    "note": "Heuristik: 'nicht referenziert' = Dateiname/Artefaktname kommt in keiner Erklärseite vor. Kein Beweis für Ungenutztheit (Referenz kann über Konfiguration/Build erfolgen)."
+  },
+  "i18n": {
+    "default_lang": null,
+    "default_lang_source": null,
+    "languages": [],
+    "translation_supplements": 0,
+    "supplement_files": [],
+    "translated_pages": 0,
+    "fsh_translation_ext": false,
+    "fsh_translation_files": []
+  },
+  "directives": {
+    "total": 0,
+    "by_label": {},
+    "unknown": 0,
+    "occurrences": [],
+    "unknown_occurrences": []
+  },
+  "quality": {
+    "qc_rules_defined": null,
+    "qc_rules": [],
+    "qc_source": null,
+    "qc_violations": null,
+    "suppressed_messages": null,
+    "qa_errors": null,
+    "qa_warnings": null,
+    "qa_hints": null,
+    "broken_links": null,
+    "qa_categories": null
+  },
+  "maturity": {
+    "components": {
+      "Status": null,
+      "Doku-Vollständigkeit": null,
+      "Beispiel-Abdeckung": 0,
+      "Governance": 0
+    },
+    "example_coverage": {
+      "profiles_total": 3,
+      "covered": 0,
+      "uncovered": [
+        "56375452-bfa1-4111-af7c-5b5ba9a1857c",
+        "e0e166b4-0f77-478d-9062-de0034d98ce0",
+        "f675b1e8-9f3f-44e8-bb59-9681f78eb464"
+      ],
+      "coverage_pct": 0
+    },
+    "governance": {
+      "ci_workflows": 0,
+      "publication_request": false,
+      "ig_ini": false,
+      "devcontainer": false,
+      "governance_score": 0
+    },
+    "doc_health_pct": null
+  },
+  "portfolio": {
+    "vendor_lockin_score": 0,
+    "vendor_lockin_band": "gering",
+    "directives_per_page": 0.0,
+    "terminology_standard_systems": [],
+    "terminology_standard_refs": 0,
+    "local_codesystems": 3,
+    "terminology_standard_share_pct": 0,
+    "canonical_reuse_ratio_pct": null,
+    "external_parents": 0,
+    "local_parents": 0,
+    "fhir_version_label": "?",
+    "fhir_version_note": "unbekannt",
+    "dependency_stale_count": 0,
+    "dependency_stale": [],
+    "dependency_staleness_note": "Heuristik aus CalVer-Jahr; exakt nur via Package-Registry (extern).",
+    "release_cadence_per_year": 24.5,
+    "days_since_last_commit": 0,
+    "tags": 4
+  },
+  "risk": {
+    "terminology_license_flags": [],
+    "terminology_license_risk": false,
+    "suppressed_total": 0,
+    "suppressed_broad": 0,
+    "suppressed_warning_risk": "keine",
+    "privacy_page_words": 0,
+    "privacy_page_substantial": false,
+    "examples_contain_pii_like": false,
+    "bus_factor_top_author_pct": 32,
+    "bus_factor_authors": 6,
+    "bus_factor_risk": "gering",
+    "breaking_change_risk": null,
+    "breaking_change_note": "Erfordert Diff gegen die publizierte Vorversion (Build/extern) — statisch nicht erhoben."
+  },
+  "git": {
+    "commits": 111,
+    "authors": 6,
+    "top_author_share": 32,
+    "days_since_last": 0,
+    "commits_per_year": 24.5,
+    "tags": 4,
+    "first": "2022-01-28",
+    "last": "2026-08-06",
+    "history_complete": true
+  }
+}

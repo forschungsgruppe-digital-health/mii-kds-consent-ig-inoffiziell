@@ -1,0 +1,17 @@
+{
+   "package-id" : "de.medizininformatikinitiative.kerndatensatz.consent",
+   "version" : "2026.0.1",
+   "path" : "https://forschungsgruppe-digital-health.github.io/mii-kds-consent-ig-inoffiziell/2026.0.1",
+   "mode" : "milestone",
+   "status" : "release",
+   "sequence" : "2026",
+   "desc" : "Medizininformatik Initiative - Modul Consent - Implementation Guide",
+   "first" : true,
+   "title" : "MII Implementation Guide Consent",
+   "ci-build" : "https://forschungsgruppe-digital-health.github.io/mii-kds-consent-ig-inoffiziell/branches/dev/",
+   "category" : "Research",
+   "introduction" : "Medizininformatik Initiative - Modul Consent - Implementation Guide",
+   "registry-description" : "Medizininformatik Initiative - Modul Consent - Implementation Guide",
+   "registry-country" : "de",
+   "registry-authority" : "Medical Informatics Initiative (MII)"
+}
