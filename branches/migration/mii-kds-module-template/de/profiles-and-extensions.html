@@ -233,28 +233,148 @@ Diese Seite enthält Übersetzungen aus der Originalsprache, in der der Leitfade
 </p>
 
 <!-- markdownlint-disable MD041 -->
-<div class="mii-highlight mii-highlight-orange">
-<h5>TODO:REVIEW (Gate B) &mdash; Startseiten-Vorlage, Narrativ noch nicht migriert</h5>
-<p>Dies ist die <strong>Vorlagenseite des MII-KDS-Modul-Templates</strong>, unveraendert
-uebernommen. Es ist <strong>nicht</strong> das Narrativ des MII-KDS-Moduls Consent.</p>
-<p>Der Leitfadentext des Moduls existiert nur als gerenderter Simplifier-Guide
-(<code>simplifier.net/guide/miiigmodulconsent</code>) und liegt <strong>nicht im
-Quell-Repository</strong>. Es gab daher nichts, was in diese Seite haette migriert werden
-koennen, und es wurde nichts erfunden. Seitenstruktur, Menue und Artefakt-Rendering sind
-echt; der Fliesstext ist ein Platzhalter, bis das Narrativ von Simplifier migriert ist.</p>
-</div>
+<!--
+  PROFILE UND EXTENSIONS — DEUTSCHE FASSUNG (Quelltext, massgeblich).
+  Herkunft (Migration 2026-08-06, spec 5.1c):
+    - .../TechnischeImplementierung/FHIRProfile?version=2026.0.0 (Einleitung)
+    - .../TechnischeImplementierung/FHIRProfile/WeitererelevanteProfile?version=2026.0.0
+  Das Narrativ JE PROFIL steht nicht hier, sondern in input/intro-notes/ bzw.
+  input/translations/de/intro-notes/ und wird oben auf der jeweiligen
+  Artefaktseite gerendert (spec 9: bei mehr als zwei Profilen). Die
+  Elementbaeume der Simplifier-Seiten wurden NICHT uebernommen: der IG Publisher
+  erzeugt sie aus den StructureDefinitions selbst (Direktiven-Crosswalk).
+-->
 
-<p>Diese Seite führt die FHIR-Profile und Extensions des Moduls
-<strong>Consent</strong> auf. Die drei Profile des Moduls — <code class="language-plaintext highlighter-rouge">MII_PR_Consent_Einwilligung</code>,
-<code class="language-plaintext highlighter-rouge">MII_PR_Consent_DocumentReference</code> und <code class="language-plaintext highlighter-rouge">MII_PR_Consent_Provenance</code> — wurden aus
-dem Quell-Repository migriert und werden im Artefakt-Index dieses Leitfadens
-gerendert. (Das Beispielprofil der Vorlage wurde bei der Migration gelöscht,
-damit es nicht mit den eigenen kollidieren konnte.)</p>
+<h3 id="profile-und-extensions">Profile und Extensions</h3>
 
-<blockquote class="mii-highlight mii-highlight-grey">
-  <p>[TODO: Beschreiben Sie die Profile Ihres Moduls und ihre Beziehungen. Der
-IG-Publisher erzeugt die technischen Detailseiten automatisch.]</p>
-</blockquote>
+<p>Die Arbeiten der Kerndatensatzspezifikationen basieren, wo möglich, auf
+internationalen Standards und Terminologien, insbesondere auf den
+Profilierungs-Vorarbeiten der
+<a href="https://ig.fhir.de/einwilligungsmanagement/stable/">AG Einwilligungsmanagement zum FHIR Consent</a>.</p>
+
+<p>Alle Elemente des Kerndatensatzes, angepasst an die Details und Anforderungen für
+die Use Cases der Medizininformatik-Initiative, werden in Form von FHIR
+StructureDefinitions beschrieben. Die Notwendigkeit der Anpassung der
+FHIR-Profile wird in textueller Form auf der jeweiligen Profilseite erläutert.</p>
+
+<h4 id="verpflichtende--must-support-elemente">Verpflichtende / must-support Elemente</h4>
+
+<p>Für <strong>verpflichtende</strong> oder als <strong>must-support</strong> markierte Elemente sei an dieser
+Stelle auf die entsprechenden
+<a href="https://build.fhir.org/ig/HL7/fhir-ips/design.html#must-support">Regeln der IPS</a>
+verwiesen, die auch für diesen ImplementationGuide gelten. Siehe auch
+<a href="must-support.html">Must-Support</a>.</p>
+
+<h4 id="profile-dieses-moduls">Profile dieses Moduls</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Profil</th>
+      <th>Zur Abbildung von</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="StructureDefinition-e0e166b4-0f77-478d-9062-de0034d98ce0.html">MII_PR_Consent_Einwilligung</a></td>
+      <td>Die operationalisierte, maschinenlesbare Einwilligung</td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-f675b1e8-9f3f-44e8-bb59-9681f78eb464.html">MII_PR_Consent_Provenance</a></td>
+      <td>Herkunft der Einwilligungsinhalte, u. a. Unterschriften</td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-56375452-bfa1-4111-af7c-5b5ba9a1857c.html">MII_PR_Consent_DocumentReference</a></td>
+      <td>Scan des Einwilligungsdokuments (PDF)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Die ausführliche Erläuterung je Profil — Datenschutz-Aspekte,
+Interoperabilität, die Unterschiede zum Basis-Profil, die verschachtelten
+Provision-Elemente und die Policy-OIDs — steht <strong>auf der jeweiligen
+Profilseite</strong>; die Seite selbst zeigt darunter den vom IG Publisher erzeugten
+Elementbaum, die Differenz zum Basis-Profil sowie XML- und JSON-Serialisierung.</p>
+
+<p>Dieses Modul definiert <strong>keine eigenen Extensions</strong>. Die verwendete Extension
+<code class="language-plaintext highlighter-rouge">DomainReference</code> stammt aus dem
+<a href="https://ig.fhir.de/einwilligungsmanagement/stable/">Implementierungsleitfaden Einwilligungsmanagement</a>.</p>
+
+<h4 id="weitere-relevante-profile">Weitere relevante Profile</h4>
+
+<p>Neben
+<a href="StructureDefinition-e0e166b4-0f77-478d-9062-de0034d98ce0.html">Consent</a>,
+<a href="StructureDefinition-f675b1e8-9f3f-44e8-bb59-9681f78eb464.html">Provenance</a> und
+<a href="StructureDefinition-56375452-bfa1-4111-af7c-5b5ba9a1857c.html">DocumentReference</a>
+sind weitere Profile für den Umgang mit Einwilligungen und
+Einwilligungsvorlagen relevant, die unverändert aus dem
+<a href="https://ig.fhir.de/einwilligungsmanagement/stable/Home.html">Implementierungsleitfaden Einwilligungsmanagement</a>
+übernommen werden.</p>
+
+<p>Die folgenden Profile sind dabei für die Nutzung dieses Leitfadens zwingend zu
+unterstützen:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>FHIR-Profil</th>
+      <th>Zur Abbildung von / Verwendung für</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="https://ig.fhir.de/einwilligungsmanagement/stable/Organization.html">Organization</a></td>
+      <td>Verantwortliche Einrichtung</td>
+    </tr>
+    <tr>
+      <td><a href="https://ig.fhir.de/einwilligungsmanagement/stable/ResearchStudy.html">ResearchStudy</a></td>
+      <td>Forschungsprojekt</td>
+    </tr>
+    <tr>
+      <td><a href="https://ig.fhir.de/einwilligungsmanagement/stable/Patient.html">Patient</a></td>
+      <td>Betroffene Person (pseudonymisiert)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Wird der Broad Consent mittels FHIR Questionnaires abgebildet bzw. abgefragt,
+sollten außerdem die folgenden Profile verwendet werden:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>FHIR-Profil</th>
+      <th>Zur Abbildung von / Verwendung für</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="https://ig.fhir.de/einwilligungsmanagement/stable/QuestionnaireResponse.html">QuestionnaireResponse</a></td>
+      <td>Ausgefüllte Einwilligung</td>
+    </tr>
+    <tr>
+      <td><a href="https://ig.fhir.de/einwilligungsmanagement/stable/QuestionnaireComposed.html">QuestionnaireComposed</a></td>
+      <td>Einwilligungsvorlage (render-fähig)</td>
+    </tr>
+    <tr>
+      <td><a href="https://ig.fhir.de/einwilligungsmanagement/stable/TemplateFrame.html">TemplateFrame</a></td>
+      <td>Einwilligungsvorlage (Strukturdefinition)</td>
+    </tr>
+    <tr>
+      <td><a href="https://ig.fhir.de/einwilligungsmanagement/stable/TemplateModule.html">TemplateModule</a></td>
+      <td>Einwilligungsmodul</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="siehe-auch">Siehe auch</h4>
+
+<ul>
+  <li><a href="search-parameters-and-operations.html">Suchparameter und Operationen</a> — die
+modul-eigenen Suchparameter der Consent-Ressource.</li>
+  <li><a href="terminology.html">Terminologie</a> — die ValueSets und CodeSysteme des Moduls.</li>
+  <li><a href="examples.html">Beispiele</a> — die Beispielinstanzen zu den drei Profilen.</li>
+</ul>
 
 
 
@@ -281,7 +401,7 @@ IG-Publisher erzeugt die technischen Detailseiten automatisch.]</p>
 
           IG © 2019+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de">Medical Informatics Initiative (MII)</a>.  
           Package de.medizininformatikinitiative.kerndatensatz.consent#2026.0.0 basiert auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
-          Erstellt <span title="Thu, Aug 6, 2026 10:59+0000">2026-08-06</span>
+          Erstellt <span title="Thu, Aug 6, 2026 13:20+0000">2026-08-06</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
             <!-- MII branding override for the fhir2.base.template footer fragment.

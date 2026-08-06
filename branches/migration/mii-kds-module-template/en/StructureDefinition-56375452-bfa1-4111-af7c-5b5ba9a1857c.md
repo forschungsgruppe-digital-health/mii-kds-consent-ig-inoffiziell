@@ -14,6 +14,12 @@
  
 Dieses Profil beschreibt die Abbildung von Originaldokumenten zu Einwilligungen in der Medizininformatik-Initiative. Diese müssen im PDF-Format vorliegen. 
 
+**TODO:REVIEW (Gate C) — unreviewed machine translation.** The authoritative text of this module is German; this page is an unreviewed machine translation of the German intro note (source guide version 2026.0.0, harvested 2026-08-06). Where the two language variants differ, the German page applies.
+
+Based on the [recommendations](https://ig.fhir.de/einwilligungsmanagement/stable/DocumentReference.html) of the AG Einwilligungsmanagement, the profile **MIIConsentDocumentReference** targets a real, existing document related to the consent document.
+
+It is, however, restricted to scans of consent documents in PDF format.
+
 **Usages:**
 
 * Refer to this Profile: [Profile - MI-I - Consent - Provenance](StructureDefinition-f675b1e8-9f3f-44e8-bb59-9681f78eb464.md)
@@ -28,6 +34,18 @@ You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir
  
 
 Other representations of profile: [CSV](../StructureDefinition-56375452-bfa1-4111-af7c-5b5ba9a1857c.csv), [Excel](../StructureDefinition-56375452-bfa1-4111-af7c-5b5ba9a1857c.xlsx), [Schematron](../StructureDefinition-56375452-bfa1-4111-af7c-5b5ba9a1857c.sch) 
+
+### Notes:
+
+**TODO:REVIEW (Gate C) — unreviewed machine translation.** The authoritative text is the German notes file.
+
+| | |
+| :--- | :--- |
+| `DocumentReference.content.attachment.contentType` | fixed value`application/pdf`, must-support |
+
+### Example
+
+* [Example (complete)](DocumentReference-8a3d1799-2463-405e-b49c-6a16c8692b01.md)
 
 
 

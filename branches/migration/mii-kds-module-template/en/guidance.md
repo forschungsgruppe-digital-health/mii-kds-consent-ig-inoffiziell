@@ -5,12 +5,6 @@
 
 ## Guidance
 
-##### TODO:REVIEW (Gate B) — starter page, narrative not yet migrated
-
-This is the **MII KDS module template's starter page**, carried over as-is. It is **not** the narrative of the MII KDS Modul Consent.
-
-The module's guide text exists only as a rendered Simplifier guide (`simplifier.net/guide/miiigmodulconsent`); it is **not in the source repository**, so there was nothing to migrate into this page and nothing was invented for it. The page **structure**, the menu and the artifact rendering below are real; the prose is a placeholder until the narrative is migrated from Simplifier.
-
 This section collects the domain guidance for implementing and using the **Consent** module.
 
 ### General Implementation Guidance
@@ -23,7 +17,7 @@ This section collects the domain guidance for implementing and using the **Conse
 * **[Guidance for Researchers](researcher-guidance.md)** — for researchers using the module's data.
 * **[Guidance for Implementers](implementer-guidance.md)** — technical guidance for DIC implementers.
 
-> [TODO: Add the module-specific guidance that is relevant to all audiences — e.g. the domain scope or its delimitations.]
+The module's focus is the operationalisation (enforcement) of the consent filled in by the patient, on the basis of the consent policies. The delimitation the source guide draws: using **all** of the profiles developed in the AG Einwilligungsmanagement is not mandatory, and the FHIR Consent resource carries neither person-identifying information nor document scans or signatures. See [Guidance for Implementers](implementer-guidance.md) and [Security and Privacy](security-and-privacy.md).
 
 -------
 

@@ -7,13 +7,9 @@
 
  Diese Seite enthält Übersetzungen aus der Originalsprache, in der der Leitfaden verfasst wurde. Informationen zu diesen Übersetzungen und Anweisungen zum Abgeben von Feedback zu den Übersetzungen finden Sie [hier](translationinfo.md). 
 
-##### TODO:REVIEW (Gate B) — Startseiten-Vorlage, Narrativ noch nicht migriert
+### Metadaten
 
-Dies ist die **Vorlagenseite des MII-KDS-Modul-Templates**, unveraendert uebernommen. Es ist **nicht** das Narrativ des MII-KDS-Moduls Consent.
-
-Der Leitfadentext des Moduls existiert nur als gerenderter Simplifier-Guide (`simplifier.net/guide/miiigmodulconsent`) und liegt **nicht im Quell-Repository**. Es gab daher nichts, was in diese Seite haette migriert werden koennen, und es wurde nichts erfunden. Seitenstruktur, Menue und Artefakt-Rendering sind echt; der Fliesstext ist ein Platzhalter, bis das Narrativ von Simplifier migriert ist.
-
-### Metadaten-Übersicht
+**Migrationshinweis (2026-08-06):** Der Quell-Leitfaden hat keine Metadaten-Seite; diese Seite beschreibt die CRMI-Metadaten dieses Repositoriums. Die `[TODO ...]`-Hinweise unten sind **Einrichtungsaufgaben der Modulverantwortlichen**, kein fehlendes Narrativ. -Übersicht
 
 Diese Seite beschreibt die maschinenlesbaren Metadaten des Moduls **Consent**. Sie existieren, damit die Artefakte dieses Leitfadens auffindbar, bewertbar, validierbar, zitierbar, steuerbar und wiederverwendbar sind — für Menschen wie für Software.
 

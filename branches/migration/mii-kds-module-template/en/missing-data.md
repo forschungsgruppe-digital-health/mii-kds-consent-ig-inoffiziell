@@ -6,12 +6,6 @@
 
 ## Handling Missing Data
 
-##### TODO:REVIEW (Gate B) — starter page, narrative not yet migrated
-
-This is the **MII KDS module template's starter page**, carried over as-is. It is **not** the narrative of the MII KDS Modul Consent.
-
-The module's guide text exists only as a rendered Simplifier guide (`simplifier.net/guide/miiigmodulconsent`); it is **not in the source repository**, so there was nothing to migrate into this page and nothing was invented for it. The page **structure**, the menu and the artifact rendering below are real; the prose is a placeholder until the narrative is migrated from Simplifier.
-
 ### Handling Missing Data
 
 There are situations in which information on a particular data element is missing and the source system does not know the reason for its absence.
@@ -110,7 +104,9 @@ For elements with a `required` binding (`CodeableConcept`, `Coding` or `code` da
 1. Use the appropriate "unknown" concept from the ValueSet if one exists.
 1. §missing-data-4:If the ValueSet has no such concept, a concept from the ValueSet**SHALL**nevertheless be used — otherwise the instance is**not conformant**§
 
-> [TODO: Only add anything here if YOUR module has module-specific special cases — for example an element whose ValueSet carries its own "unknown" concept, or a data category for which the module prescribes a different representation. Delete this prompt afterwards.]
+##### TODO:REVIEW (Gate B) — the source guide states nothing on missing data
+
+The migrated source guide has no section on handling missing or unknown values, so nothing was migrated into this page and nothing was invented; the MII-wide rules above stand unchanged. Note for the reviewer: the module's [answer ValueSet](terminology.md) does carry its own concept for an unticked checkbox (`unbekannt`, `2.16.840.1.113883.3.1937.777.24.5.2.3`), which the source explains as a questionnaire answer rather than as a missing-data rule — that reading was not extended into a rule here.
 
 #### See also
 

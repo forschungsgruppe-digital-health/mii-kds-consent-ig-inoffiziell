@@ -229,31 +229,238 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 
     <p><!-- white space is critical inside of capture --></p>
-<div>
-<!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
-</div>
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#guidance-for-implementers" id="markdown-toc-guidance-for-implementers">Guidance for Implementers</a></li>
+  <li><a href="#context-within-the-overall-project--relations-to-other-modules" id="markdown-toc-context-within-the-overall-project--relations-to-other-modules">Context within the overall project / relations to other modules</a></li>
+  <li><a href="#questionnaires" id="markdown-toc-questionnaires">Questionnaires</a></li>
+  <li><a href="#recommendations-for-practical-use" id="markdown-toc-recommendations-for-practical-use">Recommendations for practical use</a></li>
+  <li><a href="#references" id="markdown-toc-references">References</a></li>
+</ul>
 
+</div>
 <!-- markdownlint-disable MD041 -->
 <div class="mii-highlight mii-highlight-orange">
-<h5>TODO:REVIEW (Gate B) &mdash; starter page, narrative not yet migrated</h5>
-<p>This is the <strong>MII KDS module template's starter page</strong>, carried over as-is.
-It is <strong>not</strong> the narrative of the MII KDS Modul Consent.</p>
-<p>The module's guide text exists only as a rendered Simplifier guide
-(<code>simplifier.net/guide/miiigmodulconsent</code>); it is <strong>not in the source
-repository</strong>, so there was nothing to migrate into this page and nothing was
-invented for it. The page <em>structure</em>, the menu and the artifact rendering below are
-real; the prose is a placeholder until the narrative is migrated from Simplifier.</p>
+<h5>TODO:REVIEW (Gate C) &mdash; unreviewed machine translation</h5>
+<p>The authoritative text of this module is <strong>German</strong>. This English page is an
+<strong>unreviewed machine translation</strong> of
+<code>input/translations/de/pagecontent/implementer-guidance.md</code>, migrated from the
+Simplifier-rendered guide (version 2026.0.0, harvested 2026-08-06). Consent policy wording,
+policy display names and the names of the MII Broad Consent form modules are
+<strong>deliberately left in German</strong>: they are legally binding text and identifiers,
+not prose. Where the two language variants differ, the German page applies.</p>
 </div>
 
-<!-- Source: kerndatensatz-basis input/pagecontent/implementer-guidance.md.
-     German mirror: input/translations/de/pagecontent/implementer-guidance.md. -->
+<!--
+  GUIDANCE FOR IMPLEMENTERS — ENGLISH (translation).
+  Source of record and section provenance:
+  input/translations/de/pagecontent/implementer-guidance.md
+-->
+
 <h3 id="guidance-for-implementers">Guidance for Implementers</h3>
 
-<p>Technical guidance for DIC implementers on implementing the profiles of the <strong>Consent</strong> module (ETL from primary systems, FHIR API, validation).</p>
+<p>This page collects the domain and technical guidance of the Consent module for
+Data Integration Centers and vendors: how the module fits into the overall
+project, how the MII Broad Consent is represented via questionnaires, the
+recommendations for practical use, and the references.</p>
 
-<blockquote class="mii-highlight mii-highlight-grey">
-  <p>[TODO: Describe the technical implementation steps for your module.]</p>
-</blockquote>
+<h3 id="context-within-the-overall-project--relations-to-other-modules">Context within the overall project / relations to other modules</h3>
+
+<p>The Consent module supports cross-site data-use requests based on the patient's
+current consent status at the site.</p>
+
+<p>To relate a person to a consent, the consent carries at least one unique person
+identifier (base module: Person). As a rule this is a
+<a href="https://ig.fhir.de/einwilligungsmanagement/stable/Patient.html">pseudonymous identifier</a>.</p>
+
+<h4 id="references-to-other-undertakings">References to other undertakings</h4>
+
+<p>The
+<a href="https://www.bfarm.de/SharedDocs/Downloads/DE/Forschung/modellvorhaben-genomsequenzierung/Handreichung-zur-Implementierung-beim-LE.pdf?__blob=publicationFile">guidance document</a>
+on patient information &amp; declaration of participation for the <strong>"Modellvorhaben
+Genomsequenzierung bei seltenen und bei onkologischen Erkrankungen"</strong> (model
+project on genome sequencing for rare and oncological diseases) under § 64e SGB V,
+version V1, recommends in section 2.1.4 (research consent) the use of the MII
+Broad Consent from version 1.6d onwards, which in the legal sense corresponds at
+least to the base version without additional modules.</p>
+
+<h3 id="questionnaires">Questionnaires</h3>
+
+<p>The <a href="https://ig.fhir.de/einwilligungsmanagement/stable/">AG Einwilligungsmanagement</a>
+has dealt comprehensively with the modelling of consents and consent templates.
+This implementation guide builds substantially on that preliminary work.</p>
+
+<h4 id="the-structured-consent-template">The structured consent template</h4>
+
+<p>The profiles
+<a href="https://ig.fhir.de/einwilligungsmanagement/stable/QuestionnaireComposed.html">Questionnaire Composed</a>,
+<a href="https://ig.fhir.de/einwilligungsmanagement/stable/TemplateFrame.html">Template Frame</a> and
+<a href="https://ig.fhir.de/einwilligungsmanagement/stable/TemplateModule.html">Template Module</a>
+are based on the FHIR resource Questionnaire and serve to represent the consent
+form (here: MII Broad Consent).</p>
+
+<p>A Template Module is a reusable basic building block that is used in, or embedded
+into, one or several form sections (TemplateFrames). One or several TemplateFrames
+can be assembled into a complete, renderable form (QuestionnaireComposed).</p>
+
+<h4 id="the-completed-consent">The completed consent</h4>
+
+<p>The profile
+<a href="https://ig.fhir.de/einwilligungsmanagement/stable/QuestionnaireResponse.html">QuestionnaireResponse</a>
+represents the questionnaire filled in by the patient. It documents the patient's
+answers to the referenced questionnaire (QuestionnaireComposed) of the MII Broad
+Consent.</p>
+
+<p>The value set
+"<a href="https://art-decor.org/art-decor/decor-valuesets--mide-?id=2.16.840.1.113883.3.1937.777.24.11.30">MII Consent: Answer ValueSet</a>"
+should be used to represent the answers — in this guide the ValueSet
+<a href="ValueSet-2.16.840.1.113883.3.1937.777.24.11.30--20210323234509.html">MII Consent: Answer ValueSet</a>.
+The code designators below are the <strong>German</strong> designators of the code system and
+are not translated:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Checkbox</th>
+      <th>Code designator</th>
+      <th>Code (OID)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>"Ja" ticked</td>
+      <td>gültig</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.2.1</td>
+    </tr>
+    <tr>
+      <td>"Nein" ticked</td>
+      <td>nicht gültig</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.2.2</td>
+    </tr>
+    <tr>
+      <td>not ticked</td>
+      <td>unbekannt</td>
+      <td>2.16.840.1.113883.3.1937.777.24.5.2.3</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><em>Answers (checkbox), code designators and OIDs</em></p>
+
+<h4 id="representing-the-mii-broad-consent">Representing the MII Broad Consent</h4>
+
+<p>The data elements of the MII Broad Consent form in versions
+<a href="https://art-decor.org/art-decor/decor-datasets--mide-?conceptId=2.16.840.1.113883.3.1937.777.24.2.1790">1.6d</a>
+and
+<a href="https://art-decor.org/art-decor/decor-datasets--mide-?conceptId=2.16.840.1.113883.3.1937.777.24.2.1791">1.6f</a>
+are modelled as a dataset in ART-DECOR, see
+<a href="datasets-and-descriptions.html">Datasets and Descriptions</a>.</p>
+
+<h4 id="using-uniform-policies">Using uniform policies</h4>
+
+<p>The required value sets are likewise modelled in ART-DECOR and associated with the
+corresponding data elements. Compatibility with IHE BPPC (Integrating the
+Healthcare Enterprise,
+<a href="https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_TF_Vol1.pdf#nameddest=19_Basic_Patient_Privacy_Consen">profile "Basic Patient Privacy Consent"</a>)
+is addressed via policies.</p>
+
+<p>The <strong>operationalisation and enforcement of the consent information</strong> is supported
+by a
+<a href="http://art-decor.org/decor/services/RetrieveValueSet?id=2.16.840.1.113883.3.1937.777.24.11.36&amp;effectiveDate=2021-04-23T10:55:54&amp;prefix=mide-&amp;format=html&amp;collapsable=true&amp;language=de-DE&amp;ui=en-US">uniform policy value set</a>.
+It can be used interoperably in IHE BPPC. In this guide it is the ValueSet
+<a href="ValueSet-2.16.840.1.113883.3.1937.777.24.11.36--20230331232804.html">MII Consent: Policy ValueSet</a>.</p>
+
+<h3 id="recommendations-for-practical-use">Recommendations for practical use</h3>
+
+<h4 id="meaning-of-categorising-consent-resources-via-resulttype">Meaning of categorising Consent resources via ResultType</h4>
+
+<p>The IG of the <strong>HL7-D AG Einwilligungsmanagement</strong> and the corresponding
+<a href="https://ebooks.iospress.nl/doi/10.3233/SHTI251389">publication</a> explain the
+meaning of the <code class="language-plaintext highlighter-rouge">ResultType</code> parameter comprehensively.</p>
+
+<p>Particular attention should be paid to the codes <code class="language-plaintext highlighter-rouge">consent-status</code> and <code class="language-plaintext highlighter-rouge">document</code>.
+Further details and relationships are described
+<a href="https://simplifier.net/guide/Einwilligungsmanagement/Mitgeltende-Erl-uterungen?version=current">here</a>.</p>
+
+<h4 id="recommendation-on-using-consentcategory-resulttype">Recommendation on using Consent.category ResultType</h4>
+
+<p>Concrete mandatory project requirements on using the ResultType search parameter
+are only of limited use in practice, because of the heterogeneous technical
+situation at the MII sites. The <strong>technical realisation of the requirements
+depends on the concrete implementation</strong>.</p>
+
+<p>The consent management system <a href="https://ths-greifswald.de/gics">gICS</a> is the
+current <a href="https://ebooks.iospress.nl/doi/10.3233/SHTI251389">reference implementation</a>
+of the HL7-D FHIR standard for consent management (version 2.0).</p>
+
+<p>All implementations should support <strong>at least the following variants</strong>. The
+cardinality of <code class="language-plaintext highlighter-rouge">Consent.category</code> is defined as <code class="language-plaintext highlighter-rouge">2..*</code> and enables the necessary
+backwards compatibility.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>ResultType</th>
+      <th>Meaning for the Consent resource</th>
+      <th>Aggregation of information</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">document</code></td>
+      <td>The Consent resource refers to <strong>one (!) completed document</strong> (QuestionnaireResponse). <em>This should be the default in an (MII) FHIR server.</em></td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">consent-status</code></td>
+      <td>The Consent resource <strong>takes into account all relevant consent and withdrawal documents</strong> in the MII context <strong>for one (!) patient</strong>. A Consent resource with ResultType <code class="language-plaintext highlighter-rouge">consent-status</code> always refers to one patient and carries the current consent status. <em>This should ideally be supported by the (MII) FHIR server.</em></td>
+      <td>yes, computed by the corresponding business logic at query time or for a given period</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Ideally the FHIR server should hold only one Consent resource per patient, with
+the current aggregated consent information (ResultType <code class="language-plaintext highlighter-rouge">consent-status</code>).</p>
+
+<p><em>If this is not possible for other reasons, at least one document-specific export
+per completed document (consent, updated consent, partial withdrawal, full
+withdrawal) should be made possible (ResultType <code class="language-plaintext highlighter-rouge">document</code>). In that case it
+remains the site's responsibility to provide this information</em> <strong>in the form
+required by the FDPG</strong>.</p>
+
+<h5 id="recommendations-for-gics-users-regarding-key-figure-determination-and-the-fdpg">Recommendations for gICS users regarding key-figure determination and the FDPG</h5>
+
+<p>The Data Integration Centers provide the information required to determine
+core-dataset-specific key figures for the DIZ dashboard. The determination of the
+key figures is triggered on the DIZ dashboard side by corresponding calls to the
+sites, for the MII KDS Consent module as well.</p>
+
+<p>Sites using the consent management system
+<a href="https://ths-greifswald.de/gics">gICS</a> should follow the precise
+<a href="https://www.ths-greifswald.de/diz-dashboard-empfehlung-gics-kds-consent-status/"><strong>vendor recommendations</strong></a>
+for <strong>key-figure determination</strong> and for providing the Consent resources to the
+<strong>FDPG</strong>.</p>
+
+<h3 id="references">References</h3>
+
+<p>The modelling of the dataset of the Consent module contains references to the
+following projects:</p>
+
+<ul>
+  <li><a href="https://ig.fhir.de/einwilligungsmanagement/stable/">Implementation Guide of the working group Einwilligungsmanagement of the Interop-Forum, version 1.0</a></li>
+  <li><a href="https://art-decor.org/art-decor/decor-datasets--mide-?conceptId=2.16.840.1.113883.3.1937.777.24.2.184">Core Dataset description in ART-DECOR</a></li>
+</ul>
+
+<p>The <a href="http://hl7.org/fhir/">HL7 FHIR core specification</a> — in particular the
+<a href="http://hl7.org/fhir/consent.html">Consent</a> resource — and the existing work on
+the German base profiles in <a href="https://simplifier.net/basisprofilde">STU3</a> and
+<a href="https://simplifier.net/basisprofil-de-r4">R4</a> were also taken into account.</p>
+
+<p>This specification was designed on the basis of the description of the MII Core
+Dataset in the version of 10 March 2017
+(<a href="https://www.medizininformatik-initiative.de/sites/default/files/inline-files/MII_04_Kerndatensatz_1-0.pdf">PDF</a>),
+and of the dataset description in
+<a href="https://art-decor.org/art-decor/decor-project--mide-">ART-DECOR</a>.</p>
 
 
 
@@ -280,7 +487,7 @@ real; the prose is a placeholder until the narrative is migrated from Simplifier
 
           IG © 2019+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de">Medical Informatics Initiative (MII)</a>.  
           Package de.medizininformatikinitiative.kerndatensatz.consent#2026.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
-          Generated <span title="Thu, Aug 6, 2026 10:59+0000">2026-08-06</span>
+          Generated <span title="Thu, Aug 6, 2026 13:20+0000">2026-08-06</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
             <!-- MII branding override for the fhir2.base.template footer fragment.

@@ -1,10 +1,10 @@
 MII_IG_Consent : Validation Results
 =========================================
 
-err = 83, warn = 137, info = 466
+err = 83, warn = 137, info = 465
 $--
 Generated $--. FHIR version $-- for de.medizininformatikinitiative.kerndatensatz.consent#$-- (canonical = https://www.medizininformatik-initiative.de/fhir/modul-consent)
- Build Errors : 0 / 12 / 1
+ Build Errors : 0 / 12 / 0
  /home/runner/work/mii-kds-consent-ig-inoffiziell/mii-kds-consent-ig-inoffiziell/fsh-generated/resources/CodeSystem-2.16.840.1.113883.3.1937.777.24.5.2--20210423105554 : 3 / 13 / 2
  /home/runner/work/mii-kds-consent-ig-inoffiziell/mii-kds-consent-ig-inoffiziell/fsh-generated/resources/CodeSystem-2.16.840.1.113883.3.1937.777.24.5.3--20251211153003 : 3 / 15 / 3
  /home/runner/work/mii-kds-consent-ig-inoffiziell/mii-kds-consent-ig-inoffiziell/fsh-generated/resources/CodeSystem-mii-cs-consent-version-modules : 0 / 44 / 4
@@ -36,7 +36,6 @@ WARNING: Unable to find ImplementationGuide.definition.resource.description for 
 WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource DocumentReference/8a3d1799-2463-405e-b49c-6a16c8692b01.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
 WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Consent/Example-MII-Consent-ResultType-document.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
 WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Parameters/mii-param-consent-manifest.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
-INFORMATION: en/terminology.html: No conformance term found in the text: …
 WARNING: 1: An HTML fragment from the set [ip-statements.xhtml, ip-statements.xhtml] is not included anywhere in the produced implementation guide
 WARNING: 2: An HTML fragment from the set [cross-version-analysis.xhtml, cross-version-analysis-inline.xhtml, cross-version-analysis.xhtml, cross-version-analysis-inline.xhtml] is not included anywhere in the produced implementation guide
 WARNING: 3: An HTML fragment from the set [dependency-table.xhtml, dependency-table-short.xhtml, dependency-table-nontech.xhtml, dependency-table.xhtml, dependency-table-short.xhtml, dependency-table-nontech.xhtml] is not included anywhere in the produced implementation guide

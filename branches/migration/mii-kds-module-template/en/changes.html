@@ -235,14 +235,14 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <!-- markdownlint-disable MD041 -->
 <div class="mii-highlight mii-highlight-orange">
-<h5>TODO:REVIEW (Gate B) &mdash; starter page, narrative not yet migrated</h5>
-<p>This is the <strong>MII KDS module template's starter page</strong>, carried over as-is.
-It is <strong>not</strong> the narrative of the MII KDS Modul Consent.</p>
-<p>The module's guide text exists only as a rendered Simplifier guide
-(<code>simplifier.net/guide/miiigmodulconsent</code>); it is <strong>not in the source
-repository</strong>, so there was nothing to migrate into this page and nothing was
-invented for it. The page <em>structure</em>, the menu and the artifact rendering below are
-real; the prose is a placeholder until the narrative is migrated from Simplifier.</p>
+<h5>TODO:REVIEW (Gate C) &mdash; unreviewed machine translation</h5>
+<p>The authoritative text of this module is <strong>German</strong>. This English page is an
+<strong>unreviewed machine translation</strong> of
+<code>input/translations/de/pagecontent/changes.md</code>, migrated from the Simplifier-rendered
+guide (version 2026.0.0, harvested 2026-08-06). Consent policy wording, policy display names
+and the names of the MII Broad Consent form modules are <strong>deliberately left in
+German</strong>: they are legally binding text and identifiers, not prose. Where the two
+language variants differ, the German page applies.</p>
 </div>
 
 <!-- Default-language (English) page. Structure ported from kerndatensatz-basis
@@ -323,22 +323,165 @@ section, so the prose explanation and the technical diff sit side by side.</p>
 
 <h4 id="version-202600">Version 2026.0.0</h4>
 
-<p><strong>Date:</strong> 2026-08-06</p>
-
-<h5 id="added">Added</h5>
+<p><strong>Date:</strong> 2025-12-18</p>
 
 <ul>
-  <li>First publication of the <strong>Consent</strong> module.</li>
+  <li>ValueSet <em>MII_VS_Consent_SignatureTypes</em> extended by the code
+<code class="language-plaintext highlighter-rouge">1.2.840.10065.1.12.1.5</code> "Verification Signature"</li>
+  <li>CodeSystem <em>MII Consent: Policy CodeSystem</em>
+    <ul>
+      <li>validity period added per policy (property <code class="language-plaintext highlighter-rouge">period-of-validity</code> with an ISO
+8601:2004 date string, or 'einmalig')</li>
+      <li>policy <code class="language-plaintext highlighter-rouge">2.16.840.1.113883.3.1937.777.24.5.3.46</code> "MDAT retrospektiv
+wissenschaftlich nutzen" is now marked deprecated and should no longer be
+used</li>
+      <li>policy <code class="language-plaintext highlighter-rouge">2.16.840.1.113883.3.1937.777.24.5.3.47</code> "MDAT retrospektiv
+zusammenfuehren Dritte" is now marked deprecated and should no longer be used</li>
+      <li>policy <code class="language-plaintext highlighter-rouge">2.16.840.1.113883.3.1937.777.24.5.3.16</code> "KKDAT 5J prospektiv
+speichern verarbeiten" is now marked deprecated and should no longer be used</li>
+      <li>policy <code class="language-plaintext highlighter-rouge">2.16.840.1.113883.3.1937.777.24.5.3.17</code> "KKDAT 5J prospektiv
+wissenschaftlich nutzen" is now marked deprecated and should no longer be
+used</li>
+      <li>a Markdown representation of the code system as a table was created under
+'Terminologie' in the IG</li>
+    </ul>
+  </li>
+  <li>CodeSystem <em>mii-cs-consent-version-modules</em> created for the BC versions and
+additional modules
+    <ul>
+      <li>OIDs for refusals added (BC v1.6d and v1.7.2)</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">Consent.provision.period.end</code> and <code class="language-plaintext highlighter-rouge">Consent.provision.provision.period.end</code> now
+have cardinality <code class="language-plaintext highlighter-rouge">0..1</code>, i.e. they are no longer mandatory</li>
+  <li>examples revised and extended</li>
+  <li>IG: editorial revision, explanations improved
+    <ul>
+      <li>new page <em>Empfehlungen zur praktischen Anwendung</em> added (ResultType)</li>
+      <li>handling of withdrawals for consents of minors (validity period / expiry of
+the consent)</li>
+      <li>notes on use in the Modellvorhaben Genomsequenzierung (§ 64e)</li>
+      <li>explanation of the new search parameters added</li>
+    </ul>
+  </li>
 </ul>
 
+<p>Full changelog:
+<a href="https://github.com/medizininformatik-initiative/kerndatensatzmodul-consent/compare/2025.0.3...2026.0.0">2025.0.3…2026.0.0</a></p>
+
+<h4 id="version-202504">Version 2025.0.4</h4>
+
+<p><strong>Date:</strong> 2025-06-16</p>
+
+<ul>
+  <li>Terminologies:
+    <ul>
+      <li>policy CodeSystem resource: <code class="language-plaintext highlighter-rouge">display</code> adjusted (abbreviation → meaningful
+designator)</li>
+    </ul>
+  </li>
+  <li>Bugfix:
+    <ul>
+      <li>pagelink error fixed</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="version-202503">Version 2025.0.3</h4>
+
+<p><strong>Date:</strong> 2025-06-12</p>
+
+<ul>
+  <li>IG/Consent:
+    <ul>
+      <li>support for the additional module Fachnetzwerk Infektion – SNID (Z4) added</li>
+      <li>support for the additional module Deutsches Zentrum für Psychische
+Gesundheit – DZPG (Z5) added</li>
+      <li>Consent: list of available MII consents for use in <code class="language-plaintext highlighter-rouge">Consent.policy.uri</code>
+updated</li>
+      <li>terminologies: policy CodeSystem extended by the SNID and DZPG policies</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Full changelog:
+<a href="https://github.com/medizininformatik-initiative/kerndatensatzmodul-consent/compare/2025.0.0...2025.0.3">2025.0.0…2025.0.3</a></p>
+
+<h4 id="version-202502">Version 2025.0.2</h4>
+
+<p><strong>Date:</strong> 2025-06-11</p>
+
+<ul>
+  <li>IG/Consent:
+    <ul>
+      <li>support for the additional module Fachnetzwerk Infektion – SNID (Z4) added
+        <ul>
+          <li>Consent: list of available MII consents for use in <code class="language-plaintext highlighter-rouge">Consent.policy.uri</code>
+updated</li>
+          <li>terminologies: policy CodeSystem extended by the SNID policies</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="version-202501">Version 2025.0.1</h4>
+
+<p><strong>Date:</strong> 2025-01-21</p>
+
+<ul>
+  <li>IG/Consent:
+    <ul>
+      <li>list of available MII consents for use in <code class="language-plaintext highlighter-rouge">Consent.policy.uri</code> updated:
+        <ul>
+          <li>Zusatzmodul ACRIBiS (Z2)</li>
+          <li>Zusatzmodul Patientenbefragung (Z3)</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="version-202500">Version 2025.0.0</h4>
+
+<p><strong>Date:</strong> 2024-12-17</p>
+
+<ul>
+  <li>Consent resource
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">Consent.category</code> → max value <code class="language-plaintext highlighter-rouge">*</code></li>
+      <li><code class="language-plaintext highlighter-rouge">Consent.provision.type</code> → fixedCode <code class="language-plaintext highlighter-rouge">deny</code> removed</li>
+      <li><code class="language-plaintext highlighter-rouge">Consent.provision.provision.type</code> → fixedCode <code class="language-plaintext highlighter-rouge">permit</code> removed</li>
+      <li>IG/Consent adjusted accordingly</li>
+    </ul>
+  </li>
+  <li>IG/Consent
+    <ul>
+      <li>list of available MII consents for use in <code class="language-plaintext highlighter-rouge">Consent.policy.uri</code> updated
+(withdrawals and minors)</li>
+    </ul>
+  </li>
+  <li>policy CodeSystem: acribis and PROM policies added</li>
+  <li>IG/terminology:
+    <ul>
+      <li>level information corrected</li>
+      <li>formatting of the note text corrected</li>
+      <li>note 1 (FHIR + policies) corrected</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Full changelog:
+<a href="https://github.com/medizininformatik-initiative/kerndatensatzmodul-consent/compare/1.0.7...2025.0.0">1.0.7…2025.0.0</a></p>
+
 <blockquote class="mii-highlight mii-highlight-grey">
-  <p>[TODO: Replace this section with the real entries of your first release, and
-add a new section on top for every subsequent version. For a module with
-several sub-domains, <code class="language-plaintext highlighter-rouge">kerndatensatz-basis</code> groups the entries of a version by
-topic (for example <em>Documentation</em>, <em>Terminology updates</em>, and one heading per
-sub-module) and prefixes each bullet with <strong>Added:</strong> / <strong>Changed:</strong> /
-<strong>Removed:</strong> — use whichever of the two groupings suits your module, but keep
-it the same across versions and identical in both languages.]</p>
+  <p><strong>TODO:REVIEW (Gate B) — scope and shape of this changelog.</strong> The source guide
+lists exactly these six versions on its <em>Release Notes</em> page; older versions
+(up to 1.0.7) are not on it and were therefore not added here either. The
+entries are taken over unchanged and were <strong>not</strong> re-sorted into the Keep a
+Changelog categories (Added/Changed/…): re-sorting would be an editorial
+interpretation. The migration itself is deliberately not a changelog entry — it
+is not a change to the module.</p>
 </blockquote>
 
 
@@ -366,7 +509,7 @@ it the same across versions and identical in both languages.]</p>
 
           IG © 2019+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de">Medical Informatics Initiative (MII)</a>.  
           Package de.medizininformatikinitiative.kerndatensatz.consent#2026.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
-          Generated <span title="Thu, Aug 6, 2026 10:59+0000">2026-08-06</span>
+          Generated <span title="Thu, Aug 6, 2026 13:20+0000">2026-08-06</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
             <!-- MII branding override for the fhir2.base.template footer fragment.

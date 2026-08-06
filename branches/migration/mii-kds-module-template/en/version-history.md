@@ -5,12 +5,6 @@
 
 ## Versioning
 
-##### TODO:REVIEW (Gate B) — starter page, narrative not yet migrated
-
-This is the **MII KDS module template's starter page**, carried over as-is. It is **not** the narrative of the MII KDS Modul Consent.
-
-The module's guide text exists only as a rendered Simplifier guide (`simplifier.net/guide/miiigmodulconsent`); it is **not in the source repository**, so there was nothing to migrate into this page and nothing was invented for it. The page **structure**, the menu and the artifact rendering below are real; the prose is a placeholder until the narrative is migrated from Simplifier.
-
 ### Versioning
 
 #### Version scheme
@@ -49,5 +43,7 @@ From the second **formal publication** on, this guide also publishes a **machine
 
 **The demonstration below** (this template repository's preview only) shows the same kind of report before any formal publication exists: the build compares itself against the previous `dev` preview using the FHIR validator's `-compare` command and publishes the result at `comparison-demo/index.html`. The repository variable `ENABLE_VERSION_COMPARISON=false` switches the whole feature off — the publisher's comparison in every build workflow and this demonstration alike; a created module never renders the demonstration.
 
-> [TODO: If your module has a versioning policy of its own beyond the MII scheme — for example a support window for older versions, or a deprecation policy for profiles — describe it here. Delete this prompt afterwards.]
+##### TODO:REVIEW (Gate B) — the source guide states no versioning policy of its own
+
+The migrated source guide has no section on versioning beyond its release notes, which are on [Changelog](changes.md). Nothing was invented. It does, however, deprecate individual policy codes rather than removing them (see the 2026.0.0 entry and the `status`/`inactive` properties on [Terminology](terminology.md)) — a de-facto deprecation practice that the module owners may want to write down here explicitly.
 

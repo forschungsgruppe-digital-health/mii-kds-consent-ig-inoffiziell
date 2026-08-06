@@ -233,17 +233,6 @@ Diese Seite enthält Übersetzungen aus der Originalsprache, in der der Leitfade
 </p>
 
 <!-- markdownlint-disable MD041 -->
-<div class="mii-highlight mii-highlight-orange">
-<h5>TODO:REVIEW (Gate B) &mdash; Startseiten-Vorlage, Narrativ noch nicht migriert</h5>
-<p>Dies ist die <strong>Vorlagenseite des MII-KDS-Modul-Templates</strong>, unveraendert
-uebernommen. Es ist <strong>nicht</strong> das Narrativ des MII-KDS-Moduls Consent.</p>
-<p>Der Leitfadentext des Moduls existiert nur als gerenderter Simplifier-Guide
-(<code>simplifier.net/guide/miiigmodulconsent</code>) und liegt <strong>nicht im
-Quell-Repository</strong>. Es gab daher nichts, was in diese Seite haette migriert werden
-koennen, und es wurde nichts erfunden. Seitenstruktur, Menue und Artefakt-Rendering sind
-echt; der Fliesstext ist ein Platzhalter, bis das Narrativ von Simplifier migriert ist.</p>
-</div>
-
 <!-- Deutsche Übersetzung der Standardsprachseite
      input/pagecontent/version-history.md — beide Dateien müssen dasselbe
      aussagen. Quelle: kerndatensatz-basis input/pagecontent/version-history.md
@@ -337,12 +326,15 @@ Die Repository-Variable <code class="language-plaintext highlighter-rouge">ENABL
 gesamte Feature ab — den Publisher-Vergleich in allen Build-Workflows ebenso
 wie diese Demonstration; ein erstelltes Modul rendert die Demonstration nie.</p>
 
-<blockquote class="mii-highlight mii-highlight-grey">
-  <p>[TODO: Falls Ihr Modul über das MII-Schema hinaus eine eigene
-Versionierungs-Politik hat — etwa einen Unterstützungszeitraum für ältere
-Versionen oder eine Abkündigungs-Politik für Profile —, beschreiben Sie sie
-hier. Löschen Sie diesen Hinweis anschließend.]</p>
-</blockquote>
+<div class="mii-highlight mii-highlight-grey">
+<h5>TODO:REVIEW (Gate B) &mdash; der Quell-Leitfaden nennt keine eigene Versionierungs-Policy</h5>
+<p>Der migrierte Quell-Leitfaden hat &uuml;ber seine Release Notes hinaus keinen Abschnitt zur
+Versionierung; diese stehen unter <a href="changes.html">Changelog</a>. Es wurde nichts
+erfunden. Er markiert einzelne Policy-Codes allerdings als veraltet, statt sie zu entfernen
+(siehe den Eintrag zu 2026.0.0 und die Properties <code>status</code>/<code>inactive</code>
+unter <a href="terminology.html">Terminologie</a>) &mdash; eine faktische Deprecation-Praxis,
+die die Modulverantwortlichen hier ausdr&uuml;cklich festhalten k&ouml;nnten.</p>
+</div>
 
 
 
@@ -369,7 +361,7 @@ hier. Löschen Sie diesen Hinweis anschließend.]</p>
 
           IG © 2019+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de">Medical Informatics Initiative (MII)</a>.  
           Package de.medizininformatikinitiative.kerndatensatz.consent#2026.0.0 basiert auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
-          Erstellt <span title="Thu, Aug 6, 2026 10:59+0000">2026-08-06</span>
+          Erstellt <span title="Thu, Aug 6, 2026 13:20+0000">2026-08-06</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
             <!-- MII branding override for the fhir2.base.template footer fragment.

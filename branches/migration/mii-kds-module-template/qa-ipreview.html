@@ -309,7 +309,7 @@ MII Implementation Guide Consent - Local Development build (v2026.0.0) built by 
 .  
           Package de.medizininformatikinitiative.kerndatensatz.consent#2026.0.0 basiert auf           <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>
 .
-          Erstellt           <span title="Thu, Aug 6, 2026 10:59+0000">2026-08-06</span>
+          Erstellt           <span title="Thu, Aug 6, 2026 13:20+0000">2026-08-06</span>
 
                     <br/>
 
@@ -429,6 +429,210 @@ MII Implementation Guide Consent - Local Development build (v2026.0.0) built by 
       </tr>
       <tr>
         <td>
+          <a href="de/StructureDefinition-56375452-bfa1-4111-af7c-5b5ba9a1857c.html">web</a>
+        </td>
+        <td>
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/DocumentReference.html">ig.fhir.de</a>
+        </td>
+        <td>
+Basierend auf den
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/DocumentReference.html">Empfehlungen</a>
+
+der AG Einwilligungsmanagement zielt das Profil           <em>MIIConsentDocumentReference</em>
+ auf
+ein real existierendes Dokument mit Bezug zum Einwilligungsdokument ab.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="de/StructureDefinition-e0e166b4-0f77-478d-9062-de0034d98ce0.html">web</a>
+        </td>
+        <td>
+          <a href="https://www.medizininformatik-initiative.de/de/mustertext-zur-patienteneinwilligung">www.medizininformatik-initiative.de</a>
+        </td>
+        <td>
+Beim Einschluss einer Person in eine Studie (auch in einen MII-Use-Case) wird eine
+Einwilligung für diese Person auf Basis der
+          <a href="https://www.medizininformatik-initiative.de/de/mustertext-zur-patienteneinwilligung">MII Broad Consent Mustertexte</a>
+
+erhoben und das entsprechende Einwilligungsdokument am jeweiligen Standort
+strukturiert dokumentiert, gemäß den
+          <a href="https://art-decor.org/art-decor/decor-datasets--mide-?id=2.16.840.1.113883.3.1937.777.24.1.1&amp;effectiveDate=2018-06-05T12%3A44%3A12&amp;conceptId=2.16.840.1.113883.3.1937.777.24.2.184&amp;conceptEffectiveDate=2018-06-29T16%3A26%3A50&amp;language=de-DE">Vorgaben der MII Task Force Consent Umsetzung</a>
+.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="de/StructureDefinition-e0e166b4-0f77-478d-9062-de0034d98ce0.html">web</a>
+        </td>
+        <td>
+          <a href="https://art-decor.org/art-decor/decor-datasets--mide-?id=2.16.840.1.113883.3.1937.777.24.1.1&amp;effectiveDate=2018-06-05T12%3A44%3A12&amp;conceptId=2.16.840.1.113883.3.1937.777.24.2.184&amp;conceptEffectiveDate=2018-06-29T16%3A26%3A50&amp;language=de-DE">art-decor.org</a>
+        </td>
+        <td>
+Beim Einschluss einer Person in eine Studie (auch in einen MII-Use-Case) wird eine
+Einwilligung für diese Person auf Basis der
+          <a href="https://www.medizininformatik-initiative.de/de/mustertext-zur-patienteneinwilligung">MII Broad Consent Mustertexte</a>
+
+erhoben und das entsprechende Einwilligungsdokument am jeweiligen Standort
+strukturiert dokumentiert, gemäß den
+          <a href="https://art-decor.org/art-decor/decor-datasets--mide-?id=2.16.840.1.113883.3.1937.777.24.1.1&amp;effectiveDate=2018-06-05T12%3A44%3A12&amp;conceptId=2.16.840.1.113883.3.1937.777.24.2.184&amp;conceptEffectiveDate=2018-06-29T16%3A26%3A50&amp;language=de-DE">Vorgaben der MII Task Force Consent Umsetzung</a>
+.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="de/StructureDefinition-e0e166b4-0f77-478d-9062-de0034d98ce0.html">web</a>
+        </td>
+        <td>
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/DomainReference.html">ig.fhir.de</a>
+        </td>
+        <td>
+Auf Grundlage dieser Einwilligungsdokumente wird die FHIR-Consent-Ressource
+automatisiert erzeugt. Der
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/DomainReference.html">Projektkontext</a>
+
+bleibt erhalten.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="de/StructureDefinition-e0e166b4-0f77-478d-9062-de0034d98ce0.html">web</a>
+        </td>
+        <td>
+          <a href="http://art-decor.org/decor/services/RetrieveValueSet?id=2.16.840.1.113883.3.1937.777.24.11.36&amp;effectiveDate=2021-04-23T10:55:54&amp;prefix=mide-&amp;format=html&amp;collapsable=true&amp;language=de-DE&amp;ui=en-US">art-decor.org</a>
+        </td>
+        <td>
+Um die Austauschbarkeit der operationalisierten Einwilligungsinhalte auch über
+FHIR hinaus sicherzustellen, wurde mit der           <strong>MII AG Consent</strong>
+ ein einheitliches
+Policy-ValueSet zur           <strong>semantischen Abbildung</strong>
+ der im MII Broad Consent
+enthaltenen Aussagen im Dezember 2021 abgestimmt und im
+          <a href="http://art-decor.org/decor/services/RetrieveValueSet?id=2.16.840.1.113883.3.1937.777.24.11.36&amp;effectiveDate=2021-04-23T10:55:54&amp;prefix=mide-&amp;format=html&amp;collapsable=true&amp;language=de-DE&amp;ui=en-US">ART-DECOR</a>
+
+(Policy-OIDs) dokumentiert.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="de/StructureDefinition-e0e166b4-0f77-478d-9062-de0034d98ce0.html">web</a>
+        </td>
+        <td>
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/ResearchStudy.html">ig.fhir.de</a>
+        </td>
+        <td>
+Must-support gemäß Vorgaben der           <a href="https://ig.fhir.de/einwilligungsmanagement/stable/ResearchStudy.html">AG Einwilligungsmanagement</a>
+, jedoch optional
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="de/StructureDefinition-e0e166b4-0f77-478d-9062-de0034d98ce0.html">web</a>
+        </td>
+        <td>
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/ResultType.html">ig.fhir.de</a>
+        </td>
+        <td>
+ResultType gemäß           <a href="https://ig.fhir.de/einwilligungsmanagement/stable/ResultType.html">ResultType</a>
+. Es sollten mindestens           <code class="language-plaintext highlighter-rouge">document</code>
+ und           <code class="language-plaintext highlighter-rouge">consent-status</code>
+ unterstützt werden. Wenn als ResultType           <code class="language-plaintext highlighter-rouge">document</code>
+ angegeben ist, muss die Art des (Quell-)Dokuments im Slice           <code class="language-plaintext highlighter-rouge">templateType</code>
+ ebenfalls angegeben werden.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="de/StructureDefinition-e0e166b4-0f77-478d-9062-de0034d98ce0.html">web</a>
+        </td>
+        <td>
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/TemplateType.html">ig.fhir.de</a>
+        </td>
+        <td>
+Kategorisierung gemäß           <a href="https://ig.fhir.de/einwilligungsmanagement/stable/TemplateType.html">TemplateType</a>
+. Dient als informelles Element der Differenzierung zwischen Einwilligung, Widerruf, Widerspruch und Ablehnung.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="de/StructureDefinition-e0e166b4-0f77-478d-9062-de0034d98ce0.html">web</a>
+        </td>
+        <td>
+          <a href="https://art-decor.org/decor/services/RetrieveDataSet?conceptId=2.16.840.1.113883.3.1937.777.24.2.184">art-decor.org</a>
+        </td>
+        <td>
+Eindeutige OID gemäß           <a href="https://art-decor.org/decor/services/RetrieveDataSet?conceptId=2.16.840.1.113883.3.1937.777.24.2.184">Vorgabe der TFCU</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="de/StructureDefinition-e0e166b4-0f77-478d-9062-de0034d98ce0.html">web</a>
+        </td>
+        <td>
+          <a href="https://www.ths-greifswald.de/dezember-release-2025-neue-versionen-von-e-pix-gpas-und-gics-verfuegbar/">www.ths-greifswald.de</a>
+        </td>
+        <td>
+Die Einwilligung des Patienten endet nach Vorgaben der MII AG Consent
+grundsätzlich nach 30 Jahren. Einen Sonderfall stellen die Einwilligungen von
+Minderjährigen (von der Einwilligung betroffene Person) dar. Im Fall von
+Einwilligungen für           <strong>Minderjährige</strong>
+, die ggf. durch entsprechende
+Sorgeberechtigte stellvertretend ausgefüllt wurden,           <strong>endet die Einwilligung mit
+Erreichen der Volljährigkeit</strong>
+ der betroffenen Person. Dies ist entsprechend
+technisch umzusetzen.
+          <a href="https://www.ths-greifswald.de/dezember-release-2025-neue-versionen-von-e-pix-gpas-und-gics-verfuegbar/">Referenzimplementierungen</a>
+
+existieren.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="de/StructureDefinition-e0e166b4-0f77-478d-9062-de0034d98ce0.html">web</a>
+        </td>
+        <td>
+          <a href="https://www.medizininformatik-initiative.de/sites/default/files/2025-01/MII_BC_Formular-Komplettwiderruf.pdf">www.medizininformatik-initiative.de</a>
+        </td>
+        <td>
+Die
+          <a href="https://www.medizininformatik-initiative.de/sites/default/files/2025-01/MII_BC_Formular-Komplettwiderruf.pdf">Widerrufsvorlage (kompatibel mit MII BC 1.7.2)</a>
+
+ist ebenfalls für den Widerruf von Einwilligungen Minderjähriger gedacht, da
+diese in der Regel ebenfalls durch die Sorgeberechtigten ausgefüllt werden.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="de/StructureDefinition-f675b1e8-9f3f-44e8-bb59-9681f78eb464.html">web</a>
+        </td>
+        <td>
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/Provenance.html">ig.fhir.de</a>
+        </td>
+        <td>
+Basierend auf den
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/Provenance.html">Empfehlungen</a>
+
+der AG Einwilligungsmanagement beschreibt das Profil           <em>MIIConsentProvenance</em>
+ die
+Herkunftsinformationen eines Einwilligungsdokuments.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="de/StructureDefinition-f675b1e8-9f3f-44e8-bb59-9681f78eb464.html">web</a>
+        </td>
+        <td>
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/Provenance.html">ig.fhir.de</a>
+        </td>
+        <td>
+Nachfolgend werden nur die Unterschiede zum
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/Provenance.html">Basis-Profil</a>
+
+erläutert.
+        </td>
+      </tr>
+      <tr>
+        <td>
           <a href="de/ValueSet-2.16.840.1.113883.3.1937.777.24.11.36--20230331232804.html">web</a>
         </td>
         <td>
@@ -460,6 +664,42 @@ beschreibt.
       </tr>
       <tr>
         <td>
+          <a href="de/changes.html">web</a>
+        </td>
+        <td>
+          <a href="https://github.com/medizininformatik-initiative/kerndatensatzmodul-consent/compare/2025.0.3...2026.0.0">github.com</a>
+        </td>
+        <td>
+Full Changelog:
+          <a href="https://github.com/medizininformatik-initiative/kerndatensatzmodul-consent/compare/2025.0.3...2026.0.0">2025.0.3…2026.0.0</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="de/changes.html">web</a>
+        </td>
+        <td>
+          <a href="https://github.com/medizininformatik-initiative/kerndatensatzmodul-consent/compare/2025.0.0...2025.0.3">github.com</a>
+        </td>
+        <td>
+Full Changelog:
+          <a href="https://github.com/medizininformatik-initiative/kerndatensatzmodul-consent/compare/2025.0.0...2025.0.3">2025.0.0…2025.0.3</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="de/changes.html">web</a>
+        </td>
+        <td>
+          <a href="https://github.com/medizininformatik-initiative/kerndatensatzmodul-consent/compare/1.0.7...2025.0.0">github.com</a>
+        </td>
+        <td>
+Full Changelog:
+          <a href="https://github.com/medizininformatik-initiative/kerndatensatzmodul-consent/compare/1.0.7...2025.0.0">1.0.7…2025.0.0</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
           <a href="de/conformance.html">web</a>
         </td>
         <td>
@@ -473,6 +713,28 @@ des MII-Meta-Wikis. Allgemeine Anforderungen, Must-Support und Umgang mit
 fehlenden Daten geben sie für dieses Modul wieder; bei Abweichungen gilt das
 Wiki. Sicherheit und Datenschutz ist eine zusätzliche Seite dieses Leitfadens
 gemäß den HL7-IG-Best-Practices.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="de/datasets-and-descriptions.html">web</a>
+        </td>
+        <td>
+          <a href="https://art-decor.org/art-decor/decor-datasets--mide-?conceptId=2.16.840.1.113883.3.1937.777.24.2.184">art-decor.org</a>
+        </td>
+        <td>
+          <a href="https://art-decor.org/art-decor/decor-datasets--mide-?conceptId=2.16.840.1.113883.3.1937.777.24.2.184">formularbasierte Beschreibung MII Dataset, Concept ‚Consent‘</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="de/datasets-and-descriptions.html">web</a>
+        </td>
+        <td>
+          <a href="https://art-decor.org/decor/services/RetrieveDataSet?conceptId=2.16.840.1.113883.3.1937.777.24.2.184">art-decor.org</a>
+        </td>
+        <td>
+          <a href="https://art-decor.org/decor/services/RetrieveDataSet?conceptId=2.16.840.1.113883.3.1937.777.24.2.184">tabellarische Beschreibung MII Dataset, Concept ‚Consent‘</a>
         </td>
       </tr>
       <tr>
@@ -499,17 +761,601 @@ gemäß den HL7-IG-Best-Practices.
       </tr>
       <tr>
         <td>
+          <a href="de/general-requirements.html">web</a>
+        </td>
+        <td>
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/">ig.fhir.de</a>
+        </td>
+        <td>
+          <strong>Woran sich dieses Modul tatsächlich orientiert</strong>
+, gemäß Quell-Leitfaden und
+          <code class="language-plaintext highlighter-rouge">dependencies</code>
+: die
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/">FHIR-R4-Profile der AG Einwilligungsmanagement des Interop-Forums</a>
+
+(Paket           <code class="language-plaintext highlighter-rouge">de.einwilligungsmanagement</code>
+, die einzige fachliche Abhängigkeit des
+Moduls), die           <a href="http://hl7.org/fhir/">HL7-FHIR-Kernspezifikation</a>
+ mit der Ressource
+          <a href="http://hl7.org/fhir/consent.html">Consent</a>
+, die Deutschen Basisprofile in
+          <a href="https://simplifier.net/basisprofilde">STU3</a>
+ und
+          <a href="https://simplifier.net/basisprofil-de-r4">R4</a>
+, die
+          <a href="https://art-decor.org/art-decor/decor-datasets--mide-?conceptId=2.16.840.1.113883.3.1937.777.24.2.184">Kerndatensatzbeschreibung im ART-DECOR</a>
+
+sowie IHE BPPC über die Policies. Die vollständige Referenzliste steht unter
+          <a href="implementer-guidance.html">Hinweise für Implementierende</a>
+.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="de/general-requirements.html">web</a>
+        </td>
+        <td>
+          <a href="https://art-decor.org/art-decor/decor-datasets--mide-?conceptId=2.16.840.1.113883.3.1937.777.24.2.184">art-decor.org</a>
+        </td>
+        <td>
+          <strong>Woran sich dieses Modul tatsächlich orientiert</strong>
+, gemäß Quell-Leitfaden und
+          <code class="language-plaintext highlighter-rouge">dependencies</code>
+: die
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/">FHIR-R4-Profile der AG Einwilligungsmanagement des Interop-Forums</a>
+
+(Paket           <code class="language-plaintext highlighter-rouge">de.einwilligungsmanagement</code>
+, die einzige fachliche Abhängigkeit des
+Moduls), die           <a href="http://hl7.org/fhir/">HL7-FHIR-Kernspezifikation</a>
+ mit der Ressource
+          <a href="http://hl7.org/fhir/consent.html">Consent</a>
+, die Deutschen Basisprofile in
+          <a href="https://simplifier.net/basisprofilde">STU3</a>
+ und
+          <a href="https://simplifier.net/basisprofil-de-r4">R4</a>
+, die
+          <a href="https://art-decor.org/art-decor/decor-datasets--mide-?conceptId=2.16.840.1.113883.3.1937.777.24.2.184">Kerndatensatzbeschreibung im ART-DECOR</a>
+
+sowie IHE BPPC über die Policies. Die vollständige Referenzliste steht unter
+          <a href="implementer-guidance.html">Hinweise für Implementierende</a>
+.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="de/general-requirements.html">web</a>
+        </td>
+        <td>
+          <a href="https://www.medizininformatik-initiative.de/de/mustertext-zur-patienteneinwilligung">www.medizininformatik-initiative.de</a>
+        </td>
+        <td>
+Das Erweiterungsmodul Consent stellt die elektronische Abbildung des
+          <a href="https://www.medizininformatik-initiative.de/de/mustertext-zur-patienteneinwilligung">MII Consent</a>
+
+bereit, kann darüber hinaus aber auch die Abbildung weiterer Einwilligungen
+ermöglichen. Dies ist eine Voraussetzung für die Berücksichtigung des
+Patientenwillens bei der Verwendung der im Rahmen der Versorgung erfassten
+medizinischen Daten des Patienten für Forschungszwecke. Die Einwilligung ist vor
+allem dann erforderlich, wenn der Nutzungszweck über die Forschungsklauseln der
+jeweiligen anwendbaren Gesetze hinausgeht.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="de/general-requirements.html">web</a>
+        </td>
+        <td>
+          <a href="https://www.medizininformatik-initiative.de/de/use-cases-und-projekte">www.medizininformatik-initiative.de</a>
+        </td>
+        <td>
+Eine wichtige Maßzahl für die medizinische Forschung ist u. a., wie viele
+Patienten bestimmten Kriterien genügen (Fallzahl) und ob diese Patienten der
+Verwendung ihrer Daten für Forschungszwecke zugestimmt haben. Entsprechende
+Anfragen können nur effizient elektronisch verarbeitet bzw. beantwortet werden,
+wenn der Einwilligungsstatus elektronisch geprüft werden kann. Derartige
+Fallzahlabfragen unter Berücksichtigung des Einwilligungsstatus sind essenziell
+für Anwendungsfälle wie ‚Fallzahl-Schätzung‘, ‚Feasibility-Abfragen‘ und ‚Data
+Sharing‘, für die MII-übergreifenden Use Cases CORD und POLAR, sowie für die
+          <a href="https://www.medizininformatik-initiative.de/de/use-cases-und-projekte">Use Cases</a>
+
+der           <a href="https://www.medizininformatik-initiative.de/index.php/de/konsortien">MII-Konsortien</a>
+.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="de/general-requirements.html">web</a>
+        </td>
+        <td>
+          <a href="https://www.medizininformatik-initiative.de/index.php/de/konsortien">www.medizininformatik-initiative.de</a>
+        </td>
+        <td>
+Eine wichtige Maßzahl für die medizinische Forschung ist u. a., wie viele
+Patienten bestimmten Kriterien genügen (Fallzahl) und ob diese Patienten der
+Verwendung ihrer Daten für Forschungszwecke zugestimmt haben. Entsprechende
+Anfragen können nur effizient elektronisch verarbeitet bzw. beantwortet werden,
+wenn der Einwilligungsstatus elektronisch geprüft werden kann. Derartige
+Fallzahlabfragen unter Berücksichtigung des Einwilligungsstatus sind essenziell
+für Anwendungsfälle wie ‚Fallzahl-Schätzung‘, ‚Feasibility-Abfragen‘ und ‚Data
+Sharing‘, für die MII-übergreifenden Use Cases CORD und POLAR, sowie für die
+          <a href="https://www.medizininformatik-initiative.de/de/use-cases-und-projekte">Use Cases</a>
+
+der           <a href="https://www.medizininformatik-initiative.de/index.php/de/konsortien">MII-Konsortien</a>
+.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="de/implementer-guidance.html">web</a>
+        </td>
+        <td>
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/Patient.html">ig.fhir.de</a>
+        </td>
+        <td>
+Um den Bezug zwischen Person und Einwilligung herzustellen, wird die Einwilligung
+mit mindestens einem eindeutigen Personenidentifikator versehen (Basismodul:
+Person). Dies ist im Regelfall ein
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/Patient.html">pseudonymer Identifikator</a>
+.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="de/implementer-guidance.html">web</a>
+        </td>
+        <td>
+          <a href="https://www.bfarm.de/SharedDocs/Downloads/DE/Forschung/modellvorhaben-genomsequenzierung/Handreichung-zur-Implementierung-beim-LE.pdf?__blob=publicationFile">www.bfarm.de</a>
+        </td>
+        <td>
+In der
+          <a href="https://www.bfarm.de/SharedDocs/Downloads/DE/Forschung/modellvorhaben-genomsequenzierung/Handreichung-zur-Implementierung-beim-LE.pdf?__blob=publicationFile">Handreichung</a>
+
+zur Patienteninformation &amp; Teilnahmeerklärung zum           <strong>„Modellvorhaben
+Genomsequenzierung bei seltenen und bei onkologischen Erkrankungen“</strong>
+ nach &sect; 64e
+SGB V in der Version V1 wird unter Kapitel 2.1.4 Forschungseinwilligung die
+Nutzung des MII-Broad Consent ab der Version 1.6d empfohlen, die im gesetzlichen
+Sinn mindestens der Basisversion ohne Zusatzmodule entspricht.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="de/implementer-guidance.html">web</a>
+        </td>
+        <td>
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/">ig.fhir.de</a>
+        </td>
+        <td>
+Die           <a href="https://ig.fhir.de/einwilligungsmanagement/stable/">AG Einwilligungsmanagement</a>
+
+hat sich umfassend mit der Modellierung von Einwilligungen und
+Einwilligungsvorlagen befasst. Der vorliegende Implementation Guide setzt
+wesentlich auf diesen Vorarbeiten auf.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="de/implementer-guidance.html">web</a>
+        </td>
+        <td>
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/QuestionnaireComposed.html">ig.fhir.de</a>
+        </td>
+        <td>
+Die Profile
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/QuestionnaireComposed.html">Questionnaire Composed</a>
+,
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/TemplateFrame.html">Template Frame</a>
+ und
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/TemplateModule.html">Template Module</a>
+
+basieren auf der FHIR-Ressource Questionnaire und dienen der Abbildung des
+Einwilligungsformulars (hier: MII Broad Consent).
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="de/implementer-guidance.html">web</a>
+        </td>
+        <td>
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/TemplateFrame.html">ig.fhir.de</a>
+        </td>
+        <td>
+Die Profile
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/QuestionnaireComposed.html">Questionnaire Composed</a>
+,
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/TemplateFrame.html">Template Frame</a>
+ und
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/TemplateModule.html">Template Module</a>
+
+basieren auf der FHIR-Ressource Questionnaire und dienen der Abbildung des
+Einwilligungsformulars (hier: MII Broad Consent).
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="de/implementer-guidance.html">web</a>
+        </td>
+        <td>
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/TemplateModule.html">ig.fhir.de</a>
+        </td>
+        <td>
+Die Profile
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/QuestionnaireComposed.html">Questionnaire Composed</a>
+,
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/TemplateFrame.html">Template Frame</a>
+ und
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/TemplateModule.html">Template Module</a>
+
+basieren auf der FHIR-Ressource Questionnaire und dienen der Abbildung des
+Einwilligungsformulars (hier: MII Broad Consent).
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="de/implementer-guidance.html">web</a>
+        </td>
+        <td>
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/QuestionnaireResponse.html">ig.fhir.de</a>
+        </td>
+        <td>
+Das Profil
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/QuestionnaireResponse.html">QuestionnaireResponse</a>
+
+bildet den vom Patienten ausgefüllten Fragebogen elektronisch ab. Hier werden die
+Antworten des Patienten auf den referenzierten Fragebogen (QuestionnaireComposed)
+des MII Broad Consent dokumentiert.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="de/implementer-guidance.html">web</a>
+        </td>
+        <td>
+          <a href="https://art-decor.org/art-decor/decor-valuesets--mide-?id=2.16.840.1.113883.3.1937.777.24.11.30">art-decor.org</a>
+        </td>
+        <td>
+Zur Abbildung der Antworten sollte das Value Set
+„          <a href="https://art-decor.org/art-decor/decor-valuesets--mide-?id=2.16.840.1.113883.3.1937.777.24.11.30">MII Consent: Answer ValueSet</a>
+“
+verwendet werden — im vorliegenden Leitfaden das ValueSet
+          <a href="ValueSet-2.16.840.1.113883.3.1937.777.24.11.30--20210323234509.html">MII Consent: Answer ValueSet</a>
+:
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="de/implementer-guidance.html">web</a>
+        </td>
+        <td>
+          <a href="https://art-decor.org/art-decor/decor-datasets--mide-?conceptId=2.16.840.1.113883.3.1937.777.24.2.1790">art-decor.org</a>
+        </td>
+        <td>
+Die Datenelemente des MII Broad Consent Formulars in Version
+          <a href="https://art-decor.org/art-decor/decor-datasets--mide-?conceptId=2.16.840.1.113883.3.1937.777.24.2.1790">1.6d</a>
+
+und
+          <a href="https://art-decor.org/art-decor/decor-datasets--mide-?conceptId=2.16.840.1.113883.3.1937.777.24.2.1791">1.6f</a>
+
+sind als Dataset in ART-DECOR modelliert, siehe Abschnitt
+          <a href="datasets-and-descriptions.html">Datensätze inkl. Beschreibungen</a>
+.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="de/implementer-guidance.html">web</a>
+        </td>
+        <td>
+          <a href="https://art-decor.org/art-decor/decor-datasets--mide-?conceptId=2.16.840.1.113883.3.1937.777.24.2.1791">art-decor.org</a>
+        </td>
+        <td>
+Die Datenelemente des MII Broad Consent Formulars in Version
+          <a href="https://art-decor.org/art-decor/decor-datasets--mide-?conceptId=2.16.840.1.113883.3.1937.777.24.2.1790">1.6d</a>
+
+und
+          <a href="https://art-decor.org/art-decor/decor-datasets--mide-?conceptId=2.16.840.1.113883.3.1937.777.24.2.1791">1.6f</a>
+
+sind als Dataset in ART-DECOR modelliert, siehe Abschnitt
+          <a href="datasets-and-descriptions.html">Datensätze inkl. Beschreibungen</a>
+.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="de/implementer-guidance.html">web</a>
+        </td>
+        <td>
+          <a href="https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_TF_Vol1.pdf#nameddest=19_Basic_Patient_Privacy_Consen">www.ihe.net</a>
+        </td>
+        <td>
+Die benötigten Value Sets sind ebenfalls in ART-DECOR modelliert und mit den
+entsprechenden Datenelementen assoziiert. Die Kompatibilität zu IHE BPPC
+(Integrating the Healthcare Enterprise,
+          <a href="https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_TF_Vol1.pdf#nameddest=19_Basic_Patient_Privacy_Consen">Profil „Basic Patient Privacy Consent“</a>
+)
+wird über Policies adressiert.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="de/implementer-guidance.html">web</a>
+        </td>
+        <td>
+          <a href="http://art-decor.org/decor/services/RetrieveValueSet?id=2.16.840.1.113883.3.1937.777.24.11.36&amp;effectiveDate=2021-04-23T10:55:54&amp;prefix=mide-&amp;format=html&amp;collapsable=true&amp;language=de-DE&amp;ui=en-US">art-decor.org</a>
+        </td>
+        <td>
+Die           <strong>Operationalisierung bzw. Durchsetzung (Enforcement) der Consent-Informationen</strong>
+
+wird durch ein
+          <a href="http://art-decor.org/decor/services/RetrieveValueSet?id=2.16.840.1.113883.3.1937.777.24.11.36&amp;effectiveDate=2021-04-23T10:55:54&amp;prefix=mide-&amp;format=html&amp;collapsable=true&amp;language=de-DE&amp;ui=en-US">einheitliches Policy-ValueSet</a>
+
+unterstützt. Dies kann interoperabel in IHE BPPC verwendet werden. Im
+vorliegenden Leitfaden ist es das ValueSet
+          <a href="ValueSet-2.16.840.1.113883.3.1937.777.24.11.36--20230331232804.html">MII Consent: Policy ValueSet</a>
+.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="de/implementer-guidance.html">web</a>
+        </td>
+        <td>
+          <a href="https://ebooks.iospress.nl/doi/10.3233/SHTI251389">ebooks.iospress.nl</a>
+        </td>
+        <td>
+Im IG der           <strong>HL7-D AG Einwilligungsmanagement</strong>
+ und der korrespondierenden
+          <a href="https://ebooks.iospress.nl/doi/10.3233/SHTI251389">Publikation</a>
+ wird die
+Bedeutung des Parameters           <code class="language-plaintext highlighter-rouge">ResultType</code>
+ umfassend erläutert.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="de/implementer-guidance.html">web</a>
+        </td>
+        <td>
+          <a href="https://ths-greifswald.de/gics">ths-greifswald.de</a>
+        </td>
+        <td>
+Das Einwilligungsmanagement           <a href="https://ths-greifswald.de/gics">gICS</a>
+ stellt die
+aktuelle           <a href="https://ebooks.iospress.nl/doi/10.3233/SHTI251389">Referenzimplementierung</a>
+
+des HL7-D FHIR Standards für Einwilligungsmanagement (Version 2.0) dar.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="de/implementer-guidance.html">web</a>
+        </td>
+        <td>
+          <a href="https://ebooks.iospress.nl/doi/10.3233/SHTI251389">ebooks.iospress.nl</a>
+        </td>
+        <td>
+Das Einwilligungsmanagement           <a href="https://ths-greifswald.de/gics">gICS</a>
+ stellt die
+aktuelle           <a href="https://ebooks.iospress.nl/doi/10.3233/SHTI251389">Referenzimplementierung</a>
+
+des HL7-D FHIR Standards für Einwilligungsmanagement (Version 2.0) dar.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="de/implementer-guidance.html">web</a>
+        </td>
+        <td>
+          <a href="https://ths-greifswald.de/gics">ths-greifswald.de</a>
+        </td>
+        <td>
+Standorte, die das           <a href="https://ths-greifswald.de/gics">Einwilligungsmanagement gICS</a>
+
+verwenden, sollten bei der           <strong>Kennzahlen-Ermittlung</strong>
+ sowie bei der Bereitstellung
+der Consent-Ressourcen für das           <strong>FDPG</strong>
+ den präzisen
+          <a href="https://www.ths-greifswald.de/diz-dashboard-empfehlung-gics-kds-consent-status/">
+<strong>Hersteller-Empfehlungen</strong>          </a>
+
+folgen.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="de/implementer-guidance.html">web</a>
+        </td>
+        <td>
+          <a href="https://www.ths-greifswald.de/diz-dashboard-empfehlung-gics-kds-consent-status/">www.ths-greifswald.de</a>
+        </td>
+        <td>
+Standorte, die das           <a href="https://ths-greifswald.de/gics">Einwilligungsmanagement gICS</a>
+
+verwenden, sollten bei der           <strong>Kennzahlen-Ermittlung</strong>
+ sowie bei der Bereitstellung
+der Consent-Ressourcen für das           <strong>FDPG</strong>
+ den präzisen
+          <a href="https://www.ths-greifswald.de/diz-dashboard-empfehlung-gics-kds-consent-status/">
+<strong>Hersteller-Empfehlungen</strong>          </a>
+
+folgen.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="de/implementer-guidance.html">web</a>
+        </td>
+        <td>
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/">ig.fhir.de</a>
+        </td>
+        <td>
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/">Implementation Guide der Arbeitsgruppe Einwilligungsmanagement des Interop-Forum, Version 1.0</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="de/implementer-guidance.html">web</a>
+        </td>
+        <td>
+          <a href="https://art-decor.org/art-decor/decor-datasets--mide-?conceptId=2.16.840.1.113883.3.1937.777.24.2.184">art-decor.org</a>
+        </td>
+        <td>
+          <a href="https://art-decor.org/art-decor/decor-datasets--mide-?conceptId=2.16.840.1.113883.3.1937.777.24.2.184">Kerndatensatzbeschreibung im ART-DECOR</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="de/implementer-guidance.html">web</a>
+        </td>
+        <td>
+          <a href="https://www.medizininformatik-initiative.de/sites/default/files/inline-files/MII_04_Kerndatensatz_1-0.pdf">www.medizininformatik-initiative.de</a>
+        </td>
+        <td>
+Die vorliegende Spezifikation wurde gestaltet auf Basis der Beschreibung des
+MII-Kerndatensatzes in der Version vom 10.3.2017
+(          <a href="https://www.medizininformatik-initiative.de/sites/default/files/inline-files/MII_04_Kerndatensatz_1-0.pdf">PDF</a>
+),
+sowie der Datensatzbeschreibung in
+          <a href="https://art-decor.org/art-decor/decor-project--mide-">ART-DECOR</a>
+.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="de/implementer-guidance.html">web</a>
+        </td>
+        <td>
+          <a href="https://art-decor.org/art-decor/decor-project--mide-">art-decor.org</a>
+        </td>
+        <td>
+Die vorliegende Spezifikation wurde gestaltet auf Basis der Beschreibung des
+MII-Kerndatensatzes in der Version vom 10.3.2017
+(          <a href="https://www.medizininformatik-initiative.de/sites/default/files/inline-files/MII_04_Kerndatensatz_1-0.pdf">PDF</a>
+),
+sowie der Datensatzbeschreibung in
+          <a href="https://art-decor.org/art-decor/decor-project--mide-">ART-DECOR</a>
+.
+        </td>
+      </tr>
+      <tr>
+        <td>
           <a href="de/index.html">web</a>
         </td>
         <td>
-          <a href="https://www.medizininformatik-initiative.de/">www.medizininformatik-initiative.de</a>
+          <a href="https://bmcmedinformdecismak.biomedcentral.com/articles/10.1186/s12911-020-01138-6">bmcmedinformdecismak.biomedcentral.com</a>
         </td>
         <td>
-Dieses Modul ist Teil des MII-Kerndatensatzes; die weiteren KDS-Module und ihre
-Abhängigkeiten sind unter
-          <a href="https://www.medizininformatik-initiative.de/">medizininformatik-initiative.de</a>
+Das MII KDS Modul Consent ist ein Basismodul des Kerndatensatzes (KDS) der
+Medizininformatik-Initiative (MII). Es setzt auf den
+          <a href="https://bmcmedinformdecismak.biomedcentral.com/articles/10.1186/s12911-020-01138-6">publizierten Vorarbeiten der MII Taskforce Consent Umsetzung</a>
 
-beschrieben.
+auf.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="de/index.html">web</a>
+        </td>
+        <td>
+          <a href="https://www.medizininformatik-initiative.de/de/mustertext-zur-patienteneinwilligung">www.medizininformatik-initiative.de</a>
+        </td>
+        <td>
+Dabei orientiert sich das Modul Consent für die Abbildung des
+          <a href="https://www.medizininformatik-initiative.de/de/mustertext-zur-patienteneinwilligung">MII Broad Consent</a>
+
+an den           <strong>
+<a href="https://ig.fhir.de/einwilligungsmanagement/stable">FHIR-R4-Profilen</a> der
+<a href="https://wiki.hl7.de/index.php?title=Einwilligungsmanagement_(Projekt)">AG Einwilligungsmanagement</a>
+des <a href="https://wiki.hl7.de/index.php?title=Hauptseite">Interop-Forums</a>          </strong>
+ zur
+Repräsentation von Formulardaten (Questionnaire, QuestionnaireResponse) und
+Einwilligungen (Consent).
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="de/index.html">web</a>
+        </td>
+        <td>
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable">ig.fhir.de</a>
+        </td>
+        <td>
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable">FHIR-R4-Profilen</a>
+ der
+          <a href="https://wiki.hl7.de/index.php?title=Einwilligungsmanagement_(Projekt)">AG Einwilligungsmanagement</a>
+
+des           <a href="https://wiki.hl7.de/index.php?title=Hauptseite">Interop-Forums</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="de/index.html">web</a>
+        </td>
+        <td>
+          <a href="https://wiki.hl7.de/index.php?title=Einwilligungsmanagement_(Projekt)">wiki.hl7.de</a>
+        </td>
+        <td>
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable">FHIR-R4-Profilen</a>
+ der
+          <a href="https://wiki.hl7.de/index.php?title=Einwilligungsmanagement_(Projekt)">AG Einwilligungsmanagement</a>
+
+des           <a href="https://wiki.hl7.de/index.php?title=Hauptseite">Interop-Forums</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="de/index.html">web</a>
+        </td>
+        <td>
+          <a href="https://wiki.hl7.de/index.php?title=Hauptseite">wiki.hl7.de</a>
+        </td>
+        <td>
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable">FHIR-R4-Profilen</a>
+ der
+          <a href="https://wiki.hl7.de/index.php?title=Einwilligungsmanagement_(Projekt)">AG Einwilligungsmanagement</a>
+
+des           <a href="https://wiki.hl7.de/index.php?title=Hauptseite">Interop-Forums</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="de/index.html">web</a>
+        </td>
+        <td>
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/">ig.fhir.de</a>
+        </td>
+        <td>
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/">Implementierungsleitfaden der AG Einwilligungsmanagement des Interop-Forums</a>
+
+— formale Abhängigkeit dieses Moduls (          <code class="language-plaintext highlighter-rouge">de.einwilligungsmanagement</code>
+ in
+          <code class="language-plaintext highlighter-rouge">sushi-config.yaml</code>
+).
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="de/index.html">web</a>
+        </td>
+        <td>
+          <a href="https://art-decor.org/art-decor/decor-datasets--mide-?conceptId=2.16.840.1.113883.3.1937.777.24.2.184">art-decor.org</a>
+        </td>
+        <td>
+          <a href="https://art-decor.org/art-decor/decor-datasets--mide-?conceptId=2.16.840.1.113883.3.1937.777.24.2.184">Kerndatensatzbeschreibung im ART-DECOR</a>
+
+— die fachliche Datensatzbeschreibung des Moduls.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="de/index.html">web</a>
+        </td>
+        <td>
+          <a href="https://www.medizininformatik-initiative.de/de/mustertext-zur-patienteneinwilligung">www.medizininformatik-initiative.de</a>
+        </td>
+        <td>
+          <a href="https://www.medizininformatik-initiative.de/de/mustertext-zur-patienteneinwilligung">MII Broad Consent (Mustertext zur Patienteneinwilligung)</a>
+.
         </td>
       </tr>
       <tr>
@@ -534,21 +1380,10 @@ Weitere FHIR-Implementierungsleitfäden finden Sie im offiziellen
           <a href="de/index.html">web</a>
         </td>
         <td>
-          <a href="https://mii.zulipchat.com/">mii.zulipchat.com</a>
+          <a href="https://github.com/medizininformatik-initiative/kerndatensatzmodul-consent/issues">github.com</a>
         </td>
         <td>
-Fragen zu dieser Publikation können im HL7-FHIR-Zulip
-          <a href="https://chat.fhir.org">chat.fhir.org</a>
- im Stream           <code class="language-plaintext highlighter-rouge">german/mi-initiative</code>
- oder im
-MII-Zulip           <a href="https://mii.zulipchat.com/">mii.zulipchat.com</a>
- im Stream
-          <code class="language-plaintext highlighter-rouge">MII-Kerndatensatz</code>
- gestellt werden.
-Anmerkungen und Kritik werden als           <em>Issues</em>
- auf
-          <a href="https://github.com/forschungsgruppe-digital-health/mii-kds-consent-ig-inoffiziell/issues">GitHub</a>
- entgegengenommen.
+GitHub (Originalmodul):           <a href="https://github.com/medizininformatik-initiative/kerndatensatzmodul-consent/issues">medizininformatik-initiative/kerndatensatzmodul-consent/issues</a>
         </td>
       </tr>
       <tr>
@@ -556,33 +1391,32 @@ Anmerkungen und Kritik werden als           <em>Issues</em>
           <a href="de/index.html">web</a>
         </td>
         <td>
-          <a href="https://github.com/forschungsgruppe-digital-health/mii-kds-consent-ig-inoffiziell/issues">github.com</a>
+          <a href="https://creativecommons.org/licenses/by/4.0/">creativecommons.org</a>
         </td>
         <td>
-Fragen zu dieser Publikation können im HL7-FHIR-Zulip
-          <a href="https://chat.fhir.org">chat.fhir.org</a>
- im Stream           <code class="language-plaintext highlighter-rouge">german/mi-initiative</code>
- oder im
-MII-Zulip           <a href="https://mii.zulipchat.com/">mii.zulipchat.com</a>
- im Stream
-          <code class="language-plaintext highlighter-rouge">MII-Kerndatensatz</code>
- gestellt werden.
-Anmerkungen und Kritik werden als           <em>Issues</em>
- auf
-          <a href="https://github.com/forschungsgruppe-digital-health/mii-kds-consent-ig-inoffiziell/issues">GitHub</a>
- entgegengenommen.
+          <a href="https://creativecommons.org/licenses/by/4.0/">
+<img src="https://licensebuttons.net/l/by/4.0/88x31.png" alt="CC BY 4.0"/>          </a>
         </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="de/index.html">img</a>
+        </td>
+        <td>
+          <a href="https://licensebuttons.net/l/by/4.0/88x31.png">licensebuttons.net</a>
+        </td>
+        <td></td>
       </tr>
       <tr>
         <td>
           <a href="de/index.html">web</a>
         </td>
         <td>
-          <a href="https://creativecommons.org/licenses/by/4.0/deed.de">creativecommons.org</a>
+          <a href="https://creativecommons.org/licenses/by/4.0/">creativecommons.org</a>
         </td>
         <td>
-Dieses Werk ist lizenziert unter der
-          <a href="https://creativecommons.org/licenses/by/4.0/deed.de">Creative Commons Namensnennung 4.0 International Lizenz (CC BY 4.0)</a>
+Diese Arbeit ist lizenziert unter der
+          <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>
 .
         </td>
       </tr>
@@ -643,6 +1477,260 @@ unterstützen.
       </tr>
       <tr>
         <td>
+          <a href="de/profiles-and-extensions.html">web</a>
+        </td>
+        <td>
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/">ig.fhir.de</a>
+        </td>
+        <td>
+Die Arbeiten der Kerndatensatzspezifikationen basieren, wo möglich, auf
+internationalen Standards und Terminologien, insbesondere auf den
+Profilierungs-Vorarbeiten der
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/">AG Einwilligungsmanagement zum FHIR Consent</a>
+.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="de/profiles-and-extensions.html">web</a>
+        </td>
+        <td>
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/">ig.fhir.de</a>
+        </td>
+        <td>
+Dieses Modul definiert           <strong>keine eigenen Extensions</strong>
+. Die verwendete Extension
+          <code class="language-plaintext highlighter-rouge">DomainReference</code>
+ stammt aus dem
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/">Implementierungsleitfaden Einwilligungsmanagement</a>
+.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="de/profiles-and-extensions.html">web</a>
+        </td>
+        <td>
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/Home.html">ig.fhir.de</a>
+        </td>
+        <td>
+Neben
+          <a href="StructureDefinition-e0e166b4-0f77-478d-9062-de0034d98ce0.html">Consent</a>
+,
+          <a href="StructureDefinition-f675b1e8-9f3f-44e8-bb59-9681f78eb464.html">Provenance</a>
+ und
+          <a href="StructureDefinition-56375452-bfa1-4111-af7c-5b5ba9a1857c.html">DocumentReference</a>
+
+sind weitere Profile für den Umgang mit Einwilligungen und
+Einwilligungsvorlagen relevant, die unverändert aus dem
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/Home.html">Implementierungsleitfaden Einwilligungsmanagement</a>
+
+übernommen werden.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="de/profiles-and-extensions.html">web</a>
+        </td>
+        <td>
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/Organization.html">ig.fhir.de</a>
+        </td>
+        <td>
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/Organization.html">Organization</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="de/profiles-and-extensions.html">web</a>
+        </td>
+        <td>
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/ResearchStudy.html">ig.fhir.de</a>
+        </td>
+        <td>
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/ResearchStudy.html">ResearchStudy</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="de/profiles-and-extensions.html">web</a>
+        </td>
+        <td>
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/Patient.html">ig.fhir.de</a>
+        </td>
+        <td>
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/Patient.html">Patient</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="de/profiles-and-extensions.html">web</a>
+        </td>
+        <td>
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/QuestionnaireResponse.html">ig.fhir.de</a>
+        </td>
+        <td>
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/QuestionnaireResponse.html">QuestionnaireResponse</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="de/profiles-and-extensions.html">web</a>
+        </td>
+        <td>
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/QuestionnaireComposed.html">ig.fhir.de</a>
+        </td>
+        <td>
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/QuestionnaireComposed.html">QuestionnaireComposed</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="de/profiles-and-extensions.html">web</a>
+        </td>
+        <td>
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/TemplateFrame.html">ig.fhir.de</a>
+        </td>
+        <td>
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/TemplateFrame.html">TemplateFrame</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="de/profiles-and-extensions.html">web</a>
+        </td>
+        <td>
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/TemplateModule.html">ig.fhir.de</a>
+        </td>
+        <td>
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/TemplateModule.html">TemplateModule</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="de/search-parameters-and-operations.html">web</a>
+        </td>
+        <td>
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/Consent.html">ig.fhir.de</a>
+        </td>
+        <td>
+Im Kontext der Suche nach Consent-Ressourcen sind nach dem
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/Consent.html">HL7-D Standard für Einwilligungsmanagement</a>
+
+(Version 2.0) folgende Suchparameter zur Filterung von Consent-Ressourcen
+definiert. Diese werden ebenfalls durch den MII KDS Consent unterstützt.
+Konkrete Beispiele sind im IG der HL7-D-Arbeitsgruppe dokumentiert.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="de/security-and-privacy.html">web</a>
+        </td>
+        <td>
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/Patient.html">ig.fhir.de</a>
+        </td>
+        <td>
+Da auch die FHIR-Consent-Ressource           <strong>keine personenidentifizierenden
+Informationen</strong>
+ der einwilligenden Person enthält, sollte der
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/Patient.html">
+<strong>pseudonyme Personenbezug</strong>          </a>
+
+über entsprechende
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/ContextIdentifier.html">
+<strong>pseudonyme Identifier</strong>          </a>
+
+hergestellt werden. Etwaige personenidentifizierende Informationen (z. B.
+Geburtsdatum, Geschlecht, Anschrift) sowie Referenzen, z. B. auf
+(Klartext-)Patienten-Profile, sollten vor Ausleitung geeignet ersetzt werden.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="de/security-and-privacy.html">web</a>
+        </td>
+        <td>
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/ContextIdentifier.html">ig.fhir.de</a>
+        </td>
+        <td>
+Da auch die FHIR-Consent-Ressource           <strong>keine personenidentifizierenden
+Informationen</strong>
+ der einwilligenden Person enthält, sollte der
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/Patient.html">
+<strong>pseudonyme Personenbezug</strong>          </a>
+
+über entsprechende
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/ContextIdentifier.html">
+<strong>pseudonyme Identifier</strong>          </a>
+
+hergestellt werden. Etwaige personenidentifizierende Informationen (z. B.
+Geburtsdatum, Geschlecht, Anschrift) sowie Referenzen, z. B. auf
+(Klartext-)Patienten-Profile, sollten vor Ausleitung geeignet ersetzt werden.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="de/security-and-privacy.html">web</a>
+        </td>
+        <td>
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/Patient.html">ig.fhir.de</a>
+        </td>
+        <td>
+Technisch gesehen können Patienten-Ressourcen und abgeleitete Profile verwendet
+werden, wie z. B. die Profile der
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/Patient.html">AG Einwilligungsmanagement</a>
+
+oder der
+          <a href="https://simplifier.net/medizininformatikinitiative-modulperson/sdmiipersonpatientpseudonymisiert">MII</a>
+.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="de/security-and-privacy.html">web</a>
+        </td>
+        <td>
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/ContextIdentifierType.html">ig.fhir.de</a>
+        </td>
+        <td>
+          <em>
+Technisch gesehen können Patienten-Ressourcen und abgeleitete Profile verwendet
+werden, wie z. B. die Profile der
+<a href="https://ig.fhir.de/einwilligungsmanagement/stable/Patient.html">AG Einwilligungsmanagement</a>
+oder der
+<a href="https://simplifier.net/medizininformatikinitiative-modulperson/sdmiipersonpatientpseudonymisiert">MII</a>.
+          </em>
+
+Um Pseudonyme, Fallnummern usw. unterscheiden zu können, ist es unabhängig davon
+erforderlich, eine Kategorisierung des verwendeten Identifiers mittels
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/ContextIdentifierType.html">
+<code class="language-plaintext highlighter-rouge">Patient.identifier.type</code>          </a>
+
+vorzunehmen.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="de/security-and-privacy.html">web</a>
+        </td>
+        <td>
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/DocumentReference.html">ig.fhir.de</a>
+        </td>
+        <td>
+Die FHIR-Consent-Ressource enthält           <strong>keine Dokumenten-Scans und/oder
+Unterschriften</strong>
+. Ist eine Übermittlung je nach Anwendungsfall erforderlich, sind
+separate Ressourcen gemäß den
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/DocumentReference.html">Vorgaben der AG Einwilligungsmanagement</a>
+
+zu erstellen (Consent-Bundles) — in diesem Modul die Profile
+          <a href="StructureDefinition-f675b1e8-9f3f-44e8-bb59-9681f78eb464.html">Provenance</a>
+ und
+          <a href="StructureDefinition-56375452-bfa1-4111-af7c-5b5ba9a1857c.html">DocumentReference</a>
+.
+        </td>
+      </tr>
+      <tr>
+        <td>
           <a href="de/terminology.html">web</a>
         </td>
         <td>
@@ -652,10 +1740,66 @@ unterstützen.
           <strong>Wichtig:</strong>
  CodeSystem-Ressourcen externer Terminologien (z. B. ICD-10-GM, OPS,
 SNOMED CT) werden in diesem Modul           <strong>nicht</strong>
- publiziert, sondern über den
+ veröffentlicht; sie werden über den
 MII-Terminologieserver (SU-TermServ) bezogen:
           <a href="https://mii-termserv.de/">https://mii-termserv.de/</a>
 .
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="de/uml-diagrams.html">web</a>
+        </td>
+        <td>
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/Organization.html">ig.fhir.de</a>
+        </td>
+        <td>
+Die Einwilligung wird in einem konkreten Kontext (z. B. MII) erhoben, was in FHIR
+in Form einer Referenz auf die verantwortliche Organisation
+(          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/Organization.html">Organization</a>
+)
+und/oder zu einem Forschungsprojekt
+(          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/ResearchStudy.html">ResearchStudy</a>
+)
+modelliert wird.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="de/uml-diagrams.html">web</a>
+        </td>
+        <td>
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/ResearchStudy.html">ig.fhir.de</a>
+        </td>
+        <td>
+Die Einwilligung wird in einem konkreten Kontext (z. B. MII) erhoben, was in FHIR
+in Form einer Referenz auf die verantwortliche Organisation
+(          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/Organization.html">Organization</a>
+)
+und/oder zu einem Forschungsprojekt
+(          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/ResearchStudy.html">ResearchStudy</a>
+)
+modelliert wird.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="de/uml-diagrams.html">web</a>
+        </td>
+        <td>
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/Patient.html">ig.fhir.de</a>
+        </td>
+        <td>
+Die Provenance-Resource beschreibt die Herkunft der Einwilligungsinhalte (u. a.
+Unterschriften) und verknüpft diese mit den beteiligten Personen
+(          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/Patient.html">Patient</a>
+,
+Consent Witness) und eventuell vorhandenen Dokumenten-Scans
+(          <a href="StructureDefinition-56375452-bfa1-4111-af7c-5b5ba9a1857c.html">DocumentReference</a>
+).
+Ebenso können die für die Erhebung genutzten Anwendungssysteme genannt (display)
+bzw. referenziert werden, sowie im Anwendungssystem geltende
+Patienten-Identifier.
         </td>
       </tr>
       <tr>
@@ -710,7 +1854,7 @@ Merge wird das Release getaggt.
 .  
           Package de.medizininformatikinitiative.kerndatensatz.consent#2026.0.0 based on           <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>
 .
-          Generated           <span title="Thu, Aug 6, 2026 10:59+0000">2026-08-06</span>
+          Generated           <span title="Thu, Aug 6, 2026 13:20+0000">2026-08-06</span>
 
                     <br/>
 
@@ -818,6 +1962,208 @@ Merge wird das Release getaggt.
       </tr>
       <tr>
         <td>
+          <a href="en/StructureDefinition-56375452-bfa1-4111-af7c-5b5ba9a1857c.html">web</a>
+        </td>
+        <td>
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/DocumentReference.html">ig.fhir.de</a>
+        </td>
+        <td>
+Based on the
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/DocumentReference.html">recommendations</a>
+
+of the AG Einwilligungsmanagement, the profile           <em>MIIConsentDocumentReference</em>
+
+targets a real, existing document related to the consent document.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/StructureDefinition-e0e166b4-0f77-478d-9062-de0034d98ce0.html">web</a>
+        </td>
+        <td>
+          <a href="https://www.medizininformatik-initiative.de/de/mustertext-zur-patienteneinwilligung">www.medizininformatik-initiative.de</a>
+        </td>
+        <td>
+When a person is enrolled in a study (including an MII use case), a consent is
+obtained for that person on the basis of the
+          <a href="https://www.medizininformatik-initiative.de/de/mustertext-zur-patienteneinwilligung">MII Broad Consent model texts</a>
+,
+and the corresponding consent document is documented in a structured way at the
+respective site, following the
+          <a href="https://art-decor.org/art-decor/decor-datasets--mide-?id=2.16.840.1.113883.3.1937.777.24.1.1&amp;effectiveDate=2018-06-05T12%3A44%3A12&amp;conceptId=2.16.840.1.113883.3.1937.777.24.2.184&amp;conceptEffectiveDate=2018-06-29T16%3A26%3A50&amp;language=de-DE">requirements of the MII Task Force Consent Umsetzung</a>
+.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/StructureDefinition-e0e166b4-0f77-478d-9062-de0034d98ce0.html">web</a>
+        </td>
+        <td>
+          <a href="https://art-decor.org/art-decor/decor-datasets--mide-?id=2.16.840.1.113883.3.1937.777.24.1.1&amp;effectiveDate=2018-06-05T12%3A44%3A12&amp;conceptId=2.16.840.1.113883.3.1937.777.24.2.184&amp;conceptEffectiveDate=2018-06-29T16%3A26%3A50&amp;language=de-DE">art-decor.org</a>
+        </td>
+        <td>
+When a person is enrolled in a study (including an MII use case), a consent is
+obtained for that person on the basis of the
+          <a href="https://www.medizininformatik-initiative.de/de/mustertext-zur-patienteneinwilligung">MII Broad Consent model texts</a>
+,
+and the corresponding consent document is documented in a structured way at the
+respective site, following the
+          <a href="https://art-decor.org/art-decor/decor-datasets--mide-?id=2.16.840.1.113883.3.1937.777.24.1.1&amp;effectiveDate=2018-06-05T12%3A44%3A12&amp;conceptId=2.16.840.1.113883.3.1937.777.24.2.184&amp;conceptEffectiveDate=2018-06-29T16%3A26%3A50&amp;language=de-DE">requirements of the MII Task Force Consent Umsetzung</a>
+.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/StructureDefinition-e0e166b4-0f77-478d-9062-de0034d98ce0.html">web</a>
+        </td>
+        <td>
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/DomainReference.html">ig.fhir.de</a>
+        </td>
+        <td>
+The FHIR Consent resource is generated automatically on the basis of these
+consent documents. The
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/DomainReference.html">project context</a>
+
+is preserved.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/StructureDefinition-e0e166b4-0f77-478d-9062-de0034d98ce0.html">web</a>
+        </td>
+        <td>
+          <a href="http://art-decor.org/decor/services/RetrieveValueSet?id=2.16.840.1.113883.3.1937.777.24.11.36&amp;effectiveDate=2021-04-23T10:55:54&amp;prefix=mide-&amp;format=html&amp;collapsable=true&amp;language=de-DE&amp;ui=en-US">art-decor.org</a>
+        </td>
+        <td>
+To ensure that the operationalised consent content can be exchanged beyond FHIR
+as well, a uniform policy value set for the           <strong>semantic representation</strong>
+ of the
+statements contained in the MII Broad Consent was agreed with the           <strong>MII AG
+Consent</strong>
+ in December 2021 and documented in
+          <a href="http://art-decor.org/decor/services/RetrieveValueSet?id=2.16.840.1.113883.3.1937.777.24.11.36&amp;effectiveDate=2021-04-23T10:55:54&amp;prefix=mide-&amp;format=html&amp;collapsable=true&amp;language=de-DE&amp;ui=en-US">ART-DECOR</a>
+
+(policy OIDs).
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/StructureDefinition-e0e166b4-0f77-478d-9062-de0034d98ce0.html">web</a>
+        </td>
+        <td>
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/ResearchStudy.html">ig.fhir.de</a>
+        </td>
+        <td>
+must-support per the requirements of the           <a href="https://ig.fhir.de/einwilligungsmanagement/stable/ResearchStudy.html">AG Einwilligungsmanagement</a>
+, but optional
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/StructureDefinition-e0e166b4-0f77-478d-9062-de0034d98ce0.html">web</a>
+        </td>
+        <td>
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/ResultType.html">ig.fhir.de</a>
+        </td>
+        <td>
+ResultType per           <a href="https://ig.fhir.de/einwilligungsmanagement/stable/ResultType.html">ResultType</a>
+. At least           <code class="language-plaintext highlighter-rouge">document</code>
+ and           <code class="language-plaintext highlighter-rouge">consent-status</code>
+ should be supported. If           <code class="language-plaintext highlighter-rouge">document</code>
+ is given as the ResultType, the kind of (source) document must also be given in the           <code class="language-plaintext highlighter-rouge">templateType</code>
+ slice.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/StructureDefinition-e0e166b4-0f77-478d-9062-de0034d98ce0.html">web</a>
+        </td>
+        <td>
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/TemplateType.html">ig.fhir.de</a>
+        </td>
+        <td>
+Categorisation per           <a href="https://ig.fhir.de/einwilligungsmanagement/stable/TemplateType.html">TemplateType</a>
+. Serves as an informal element to differentiate between consent, withdrawal, objection and refusal.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/StructureDefinition-e0e166b4-0f77-478d-9062-de0034d98ce0.html">web</a>
+        </td>
+        <td>
+          <a href="https://art-decor.org/decor/services/RetrieveDataSet?conceptId=2.16.840.1.113883.3.1937.777.24.2.184">art-decor.org</a>
+        </td>
+        <td>
+Unique OID per the           <a href="https://art-decor.org/decor/services/RetrieveDataSet?conceptId=2.16.840.1.113883.3.1937.777.24.2.184">TFCU specification</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/StructureDefinition-e0e166b4-0f77-478d-9062-de0034d98ce0.html">web</a>
+        </td>
+        <td>
+          <a href="https://www.ths-greifswald.de/dezember-release-2025-neue-versionen-von-e-pix-gpas-und-gics-verfuegbar/">www.ths-greifswald.de</a>
+        </td>
+        <td>
+Per the requirements of the MII AG Consent, a patient's consent generally ends
+after 30 years. Consents of           <strong>minors</strong>
+ (the person the consent concerns) are a
+special case: where such consents were filled in on their behalf by those with
+custody,           <strong>the consent ends when the data subject reaches the age of majority</strong>
+.
+This has to be implemented technically.
+          <a href="https://www.ths-greifswald.de/dezember-release-2025-neue-versionen-von-e-pix-gpas-und-gics-verfuegbar/">Reference implementations</a>
+
+exist.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/StructureDefinition-e0e166b4-0f77-478d-9062-de0034d98ce0.html">web</a>
+        </td>
+        <td>
+          <a href="https://www.medizininformatik-initiative.de/sites/default/files/2025-01/MII_BC_Formular-Komplettwiderruf.pdf">www.medizininformatik-initiative.de</a>
+        </td>
+        <td>
+The
+          <a href="https://www.medizininformatik-initiative.de/sites/default/files/2025-01/MII_BC_Formular-Komplettwiderruf.pdf">withdrawal template (compatible with MII BC 1.7.2)</a>
+
+is also intended for withdrawing consents of minors, as these too are usually
+filled in by those with custody.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/StructureDefinition-f675b1e8-9f3f-44e8-bb59-9681f78eb464.html">web</a>
+        </td>
+        <td>
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/Provenance.html">ig.fhir.de</a>
+        </td>
+        <td>
+Based on the
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/Provenance.html">recommendations</a>
+
+of the AG Einwilligungsmanagement, the profile           <em>MIIConsentProvenance</em>
+ describes
+the provenance information of a consent document.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/StructureDefinition-f675b1e8-9f3f-44e8-bb59-9681f78eb464.html">web</a>
+        </td>
+        <td>
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/Provenance.html">ig.fhir.de</a>
+        </td>
+        <td>
+Only the differences from the
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/Provenance.html">base profile</a>
+
+are explained below.
+        </td>
+      </tr>
+      <tr>
+        <td>
           <a href="en/changes.html">web</a>
         </td>
         <td>
@@ -831,6 +2177,42 @@ This page records the changes between the released versions of the
  and the MII calendar
 versioning scheme described on the           <a href="version-history.html">Versioning</a>
  page.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/changes.html">web</a>
+        </td>
+        <td>
+          <a href="https://github.com/medizininformatik-initiative/kerndatensatzmodul-consent/compare/2025.0.3...2026.0.0">github.com</a>
+        </td>
+        <td>
+Full changelog:
+          <a href="https://github.com/medizininformatik-initiative/kerndatensatzmodul-consent/compare/2025.0.3...2026.0.0">2025.0.3…2026.0.0</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/changes.html">web</a>
+        </td>
+        <td>
+          <a href="https://github.com/medizininformatik-initiative/kerndatensatzmodul-consent/compare/2025.0.0...2025.0.3">github.com</a>
+        </td>
+        <td>
+Full changelog:
+          <a href="https://github.com/medizininformatik-initiative/kerndatensatzmodul-consent/compare/2025.0.0...2025.0.3">2025.0.0…2025.0.3</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/changes.html">web</a>
+        </td>
+        <td>
+          <a href="https://github.com/medizininformatik-initiative/kerndatensatzmodul-consent/compare/1.0.7...2025.0.0">github.com</a>
+        </td>
+        <td>
+Full changelog:
+          <a href="https://github.com/medizininformatik-initiative/kerndatensatzmodul-consent/compare/1.0.7...2025.0.0">1.0.7…2025.0.0</a>
         </td>
       </tr>
       <tr>
@@ -852,6 +2234,28 @@ following HL7's IG best-practice guidance.
       </tr>
       <tr>
         <td>
+          <a href="en/datasets-and-descriptions.html">web</a>
+        </td>
+        <td>
+          <a href="https://art-decor.org/art-decor/decor-datasets--mide-?conceptId=2.16.840.1.113883.3.1937.777.24.2.184">art-decor.org</a>
+        </td>
+        <td>
+          <a href="https://art-decor.org/art-decor/decor-datasets--mide-?conceptId=2.16.840.1.113883.3.1937.777.24.2.184">form-based description, MII Dataset, concept "Consent"</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/datasets-and-descriptions.html">web</a>
+        </td>
+        <td>
+          <a href="https://art-decor.org/decor/services/RetrieveDataSet?conceptId=2.16.840.1.113883.3.1937.777.24.2.184">art-decor.org</a>
+        </td>
+        <td>
+          <a href="https://art-decor.org/decor/services/RetrieveDataSet?conceptId=2.16.840.1.113883.3.1937.777.24.2.184">tabular description, MII Dataset, concept "Consent"</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
           <a href="en/general-requirements.html">web</a>
         </td>
         <td>
@@ -863,15 +2267,595 @@ following HL7's IG best-practice guidance.
       </tr>
       <tr>
         <td>
+          <a href="en/general-requirements.html">web</a>
+        </td>
+        <td>
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/">ig.fhir.de</a>
+        </td>
+        <td>
+          <strong>What this module actually aligns with</strong>
+, per its source guide and its
+          <code class="language-plaintext highlighter-rouge">dependencies</code>
+: the           <a href="https://ig.fhir.de/einwilligungsmanagement/stable/">FHIR R4 profiles of the AG Einwilligungsmanagement of the
+Interop-Forum</a>
+ (package
+          <code class="language-plaintext highlighter-rouge">de.einwilligungsmanagement</code>
+, the module's only domain dependency), the
+          <a href="http://hl7.org/fhir/">HL7 FHIR core specification</a>
+ with its
+          <a href="http://hl7.org/fhir/consent.html">Consent</a>
+ resource, the German base profiles in
+          <a href="https://simplifier.net/basisprofilde">STU3</a>
+ and
+          <a href="https://simplifier.net/basisprofil-de-r4">R4</a>
+, the
+          <a href="https://art-decor.org/art-decor/decor-datasets--mide-?conceptId=2.16.840.1.113883.3.1937.777.24.2.184">Core Dataset description in ART-DECOR</a>
+,
+and IHE BPPC via the policies. The full reference list is on
+          <a href="implementer-guidance.html">Guidance for Implementers</a>
+.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/general-requirements.html">web</a>
+        </td>
+        <td>
+          <a href="https://art-decor.org/art-decor/decor-datasets--mide-?conceptId=2.16.840.1.113883.3.1937.777.24.2.184">art-decor.org</a>
+        </td>
+        <td>
+          <strong>What this module actually aligns with</strong>
+, per its source guide and its
+          <code class="language-plaintext highlighter-rouge">dependencies</code>
+: the           <a href="https://ig.fhir.de/einwilligungsmanagement/stable/">FHIR R4 profiles of the AG Einwilligungsmanagement of the
+Interop-Forum</a>
+ (package
+          <code class="language-plaintext highlighter-rouge">de.einwilligungsmanagement</code>
+, the module's only domain dependency), the
+          <a href="http://hl7.org/fhir/">HL7 FHIR core specification</a>
+ with its
+          <a href="http://hl7.org/fhir/consent.html">Consent</a>
+ resource, the German base profiles in
+          <a href="https://simplifier.net/basisprofilde">STU3</a>
+ and
+          <a href="https://simplifier.net/basisprofil-de-r4">R4</a>
+, the
+          <a href="https://art-decor.org/art-decor/decor-datasets--mide-?conceptId=2.16.840.1.113883.3.1937.777.24.2.184">Core Dataset description in ART-DECOR</a>
+,
+and IHE BPPC via the policies. The full reference list is on
+          <a href="implementer-guidance.html">Guidance for Implementers</a>
+.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/general-requirements.html">web</a>
+        </td>
+        <td>
+          <a href="https://www.medizininformatik-initiative.de/de/mustertext-zur-patienteneinwilligung">www.medizininformatik-initiative.de</a>
+        </td>
+        <td>
+The Consent extension module provides the electronic representation of the
+          <a href="https://www.medizininformatik-initiative.de/de/mustertext-zur-patienteneinwilligung">MII Consent</a>
+,
+but can also be used to represent further consents. This is a precondition for
+taking the patient's will into account when the patient's medical data collected
+during care is used for research purposes. Consent is required above all when the
+purpose of use goes beyond the research clauses of the applicable laws.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/general-requirements.html">web</a>
+        </td>
+        <td>
+          <a href="https://www.medizininformatik-initiative.de/de/use-cases-und-projekte">www.medizininformatik-initiative.de</a>
+        </td>
+        <td>
+An important measure for medical research is, among other things, how many
+patients meet certain criteria (case numbers) and whether these patients have
+agreed to the use of their data for research purposes. Such requests can only be
+processed and answered efficiently by electronic means if the consent status can
+be checked electronically. Such case-number queries taking the consent status
+into account are essential for use cases such as "case-number estimation",
+"feasibility queries" and "data sharing", for the cross-MII use cases CORD and
+POLAR, and for the           <a href="https://www.medizininformatik-initiative.de/de/use-cases-und-projekte">use cases</a>
+
+of the           <a href="https://www.medizininformatik-initiative.de/index.php/de/konsortien">MII consortia</a>
+.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/general-requirements.html">web</a>
+        </td>
+        <td>
+          <a href="https://www.medizininformatik-initiative.de/index.php/de/konsortien">www.medizininformatik-initiative.de</a>
+        </td>
+        <td>
+An important measure for medical research is, among other things, how many
+patients meet certain criteria (case numbers) and whether these patients have
+agreed to the use of their data for research purposes. Such requests can only be
+processed and answered efficiently by electronic means if the consent status can
+be checked electronically. Such case-number queries taking the consent status
+into account are essential for use cases such as "case-number estimation",
+"feasibility queries" and "data sharing", for the cross-MII use cases CORD and
+POLAR, and for the           <a href="https://www.medizininformatik-initiative.de/de/use-cases-und-projekte">use cases</a>
+
+of the           <a href="https://www.medizininformatik-initiative.de/index.php/de/konsortien">MII consortia</a>
+.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/implementer-guidance.html">web</a>
+        </td>
+        <td>
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/Patient.html">ig.fhir.de</a>
+        </td>
+        <td>
+To relate a person to a consent, the consent carries at least one unique person
+identifier (base module: Person). As a rule this is a
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/Patient.html">pseudonymous identifier</a>
+.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/implementer-guidance.html">web</a>
+        </td>
+        <td>
+          <a href="https://www.bfarm.de/SharedDocs/Downloads/DE/Forschung/modellvorhaben-genomsequenzierung/Handreichung-zur-Implementierung-beim-LE.pdf?__blob=publicationFile">www.bfarm.de</a>
+        </td>
+        <td>
+The
+          <a href="https://www.bfarm.de/SharedDocs/Downloads/DE/Forschung/modellvorhaben-genomsequenzierung/Handreichung-zur-Implementierung-beim-LE.pdf?__blob=publicationFile">guidance document</a>
+
+on patient information &amp; declaration of participation for the           <strong>"Modellvorhaben
+Genomsequenzierung bei seltenen und bei onkologischen Erkrankungen"</strong>
+ (model
+project on genome sequencing for rare and oncological diseases) under &sect; 64e SGB V,
+version V1, recommends in section 2.1.4 (research consent) the use of the MII
+Broad Consent from version 1.6d onwards, which in the legal sense corresponds at
+least to the base version without additional modules.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/implementer-guidance.html">web</a>
+        </td>
+        <td>
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/">ig.fhir.de</a>
+        </td>
+        <td>
+The           <a href="https://ig.fhir.de/einwilligungsmanagement/stable/">AG Einwilligungsmanagement</a>
+
+has dealt comprehensively with the modelling of consents and consent templates.
+This implementation guide builds substantially on that preliminary work.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/implementer-guidance.html">web</a>
+        </td>
+        <td>
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/QuestionnaireComposed.html">ig.fhir.de</a>
+        </td>
+        <td>
+The profiles
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/QuestionnaireComposed.html">Questionnaire Composed</a>
+,
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/TemplateFrame.html">Template Frame</a>
+ and
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/TemplateModule.html">Template Module</a>
+
+are based on the FHIR resource Questionnaire and serve to represent the consent
+form (here: MII Broad Consent).
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/implementer-guidance.html">web</a>
+        </td>
+        <td>
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/TemplateFrame.html">ig.fhir.de</a>
+        </td>
+        <td>
+The profiles
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/QuestionnaireComposed.html">Questionnaire Composed</a>
+,
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/TemplateFrame.html">Template Frame</a>
+ and
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/TemplateModule.html">Template Module</a>
+
+are based on the FHIR resource Questionnaire and serve to represent the consent
+form (here: MII Broad Consent).
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/implementer-guidance.html">web</a>
+        </td>
+        <td>
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/TemplateModule.html">ig.fhir.de</a>
+        </td>
+        <td>
+The profiles
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/QuestionnaireComposed.html">Questionnaire Composed</a>
+,
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/TemplateFrame.html">Template Frame</a>
+ and
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/TemplateModule.html">Template Module</a>
+
+are based on the FHIR resource Questionnaire and serve to represent the consent
+form (here: MII Broad Consent).
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/implementer-guidance.html">web</a>
+        </td>
+        <td>
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/QuestionnaireResponse.html">ig.fhir.de</a>
+        </td>
+        <td>
+The profile
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/QuestionnaireResponse.html">QuestionnaireResponse</a>
+
+represents the questionnaire filled in by the patient. It documents the patient's
+answers to the referenced questionnaire (QuestionnaireComposed) of the MII Broad
+Consent.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/implementer-guidance.html">web</a>
+        </td>
+        <td>
+          <a href="https://art-decor.org/art-decor/decor-valuesets--mide-?id=2.16.840.1.113883.3.1937.777.24.11.30">art-decor.org</a>
+        </td>
+        <td>
+The value set
+"          <a href="https://art-decor.org/art-decor/decor-valuesets--mide-?id=2.16.840.1.113883.3.1937.777.24.11.30">MII Consent: Answer ValueSet</a>
+"
+should be used to represent the answers — in this guide the ValueSet
+          <a href="ValueSet-2.16.840.1.113883.3.1937.777.24.11.30--20210323234509.html">MII Consent: Answer ValueSet</a>
+.
+The code designators below are the           <strong>German</strong>
+ designators of the code system and
+are not translated:
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/implementer-guidance.html">web</a>
+        </td>
+        <td>
+          <a href="https://art-decor.org/art-decor/decor-datasets--mide-?conceptId=2.16.840.1.113883.3.1937.777.24.2.1790">art-decor.org</a>
+        </td>
+        <td>
+The data elements of the MII Broad Consent form in versions
+          <a href="https://art-decor.org/art-decor/decor-datasets--mide-?conceptId=2.16.840.1.113883.3.1937.777.24.2.1790">1.6d</a>
+
+and
+          <a href="https://art-decor.org/art-decor/decor-datasets--mide-?conceptId=2.16.840.1.113883.3.1937.777.24.2.1791">1.6f</a>
+
+are modelled as a dataset in ART-DECOR, see
+          <a href="datasets-and-descriptions.html">Datasets and Descriptions</a>
+.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/implementer-guidance.html">web</a>
+        </td>
+        <td>
+          <a href="https://art-decor.org/art-decor/decor-datasets--mide-?conceptId=2.16.840.1.113883.3.1937.777.24.2.1791">art-decor.org</a>
+        </td>
+        <td>
+The data elements of the MII Broad Consent form in versions
+          <a href="https://art-decor.org/art-decor/decor-datasets--mide-?conceptId=2.16.840.1.113883.3.1937.777.24.2.1790">1.6d</a>
+
+and
+          <a href="https://art-decor.org/art-decor/decor-datasets--mide-?conceptId=2.16.840.1.113883.3.1937.777.24.2.1791">1.6f</a>
+
+are modelled as a dataset in ART-DECOR, see
+          <a href="datasets-and-descriptions.html">Datasets and Descriptions</a>
+.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/implementer-guidance.html">web</a>
+        </td>
+        <td>
+          <a href="https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_TF_Vol1.pdf#nameddest=19_Basic_Patient_Privacy_Consen">www.ihe.net</a>
+        </td>
+        <td>
+The required value sets are likewise modelled in ART-DECOR and associated with the
+corresponding data elements. Compatibility with IHE BPPC (Integrating the
+Healthcare Enterprise,
+          <a href="https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_TF_Vol1.pdf#nameddest=19_Basic_Patient_Privacy_Consen">profile "Basic Patient Privacy Consent"</a>
+)
+is addressed via policies.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/implementer-guidance.html">web</a>
+        </td>
+        <td>
+          <a href="http://art-decor.org/decor/services/RetrieveValueSet?id=2.16.840.1.113883.3.1937.777.24.11.36&amp;effectiveDate=2021-04-23T10:55:54&amp;prefix=mide-&amp;format=html&amp;collapsable=true&amp;language=de-DE&amp;ui=en-US">art-decor.org</a>
+        </td>
+        <td>
+The           <strong>operationalisation and enforcement of the consent information</strong>
+ is supported
+by a
+          <a href="http://art-decor.org/decor/services/RetrieveValueSet?id=2.16.840.1.113883.3.1937.777.24.11.36&amp;effectiveDate=2021-04-23T10:55:54&amp;prefix=mide-&amp;format=html&amp;collapsable=true&amp;language=de-DE&amp;ui=en-US">uniform policy value set</a>
+.
+It can be used interoperably in IHE BPPC. In this guide it is the ValueSet
+          <a href="ValueSet-2.16.840.1.113883.3.1937.777.24.11.36--20230331232804.html">MII Consent: Policy ValueSet</a>
+.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/implementer-guidance.html">web</a>
+        </td>
+        <td>
+          <a href="https://ebooks.iospress.nl/doi/10.3233/SHTI251389">ebooks.iospress.nl</a>
+        </td>
+        <td>
+The IG of the           <strong>HL7-D AG Einwilligungsmanagement</strong>
+ and the corresponding
+          <a href="https://ebooks.iospress.nl/doi/10.3233/SHTI251389">publication</a>
+ explain the
+meaning of the           <code class="language-plaintext highlighter-rouge">ResultType</code>
+ parameter comprehensively.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/implementer-guidance.html">web</a>
+        </td>
+        <td>
+          <a href="https://ths-greifswald.de/gics">ths-greifswald.de</a>
+        </td>
+        <td>
+The consent management system           <a href="https://ths-greifswald.de/gics">gICS</a>
+ is the
+current           <a href="https://ebooks.iospress.nl/doi/10.3233/SHTI251389">reference implementation</a>
+
+of the HL7-D FHIR standard for consent management (version 2.0).
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/implementer-guidance.html">web</a>
+        </td>
+        <td>
+          <a href="https://ebooks.iospress.nl/doi/10.3233/SHTI251389">ebooks.iospress.nl</a>
+        </td>
+        <td>
+The consent management system           <a href="https://ths-greifswald.de/gics">gICS</a>
+ is the
+current           <a href="https://ebooks.iospress.nl/doi/10.3233/SHTI251389">reference implementation</a>
+
+of the HL7-D FHIR standard for consent management (version 2.0).
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/implementer-guidance.html">web</a>
+        </td>
+        <td>
+          <a href="https://ths-greifswald.de/gics">ths-greifswald.de</a>
+        </td>
+        <td>
+Sites using the consent management system
+          <a href="https://ths-greifswald.de/gics">gICS</a>
+ should follow the precise
+          <a href="https://www.ths-greifswald.de/diz-dashboard-empfehlung-gics-kds-consent-status/">
+<strong>vendor recommendations</strong>          </a>
+
+for           <strong>key-figure determination</strong>
+ and for providing the Consent resources to the
+          <strong>FDPG</strong>
+.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/implementer-guidance.html">web</a>
+        </td>
+        <td>
+          <a href="https://www.ths-greifswald.de/diz-dashboard-empfehlung-gics-kds-consent-status/">www.ths-greifswald.de</a>
+        </td>
+        <td>
+Sites using the consent management system
+          <a href="https://ths-greifswald.de/gics">gICS</a>
+ should follow the precise
+          <a href="https://www.ths-greifswald.de/diz-dashboard-empfehlung-gics-kds-consent-status/">
+<strong>vendor recommendations</strong>          </a>
+
+for           <strong>key-figure determination</strong>
+ and for providing the Consent resources to the
+          <strong>FDPG</strong>
+.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/implementer-guidance.html">web</a>
+        </td>
+        <td>
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/">ig.fhir.de</a>
+        </td>
+        <td>
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/">Implementation Guide of the working group Einwilligungsmanagement of the Interop-Forum, version 1.0</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/implementer-guidance.html">web</a>
+        </td>
+        <td>
+          <a href="https://art-decor.org/art-decor/decor-datasets--mide-?conceptId=2.16.840.1.113883.3.1937.777.24.2.184">art-decor.org</a>
+        </td>
+        <td>
+          <a href="https://art-decor.org/art-decor/decor-datasets--mide-?conceptId=2.16.840.1.113883.3.1937.777.24.2.184">Core Dataset description in ART-DECOR</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/implementer-guidance.html">web</a>
+        </td>
+        <td>
+          <a href="https://www.medizininformatik-initiative.de/sites/default/files/inline-files/MII_04_Kerndatensatz_1-0.pdf">www.medizininformatik-initiative.de</a>
+        </td>
+        <td>
+This specification was designed on the basis of the description of the MII Core
+Dataset in the version of 10 March 2017
+(          <a href="https://www.medizininformatik-initiative.de/sites/default/files/inline-files/MII_04_Kerndatensatz_1-0.pdf">PDF</a>
+),
+and of the dataset description in
+          <a href="https://art-decor.org/art-decor/decor-project--mide-">ART-DECOR</a>
+.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/implementer-guidance.html">web</a>
+        </td>
+        <td>
+          <a href="https://art-decor.org/art-decor/decor-project--mide-">art-decor.org</a>
+        </td>
+        <td>
+This specification was designed on the basis of the description of the MII Core
+Dataset in the version of 10 March 2017
+(          <a href="https://www.medizininformatik-initiative.de/sites/default/files/inline-files/MII_04_Kerndatensatz_1-0.pdf">PDF</a>
+),
+and of the dataset description in
+          <a href="https://art-decor.org/art-decor/decor-project--mide-">ART-DECOR</a>
+.
+        </td>
+      </tr>
+      <tr>
+        <td>
           <a href="en/index.html">web</a>
         </td>
         <td>
-          <a href="https://www.medizininformatik-initiative.de/">www.medizininformatik-initiative.de</a>
+          <a href="https://bmcmedinformdecismak.biomedcentral.com/articles/10.1186/s12911-020-01138-6">bmcmedinformdecismak.biomedcentral.com</a>
         </td>
         <td>
-This module is part of the MII Core Dataset; the other KDS modules and their
-dependencies are described at
-          <a href="https://www.medizininformatik-initiative.de/">medizininformatik-initiative.de</a>
+The MII CDS module Consent is a base module of the Core Dataset (CDS) of the
+Medical Informatics Initiative (MII). It builds on the
+          <a href="https://bmcmedinformdecismak.biomedcentral.com/articles/10.1186/s12911-020-01138-6">published preliminary work of the MII Taskforce Consent Umsetzung</a>
+.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/index.html">web</a>
+        </td>
+        <td>
+          <a href="https://www.medizininformatik-initiative.de/de/mustertext-zur-patienteneinwilligung">www.medizininformatik-initiative.de</a>
+        </td>
+        <td>
+For representing the
+          <a href="https://www.medizininformatik-initiative.de/de/mustertext-zur-patienteneinwilligung">MII Broad Consent</a>
+,
+the module follows the           <strong>
+<a href="https://ig.fhir.de/einwilligungsmanagement/stable">FHIR R4 profiles</a> of the
+<a href="https://wiki.hl7.de/index.php?title=Einwilligungsmanagement_(Projekt)">AG Einwilligungsmanagement</a>
+of the <a href="https://wiki.hl7.de/index.php?title=Hauptseite">Interop-Forum</a>          </strong>
+ for form data
+(Questionnaire, QuestionnaireResponse) and consents (Consent).
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/index.html">web</a>
+        </td>
+        <td>
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable">ig.fhir.de</a>
+        </td>
+        <td>
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable">FHIR R4 profiles</a>
+ of the
+          <a href="https://wiki.hl7.de/index.php?title=Einwilligungsmanagement_(Projekt)">AG Einwilligungsmanagement</a>
+
+of the           <a href="https://wiki.hl7.de/index.php?title=Hauptseite">Interop-Forum</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/index.html">web</a>
+        </td>
+        <td>
+          <a href="https://wiki.hl7.de/index.php?title=Einwilligungsmanagement_(Projekt)">wiki.hl7.de</a>
+        </td>
+        <td>
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable">FHIR R4 profiles</a>
+ of the
+          <a href="https://wiki.hl7.de/index.php?title=Einwilligungsmanagement_(Projekt)">AG Einwilligungsmanagement</a>
+
+of the           <a href="https://wiki.hl7.de/index.php?title=Hauptseite">Interop-Forum</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/index.html">web</a>
+        </td>
+        <td>
+          <a href="https://wiki.hl7.de/index.php?title=Hauptseite">wiki.hl7.de</a>
+        </td>
+        <td>
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable">FHIR R4 profiles</a>
+ of the
+          <a href="https://wiki.hl7.de/index.php?title=Einwilligungsmanagement_(Projekt)">AG Einwilligungsmanagement</a>
+
+of the           <a href="https://wiki.hl7.de/index.php?title=Hauptseite">Interop-Forum</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/index.html">web</a>
+        </td>
+        <td>
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/">ig.fhir.de</a>
+        </td>
+        <td>
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/">Implementation Guide of the AG Einwilligungsmanagement of the Interop-Forum</a>
+
+— this module's formal dependency (          <code class="language-plaintext highlighter-rouge">de.einwilligungsmanagement</code>
+ in
+          <code class="language-plaintext highlighter-rouge">sushi-config.yaml</code>
+).
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/index.html">web</a>
+        </td>
+        <td>
+          <a href="https://art-decor.org/art-decor/decor-datasets--mide-?conceptId=2.16.840.1.113883.3.1937.777.24.2.184">art-decor.org</a>
+        </td>
+        <td>
+          <a href="https://art-decor.org/art-decor/decor-datasets--mide-?conceptId=2.16.840.1.113883.3.1937.777.24.2.184">Core Dataset description in ART-DECOR</a>
+
+— the domain dataset description of this module.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/index.html">web</a>
+        </td>
+        <td>
+          <a href="https://www.medizininformatik-initiative.de/de/mustertext-zur-patienteneinwilligung">www.medizininformatik-initiative.de</a>
+        </td>
+        <td>
+          <a href="https://www.medizininformatik-initiative.de/de/mustertext-zur-patienteneinwilligung">MII Broad Consent (model patient consent form)</a>
 .
         </td>
       </tr>
@@ -897,43 +2881,10 @@ More FHIR implementation guides can be found in the official
           <a href="en/index.html">web</a>
         </td>
         <td>
-          <a href="https://mii.zulipchat.com/">mii.zulipchat.com</a>
+          <a href="https://github.com/medizininformatik-initiative/kerndatensatzmodul-consent/issues">github.com</a>
         </td>
         <td>
-Questions about this publication can be asked on the HL7 FHIR Zulip
-          <a href="https://chat.fhir.org">chat.fhir.org</a>
- in the           <code class="language-plaintext highlighter-rouge">german/mi-initiative</code>
- stream, or
-on the MII Zulip           <a href="https://mii.zulipchat.com/">mii.zulipchat.com</a>
- in the
-          <code class="language-plaintext highlighter-rouge">MII-Kerndatensatz</code>
- stream.
-Comments and issues are welcome as           <em>Issues</em>
- on
-          <a href="https://github.com/forschungsgruppe-digital-health/mii-kds-consent-ig-inoffiziell/issues">GitHub</a>
-.
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <a href="en/index.html">web</a>
-        </td>
-        <td>
-          <a href="https://github.com/forschungsgruppe-digital-health/mii-kds-consent-ig-inoffiziell/issues">github.com</a>
-        </td>
-        <td>
-Questions about this publication can be asked on the HL7 FHIR Zulip
-          <a href="https://chat.fhir.org">chat.fhir.org</a>
- in the           <code class="language-plaintext highlighter-rouge">german/mi-initiative</code>
- stream, or
-on the MII Zulip           <a href="https://mii.zulipchat.com/">mii.zulipchat.com</a>
- in the
-          <code class="language-plaintext highlighter-rouge">MII-Kerndatensatz</code>
- stream.
-Comments and issues are welcome as           <em>Issues</em>
- on
-          <a href="https://github.com/forschungsgruppe-digital-health/mii-kds-consent-ig-inoffiziell/issues">GitHub</a>
-.
+GitHub (original module):           <a href="https://github.com/medizininformatik-initiative/kerndatensatzmodul-consent/issues">medizininformatik-initiative/kerndatensatzmodul-consent/issues</a>
         </td>
       </tr>
       <tr>
@@ -945,7 +2896,7 @@ Comments and issues are welcome as           <em>Issues</em>
         </td>
         <td>
 This work is licensed under the
-          <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License (CC BY 4.0)</a>
+          <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>
 .
         </td>
       </tr>
@@ -1004,6 +2955,180 @@ this guide supports FAIR-aligned publication of FHIR specification artifacts.
       </tr>
       <tr>
         <td>
+          <a href="en/profiles-and-extensions.html">web</a>
+        </td>
+        <td>
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/">ig.fhir.de</a>
+        </td>
+        <td>
+The Core Dataset specifications are based, wherever possible, on international
+standards and terminologies — in particular on the profiling work of the
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/">AG Einwilligungsmanagement on FHIR Consent</a>
+.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/profiles-and-extensions.html">web</a>
+        </td>
+        <td>
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/">ig.fhir.de</a>
+        </td>
+        <td>
+This module defines           <strong>no extensions of its own</strong>
+. The           <code class="language-plaintext highlighter-rouge">DomainReference</code>
+ extension
+it uses comes from the
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/">Einwilligungsmanagement implementation guide</a>
+.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/profiles-and-extensions.html">web</a>
+        </td>
+        <td>
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/Home.html">ig.fhir.de</a>
+        </td>
+        <td>
+Besides
+          <a href="StructureDefinition-e0e166b4-0f77-478d-9062-de0034d98ce0.html">Consent</a>
+,
+          <a href="StructureDefinition-f675b1e8-9f3f-44e8-bb59-9681f78eb464.html">Provenance</a>
+ and
+          <a href="StructureDefinition-56375452-bfa1-4111-af7c-5b5ba9a1857c.html">DocumentReference</a>
+,
+further profiles are relevant for handling consents and consent templates. They
+are taken over unchanged from the
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/Home.html">Einwilligungsmanagement implementation guide</a>
+.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/search-parameters-and-operations.html">web</a>
+        </td>
+        <td>
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/Consent.html">ig.fhir.de</a>
+        </td>
+        <td>
+For searching Consent resources, the
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/Consent.html">HL7-D standard for consent management</a>
+
+(version 2.0) defines the following search parameters for filtering Consent
+resources. They are supported by the MII KDS Consent module as well. Concrete
+examples are documented in the IG of the HL7-D working group.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/security-and-privacy.html">web</a>
+        </td>
+        <td>
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/Patient.html">ig.fhir.de</a>
+        </td>
+        <td>
+Because the FHIR Consent resource likewise contains           <strong>no person-identifying
+information</strong>
+ about the consenting person, the
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/Patient.html">
+<strong>pseudonymous person reference</strong>          </a>
+
+should be established through corresponding
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/ContextIdentifier.html">
+<strong>pseudonymous identifiers</strong>          </a>
+.
+Any person-identifying information (e.g. date of birth, sex, address), as well as
+references — for example to clear-text patient profiles — should be replaced
+suitably before export.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/security-and-privacy.html">web</a>
+        </td>
+        <td>
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/ContextIdentifier.html">ig.fhir.de</a>
+        </td>
+        <td>
+Because the FHIR Consent resource likewise contains           <strong>no person-identifying
+information</strong>
+ about the consenting person, the
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/Patient.html">
+<strong>pseudonymous person reference</strong>          </a>
+
+should be established through corresponding
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/ContextIdentifier.html">
+<strong>pseudonymous identifiers</strong>          </a>
+.
+Any person-identifying information (e.g. date of birth, sex, address), as well as
+references — for example to clear-text patient profiles — should be replaced
+suitably before export.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/security-and-privacy.html">web</a>
+        </td>
+        <td>
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/Patient.html">ig.fhir.de</a>
+        </td>
+        <td>
+Technically, Patient resources and derived profiles may be used, such as the
+profiles of the
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/Patient.html">AG Einwilligungsmanagement</a>
+
+or of the
+          <a href="https://simplifier.net/medizininformatikinitiative-modulperson/sdmiipersonpatientpseudonymisiert">MII</a>
+.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/security-and-privacy.html">web</a>
+        </td>
+        <td>
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/ContextIdentifierType.html">ig.fhir.de</a>
+        </td>
+        <td>
+          <em>
+Technically, Patient resources and derived profiles may be used, such as the
+profiles of the
+<a href="https://ig.fhir.de/einwilligungsmanagement/stable/Patient.html">AG Einwilligungsmanagement</a>
+or of the
+<a href="https://simplifier.net/medizininformatikinitiative-modulperson/sdmiipersonpatientpseudonymisiert">MII</a>.
+          </em>
+
+Independently of that, in order to distinguish pseudonyms, case numbers and so
+on, the identifier used has to be categorised by means of
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/ContextIdentifierType.html">
+<code class="language-plaintext highlighter-rouge">Patient.identifier.type</code>          </a>
+.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/security-and-privacy.html">web</a>
+        </td>
+        <td>
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/DocumentReference.html">ig.fhir.de</a>
+        </td>
+        <td>
+The FHIR Consent resource contains           <strong>no document scans and/or signatures</strong>
+. Where
+transmitting them is required for a given use case, separate resources have to be
+created per the
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/DocumentReference.html">requirements of the AG Einwilligungsmanagement</a>
+
+(consent bundles) — in this module the profiles
+          <a href="StructureDefinition-f675b1e8-9f3f-44e8-bb59-9681f78eb464.html">Provenance</a>
+ and
+          <a href="StructureDefinition-56375452-bfa1-4111-af7c-5b5ba9a1857c.html">DocumentReference</a>
+.
+        </td>
+      </tr>
+      <tr>
+        <td>
           <a href="en/terminology.html">web</a>
         </td>
         <td>
@@ -1017,6 +3142,59 @@ OPS, SNOMED CT) are           <strong>not</strong>
 MII terminology service (SU-TermServ):
           <a href="https://mii-termserv.de/">https://mii-termserv.de/</a>
 .
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/uml-diagrams.html">web</a>
+        </td>
+        <td>
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/Organization.html">ig.fhir.de</a>
+        </td>
+        <td>
+The consent is collected in a concrete context (e.g. MII), which in FHIR is
+modelled as a reference to the responsible organisation
+(          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/Organization.html">Organization</a>
+)
+and/or to a research project
+(          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/ResearchStudy.html">ResearchStudy</a>
+).
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/uml-diagrams.html">web</a>
+        </td>
+        <td>
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/ResearchStudy.html">ig.fhir.de</a>
+        </td>
+        <td>
+The consent is collected in a concrete context (e.g. MII), which in FHIR is
+modelled as a reference to the responsible organisation
+(          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/Organization.html">Organization</a>
+)
+and/or to a research project
+(          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/ResearchStudy.html">ResearchStudy</a>
+).
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/uml-diagrams.html">web</a>
+        </td>
+        <td>
+          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/Patient.html">ig.fhir.de</a>
+        </td>
+        <td>
+The Provenance resource describes the provenance of the consent content
+(signatures among other things) and links it to the persons involved
+(          <a href="https://ig.fhir.de/einwilligungsmanagement/stable/Patient.html">Patient</a>
+,
+consent witness) and to any document scans
+(          <a href="StructureDefinition-56375452-bfa1-4111-af7c-5b5ba9a1857c.html">DocumentReference</a>
+).
+The application systems used for the collection can likewise be named (display)
+or referenced, as can the patient identifiers valid in the application system.
         </td>
       </tr>
       <tr>
@@ -1038,6 +3216,24 @@ after the merge.
     </table>
     <h2>Internal Images</h2>
     <table class="grid">
+      <tr>
+        <td>
+MII-KDS_de_Consent.jpg          <br/>
+          <img src="MII-KDS_de_Consent.jpg" alt="MII-KDS_de_Consent.jpg" width="600px" height="auto"/>
+        </td>
+      </tr>
+      <tr>
+        <td>
+MII-KDS_en_Consent.jpg          <br/>
+          <img src="MII-KDS_en_Consent.jpg" alt="MII-KDS_en_Consent.jpg" width="600px" height="auto"/>
+        </td>
+      </tr>
+      <tr>
+        <td>
+information-model_UML-Diagramm_MII-spez.png          <br/>
+          <img src="information-model_UML-Diagramm_MII-spez.png" alt="information-model_UML-Diagramm_MII-spez.png" width="600px" height="auto"/>
+        </td>
+      </tr>
       <tr>
         <td>
 tree-filter.png          <br/>

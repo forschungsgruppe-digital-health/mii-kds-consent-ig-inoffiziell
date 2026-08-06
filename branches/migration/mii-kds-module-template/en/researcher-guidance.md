@@ -6,15 +6,11 @@
 
 ## Guidance for Researchers
 
-##### TODO:REVIEW (Gate B) — starter page, narrative not yet migrated
-
-This is the **MII KDS module template's starter page**, carried over as-is. It is **not** the narrative of the MII KDS Modul Consent.
-
-The module's guide text exists only as a rendered Simplifier guide (`simplifier.net/guide/miiigmodulconsent`); it is **not in the source repository**, so there was nothing to migrate into this page and nothing was invented for it. The page **structure**, the menu and the artifact rendering below are real; the prose is a placeholder until the narrative is migrated from Simplifier.
-
 ### Guidance for Researchers
 
 Guidance for researchers using the data of the **Consent** module for research purposes — e.g. which data elements are relevant to which research questions, and how they are to be interpreted.
 
-> [TODO: Describe the research-relevant aspects of your module.]
+##### TODO:REVIEW (Gate B) — the source guide carries no researcher-specific guidance
+
+The migrated source guide has no section addressed to researchers, so this page has nothing migrated into it and nothing was invented. The nearest content the guide does carry is the use-case description — case-number estimation, feasibility queries, data sharing — which is on [General Requirements](general-requirements.md). (The MII reference module `kerndatensatz-basis` is itself incomplete here and says its researcher guidance "will be added in a future version", so this gap is not unusual.) Recorded in the migration report.
 

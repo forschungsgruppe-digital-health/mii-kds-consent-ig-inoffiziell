@@ -7,12 +7,6 @@
 
  Diese Seite enthält Übersetzungen aus der Originalsprache, in der der Leitfaden verfasst wurde. Informationen zu diesen Übersetzungen und Anweisungen zum Abgeben von Feedback zu den Übersetzungen finden Sie [hier](translationinfo.md). 
 
-##### TODO:REVIEW (Gate B) — Startseiten-Vorlage, Narrativ noch nicht migriert
-
-Dies ist die **Vorlagenseite des MII-KDS-Modul-Templates**, unveraendert uebernommen. Es ist **nicht** das Narrativ des MII-KDS-Moduls Consent.
-
-Der Leitfadentext des Moduls existiert nur als gerenderter Simplifier-Guide (`simplifier.net/guide/miiigmodulconsent`) und liegt **nicht im Quell-Repository**. Es gab daher nichts, was in diese Seite haette migriert werden koennen, und es wurde nichts erfunden. Seitenstruktur, Menue und Artefakt-Rendering sind echt; der Fliesstext ist ein Platzhalter, bis das Narrativ von Simplifier migriert ist.
-
 ### Konformität
 
 Dieser Abschnitt definiert die Konformitätsanforderungen für Systeme, die die Profile des Moduls **Consent** umsetzen.
@@ -24,9 +18,21 @@ Dieser Abschnitt definiert die Konformitätsanforderungen für Systeme, die die 
 
 Maßgeblich für die MII-weiten Konformitätsregeln ist die Seite [Conformance](https://github.com/medizininformatik-initiative/kerndatensatz-meta/wiki/Conformance) des MII-Meta-Wikis. Allgemeine Anforderungen, Must-Support und Umgang mit fehlenden Daten geben sie für dieses Modul wieder; bei Abweichungen gilt das Wiki. Sicherheit und Datenschutz ist eine zusätzliche Seite dieses Leitfadens gemäß den HL7-IG-Best-Practices.
 
+#### Technische Implementierung
+
+**Aus dem Quell-Leitfaden migriert (Stand 2026.0.0, geerntet am 2026-08-06): `.../TechnischeImplementierung`. Dieser Abschnitt ist der maßgebliche Text; die englische Seite ist seine Übersetzung.**
+
+Dieser Abschnitt beschreibt die syntaktischen und semantischen Vorgaben zur Implementierung des Consent-Moduls.
+
+Weiterhin sind auch Suchparameter definiert, die bei Verwendung der FHIR RESTful API durch die jeweiligen Systeme implementiert werden müssen. Grundsätzlich werden logische AND- und OR-Verknüpfungen der FHIR-Search unterstützt, vgl. [hl7.org/fhir/search.html](http://www.hl7.org/fhir/search.html). Die modul-eigenen Suchparameter sind unter [Suchparameter und Operationen](search-parameters-and-operations.md) beschrieben.
+
+Grundlagen und weitere Details zur Suche und zur FHIR RESTful API werden zum Zeitpunkt der Erstellung dieses Implementierungsleitfadens im Rahmen der Basismodule erarbeitet und können zu einem späteren Zeitpunkt die hier gemachten Vorgaben ergänzen. Ggf. wird dann auch eine neue Version dieses Leitfadens veröffentlicht.
+
 Hinweise zur Umsetzung stehen im Abschnitt [Anleitung](guidance.md), die technischen Artefakte im Abschnitt [Artefakte](artifacts.md).
 
-> [TODO: Ergänzen Sie modul-spezifische Konformitätsaussagen.Hinweis zur Erfassung: Konformitätsaussagen werden **nicht** automatisch erkannt. Jeder normative Satz der englischen Seiten wird ausdrücklich markiert — eine Id, ein Doppelpunkt und der Satz, begrenzt durch Paragraphenzeichen — und daraus erzeugt der IG-Publisher die Übersichtstabelle am Ende der englischen Fassung dieser Seite. Die Syntax steht im Original in `input/pagecontent/general-requirements.md`. Diese deutsche Fassung trägt bewusst keine Markierungen.Halten Sie die Menge **kuratiert** — markieren Sie echte Verpflichtungen, nicht jeden Satz mit einem fett gesetzten Verb — und formulieren Sie jeden markierten Satz für sich verständlich: die Tabelle zeigt ihn ohne Kontext.]
+##### TODO:REVIEW (Gate B) — es wurden keine Konformitätsaussagen markiert
+
+Der migrierte Quell-Leitfaden formuliert seine Vorgaben als Fließtext und als Must-support-/not-supported-Angaben in den Elementtabellen; er markiert keinen Satz als Konformitätsaussage. **Kein Satz der Migration wurde zu einer gemacht** — migrierten Fließtext in Konformitätsmarker zu fassen würde seine Verbindlichkeit ändern; das ist eine Entscheidung der Modulverantwortlichen, nicht der Migration.
 
 -------
 

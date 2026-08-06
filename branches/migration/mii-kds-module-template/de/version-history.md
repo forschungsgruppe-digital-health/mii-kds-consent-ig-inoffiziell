@@ -7,12 +7,6 @@
 
  Diese Seite enthält Übersetzungen aus der Originalsprache, in der der Leitfaden verfasst wurde. Informationen zu diesen Übersetzungen und Anweisungen zum Abgeben von Feedback zu den Übersetzungen finden Sie [hier](translationinfo.md). 
 
-##### TODO:REVIEW (Gate B) — Startseiten-Vorlage, Narrativ noch nicht migriert
-
-Dies ist die **Vorlagenseite des MII-KDS-Modul-Templates**, unveraendert uebernommen. Es ist **nicht** das Narrativ des MII-KDS-Moduls Consent.
-
-Der Leitfadentext des Moduls existiert nur als gerenderter Simplifier-Guide (`simplifier.net/guide/miiigmodulconsent`) und liegt **nicht im Quell-Repository**. Es gab daher nichts, was in diese Seite haette migriert werden koennen, und es wurde nichts erfunden. Seitenstruktur, Menue und Artefakt-Rendering sind echt; der Fliesstext ist ein Platzhalter, bis das Narrativ von Simplifier migriert ist.
-
 ### Versionierung
 
 #### Versionsschema
@@ -51,5 +45,7 @@ Ab der zweiten **formalen Publikation** veröffentlicht dieser Leitfaden zusätz
 
 **Die Demonstration unten** (nur in der Vorschau dieses Vorlagen-Repositories) zeigt dieselbe Art Bericht, bevor eine formale Publikation existiert: Der Build vergleicht sich mit der vorherigen `dev`-Vorschau über das `-compare`-Kommando des FHIR-Validators und veröffentlicht das Ergebnis unter `comparison-demo/index.html`. Die Repository-Variable `ENABLE_VERSION_COMPARISON=false` schaltet das gesamte Feature ab — den Publisher-Vergleich in allen Build-Workflows ebenso wie diese Demonstration; ein erstelltes Modul rendert die Demonstration nie.
 
-> [TODO: Falls Ihr Modul über das MII-Schema hinaus eine eigene Versionierungs-Politik hat — etwa einen Unterstützungszeitraum für ältere Versionen oder eine Abkündigungs-Politik für Profile —, beschreiben Sie sie hier. Löschen Sie diesen Hinweis anschließend.]
+##### TODO:REVIEW (Gate B) — der Quell-Leitfaden nennt keine eigene Versionierungs-Policy
+
+Der migrierte Quell-Leitfaden hat über seine Release Notes hinaus keinen Abschnitt zur Versionierung; diese stehen unter [Changelog](changes.md). Es wurde nichts erfunden. Er markiert einzelne Policy-Codes allerdings als veraltet, statt sie zu entfernen (siehe den Eintrag zu 2026.0.0 und die Properties `status`/`inactive` unter [Terminologie](terminology.md)) — eine faktische Deprecation-Praxis, die die Modulverantwortlichen hier ausdrücklich festhalten könnten.
 

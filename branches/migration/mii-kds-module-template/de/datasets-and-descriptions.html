@@ -233,24 +233,43 @@ Diese Seite enthält Übersetzungen aus der Originalsprache, in der der Leitfade
 </p>
 
 <!-- markdownlint-disable MD041 -->
-<div class="mii-highlight mii-highlight-orange">
-<h5>TODO:REVIEW (Gate B) &mdash; Startseiten-Vorlage, Narrativ noch nicht migriert</h5>
-<p>Dies ist die <strong>Vorlagenseite des MII-KDS-Modul-Templates</strong>, unveraendert
-uebernommen. Es ist <strong>nicht</strong> das Narrativ des MII-KDS-Moduls Consent.</p>
-<p>Der Leitfadentext des Moduls existiert nur als gerenderter Simplifier-Guide
-(<code>simplifier.net/guide/miiigmodulconsent</code>) und liegt <strong>nicht im
-Quell-Repository</strong>. Es gab daher nichts, was in diese Seite haette migriert werden
-koennen, und es wurde nichts erfunden. Seitenstruktur, Menue und Artefakt-Rendering sind
-echt; der Fliesstext ist ein Platzhalter, bis das Narrativ von Simplifier migriert ist.</p>
+<!--
+  DATENSAETZE INKL. BESCHREIBUNGEN — DEUTSCHE FASSUNG (Quelltext, massgeblich).
+  Herkunft (Migration 2026-08-06, spec 5.1c):
+    .../AnwendungsflleInformationsmodell/Datenstzeinkl.Beschreibungen?version=2026.0.0
+  Der Modellierungsteil derselben Quellseiten-Gruppe (UML) liegt auf
+  uml-diagrams.md (spec 9: Datensatz-Narrativ und Modell-Rendering getrennt).
+-->
+
+<h3 id="datensätze-inkl-beschreibungen">Datensätze inkl. Beschreibungen</h3>
+
+<p>Die Datensatzbeschreibung des KDS-Moduls Consent ist vollumfänglich im ART-DECOR
+hinterlegt:</p>
+
+<ul>
+  <li><a href="https://art-decor.org/art-decor/decor-datasets--mide-?conceptId=2.16.840.1.113883.3.1937.777.24.2.184">formularbasierte Beschreibung MII Dataset, Concept ‚Consent‘</a></li>
+  <li><a href="https://art-decor.org/decor/services/RetrieveDataSet?conceptId=2.16.840.1.113883.3.1937.777.24.2.184">tabellarische Beschreibung MII Dataset, Concept ‚Consent‘</a></li>
+</ul>
+
+<p>Dies umfasst die Beschreibungen des MII Broad Consent in folgenden Versionen:</p>
+
+<ul>
+  <li>MII Broad Consent Version 1.6.d</li>
+  <li>MII Broad Consent Version 1.6.f</li>
+</ul>
+
+<p>Die grafische Darstellung des Informationsmodells steht unter
+<a href="uml-diagrams.html">UML-Diagramme</a>; die daraus abgeleiteten FHIR-Artefakte unter
+<a href="profiles-and-extensions.html">Profile und Extensions</a>.</p>
+
+<div class="mii-highlight mii-highlight-grey">
+<h5>TODO:REVIEW (Gate B) &mdash; Datensatzbeschreibung liegt ausserhalb dieses Leitfadens</h5>
+<p>Der migrierte Quell-Leitfaden beschreibt die Datenelemente nicht im Leitfaden selbst,
+sondern verweist auf ART-DECOR. Es wurde nichts erg&auml;nzt: eine im Leitfaden
+eingebettete Datenelement-Tabelle w&auml;re neuer Inhalt, kein migrierter
+(Migrationsbericht, Warteschlange &#9313;). Das Modul liefert auch kein Logical Model,
+aus dem sie erzeugt werden k&ouml;nnte &mdash; siehe <a href="logical-models.html">Logische Modelle</a>.</p>
 </div>
-
-<h3 id="datensätze-und-beschreibungen">Datensätze und Beschreibungen</h3>
-
-<p>Ausführliche Beschreibung der Datenelemente des Moduls <strong>Consent</strong> und ihrer Zuordnung zu den logischen Modellen.</p>
-
-<blockquote class="mii-highlight mii-highlight-grey">
-  <p>[TODO: Beschreiben Sie die fachlichen Datenelemente; verweisen Sie auf die logischen Modelle.]</p>
-</blockquote>
 
 
 
@@ -277,7 +296,7 @@ echt; der Fliesstext ist ein Platzhalter, bis das Narrativ von Simplifier migrie
 
           IG © 2019+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de">Medical Informatics Initiative (MII)</a>.  
           Package de.medizininformatikinitiative.kerndatensatz.consent#2026.0.0 basiert auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
-          Erstellt <span title="Thu, Aug 6, 2026 10:59+0000">2026-08-06</span>
+          Erstellt <span title="Thu, Aug 6, 2026 13:20+0000">2026-08-06</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
             <!-- MII branding override for the fhir2.base.template footer fragment.

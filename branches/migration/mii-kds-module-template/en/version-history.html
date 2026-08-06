@@ -234,17 +234,6 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </div>
 
 <!-- markdownlint-disable MD041 -->
-<div class="mii-highlight mii-highlight-orange">
-<h5>TODO:REVIEW (Gate B) &mdash; starter page, narrative not yet migrated</h5>
-<p>This is the <strong>MII KDS module template's starter page</strong>, carried over as-is.
-It is <strong>not</strong> the narrative of the MII KDS Modul Consent.</p>
-<p>The module's guide text exists only as a rendered Simplifier guide
-(<code>simplifier.net/guide/miiigmodulconsent</code>); it is <strong>not in the source
-repository</strong>, so there was nothing to migrate into this page and nothing was
-invented for it. The page <em>structure</em>, the menu and the artifact rendering below are
-real; the prose is a placeholder until the narrative is migrated from Simplifier.</p>
-</div>
-
 <!-- Default-language (English) page. Ported from kerndatensatz-basis
      input/pagecontent/version-history.md (branch main); the release process is
      the MII meta wiki page "Module Release Workflow"
@@ -333,11 +322,15 @@ The repository variable <code class="language-plaintext highlighter-rouge">ENABL
 feature off — the publisher's comparison in every build workflow and this
 demonstration alike; a created module never renders the demonstration.</p>
 
-<blockquote class="mii-highlight mii-highlight-grey">
-  <p>[TODO: If your module has a versioning policy of its own beyond the MII scheme
-— for example a support window for older versions, or a deprecation policy for
-profiles — describe it here. Delete this prompt afterwards.]</p>
-</blockquote>
+<div class="mii-highlight mii-highlight-grey">
+<h5>TODO:REVIEW (Gate B) &mdash; the source guide states no versioning policy of its own</h5>
+<p>The migrated source guide has no section on versioning beyond its release notes, which are
+on <a href="changes.html">Changelog</a>. Nothing was invented. It does, however, deprecate
+individual policy codes rather than removing them (see the 2026.0.0 entry and the
+<code>status</code>/<code>inactive</code> properties on
+<a href="terminology.html">Terminology</a>) &mdash; a de-facto deprecation practice that the
+module owners may want to write down here explicitly.</p>
+</div>
 
 
 
@@ -364,7 +357,7 @@ profiles — describe it here. Delete this prompt afterwards.]</p>
 
           IG © 2019+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de">Medical Informatics Initiative (MII)</a>.  
           Package de.medizininformatikinitiative.kerndatensatz.consent#2026.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
-          Generated <span title="Thu, Aug 6, 2026 10:59+0000">2026-08-06</span>
+          Generated <span title="Thu, Aug 6, 2026 13:20+0000">2026-08-06</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
             <!-- MII branding override for the fhir2.base.template footer fragment.

@@ -233,17 +233,6 @@ Diese Seite enthält Übersetzungen aus der Originalsprache, in der der Leitfade
 </p>
 
 <!-- markdownlint-disable MD041 -->
-<div class="mii-highlight mii-highlight-orange">
-<h5>TODO:REVIEW (Gate B) &mdash; Startseiten-Vorlage, Narrativ noch nicht migriert</h5>
-<p>Dies ist die <strong>Vorlagenseite des MII-KDS-Modul-Templates</strong>, unveraendert
-uebernommen. Es ist <strong>nicht</strong> das Narrativ des MII-KDS-Moduls Consent.</p>
-<p>Der Leitfadentext des Moduls existiert nur als gerenderter Simplifier-Guide
-(<code>simplifier.net/guide/miiigmodulconsent</code>) und liegt <strong>nicht im
-Quell-Repository</strong>. Es gab daher nichts, was in diese Seite haette migriert werden
-koennen, und es wurde nichts erfunden. Seitenstruktur, Menue und Artefakt-Rendering sind
-echt; der Fliesstext ist ein Platzhalter, bis das Narrativ von Simplifier migriert ist.</p>
-</div>
-
 <!-- Deutsche Übersetzung der Standardsprachseite input/pagecontent/changes.md
      — beide Dateien müssen dasselbe aussagen. Struktur aus kerndatensatz-basis
      input/pagecontent/changes.md (Branch main) — ein Abschnitt je Version,
@@ -330,24 +319,169 @@ werden können.</p>
 
 <h4 id="version-202600">Version 2026.0.0</h4>
 
-<p><strong>Datum:</strong> 2026-08-06</p>
-
-<h5 id="hinzugefügt">Hinzugefügt</h5>
+<p><strong>Datum:</strong> 18.12.2025</p>
 
 <ul>
-  <li>Erstveröffentlichung des Moduls <strong>Consent</strong>.</li>
+  <li>ValueSet <em>MII_VS_Consent_SignatureTypes</em> um den Code
+<code class="language-plaintext highlighter-rouge">1.2.840.10065.1.12.1.5</code> „Verification Signature“ erweitert</li>
+  <li>CodeSystem <em>MII Consent: Policy CodeSystem</em>
+    <ul>
+      <li>ergänzt um Gültigkeitsdauer je Policy (Property <code class="language-plaintext highlighter-rouge">period-of-validity</code> mit ISO
+8601:2004 date String bzw. ‚einmalig‘)</li>
+      <li>Policy <code class="language-plaintext highlighter-rouge">2.16.840.1.113883.3.1937.777.24.5.3.46</code> „MDAT retrospektiv
+wissenschaftlich nutzen“ ist nun als veraltet markiert (deprecated) und soll
+nicht mehr verwendet werden</li>
+      <li>Policy <code class="language-plaintext highlighter-rouge">2.16.840.1.113883.3.1937.777.24.5.3.47</code> „MDAT retrospektiv
+zusammenfuehren Dritte“ ist nun als veraltet markiert (deprecated) und soll
+nicht mehr verwendet werden</li>
+      <li>Policy <code class="language-plaintext highlighter-rouge">2.16.840.1.113883.3.1937.777.24.5.3.16</code> „KKDAT 5J prospektiv
+speichern verarbeiten“ ist nun als veraltet markiert (deprecated) und soll
+nicht mehr verwendet werden</li>
+      <li>Policy <code class="language-plaintext highlighter-rouge">2.16.840.1.113883.3.1937.777.24.5.3.17</code> „KKDAT 5J prospektiv
+wissenschaftlich nutzen“ ist nun als veraltet markiert (deprecated) und soll
+nicht mehr verwendet werden</li>
+      <li>Markdown-Repräsentation in Tabellenform zur Darstellung des CodeSystems
+unter ‚Terminologie‘ im IG erstellt</li>
+    </ul>
+  </li>
+  <li>CodeSystem <em>mii-cs-consent-version-modules</em> für die BC-Versionen und
+Zusatzmodule erstellt
+    <ul>
+      <li>Ergänzung von OIDs für Ablehnungen (BC v1.6d und v1.7.2)</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">Consent.provision.period.end</code> und <code class="language-plaintext highlighter-rouge">Consent.provision.provision.period.end</code>
+sind nun Kardinalität <code class="language-plaintext highlighter-rouge">0..1</code>, also nicht mehr verpflichtend</li>
+  <li>Beispiele überarbeitet und ergänzt</li>
+  <li>IG: redaktionelle Überarbeitung und Erläuterungen verbessert
+    <ul>
+      <li>neue Seite <em>Empfehlungen zur praktischen Anwendung</em> hinzugefügt (ResultType)</li>
+      <li>Umgang mit Widerrufen bei Einwilligungen von Minderjährigen (Gültigkeitsdauer
+bzw. Ablauf der Einwilligung)</li>
+      <li>Hinweise zur Verwendung im Modellvorhaben Genomsequenzierung (§ 64e)</li>
+      <li>Erläuterung zu neuen Suchparametern ergänzt</li>
+    </ul>
+  </li>
 </ul>
 
+<p>Full Changelog:
+<a href="https://github.com/medizininformatik-initiative/kerndatensatzmodul-consent/compare/2025.0.3...2026.0.0">2025.0.3…2026.0.0</a></p>
+
+<h4 id="version-202504">Version 2025.0.4</h4>
+
+<p><strong>Datum:</strong> 16.06.2025</p>
+
+<ul>
+  <li>Terminologien:
+    <ul>
+      <li>Policy-CodeSystem-Ressource: <code class="language-plaintext highlighter-rouge">display</code> angepasst (Abkürzung → sprechende
+Bezeichner)</li>
+    </ul>
+  </li>
+  <li>Bugfix:
+    <ul>
+      <li>pagelink-Fehler behoben</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="version-202503">Version 2025.0.3</h4>
+
+<p><strong>Datum:</strong> 12.06.2025</p>
+
+<ul>
+  <li>IG/Consent:
+    <ul>
+      <li>Unterstützung von Zusatzmodul Fachnetzwerk Infektion – SNID (Z4) hinzugefügt</li>
+      <li>Unterstützung von Zusatzmodul Deutsches Zentrum für Psychische Gesundheit –
+DZPG (Z5) hinzugefügt</li>
+      <li>Consent: Liste der verfügbaren MII Consents zur Verwendung in
+<code class="language-plaintext highlighter-rouge">Consent.policy.uri</code> aktualisiert</li>
+      <li>Terminologies: Policy-CodeSystem um SNID- und DZPG-Policies erweitert</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Full Changelog:
+<a href="https://github.com/medizininformatik-initiative/kerndatensatzmodul-consent/compare/2025.0.0...2025.0.3">2025.0.0…2025.0.3</a></p>
+
+<h4 id="version-202502">Version 2025.0.2</h4>
+
+<p><strong>Datum:</strong> 11.06.2025</p>
+
+<ul>
+  <li>IG/Consent:
+    <ul>
+      <li>Unterstützung von Zusatzmodul Fachnetzwerk Infektion – SNID (Z4) hinzugefügt
+        <ul>
+          <li>Consent: Liste der verfügbaren MII Consents zur Verwendung in
+<code class="language-plaintext highlighter-rouge">Consent.policy.uri</code> aktualisiert</li>
+          <li>Terminologies: Policy-CodeSystem um SNID-Policies erweitert</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="version-202501">Version 2025.0.1</h4>
+
+<p><strong>Datum:</strong> 21.01.2025</p>
+
+<ul>
+  <li>IG/Consent:
+    <ul>
+      <li>Liste der verfügbaren MII Consents zur Verwendung in <code class="language-plaintext highlighter-rouge">Consent.policy.uri</code>
+aktualisiert:
+        <ul>
+          <li>Zusatzmodul ACRIBiS (Z2)</li>
+          <li>Zusatzmodul Patientenbefragung (Z3)</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="version-202500">Version 2025.0.0</h4>
+
+<p><strong>Datum:</strong> 17.12.2024</p>
+
+<ul>
+  <li>Consent-Ressource
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">Consent.category</code> → max value <code class="language-plaintext highlighter-rouge">*</code></li>
+      <li><code class="language-plaintext highlighter-rouge">Consent.provision.type</code> → fixedCode <code class="language-plaintext highlighter-rouge">deny</code> entfernt</li>
+      <li><code class="language-plaintext highlighter-rouge">Consent.provision.provision.type</code> → fixedCode <code class="language-plaintext highlighter-rouge">permit</code> entfernt</li>
+      <li>IG/Consent entsprechend angepasst</li>
+    </ul>
+  </li>
+  <li>IG/Consent
+    <ul>
+      <li>Liste der verfügbaren MII Consents zur Verwendung in <code class="language-plaintext highlighter-rouge">Consent.policy.uri</code>
+aktualisiert (Widerrufe und Minderjährige)</li>
+    </ul>
+  </li>
+  <li>Policy-CodeSystem: acribis- und PROM-Policies hinzugefügt</li>
+  <li>IG/Terminologie:
+    <ul>
+      <li>Level-Angaben korrigiert</li>
+      <li>Formatierung Hinweis-Text korrigiert</li>
+      <li>Hinweis 1 (FHIR + Policies) korrigiert</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Full Changelog:
+<a href="https://github.com/medizininformatik-initiative/kerndatensatzmodul-consent/compare/1.0.7...2025.0.0">1.0.7…2025.0.0</a></p>
+
 <blockquote class="mii-highlight mii-highlight-grey">
-  <p>[TODO: Ersetzen Sie diesen Abschnitt durch die echten Einträge Ihres ersten
-Releases und ergänzen Sie für jede weitere Version oben einen neuen Abschnitt.
-Bei einem Modul mit mehreren Teilbereichen gruppiert <code class="language-plaintext highlighter-rouge">kerndatensatz-basis</code> die
-Einträge einer Version thematisch (etwa <em>Dokumentation</em>,
-<em>Terminologie-Aktualisierungen</em> und je eine Überschrift pro Teilmodul) und
-stellt jedem Stichpunkt <strong>Hinzugefügt:</strong> / <strong>Geändert:</strong> / <strong>Entfernt:</strong>
-voran — nutzen Sie die für Ihr Modul passende der beiden Gruppierungen,
-bleiben Sie dabei aber über alle Versionen hinweg und in beiden Sprachen
-einheitlich.]</p>
+  <p><strong>TODO:REVIEW (Gate B) — Umfang und Form dieses Changelogs.</strong> Der
+Quell-Leitfaden führt genau diese sechs Versionen auf seiner Seite <em>Release
+Notes</em>; ältere Versionen (bis 1.0.7) sind dort nicht enthalten und wurden
+daher auch hier nicht ergänzt. Die Einträge sind unverändert übernommen und
+<strong>nicht</strong> in die Keep-a-Changelog-Kategorien (Added/Changed/…) umsortiert
+worden: eine Umsortierung wäre eine inhaltliche Interpretation. Die
+Migration selbst ist bewusst kein Changelog-Eintrag — sie ist keine
+Änderung am Modul.</p>
 </blockquote>
 
 
@@ -375,7 +509,7 @@ einheitlich.]</p>
 
           IG © 2019+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de">Medical Informatics Initiative (MII)</a>.  
           Package de.medizininformatikinitiative.kerndatensatz.consent#2026.0.0 basiert auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
-          Erstellt <span title="Thu, Aug 6, 2026 10:59+0000">2026-08-06</span>
+          Erstellt <span title="Thu, Aug 6, 2026 13:20+0000">2026-08-06</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
             <!-- MII branding override for the fhir2.base.template footer fragment.

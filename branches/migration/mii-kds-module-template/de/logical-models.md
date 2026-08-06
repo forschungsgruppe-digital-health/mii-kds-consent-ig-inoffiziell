@@ -7,15 +7,11 @@
 
  Diese Seite enthält Übersetzungen aus der Originalsprache, in der der Leitfaden verfasst wurde. Informationen zu diesen Übersetzungen und Anweisungen zum Abgeben von Feedback zu den Übersetzungen finden Sie [hier](translationinfo.md). 
 
-##### TODO:REVIEW (Gate B) — Startseiten-Vorlage, Narrativ noch nicht migriert
-
-Dies ist die **Vorlagenseite des MII-KDS-Modul-Templates**, unveraendert uebernommen. Es ist **nicht** das Narrativ des MII-KDS-Moduls Consent.
-
-Der Leitfadentext des Moduls existiert nur als gerenderter Simplifier-Guide (`simplifier.net/guide/miiigmodulconsent`) und liegt **nicht im Quell-Repository**. Es gab daher nichts, was in diese Seite haette migriert werden koennen, und es wurde nichts erfunden. Seitenstruktur, Menue und Artefakt-Rendering sind echt; der Fliesstext ist ein Platzhalter, bis das Narrativ von Simplifier migriert ist.
-
 ### Logische Modelle
 
 Die logischen Datenmodelle des Moduls **Consent** beschreiben den fachlichen Datensatz unabhängig von der konkreten FHIR-Repräsentation.
 
-> [TODO: Fügen Sie die logischen Modelle ein, oder entfernen Sie diese Seite.]
+##### TODO:REVIEW (Gate B) — das Modul liefert kein logisches Modell
+
+Das migrierte Modul definiert **kein logisches FHIR-Modell**. Das fachliche Informationsmodell des Moduls Consent wird im ART-DECOR gepflegt und als Diagramm unter [UML-Diagramme](uml-diagrams.md) gezeigt; die Datensatzbeschreibung steht unter [Datensätze inkl. Beschreibungen](datasets-and-descriptions.md). Es wurde nichts erfunden.
 

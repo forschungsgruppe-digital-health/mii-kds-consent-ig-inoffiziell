@@ -233,27 +233,87 @@ Diese Seite enthält Übersetzungen aus der Originalsprache, in der der Leitfade
 </p>
 
 <!-- markdownlint-disable MD041 -->
-<div class="mii-highlight mii-highlight-orange">
-<h5>TODO:REVIEW (Gate B) &mdash; Startseiten-Vorlage, Narrativ noch nicht migriert</h5>
-<p>Dies ist die <strong>Vorlagenseite des MII-KDS-Modul-Templates</strong>, unveraendert
-uebernommen. Es ist <strong>nicht</strong> das Narrativ des MII-KDS-Moduls Consent.</p>
-<p>Der Leitfadentext des Moduls existiert nur als gerenderter Simplifier-Guide
-(<code>simplifier.net/guide/miiigmodulconsent</code>) und liegt <strong>nicht im
-Quell-Repository</strong>. Es gab daher nichts, was in diese Seite haette migriert werden
-koennen, und es wurde nichts erfunden. Seitenstruktur, Menue und Artefakt-Rendering sind
-echt; der Fliesstext ist ein Platzhalter, bis das Narrativ von Simplifier migriert ist.</p>
-</div>
+<!--
+  BEISPIELE — DEUTSCHE FASSUNG (Quelltext, massgeblich).
+  Herkunft (Migration 2026-08-06, spec 5.1c): die Abschnitte "Beispielhafte
+  Consent-Ressourcen" bzw. "Beispiele" der drei Profilseiten des Quell-Leitfadens.
+  Der Quell-Leitfaden bettet die Serialisierungen inline ein; hier stehen gemaess
+  Direktiven-Crosswalk Verweise auf die Artefaktseiten, die XML und JSON selbst
+  rendern.
+-->
 
-<p>Diese Seite führt die Beispielinstanzen des Moduls <strong>Consent</strong> auf. Es sind die
-Beispiele des Moduls selbst, aus dem Quell-Repository migriert und im
-Artefakt-Index dieses Leitfadens aufgeführt. (Die Beispiel-Artefakte der Vorlage
-wurden bei der Migration gelöscht, damit sie nicht mit den eigenen kollidieren.)</p>
+<h3 id="beispiele">Beispiele</h3>
 
-<p class="bg-warning"><strong>Nur synthetische Daten</strong> — niemals echte oder realistisch wirkende
-Patientendaten in Beispielen verwenden.</p>
+<p class="bg-warning"><strong>Nur synthetische Daten</strong> — in Beispielen werden niemals echte oder realistisch
+wirkende Patientendaten verwendet.</p>
+
+<h4 id="consent">Consent</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Beispiel</th>
+      <th>Bezeichnung im Quell-Leitfaden</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="Consent-34150a23-b1c8-404f-874f-e042a30435d2.html">34150a23-b1c8-404f-874f-e042a30435d2</a></td>
+      <td>Beispiel (vollständig)</td>
+    </tr>
+    <tr>
+      <td><a href="Consent-Example-MII-Consent-ResultType-document.html">Example-MII-Consent-ResultType-document</a></td>
+      <td>Beispiel für eine Einwilligung (ResultType <code class="language-plaintext highlighter-rouge">document</code>)</td>
+    </tr>
+    <tr>
+      <td><a href="Consent-5143266b-8d60-4b28-8ee9-635140ffa5bb.html">5143266b-8d60-4b28-8ee9-635140ffa5bb</a></td>
+      <td>Beispiel für eine MII-Einwilligung (ResultType <code class="language-plaintext highlighter-rouge">consent-status</code>)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="provenance">Provenance</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Beispiel</th>
+      <th>Bezeichnung im Quell-Leitfaden</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="Provenance-55219d12-6245-4de4-8b50-ddf6f16a789b.html">55219d12-6245-4de4-8b50-ddf6f16a789b</a></td>
+      <td>Beispiel (vollständig)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="documentreference">DocumentReference</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Beispiel</th>
+      <th>Bezeichnung im Quell-Leitfaden</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="DocumentReference-8a3d1799-2463-405e-b49c-6a16c8692b01.html">8a3d1799-2463-405e-b49c-6a16c8692b01</a></td>
+      <td>Beispiel (vollständig)</td>
+    </tr>
+  </tbody>
+</table>
 
 <blockquote class="mii-highlight mii-highlight-grey">
-  <p>[TODO: Ergänzen Sie aussagekräftige Beispielinstanzen zu Ihren Profilen.]</p>
+  <p><strong>TODO:REVIEW (Gate B) — ein Beispiel der Quelle fehlt im Modul.</strong> Die
+gerenderte Consent-Seite des Quell-Leitfadens zeigt ein viertes Beispiel,
+„Beispiel mit mehrere Codes in einer Provision“ mit der Id
+<code class="language-plaintext highlighter-rouge">89f494a3-cd75-44f5-a78a-581dfdd47a94</code>. Diese Instanz liegt <strong>weder im
+Quell-Repository noch im publizierten Paket</strong> und konnte deshalb nicht
+migriert werden; sie wurde auch nicht nachgebaut. Es ist eine Lücke der Quelle,
+kein Migrationsverlust.</p>
 </blockquote>
 
 
@@ -281,7 +341,7 @@ Patientendaten in Beispielen verwenden.</p>
 
           IG © 2019+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de">Medical Informatics Initiative (MII)</a>.  
           Package de.medizininformatikinitiative.kerndatensatz.consent#2026.0.0 basiert auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
-          Erstellt <span title="Thu, Aug 6, 2026 10:59+0000">2026-08-06</span>
+          Erstellt <span title="Thu, Aug 6, 2026 13:20+0000">2026-08-06</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
             <!-- MII branding override for the fhir2.base.template footer fragment.

@@ -233,24 +233,70 @@ Diese Seite enthält Übersetzungen aus der Originalsprache, in der der Leitfade
 </p>
 
 <!-- markdownlint-disable MD041 -->
-<div class="mii-highlight mii-highlight-orange">
-<h5>TODO:REVIEW (Gate B) &mdash; Startseiten-Vorlage, Narrativ noch nicht migriert</h5>
-<p>Dies ist die <strong>Vorlagenseite des MII-KDS-Modul-Templates</strong>, unveraendert
-uebernommen. Es ist <strong>nicht</strong> das Narrativ des MII-KDS-Moduls Consent.</p>
-<p>Der Leitfadentext des Moduls existiert nur als gerenderter Simplifier-Guide
-(<code>simplifier.net/guide/miiigmodulconsent</code>) und liegt <strong>nicht im
-Quell-Repository</strong>. Es gab daher nichts, was in diese Seite haette migriert werden
-koennen, und es wurde nichts erfunden. Seitenstruktur, Menue und Artefakt-Rendering sind
-echt; der Fliesstext ist ein Platzhalter, bis das Narrativ von Simplifier migriert ist.</p>
-</div>
+<!--
+  UML-DIAGRAMME — DEUTSCHE FASSUNG (Quelltext, massgeblich).
+  Herkunft (Migration 2026-08-06, spec 5.1c):
+    .../AnwendungsflleInformationsmodell/UML?version=2026.0.0
+  Abbildung: figures/information-model_UML-Diagramm_MII-spez.png des Quell-
+  Repositoriums, uebernommen nach input/images/ (Quelle des Diagramms:
+  input/images-source/information-model_UML-Diagramm_MII-spez.graphml).
+  Die Verweise auf die Simplifier-Profilseiten wurden auf die vom IG Publisher
+  erzeugten Artefaktseiten umgestellt (Direktiven-Crosswalk).
+-->
 
 <h3 id="uml-diagramme">UML-Diagramme</h3>
 
-<p>UML-Übersichten der Datenmodelle des Moduls <strong>Consent</strong> und ihrer Beziehungen. Editierbare Quellen (z. B. PlantUML) gehören nach <code class="language-plaintext highlighter-rouge">input/images-source/</code>, die gerenderten Bilder nach <code class="language-plaintext highlighter-rouge">input/images/</code>.</p>
+<h4 id="consent"><a href="StructureDefinition-e0e166b4-0f77-478d-9062-de0034d98ce0.html">Consent</a></h4>
 
-<blockquote class="mii-highlight mii-highlight-grey">
-  <p>[TODO: Fügen Sie die UML-Diagramme Ihres Moduls ein, oder entfernen Sie diese Seite, wenn keine vorhanden sind.]</p>
-</blockquote>
+<p>Die Consent-Resource stellt eine rein maschinenlesbare Repräsentation der real
+existierenden Einwilligung einer Person dar und wird für das Enforcement
+(Durchsetzung, Umsetzung) der Consent-Policies verwendet.</p>
+
+<p>Die Einwilligung wird in einem konkreten Kontext (z. B. MII) erhoben, was in FHIR
+in Form einer Referenz auf die verantwortliche Organisation
+(<a href="https://ig.fhir.de/einwilligungsmanagement/stable/Organization.html">Organization</a>)
+und/oder zu einem Forschungsprojekt
+(<a href="https://ig.fhir.de/einwilligungsmanagement/stable/ResearchStudy.html">ResearchStudy</a>)
+modelliert wird.</p>
+
+<h4 id="provenance"><a href="StructureDefinition-f675b1e8-9f3f-44e8-bb59-9681f78eb464.html">Provenance</a></h4>
+
+<p>Die Provenance-Resource beschreibt die Herkunft der Einwilligungsinhalte (u. a.
+Unterschriften) und verknüpft diese mit den beteiligten Personen
+(<a href="https://ig.fhir.de/einwilligungsmanagement/stable/Patient.html">Patient</a>,
+Consent Witness) und eventuell vorhandenen Dokumenten-Scans
+(<a href="StructureDefinition-56375452-bfa1-4111-af7c-5b5ba9a1857c.html">DocumentReference</a>).
+Ebenso können die für die Erhebung genutzten Anwendungssysteme genannt (display)
+bzw. referenziert werden, sowie im Anwendungssystem geltende
+Patienten-Identifier.</p>
+
+<h4 id="abbildung-von-fragebögen">Abbildung von Fragebögen</h4>
+
+<p>Der Einsatz <em>aller</em> in der AG Einwilligungsmanagement entwickelten Profile ist
+<em>nicht verpflichtend</em>. Für die Abbildung der Questionnaire-basierten Inhalte
+(siehe <a href="implementer-guidance.html">Fragebögen</a>) sind die Empfehlungen der TFCU zu
+berücksichtigen.</p>
+
+<h4 id="relevante-profile">Relevante Profile</h4>
+
+<p>Hinweise zum UML-Klassendiagramm des Erweiterungsmoduls Consent:</p>
+
+<ul>
+  <li><em>Blau</em> eingefärbte Klassen werden bei der Abbildung und Profilierung in FHIR
+berücksichtigt, sind in diesem IG profiliert und bei der MII-Umsetzung
+erforderlich.</li>
+  <li><em>Orange</em> eingefärbte Klassen sind im IG der AG Einwilligungsmanagement
+profiliert und erforderlich für die MII-Umsetzung.</li>
+  <li><em>Grau</em> eingefärbte Klassen sind im IG der AG Einwilligungsmanagement profiliert
+und optional für die MII-Umsetzung.</li>
+  <li><em>Hellgrau</em> eingefärbte Klassen werden referenziert. Diese werden jedoch nicht
+bei der Abbildung und Profilierung in FHIR berücksichtigt.</li>
+</ul>
+
+<p>Die in den Klassen des Diagramms hinterlegten Attribute sind verpflichtend.
+Darüber hinaus können weitere optionale Attribute angegeben werden.</p>
+
+<p><img src="information-model_UML-Diagramm_MII-spez.png" alt="UML-Klassendiagramm des Informationsmodells, MII-spezifisch" /></p>
 
 
 
@@ -277,7 +323,7 @@ echt; der Fliesstext ist ein Platzhalter, bis das Narrativ von Simplifier migrie
 
           IG © 2019+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de">Medical Informatics Initiative (MII)</a>.  
           Package de.medizininformatikinitiative.kerndatensatz.consent#2026.0.0 basiert auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
-          Erstellt <span title="Thu, Aug 6, 2026 10:59+0000">2026-08-06</span>
+          Erstellt <span title="Thu, Aug 6, 2026 13:20+0000">2026-08-06</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
             <!-- MII branding override for the fhir2.base.template footer fragment.

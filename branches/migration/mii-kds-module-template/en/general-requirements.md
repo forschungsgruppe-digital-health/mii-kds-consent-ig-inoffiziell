@@ -6,11 +6,9 @@
 
 ## General Requirements
 
-##### TODO:REVIEW (Gate B) — starter page, narrative not yet migrated
+##### TODO:REVIEW (Gate C) — mixed page: MII-wide English text plus an unreviewed machine translation
 
-This is the **MII KDS module template's starter page**, carried over as-is. It is **not** the narrative of the MII KDS Modul Consent.
-
-The module's guide text exists only as a rendered Simplifier guide (`simplifier.net/guide/miiigmodulconsent`); it is **not in the source repository**, so there was nothing to migrate into this page and nothing was invented for it. The page **structure**, the menu and the artifact rendering below are real; the prose is a placeholder until the narrative is migrated from Simplifier.
+The MII-wide requirements on this page were authored in English (the German mirror `input/translations/de/pagecontent/general-requirements.md` is their translation). The section(s) marked **“migrated from the source guide”** below are the opposite direction: their authoritative text is **German**, migrated from the Simplifier-rendered guide (version 2026.0.0, harvested 2026-08-06), and the English wording of those sections is an **unreviewed machine translation**. Where the two differ, the German page applies for those sections.
 
 ### General Requirements
 
@@ -50,7 +48,9 @@ The MII core dataset specifications build, wherever possible, on international s
 
 Where this module adapts a profile away from one of these specifications, the reason is given in prose on the profile page.
 
-> [TODO: Name the standards and specifications YOUR module actually aligns with (they should match the `dependencies` in `sushi-config.yaml`), and delete the entries above that do not apply.]
+**What this module actually aligns with**, per its source guide and its `dependencies`: the [FHIR R4 profiles of the AG Einwilligungsmanagement of the Interop-Forum](https://ig.fhir.de/einwilligungsmanagement/stable/) (package `de.einwilligungsmanagement`, the module's only domain dependency), the [HL7 FHIR core specification](http://hl7.org/fhir/) with its [Consent](http://hl7.org/fhir/consent.html) resource, the German base profiles in [STU3](https://simplifier.net/basisprofilde) and [R4](https://simplifier.net/basisprofil-de-r4), the [Core Dataset description in ART-DECOR](https://art-decor.org/art-decor/decor-datasets--mide-?conceptId=2.16.840.1.113883.3.1937.777.24.2.184), and IHE BPPC via the policies. The full reference list is on [Guidance for Implementers](implementer-guidance.md).
+
+> **TODO:REVIEW (Gate B) — the generic list above.** The bullet list above is the MII-wide list shipped by the module template (IPS, Basisprofil DE, KBV, gematik, ISiK). The source guide names none of them for this module. It was left in place rather than trimmed, because trimming it is an editorial decision about MII-wide conventions, not a migration finding.
 
 #### Claiming conformance
 
@@ -155,7 +155,17 @@ Modifier elements that are frequently **not** flagged Must Support include:
 
 Implementers **SHOULD** read the profile pages carefully to see which elements are modifiers and how they affect the interpretation of a resource.
 
-> [TODO: Add the general requirements that are specific to YOUR module — for example additional expectations on the FHIR RESTful API, on search parameters, or on the use of codes in your profiles. Delete this prompt afterwards.]
+#### Use cases / scenarios for using the module
+
+**Migrated from the source guide — source of record: the German page `input/translations/de/pagecontent/general-requirements.md`, harvested from `.../AnwendungsflleInformationsmodell/BeschreibungvonSzenarienfrdieAnwendungdesModuls` (version 2026.0.0, 2026-08-06).**
+
+The Consent extension module provides the electronic representation of the [MII Consent](https://www.medizininformatik-initiative.de/de/mustertext-zur-patienteneinwilligung), but can also be used to represent further consents. This is a precondition for taking the patient's will into account when the patient's medical data collected during care is used for research purposes. Consent is required above all when the purpose of use goes beyond the research clauses of the applicable laws.
+
+An important measure for medical research is, among other things, how many patients meet certain criteria (case numbers) and whether these patients have agreed to the use of their data for research purposes. Such requests can only be processed and answered efficiently by electronic means if the consent status can be checked electronically. Such case-number queries taking the consent status into account are essential for use cases such as "case-number estimation", "feasibility queries" and "data sharing", for the cross-MII use cases CORD and POLAR, and for the [use cases](https://www.medizininformatik-initiative.de/de/use-cases-und-projekte) of the [MII consortia](https://www.medizininformatik-initiative.de/index.php/de/konsortien).
+
+The standardised representation of the consent information in the Core Dataset is necessary so that it can be included as a search criterion, in particular for cross-site requests.
+
+> **TODO:REVIEW (Gate B) — where this section belongs.** The source guide carries these scenarios on a page of their own ("Beschreibung von Szenarien für die Anwendung des Moduls"). The template's page set has no such page, so per the migration specification's section mapping the scenario narrative is placed here, on General Requirements; [Guidance for Implementers](implementer-guidance.md) is the defensible alternative. Reviewers reasonably disagree on this one.
 
 #### See also
 

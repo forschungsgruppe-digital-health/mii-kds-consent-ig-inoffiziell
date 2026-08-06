@@ -235,25 +235,42 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <!-- markdownlint-disable MD041 -->
 <div class="mii-highlight mii-highlight-orange">
-<h5>TODO:REVIEW (Gate B) &mdash; starter page, narrative not yet migrated</h5>
-<p>This is the <strong>MII KDS module template's starter page</strong>, carried over as-is.
-It is <strong>not</strong> the narrative of the MII KDS Modul Consent.</p>
-<p>The module's guide text exists only as a rendered Simplifier guide
-(<code>simplifier.net/guide/miiigmodulconsent</code>); it is <strong>not in the source
-repository</strong>, so there was nothing to migrate into this page and nothing was
-invented for it. The page <em>structure</em>, the menu and the artifact rendering below are
-real; the prose is a placeholder until the narrative is migrated from Simplifier.</p>
+<h5>TODO:REVIEW (Gate C) &mdash; unreviewed machine translation</h5>
+<p>The authoritative text of this module is <strong>German</strong>. This English page is an
+<strong>unreviewed machine translation</strong> of
+<code>input/translations/de/pagecontent/datasets-and-descriptions.md</code>, migrated from the
+Simplifier-rendered guide (version 2026.0.0, harvested 2026-08-06). Where the two language
+variants differ, the German page applies.</p>
 </div>
 
-<!-- Source: kerndatensatz-basis input/pagecontent/datasets-and-descriptions.md.
-     German mirror: input/translations/de/pagecontent/datasets-and-descriptions.md. -->
 <h3 id="datasets-and-descriptions">Datasets and Descriptions</h3>
 
-<p>Detailed description of the data elements of the <strong>Consent</strong> module and how they map to the logical models.</p>
+<p>The dataset description of the CDS module Consent is held in full in ART-DECOR:</p>
 
-<blockquote class="mii-highlight mii-highlight-grey">
-  <p>[TODO: Describe the domain data elements; link them to the logical models.]</p>
-</blockquote>
+<ul>
+  <li><a href="https://art-decor.org/art-decor/decor-datasets--mide-?conceptId=2.16.840.1.113883.3.1937.777.24.2.184">form-based description, MII Dataset, concept "Consent"</a></li>
+  <li><a href="https://art-decor.org/decor/services/RetrieveDataSet?conceptId=2.16.840.1.113883.3.1937.777.24.2.184">tabular description, MII Dataset, concept "Consent"</a></li>
+</ul>
+
+<p>This covers the descriptions of the MII Broad Consent in the following versions:</p>
+
+<ul>
+  <li>MII Broad Consent version 1.6.d</li>
+  <li>MII Broad Consent version 1.6.f</li>
+</ul>
+
+<p>The graphical representation of the information model is on
+<a href="uml-diagrams.html">UML Diagrams</a>; the FHIR artifacts derived from it are on
+<a href="profiles-and-extensions.html">Profiles and Extensions</a>.</p>
+
+<div class="mii-highlight mii-highlight-grey">
+<h5>TODO:REVIEW (Gate B) &mdash; the dataset description lives outside this guide</h5>
+<p>The migrated source guide does not describe the data elements in the guide itself; it
+points to ART-DECOR. Nothing was added: a data-element table embedded in the guide would be
+new content, not migrated content (migration report, queue &#9313;). The module also ships no
+logical model from which one could be generated &mdash; see
+<a href="logical-models.html">Logical Models</a>.</p>
+</div>
 
 
 
@@ -280,7 +297,7 @@ real; the prose is a placeholder until the narrative is migrated from Simplifier
 
           IG © 2019+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de">Medical Informatics Initiative (MII)</a>.  
           Package de.medizininformatikinitiative.kerndatensatz.consent#2026.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
-          Generated <span title="Thu, Aug 6, 2026 10:59+0000">2026-08-06</span>
+          Generated <span title="Thu, Aug 6, 2026 13:20+0000">2026-08-06</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
             <!-- MII branding override for the fhir2.base.template footer fragment.

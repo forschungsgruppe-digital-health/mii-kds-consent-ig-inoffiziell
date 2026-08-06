@@ -267,52 +267,37 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <div class="markdown-toc">
 <ul id="markdown-toc">
   <li><a href="#einleitung" id="markdown-toc-einleitung">Einleitung</a></li>
-  <li><a href="#zielgruppe" id="markdown-toc-zielgruppe">Zielgruppe</a></li>
-  <li><a href="#inhalt-dieses-leitfadens" id="markdown-toc-inhalt-dieses-leitfadens">Inhalt dieses Leitfadens</a></li>
+  <li><a href="#beschreibung-modul-consent" id="markdown-toc-beschreibung-modul-consent">Beschreibung Modul Consent</a></li>
+  <li><a href="#zielgruppen" id="markdown-toc-zielgruppen">Zielgruppen</a></li>
+  <li><a href="#inhalt" id="markdown-toc-inhalt">Inhalt</a></li>
   <li><a href="#verwandte-leitfäden" id="markdown-toc-verwandte-leitfäden">Verwandte Leitfäden</a></li>
   <li><a href="#impressum" id="markdown-toc-impressum">Impressum</a></li>
-  <li><a href="#ansprechpartner" id="markdown-toc-ansprechpartner">Ansprechpartner</a></li>
-  <li><a href="#autorinnen-in-alphabetischer-reihenfolge" id="markdown-toc-autorinnen-in-alphabetischer-reihenfolge">Autor:innen (in alphabetischer Reihenfolge)</a></li>
+  <li><a href="#autoren-und-ansprechpartner" id="markdown-toc-autoren-und-ansprechpartner">Autoren und Ansprechpartner</a></li>
   <li><a href="#urheberrecht-und-lizenz" id="markdown-toc-urheberrecht-und-lizenz">Urheberrecht und Lizenz</a></li>
-  <li><a href="#haftungsausschluss" id="markdown-toc-haftungsausschluss">Haftungsausschluss</a></li>
+  <li><a href="#disclaimer" id="markdown-toc-disclaimer">Disclaimer</a></li>
 </ul>
 
 </div>
 <!-- markdownlint-disable MD041 -->
-<div class="mii-highlight mii-highlight-orange">
-<h5>TODO:REVIEW (Gate B) &mdash; Startseiten-Vorlage, Narrativ noch nicht migriert</h5>
-<p>Dies ist die <strong>Vorlagenseite des MII-KDS-Modul-Templates</strong>, unveraendert
-uebernommen. Es ist <strong>nicht</strong> das Narrativ des MII-KDS-Moduls Consent.</p>
-<p>Der Leitfadentext des Moduls existiert nur als gerenderter Simplifier-Guide
-(<code>simplifier.net/guide/miiigmodulconsent</code>) und liegt <strong>nicht im
-Quell-Repository</strong>. Es gab daher nichts, was in diese Seite haette migriert werden
-koennen, und es wurde nichts erfunden. Seitenstruktur, Menue und Artefakt-Rendering sind
-echt; der Fliesstext ist ein Platzhalter, bis das Narrativ von Simplifier migriert ist.</p>
-</div>
-
 <!--
-  HOME PAGE — GERMAN TRANSLATION of the source page input/pagecontent/index.md
-  (English is the IG's default language). The structure follows the standard MII
-  module IG page set (MII IG template and kerndatensatz-basis). Replace the
-   placeholders and the bracketed [TODO ...] prompts with your module's
-  real content, then delete these HTML comments. Keep the section headings — a
-  reviewer expects them. See docs/recipes/add-translation.md; keep this file in
-  step with the English source.
+  STARTSEITE — DEUTSCHE FASSUNG. Deutsch ist die Quellsprache dieses Moduls und
+  damit der massgebliche Text; die englische Seite input/pagecontent/index.md ist
+  die Uebersetzung.
+  Herkunft des Inhalts (Migration 2026-08-06, spec 5.1c):
+    - simplifier.net/guide/miiigmodulconsent/MIIIGModulConsent?version=2026.0.0
+      (Einleitung, Veroeffentlichungstabelle, Impressum, Autoren und
+      Ansprechpartner, Copyright-Hinweis, Disclaimer)
+    - .../Beschreibung-Modul-Consent?version=2026.0.0 (Modulbeschreibung, Abbildung)
+  Das Inhaltsverzeichnis der Simplifier-Seite wurde NICHT uebernommen: Menue und
+  Navigation erzeugt der IG Publisher (Direktiven-Crosswalk).
 -->
 
 <h3 id="einleitung">Einleitung</h3>
 
-<p>Diese Spezifikation beschreibt die FHIR-Repräsentation des
-Kerndatensatz-(KDS-)Moduls <strong>Consent</strong> der Medizininformatik-Initiative
-(MII). Sie beschreibt die Anwendungsfälle des Moduls sowie die zugehörigen
-FHIR-Profile, Extensions und Terminologie-Ressourcen in ihrer verbindlichen
-Form. Der MII-Kerndatensatz dient der standardisierten Nutzung klinischer
-Routinedaten für die medizinische Forschung.</p>
-
-<blockquote class="mii-highlight mii-highlight-grey">
-  <p>[TODO: Beschreiben Sie in ein bis zwei Sätzen den fachlichen Gegenstand Ihres
-Moduls — welche Daten es abdeckt und wofür sie genutzt werden.]</p>
-</blockquote>
+<p>Die vorliegende Spezifikation beschreibt die FHIR-Repräsentation des
+Kerndatensatz-Moduls <strong>Consent</strong> der Medizininformatik-Initiative (MII). Im
+Folgenden werden die Use Cases des Moduls sowie die dazugehörigen FHIR-Profile
+und Terminologie-Ressourcen in ihrer verbindlichen Form beschrieben.</p>
 
 <table>
   <thead>
@@ -324,7 +309,7 @@ Moduls — welche Daten es abdeckt und wofür sie genutzt werden.]</p>
   <tbody>
     <tr>
       <td>Datum</td>
-      <td>2026-08-06</td>
+      <td>18.12.2025</td>
     </tr>
     <tr>
       <td>Version</td>
@@ -341,23 +326,51 @@ Moduls — welche Daten es abdeckt und wofür sie genutzt werden.]</p>
   </tbody>
 </table>
 
-<h3 id="zielgruppe">Zielgruppe</h3>
+<blockquote class="mii-highlight mii-highlight-grey">
+  <p><strong>TODO:REVIEW (Gate A):</strong> Datum und Status stammen aus der Veröffentlichungs­tabelle
+des migrierten Simplifier-Leitfadens (18.12.2025, <code class="language-plaintext highlighter-rouge">active</code>). Die
+<code class="language-plaintext highlighter-rouge">sushi-config.yaml</code> dieses Repositoriums trägt demgegenüber <code class="language-plaintext highlighter-rouge">date: 2026-08-06</code>
+(Migrationsdatum) und <code class="language-plaintext highlighter-rouge">status: draft</code> (aus der publizierten
+ImplementationGuide-Ressource). Die Abweichung wurde <strong>nicht</strong> stillschweigend
+vereinheitlicht — sie ist eine menschliche Entscheidung.</p>
+</blockquote>
 
-<p>Dieser Implementierungsleitfaden richtet sich an:</p>
+<h3 id="beschreibung-modul-consent">Beschreibung Modul Consent</h3>
+
+<p><img src="MII-KDS_de_Consent.jpg" alt="Einordnung des Moduls Consent im MII-Kerndatensatz" /></p>
+
+<p>Das MII KDS Modul Consent ist ein Basismodul des Kerndatensatzes (KDS) der
+Medizininformatik-Initiative (MII). Es setzt auf den
+<a href="https://bmcmedinformdecismak.biomedcentral.com/articles/10.1186/s12911-020-01138-6">publizierten Vorarbeiten der MII Taskforce Consent Umsetzung</a>
+auf.</p>
+
+<p>Dabei orientiert sich das Modul Consent für die Abbildung des
+<a href="https://www.medizininformatik-initiative.de/de/mustertext-zur-patienteneinwilligung">MII Broad Consent</a>
+an den <strong><a href="https://ig.fhir.de/einwilligungsmanagement/stable">FHIR-R4-Profilen</a> der
+<a href="https://wiki.hl7.de/index.php?title=Einwilligungsmanagement_(Projekt)">AG Einwilligungsmanagement</a>
+des <a href="https://wiki.hl7.de/index.php?title=Hauptseite">Interop-Forums</a></strong> zur
+Repräsentation von Formulardaten (Questionnaire, QuestionnaireResponse) und
+Einwilligungen (Consent).</p>
+
+<p>Fokus des Moduls Consent liegt auf der Umsetzung (Enforcement) der vom Patienten
+ausgefüllten Einwilligung auf Basis der Einwilligungs-Policies (konsolidiert mit
+der MII AG Consent im Dezember 2021).</p>
+
+<h3 id="zielgruppen">Zielgruppen</h3>
 
 <div class="mii-highlight mii-highlight-blue">
 <h5>Implementierende</h5>
-<p>Datenintegrationszentren (DIZ), Software-Entwickelnde und System-Architekt:innen, die FHIR-basierte Lösungen umsetzen.<br />
-→ siehe <a href="profiles-and-extensions.html">Profile und Extensions</a> und <a href="logical-models.html">Logische Modelle</a>.</p>
+<p>Datenintegrationszentren (DIZ), Softwareentwicklung und Systemarchitektur, die FHIR-basierte Lösungen bauen.<br />
+→ siehe <a href="profiles-and-extensions.html">Profile und Extensions</a> und <a href="implementer-guidance.html">Hinweise für Implementierende</a>.</p>
 </div>
 
 <div class="mii-highlight mii-highlight-green">
 <h5>Forschende</h5>
 <p>Wissenschaftler:innen, die MII-Daten für die medizinische Forschung nutzen.<br />
-→ siehe <a href="researcher-guidance.html">Anleitung für Forschende</a>.</p>
+→ siehe <a href="researcher-guidance.html">Hinweise für Forschende</a>.</p>
 </div>
 
-<h3 id="inhalt-dieses-leitfadens">Inhalt dieses Leitfadens</h3>
+<h3 id="inhalt">Inhalt</h3>
 
 <ul>
   <li><strong><a href="guidance.html">Anleitung</a></strong> — Einstieg und fachliche Hinweise.</li>
@@ -365,20 +378,25 @@ Moduls — welche Daten es abdeckt und wofür sie genutzt werden.]</p>
 und der Umgang mit fehlenden Daten.</li>
   <li><strong><a href="profiles-and-extensions.html">Profile und Extensions</a></strong> und
 <strong><a href="terminology.html">Terminologie</a></strong> — die technischen Artefakte.</li>
+  <li><strong><a href="search-parameters-and-operations.html">Suchparameter und Operationen</a></strong> — die
+modul-eigenen Suchparameter.</li>
   <li><strong><a href="examples.html">Beispiele</a></strong> — Beispielinstanzen.</li>
 </ul>
 
 <h3 id="verwandte-leitfäden">Verwandte Leitfäden</h3>
 
-<p>Dieses Modul ist Teil des MII-Kerndatensatzes; die weiteren KDS-Module und ihre
-Abhängigkeiten sind unter
-<a href="https://www.medizininformatik-initiative.de/">medizininformatik-initiative.de</a>
-beschrieben.</p>
+<ul>
+  <li><a href="https://ig.fhir.de/einwilligungsmanagement/stable/">Implementierungsleitfaden der AG Einwilligungsmanagement des Interop-Forums</a>
+— formale Abhängigkeit dieses Moduls (<code class="language-plaintext highlighter-rouge">de.einwilligungsmanagement</code> in
+<code class="language-plaintext highlighter-rouge">sushi-config.yaml</code>).</li>
+  <li><a href="https://art-decor.org/art-decor/decor-datasets--mide-?conceptId=2.16.840.1.113883.3.1937.777.24.2.184">Kerndatensatzbeschreibung im ART-DECOR</a>
+— die fachliche Datensatzbeschreibung des Moduls.</li>
+  <li><a href="https://www.medizininformatik-initiative.de/de/mustertext-zur-patienteneinwilligung">MII Broad Consent (Mustertext zur Patienteneinwilligung)</a>.</li>
+</ul>
 
-<blockquote class="mii-highlight mii-highlight-grey">
-  <p>[TODO: Nennen Sie die formalen Abhängigkeiten (siehe <code class="language-plaintext highlighter-rouge">dependencies</code> in
-<code class="language-plaintext highlighter-rouge">sushi-config.yaml</code>) und verwandte Leitfäden Ihres Moduls.]</p>
-</blockquote>
+<p>Die inhaltliche Einordnung des Moduls und die Bezüge zu anderen Modulen sind auf
+der Seite <a href="implementer-guidance.html">Hinweise für Implementierende</a> beschrieben;
+die vollständige Referenzliste steht dort im Abschnitt <em>Referenzen</em>.</p>
 
 <p>Weitere FHIR-Implementierungsleitfäden finden Sie im offiziellen
 <strong><a href="https://fhir.org/guides/registry/">FHIR IG Registry</a></strong> (Quelle:
@@ -390,47 +408,71 @@ beschrieben.</p>
 und unterliegt per Governance-Prozess dem Abstimmungsverfahren des
 Interoperabilitätsforums und der Technischen Komitees von HL7 Deutschland e. V.</p>
 
-<h3 id="ansprechpartner">Ansprechpartner</h3>
+<h3 id="autoren-und-ansprechpartner">Autoren und Ansprechpartner</h3>
 
-<p>Fragen zu dieser Publikation können im HL7-FHIR-Zulip
-<a href="https://chat.fhir.org">chat.fhir.org</a> im Stream <code class="language-plaintext highlighter-rouge">german/mi-initiative</code> oder im
-MII-Zulip <a href="https://mii.zulipchat.com/">mii.zulipchat.com</a> im Stream
-<code class="language-plaintext highlighter-rouge">MII-Kerndatensatz</code> gestellt werden.
-Anmerkungen und Kritik werden als <em>Issues</em> auf
-<a href="https://github.com/forschungsgruppe-digital-health/mii-kds-consent-ig-inoffiziell/issues">GitHub</a> entgegengenommen.</p>
+<p>Inhaltlich verantwortlich für das hier dargestellte Modul ist die
+<strong>MII Taskforce Consent Umsetzung</strong>.</p>
 
-<blockquote class="mii-highlight mii-highlight-grey">
-  <p>[TODO: Nennen Sie die fachlichen Ansprechpartner:innen Ihres Moduls.]</p>
-</blockquote>
+<p>Das Modul Consent ist unter Mitarbeit von Martin Bialke, Sebastian Stäubert,
+Angela Merzweiler, Lars Geidel, Jörg Römhild, Raffael Bild, Fabian Prasser und
+Stefan Lang (HL7 Deutschland, technisches Komitee FHIR, Gefyra GmbH, Lang Health
+IT Consulting) entstanden.</p>
 
-<h3 id="autorinnen-in-alphabetischer-reihenfolge">Autor:innen (in alphabetischer Reihenfolge)</h3>
+<p>Leitung des Moduls:</p>
 
-<blockquote class="mii-highlight mii-highlight-grey">
-  <p>[TODO: Listen Sie die Autor:innen des Moduls mit Institution auf.]</p>
-</blockquote>
+<ul>
+  <li>Sebastian Stäubert</li>
+  <li>Martin Bialke</li>
+</ul>
+
+<p>Technische Umsetzung:</p>
+
+<ul>
+  <li>Stefan Lang (technische Umsetzung FHIR-Profile und ImplementationGuides)</li>
+  <li>Martin Bialke (Unterstützung ImplementationGuides)</li>
+</ul>
+
+<p>Ansprechpartnerin bei der TMF:</p>
+
+<ul>
+  <li>Karoline Buckow</li>
+</ul>
+
+<p>Kommentare können (nach kostenloser Anmeldung) in GitHub als Issue erstellt oder
+formlos per E-Mail an <a href="mailto:office@medizininformatik-initiative.de">office@medizininformatik-initiative.de</a> gesendet werden.</p>
+
+<ul>
+  <li>GitHub (Originalmodul): <a href="https://github.com/medizininformatik-initiative/kerndatensatzmodul-consent/issues">medizininformatik-initiative/kerndatensatzmodul-consent/issues</a></li>
+</ul>
+
+<p>Bei Fragen stehen wir Ihnen unter <a href="mailto:office@medizininformatik-initiative.de">office@medizininformatik-initiative.de</a> gerne
+zur Verfügung.</p>
 
 <h3 id="urheberrecht-und-lizenz">Urheberrecht und Lizenz</h3>
 
 <p>© 2019+ TMF e. V., Charlottenstraße 42, 10117 Berlin</p>
 
-<p>Dieses Werk ist lizenziert unter der
-<a href="https://creativecommons.org/licenses/by/4.0/deed.de">Creative Commons Namensnennung 4.0 International Lizenz (CC BY 4.0)</a>.</p>
+<p><a href="https://creativecommons.org/licenses/by/4.0/"><img src="https://licensebuttons.net/l/by/4.0/88x31.png" alt="CC BY 4.0" /></a></p>
 
-<p>Für die Nutzungsrechte der zugrunde liegenden FHIR-Technologie siehe die
+<p>Diese Arbeit ist lizenziert unter der
+<a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</p>
+
+<p>Zu den Nutzungsrechten der zugrunde liegenden FHIR-Technologie siehe die
 FHIR-Basisspezifikation.</p>
 
-<p>Einige der verwendeten Codesysteme werden von anderen Organisationen
-veröffentlicht und gepflegt; es gilt das Urheberrecht der jeweiligen Herausgeber.</p>
+<p>Einige verwendete Codesysteme werden von anderen Organisationen herausgegeben und
+gepflegt. Es gilt das Copyright der dort jeweils aufgeführten Herausgeber
+(Publisher).</p>
 
-<h3 id="haftungsausschluss">Haftungsausschluss</h3>
+<h3 id="disclaimer">Disclaimer</h3>
 
-<p>Der Inhalt dieses Dokuments ist öffentlich. Bitte beachten Sie, dass Teile
-dieses Dokuments auf FHIR Version R4 basieren, dessen Urheberrecht bei
-HL7 International liegt.</p>
+<p>Der Inhalt dieses Dokuments ist öffentlich. Zu beachten ist, dass Teile dieses
+Dokuments auf FHIR Version R4 beruhen, für die das Copyright von HL7
+International gilt.</p>
 
-<p>Obwohl diese Publikation mit größter Sorgfalt erstellt wurde, können die
-Autor:innen keine Haftung für direkte oder indirekte Schäden übernehmen, die
-aus dem Inhalt dieser Spezifikation entstehen könnten.</p>
+<p>Obwohl diese Publikation mit größter Sorgfalt erstellt wurde, können die Autoren
+keinerlei Haftung für direkten oder indirekten Schaden übernehmen, der durch den
+Inhalt dieser Spezifikation entstehen könnte.</p>
 
 
 
@@ -457,7 +499,7 @@ aus dem Inhalt dieser Spezifikation entstehen könnten.</p>
 
           IG © 2019+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de">Medical Informatics Initiative (MII)</a>.  
           Package de.medizininformatikinitiative.kerndatensatz.consent#2026.0.0 basiert auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
-          Erstellt <span title="Thu, Aug 6, 2026 10:59+0000">2026-08-06</span>
+          Erstellt <span title="Thu, Aug 6, 2026 13:20+0000">2026-08-06</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
             <!-- MII branding override for the fhir2.base.template footer fragment.

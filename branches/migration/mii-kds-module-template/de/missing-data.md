@@ -8,12 +8,6 @@
 
  Diese Seite enthält Übersetzungen aus der Originalsprache, in der der Leitfaden verfasst wurde. Informationen zu diesen Übersetzungen und Anweisungen zum Abgeben von Feedback zu den Übersetzungen finden Sie [hier](translationinfo.md). 
 
-##### TODO:REVIEW (Gate B) — Startseiten-Vorlage, Narrativ noch nicht migriert
-
-Dies ist die **Vorlagenseite des MII-KDS-Modul-Templates**, unveraendert uebernommen. Es ist **nicht** das Narrativ des MII-KDS-Moduls Consent.
-
-Der Leitfadentext des Moduls existiert nur als gerenderter Simplifier-Guide (`simplifier.net/guide/miiigmodulconsent`) und liegt **nicht im Quell-Repository**. Es gab daher nichts, was in diese Seite haette migriert werden koennen, und es wurde nichts erfunden. Seitenstruktur, Menue und Artefakt-Rendering sind echt; der Fliesstext ist ein Platzhalter, bis das Narrativ von Simplifier migriert ist.
-
 ### Umgang mit fehlenden Daten
 
 Es gibt Situationen, in denen Informationen zu einem Datenelement fehlen und das Quellsystem den Grund für das Fehlen nicht kennt.
@@ -112,7 +106,9 @@ Für Elemente mit `required`-Binding (Datentypen `CodeableConcept`, `Coding` ode
 1. Enthält das ValueSet einen „unbekannt"-Code, MUSS dieser verwendet werden.
 1. Andernfalls MUSS ein Konzept aus dem ValueSet verwendet werden — die Instanz wäre sonst**nicht konform**.
 
-> [TODO: Nur ergänzen, falls Ihr Modul modul-spezifische Sonderfälle hat — etwa ein Element, dessen ValueSet einen eigenen „unbekannt"-Code mitbringt, oder eine Datenkategorie, für die das Modul eine abweichende Darstellung vorgibt. Löschen Sie diesen Hinweis anschließend.]
+##### TODO:REVIEW (Gate B) — der Quell-Leitfaden sagt nichts zu fehlenden Daten
+
+Der migrierte Quell-Leitfaden hat keinen Abschnitt zum Umgang mit fehlenden oder unbekannten Werten; in diese Seite wurde daher nichts migriert und nichts erfunden, die MII-weiten Regeln oben bleiben unverändert. Hinweis für die Prüfung: Das [Answer-ValueSet](terminology.md) des Moduls führt für eine nicht angekreuzte Checkbox ein eigenes Konzept (`unbekannt`, `2.16.840.1.113883.3.1937.777.24.5.2.3`), das die Quelle als Fragebogen-Antwort erläutert, nicht als Regel zu fehlenden Daten — diese Lesart wurde hier nicht zu einer Regel ausgeweitet.
 
 #### Siehe auch
 

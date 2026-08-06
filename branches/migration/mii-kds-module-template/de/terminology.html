@@ -222,52 +222,193 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 
     <p><!-- white space is critical inside of capture --></p>
-<div>
-<!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#terminologie" id="markdown-toc-terminologie">Terminologie</a></li>
+  <li><a href="#valuesets" id="markdown-toc-valuesets">ValueSets</a></li>
+  <li><a href="#codesysteme" id="markdown-toc-codesysteme">CodeSysteme</a></li>
+</ul>
+
 </div>
-
-<p style="border:var(--translation-box-border);background-color:var(--translation-background-color);padding: 5px 5px 5px 5px;">
-
-Diese Seite enthält Übersetzungen aus der Originalsprache, in der der Leitfaden verfasst wurde.  Informationen zu diesen Übersetzungen und Anweisungen zum Abgeben von Feedback zu den Übersetzungen finden Sie <a href="translationinfo.html">hier</a>.
-
-</p>
-
 <!-- markdownlint-disable MD041 -->
-<div class="mii-highlight mii-highlight-orange">
-<h5>TODO:REVIEW (Gate B) &mdash; Startseiten-Vorlage, Narrativ noch nicht migriert</h5>
-<p>Dies ist die <strong>Vorlagenseite des MII-KDS-Modul-Templates</strong>, unveraendert
-uebernommen. Es ist <strong>nicht</strong> das Narrativ des MII-KDS-Moduls Consent.</p>
-<p>Der Leitfadentext des Moduls existiert nur als gerenderter Simplifier-Guide
-(<code>simplifier.net/guide/miiigmodulconsent</code>) und liegt <strong>nicht im
-Quell-Repository</strong>. Es gab daher nichts, was in diese Seite haette migriert werden
-koennen, und es wurde nichts erfunden. Seitenstruktur, Menue und Artefakt-Rendering sind
-echt; der Fliesstext ist ein Platzhalter, bis das Narrativ von Simplifier migriert ist.</p>
-</div>
+<!--
+  TERMINOLOGIE — DEUTSCHE FASSUNG (Quelltext, massgeblich).
+  Herkunft (Migration 2026-08-06, spec 5.1c):
+    .../TechnischeImplementierung/Terminologien?version=2026.0.0
+  Diese Quellseite ist zum groessten Teil eine RENDERUNG der Terminologie-
+  Ressourcen des Moduls (ValueSet-Expansionen, Konzepttabellen, die 124-zeilige
+  Policy-Tabelle). Uebernommen ist der Fliesstext; die Tabellen sind durch
+  Verweise auf die vom IG Publisher erzeugten Artefaktseiten ersetzt
+  (Direktiven-Crosswalk). EINE Tabelle ist geblieben — die Signaturarten —, weil
+  ihre Spalte "Art der Unterschrift" NICHT im ValueSet steht und ein Verweis sie
+  verlieren wuerde.
+  Die MII-weiten Hinweise (SU-TermServ, Expansionen) stammen aus dem Template und
+  sind hier belassen; sie sind auf der englischen Seite im Original verfasst.
+-->
 
-<!-- Terminologie-Seite. Der IG-Publisher listet ValueSets/CodeSystems auf den
-     Artefakt-Seiten automatisch; hier stehen die MII-Hinweise dazu. -->
+<h3 id="terminologie">Terminologie</h3>
 
-<p>Diese Seite beschreibt die im Modul <strong>Consent</strong> verwendeten ValueSets
-und CodeSystems. Allgemeine Hinweise zur Verwendung von Codes: siehe
+<p>Diese Seite beschreibt die ValueSets und CodeSysteme des Moduls <strong>Consent</strong>.
+Allgemeine Hinweise zur Verwendung von Codes finden sich unter
 <a href="http://hl7.org/fhir/R4/terminologies.html">FHIR Terminology</a>.</p>
 
 <p class="bg-info"><strong>Wichtig:</strong> CodeSystem-Ressourcen externer Terminologien (z. B. ICD-10-GM, OPS,
-SNOMED CT) werden in diesem Modul <strong>nicht</strong> publiziert, sondern über den
+SNOMED CT) werden in diesem Modul <strong>nicht</strong> veröffentlicht; sie werden über den
 MII-Terminologieserver (SU-TermServ) bezogen:
 <a href="https://mii-termserv.de/">https://mii-termserv.de/</a>.</p>
 
-<p class="bg-info"><strong>Expansionen:</strong> ValueSet-Expansionen dieses Leitfadens werden über einen
-FHIR-Terminologieserver erzeugt — über SU-TermServ, sofern das
-Client-Zertifikat konfiguriert ist, sonst über den öffentlichen HL7-Server
-<code class="language-plaintext highlighter-rouge">tx.fhir.org</code> (dann expandieren einige MII-spezifische ValueSets ggf. nicht
-vollständig).</p>
+<p class="bg-info"><strong>Expansionen:</strong> ValueSet-Expansionen in diesem Leitfaden werden von einem
+FHIR-Terminologieserver erzeugt — SU-TermServ, sofern das Client-Zertifikat
+konfiguriert ist, sonst der öffentliche HL7-Server <code class="language-plaintext highlighter-rouge">tx.fhir.org</code> (in diesem Fall
+expandieren einige MII-spezifische ValueSets möglicherweise unvollständig).</p>
+
+<p>Dieses Modul verwendet <strong>kein SNOMED CT</strong>.</p>
+
+<h3 id="valuesets">ValueSets</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>ValueSet</th>
+      <th>Inhalt</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="ValueSet-2.16.840.1.113883.3.1937.777.24.11.36--20230331232804.html">MII Consent: Policy ValueSet</a></td>
+      <td>alle Codes des CodeSystems <em>MII CS Consent Policy</em></td>
+    </tr>
+    <tr>
+      <td><a href="ValueSet-88464c5b-5338-4c2b-9c07-b42fef2ada64.html">MII Consent: Signature Types</a></td>
+      <td>die zulässigen Unterschriftsarten</td>
+    </tr>
+    <tr>
+      <td><a href="ValueSet-2.16.840.1.113883.3.1937.777.24.11.30--20210323234509.html">MII Consent: Answer ValueSet</a></td>
+      <td>die zulässigen Antworten im Fragebogen</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Erweiterungen des Policy-ValueSets im ART-DECOR werden zeitnah durch die TFCU in
+diesem IG eingepflegt. Eine erneute Ballotierung ist nicht erforderlich.</p>
+
+<h4 id="mii-consent-signature-types">MII Consent: Signature Types</h4>
+
+<p>Gemäß Empfehlung der HL7-D AG Einwilligungsmanagement.
+Canonical:
+<code class="language-plaintext highlighter-rouge">https://www.medizininformatik-initiative.de/fhir/modul-consent/ValueSet/mii-vs-consent-signaturetypes</code></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Art der Unterschrift</th>
+      <th>System</th>
+      <th>Code</th>
+      <th>Display</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Unterschrift der einwilligenden Person</td>
+      <td>urn:iso-astm:E1762-95:2013</td>
+      <td>1.2.840.10065.1.12.1.7</td>
+      <td>Consent Signature</td>
+    </tr>
+    <tr>
+      <td>Unterschrift der (gesetzlich) vertretenden Person</td>
+      <td>urn:iso-astm:E1762-95:2013</td>
+      <td>1.2.840.10065.1.12.1.11</td>
+      <td>Consent Witness Signature</td>
+    </tr>
+    <tr>
+      <td>Unterschrift der aufklärenden Person</td>
+      <td>urn:iso-astm:E1762-95:2013</td>
+      <td>1.2.840.10065.1.12.1.5</td>
+      <td>Verification Signature</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><em>Die Spalte „Art der Unterschrift“ ist eine Erläuterung des Leitfadens; sie steht
+nicht im ValueSet und wird deshalb hier geführt.</em></p>
+
+<h4 id="mii-consent-answer-valueset">MII Consent: Answer ValueSet</h4>
+
+<p>Dieses ValueSet findet ausschließlich im Kontext von Questionnaires Verwendung.
+Die Zuordnung der Antworten zu den Checkboxen des Formulars steht unter
+<a href="implementer-guidance.html">Hinweise für Implementierende</a>.</p>
+
+<h3 id="codesysteme">CodeSysteme</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>CodeSystem</th>
+      <th>Inhalt</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="CodeSystem-2.16.840.1.113883.3.1937.777.24.5.3--20251211153003.html">MII CS Consent Policy</a></td>
+      <td>die Consent-Policy-Codes zur Operationalisierung des MII Broad Consent</td>
+    </tr>
+    <tr>
+      <td><a href="CodeSystem-mii-cs-consent-version-modules.html">MII Consent Version and Modules</a></td>
+      <td>die OIDs der Broad-Consent-Versionen und Zusatzmodule</td>
+    </tr>
+    <tr>
+      <td><a href="CodeSystem-2.16.840.1.113883.3.1937.777.24.5.2--20210423105554.html">MII Consent: Answer CodeSystem</a></td>
+      <td>gültig / nicht gültig / unbekannt</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="mii-cs-consent-policy">MII CS Consent Policy</h4>
+
+<p><strong>Hinweis</strong>: Das Konzept der <strong>verschachtelten Provision-Elemente</strong> im
+MII-Kontext arbeitet mit zwei Leveln. Das übergeordnete Provision-Element, die
+Level1-Provision, repräsentiert eine Frage in der Einwilligung und legt über
+<code class="language-plaintext highlighter-rouge">Provision.Type=DENY</code> (Opt-In-Modell) fest, dass alles verboten ist, außer es ist
+in Form von untergeordneten Provision-Elementen, den Level2-Provisions, explizit
+erlaubt. D. h. für die Interpretation, ob eine Erlaubnis für eine bestimmte
+Nutzung (erheben, speichern, nutzen) von spezifischen Daten (IDAT, MDAT, BIOMAT,
+…) vorliegt, müssen die Elemente der Level2-Provisions ausgewertet werden.</p>
+
+<p>Teilwiderrufe können ebenfalls auf den Level2-Provisions Änderungen hervorrufen.
+Z. B. kann die Erhebung untersagt werden, aber die Speicherung und Nutzung kann
+davon unbetroffen bleiben („MDAT erheben“ = <code class="language-plaintext highlighter-rouge">deny</code>, aber „MDAT wissenschaftlich
+nutzen EU DSGVO NIVEAU“ = <code class="language-plaintext highlighter-rouge">permit</code>).</p>
+
+<p><strong>Achtung: Für die Nutzung in Level2-Provisions sind ausschließlich Policy-Codes
+vorgesehen</strong> (in der Konzepttabelle die Konzepte der zweiten Ebene, also die
+Kind-Konzepte eines Moduls).</p>
+
+<p>Policies, die den Status „deprecated/inactive“ haben, sollen zukünftig nicht mehr
+neu erzeugten Consent-Ressourcen hinzugefügt werden. Diese Policies sollten
+zukünftig auch nicht mehr ausgewertet werden (Enforcement).</p>
+
+<p>Das CodeSystem <code class="language-plaintext highlighter-rouge">urn:oid:2.16.840.1.113883.3.1937.777.24.5.3</code> enthält 101
+Konzepte. Die vollständige Tabelle — Ebene (Modul/Policy über die Hierarchie),
+Display, Code, Gültigkeitsdauer (Property <code class="language-plaintext highlighter-rouge">period-of-validity</code>) und Status
+(Properties <code class="language-plaintext highlighter-rouge">status</code>/<code class="language-plaintext highlighter-rouge">inactive</code>) — steht auf der Artefaktseite
+<a href="CodeSystem-2.16.840.1.113883.3.1937.777.24.5.3--20251211153003.html">MII CS Consent Policy</a>
+und wird vom IG Publisher aus der Ressource selbst erzeugt.</p>
 
 <blockquote class="mii-highlight mii-highlight-grey">
-  <p>[TODO: Falls Ihr Modul SNOMED CT nutzt, geben Sie die verwendete Edition/Version
-an. Listen Sie die modul-eigenen ValueSets/CodeSystems auf oder verweisen Sie
-auf die automatisch erzeugte Artefakt-Liste. Soll Ihr Modul Implementierenden
-eine verbindliche Anforderung an Expansionen auferlegen, gehört sie auf die
-Konformitätsseiten — diese Seite gehört nicht zum Konformitäts-Abschnitt.]</p>
+  <p><strong>TODO:REVIEW (Gate B) — Policy-Tabelle nicht abgeschrieben.</strong> Der
+Quell-Leitfaden trägt diese Tabelle mit rund 124 Zeilen als handgepflegtes
+Markdown auf der Terminologie-Seite. Sie ist hier <strong>nicht</strong> übernommen, weil
+dieselben Angaben in der CodeSystem-Ressource dieses Moduls stehen und vom IG
+Publisher gerendert werden; eine zweite, handgepflegte Kopie würde beim
+nächsten Policy-Zuwachs auseinanderlaufen. Bitte auf der erzeugten
+Artefaktseite prüfen, dass Gültigkeitsdauer und Status tatsächlich sichtbar
+sind — andernfalls muss die Tabelle zurück in diese Seite. (Beim Build vom
+2026-08-06 waren sie es: Ebene, Display, Code, <code class="language-plaintext highlighter-rouge">P30Y</code>/<code class="language-plaintext highlighter-rouge">P5Y</code> und „Deprecated“
+stehen auf der erzeugten Seite.) <strong>Eine Formulierung musste dabei umgehängt
+werden:</strong> Der Klammerzusatz der Quelle „(Siehe nachstehende Tabelle, Spalte Lvl
+mit Wert 2)“ verweist auf eine Tabelle, die es hier nicht mehr gibt; er zeigt
+jetzt auf die Konzept-Ebene der erzeugten Tabelle. Inhaltlich derselbe Verweis,
+aber bitte gegenlesen.</p>
 </blockquote>
 
 
@@ -295,7 +436,7 @@ Konformitätsseiten — diese Seite gehört nicht zum Konformitäts-Abschnitt.]<
 
           IG © 2019+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de">Medical Informatics Initiative (MII)</a>.  
           Package de.medizininformatikinitiative.kerndatensatz.consent#2026.0.0 basiert auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
-          Erstellt <span title="Thu, Aug 6, 2026 10:59+0000">2026-08-06</span>
+          Erstellt <span title="Thu, Aug 6, 2026 13:20+0000">2026-08-06</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
             <!-- MII branding override for the fhir2.base.template footer fragment.

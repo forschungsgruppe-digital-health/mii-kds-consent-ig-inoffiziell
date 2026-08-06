@@ -8,12 +8,6 @@
 
  Diese Seite enthält Übersetzungen aus der Originalsprache, in der der Leitfaden verfasst wurde. Informationen zu diesen Übersetzungen und Anweisungen zum Abgeben von Feedback zu den Übersetzungen finden Sie [hier](translationinfo.md). 
 
-##### TODO:REVIEW (Gate B) — Startseiten-Vorlage, Narrativ noch nicht migriert
-
-Dies ist die **Vorlagenseite des MII-KDS-Modul-Templates**, unveraendert uebernommen. Es ist **nicht** das Narrativ des MII-KDS-Moduls Consent.
-
-Der Leitfadentext des Moduls existiert nur als gerenderter Simplifier-Guide (`simplifier.net/guide/miiigmodulconsent`) und liegt **nicht im Quell-Repository**. Es gab daher nichts, was in diese Seite haette migriert werden koennen, und es wurde nichts erfunden. Seitenstruktur, Menue und Artefakt-Rendering sind echt; der Fliesstext ist ein Platzhalter, bis das Narrativ von Simplifier migriert ist.
-
 ### Änderungshistorie
 
 Diese Seite hält die Änderungen zwischen den veröffentlichten Versionen des Moduls **Consent** fest, die neueste Version zuerst. Sie folgt [Keep a Changelog](https://keepachangelog.com/de/1.1.0/) und dem MII-CalVer-Schema, das die Seite [Versionierung](version-history.md) beschreibt.
@@ -51,11 +45,98 @@ Kennzeichnen Sie solche Einträge deutlich (zum Beispiel mit dem Präfix **BREAK
 
 #### Version 2026.0.0
 
-**Datum:** 2026-08-06
+**Datum:** 18.12.2025
 
-##### Hinzugefügt
+* ValueSet **MII_VS_Consent_SignatureTypes** um den Code `1.2.840.10065.1.12.1.5` „Verification Signature“ erweitert
+* CodeSystem **MII Consent: Policy CodeSystem** 
+* ergänzt um Gültigkeitsdauer je Policy (Property `period-of-validity` mit ISO 8601:2004 date String bzw. ‚einmalig‘)
+* Policy `2.16.840.1.113883.3.1937.777.24.5.3.46` „MDAT retrospektiv wissenschaftlich nutzen“ ist nun als veraltet markiert (deprecated) und soll nicht mehr verwendet werden
+* Policy `2.16.840.1.113883.3.1937.777.24.5.3.47` „MDAT retrospektiv zusammenfuehren Dritte“ ist nun als veraltet markiert (deprecated) und soll nicht mehr verwendet werden
+* Policy `2.16.840.1.113883.3.1937.777.24.5.3.16` „KKDAT 5J prospektiv speichern verarbeiten“ ist nun als veraltet markiert (deprecated) und soll nicht mehr verwendet werden
+* Policy `2.16.840.1.113883.3.1937.777.24.5.3.17` „KKDAT 5J prospektiv wissenschaftlich nutzen“ ist nun als veraltet markiert (deprecated) und soll nicht mehr verwendet werden
+* Markdown-Repräsentation in Tabellenform zur Darstellung des CodeSystems unter ‚Terminologie‘ im IG erstellt
+ 
+* CodeSystem **mii-cs-consent-version-modules** für die BC-Versionen und Zusatzmodule erstellt 
+* Ergänzung von OIDs für Ablehnungen (BC v1.6d und v1.7.2)
+ 
+* `Consent.provision.period.end` und `Consent.provision.provision.period.end` sind nun Kardinalität `0..1`, also nicht mehr verpflichtend
+* Beispiele überarbeitet und ergänzt
+* IG: redaktionelle Überarbeitung und Erläuterungen verbessert 
+* neue Seite **Empfehlungen zur praktischen Anwendung** hinzugefügt (ResultType)
+* Umgang mit Widerrufen bei Einwilligungen von Minderjährigen (Gültigkeitsdauer bzw. Ablauf der Einwilligung)
+* Hinweise zur Verwendung im Modellvorhaben Genomsequenzierung (§ 64e)
+* Erläuterung zu neuen Suchparametern ergänzt
+ 
 
-* Erstveröffentlichung des Moduls **Consent**.
+Full Changelog: [2025.0.3…2026.0.0](https://github.com/medizininformatik-initiative/kerndatensatzmodul-consent/compare/2025.0.3...2026.0.0)
 
-> [TODO: Ersetzen Sie diesen Abschnitt durch die echten Einträge Ihres ersten Releases und ergänzen Sie für jede weitere Version oben einen neuen Abschnitt. Bei einem Modul mit mehreren Teilbereichen gruppiert `kerndatensatz-basis` die Einträge einer Version thematisch (etwa **Dokumentation**, **Terminologie-Aktualisierungen** und je eine Überschrift pro Teilmodul) und stellt jedem Stichpunkt **Hinzugefügt:** / **Geändert:** / **Entfernt:** voran — nutzen Sie die für Ihr Modul passende der beiden Gruppierungen, bleiben Sie dabei aber über alle Versionen hinweg und in beiden Sprachen einheitlich.]
+#### Version 2025.0.4
+
+**Datum:** 16.06.2025
+
+* Terminologien: 
+* Policy-CodeSystem-Ressource: `display` angepasst (Abkürzung → sprechende Bezeichner)
+ 
+* Bugfix: 
+* pagelink-Fehler behoben
+ 
+
+#### Version 2025.0.3
+
+**Datum:** 12.06.2025
+
+* IG/Consent: 
+* Unterstützung von Zusatzmodul Fachnetzwerk Infektion – SNID (Z4) hinzugefügt
+* Unterstützung von Zusatzmodul Deutsches Zentrum für Psychische Gesundheit – DZPG (Z5) hinzugefügt
+* Consent: Liste der verfügbaren MII Consents zur Verwendung in `Consent.policy.uri` aktualisiert
+* Terminologies: Policy-CodeSystem um SNID- und DZPG-Policies erweitert
+ 
+
+Full Changelog: [2025.0.0…2025.0.3](https://github.com/medizininformatik-initiative/kerndatensatzmodul-consent/compare/2025.0.0...2025.0.3)
+
+#### Version 2025.0.2
+
+**Datum:** 11.06.2025
+
+* IG/Consent: 
+* Unterstützung von Zusatzmodul Fachnetzwerk Infektion – SNID (Z4) hinzugefügt 
+* Consent: Liste der verfügbaren MII Consents zur Verwendung in `Consent.policy.uri` aktualisiert
+* Terminologies: Policy-CodeSystem um SNID-Policies erweitert
+ 
+ 
+
+#### Version 2025.0.1
+
+**Datum:** 21.01.2025
+
+* IG/Consent: 
+* Liste der verfügbaren MII Consents zur Verwendung in `Consent.policy.uri` aktualisiert: 
+* Zusatzmodul ACRIBiS (Z2)
+* Zusatzmodul Patientenbefragung (Z3)
+ 
+ 
+
+#### Version 2025.0.0
+
+**Datum:** 17.12.2024
+
+* Consent-Ressource 
+* `Consent.category` → max value `*`
+* `Consent.provision.type` → fixedCode `deny` entfernt
+* `Consent.provision.provision.type` → fixedCode `permit` entfernt
+* IG/Consent entsprechend angepasst
+ 
+* IG/Consent 
+* Liste der verfügbaren MII Consents zur Verwendung in `Consent.policy.uri` aktualisiert (Widerrufe und Minderjährige)
+ 
+* Policy-CodeSystem: acribis- und PROM-Policies hinzugefügt
+* IG/Terminologie: 
+* Level-Angaben korrigiert
+* Formatierung Hinweis-Text korrigiert
+* Hinweis 1 (FHIR + Policies) korrigiert
+ 
+
+Full Changelog: [1.0.7…2025.0.0](https://github.com/medizininformatik-initiative/kerndatensatzmodul-consent/compare/1.0.7...2025.0.0)
+
+> **TODO:REVIEW (Gate B) — Umfang und Form dieses Changelogs.** Der Quell-Leitfaden führt genau diese sechs Versionen auf seiner Seite **Release Notes**; ältere Versionen (bis 1.0.7) sind dort nicht enthalten und wurden daher auch hier nicht ergänzt. Die Einträge sind unverändert übernommen und **nicht** in die Keep-a-Changelog-Kategorien (Added/Changed/…) umsortiert worden: eine Umsortierung wäre eine inhaltliche Interpretation. Die Migration selbst ist bewusst kein Changelog-Eintrag — sie ist keine Änderung am Modul.
 

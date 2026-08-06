@@ -237,17 +237,6 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 </div>
 <!-- markdownlint-disable MD041 -->
-<div class="mii-highlight mii-highlight-orange">
-<h5>TODO:REVIEW (Gate B) &mdash; starter page, narrative not yet migrated</h5>
-<p>This is the <strong>MII KDS module template's starter page</strong>, carried over as-is.
-It is <strong>not</strong> the narrative of the MII KDS Modul Consent.</p>
-<p>The module's guide text exists only as a rendered Simplifier guide
-(<code>simplifier.net/guide/miiigmodulconsent</code>); it is <strong>not in the source
-repository</strong>, so there was nothing to migrate into this page and nothing was
-invented for it. The page <em>structure</em>, the menu and the artifact rendering below are
-real; the prose is a placeholder until the narrative is migrated from Simplifier.</p>
-</div>
-
 <!-- Source: kerndatensatz-basis input/pagecontent/guidance.md (MII module page set).
      "Guidance" overview page. Replace the [TODO] prompts; the sub-page structure
      follows kerndatensatz-basis. German mirror:
@@ -274,10 +263,13 @@ using the module's data.</li>
 guidance for DIC implementers.</li>
 </ul>
 
-<blockquote class="mii-highlight mii-highlight-grey">
-  <p>[TODO: Add the module-specific guidance that is relevant to all audiences —
-e.g. the domain scope or its delimitations.]</p>
-</blockquote>
+<p>The module's focus is the operationalisation (enforcement) of the consent filled
+in by the patient, on the basis of the consent policies. The delimitation the
+source guide draws: using <em>all</em> of the profiles developed in the AG
+Einwilligungsmanagement is not mandatory, and the FHIR Consent resource carries
+neither person-identifying information nor document scans or signatures. See
+<a href="implementer-guidance.html">Guidance for Implementers</a> and
+<a href="security-and-privacy.html">Security and Privacy</a>.</p>
 
 <hr />
 <p>For conformance requirements see <a href="conformance.html">Conformance</a>; for the
@@ -308,7 +300,7 @@ technical artifacts see <a href="profiles-and-extensions.html">Profiles and Exte
 
           IG © 2019+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de">Medical Informatics Initiative (MII)</a>.  
           Package de.medizininformatikinitiative.kerndatensatz.consent#2026.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
-          Generated <span title="Thu, Aug 6, 2026 10:59+0000">2026-08-06</span>
+          Generated <span title="Thu, Aug 6, 2026 13:20+0000">2026-08-06</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
             <!-- MII branding override for the fhir2.base.template footer fragment.

@@ -14,6 +14,10 @@
  
 Dieses Profil beschreibt Herkunftsinformationen zu Einwilligungen in der Medizininformatik-Initiative. 
 
+Basierend auf den [Empfehlungen](https://ig.fhir.de/einwilligungsmanagement/stable/Provenance.html) der AG Einwilligungsmanagement beschreibt das Profil **MIIConsentProvenance** die Herkunftsinformationen eines Einwilligungsdokuments.
+
+Die Provenance-Ressource verknüpft die Einwilligungsinhalte — unter anderem die Unterschriften — mit den beteiligten Personen und mit einem eventuell vorhandenen Dokumenten-Scan; siehe [UML-Diagramme](uml-diagrams.md).
+
 **Usages:**
 
 * Examples for this Profile: [Provenance/55219d12-6245-4de4-8b50-ddf6f16a789b](Provenance-55219d12-6245-4de4-8b50-ddf6f16a789b.md)
@@ -83,6 +87,21 @@ This structure refers to these other structures:
  
 
 Weitere Repräsentationen des Profils: [CSV](../StructureDefinition-f675b1e8-9f3f-44e8-bb59-9681f78eb464.csv), [Excel](../StructureDefinition-f675b1e8-9f3f-44e8-bb59-9681f78eb464.xlsx), [Schematron](../StructureDefinition-f675b1e8-9f3f-44e8-bb59-9681f78eb464.sch) 
+
+### Notizen:
+
+**Nachfolgend werden nur die Unterschiede zum [Basis-Profil](https://ig.fhir.de/einwilligungsmanagement/stable/Provenance.html) erläutert.**
+
+| | |
+| :--- | :--- |
+| `Provenance.entity.what` | Soll ein Dokumenten-Scan angehängt werden, muss die referenzierte Ressource vom Profiltyp[DocumentReference](StructureDefinition-56375452-bfa1-4111-af7c-5b5ba9a1857c.md)sein, Must-support |
+| `Provenance.entity.signature.type` | Soll eine base64-codierte Unterschrift angehängt werden, muss die Art der Unterschrift gemäß[MII_VS_Consent_SignatureTypes](ValueSet-88464c5b-5338-4c2b-9c07-b42fef2ada64.md)erfolgen, Must-support |
+
+### Beispiel
+
+* [Beispiel (vollständig)](Provenance-55219d12-6245-4de4-8b50-ddf6f16a789b.md)
+
+> **TODO:REVIEW (Gate B).** Auf der gerenderten Quellseite schlug die Einbettung genau dieses Beispiels fehl („File not found“). Das Beispiel existiert im Modul und wird von diesem Leitfaden als eigene Artefaktseite gerendert — die Migration behebt damit einen Renderfehler der Quelle. Bitte bestätigen, dass es dasselbe Beispiel ist, das die Quelle einbetten wollte.
 
 
 

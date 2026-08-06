@@ -8,15 +8,32 @@
 
  Diese Seite enthält Übersetzungen aus der Originalsprache, in der der Leitfaden verfasst wurde. Informationen zu diesen Übersetzungen und Anweisungen zum Abgeben von Feedback zu den Übersetzungen finden Sie [hier](translationinfo.md). 
 
-##### TODO:REVIEW (Gate B) — Startseiten-Vorlage, Narrativ noch nicht migriert
-
-Dies ist die **Vorlagenseite des MII-KDS-Modul-Templates**, unveraendert uebernommen. Es ist **nicht** das Narrativ des MII-KDS-Moduls Consent.
-
-Der Leitfadentext des Moduls existiert nur als gerenderter Simplifier-Guide (`simplifier.net/guide/miiigmodulconsent`) und liegt **nicht im Quell-Repository**. Es gab daher nichts, was in diese Seite haette migriert werden koennen, und es wurde nichts erfunden. Seitenstruktur, Menue und Artefakt-Rendering sind echt; der Fliesstext ist ein Platzhalter, bis das Narrativ von Simplifier migriert ist.
-
 ### UML-Diagramme
 
-UML-Übersichten der Datenmodelle des Moduls **Consent** und ihrer Beziehungen. Editierbare Quellen (z. B. PlantUML) gehören nach `input/images-source/`, die gerenderten Bilder nach `input/images/`.
+#### Consent
 
-> [TODO: Fügen Sie die UML-Diagramme Ihres Moduls ein, oder entfernen Sie diese Seite, wenn keine vorhanden sind.]
+Die Consent-Resource stellt eine rein maschinenlesbare Repräsentation der real existierenden Einwilligung einer Person dar und wird für das Enforcement (Durchsetzung, Umsetzung) der Consent-Policies verwendet.
+
+Die Einwilligung wird in einem konkreten Kontext (z. B. MII) erhoben, was in FHIR in Form einer Referenz auf die verantwortliche Organisation ([Organization](https://ig.fhir.de/einwilligungsmanagement/stable/Organization.html)) und/oder zu einem Forschungsprojekt ([ResearchStudy](https://ig.fhir.de/einwilligungsmanagement/stable/ResearchStudy.html)) modelliert wird.
+
+#### Provenance
+
+Die Provenance-Resource beschreibt die Herkunft der Einwilligungsinhalte (u. a. Unterschriften) und verknüpft diese mit den beteiligten Personen ([Patient](https://ig.fhir.de/einwilligungsmanagement/stable/Patient.html), Consent Witness) und eventuell vorhandenen Dokumenten-Scans ([DocumentReference](StructureDefinition-56375452-bfa1-4111-af7c-5b5ba9a1857c.md)). Ebenso können die für die Erhebung genutzten Anwendungssysteme genannt (display) bzw. referenziert werden, sowie im Anwendungssystem geltende Patienten-Identifier.
+
+#### Abbildung von Fragebögen
+
+Der Einsatz **aller** in der AG Einwilligungsmanagement entwickelten Profile ist **nicht verpflichtend**. Für die Abbildung der Questionnaire-basierten Inhalte (siehe [Fragebögen](implementer-guidance.md)) sind die Empfehlungen der TFCU zu berücksichtigen.
+
+#### Relevante Profile
+
+Hinweise zum UML-Klassendiagramm des Erweiterungsmoduls Consent:
+
+* **Blau** eingefärbte Klassen werden bei der Abbildung und Profilierung in FHIR berücksichtigt, sind in diesem IG profiliert und bei der MII-Umsetzung erforderlich.
+* **Orange** eingefärbte Klassen sind im IG der AG Einwilligungsmanagement profiliert und erforderlich für die MII-Umsetzung.
+* **Grau** eingefärbte Klassen sind im IG der AG Einwilligungsmanagement profiliert und optional für die MII-Umsetzung.
+* **Hellgrau** eingefärbte Klassen werden referenziert. Diese werden jedoch nicht bei der Abbildung und Profilierung in FHIR berücksichtigt.
+
+Die in den Klassen des Diagramms hinterlegten Attribute sind verpflichtend. Darüber hinaus können weitere optionale Attribute angegeben werden.
+
+![](information-model_UML-Diagramm_MII-spez.png)
 

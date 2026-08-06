@@ -7,15 +7,29 @@
 
  Diese Seite enthält Übersetzungen aus der Originalsprache, in der der Leitfaden verfasst wurde. Informationen zu diesen Übersetzungen und Anweisungen zum Abgeben von Feedback zu den Übersetzungen finden Sie [hier](translationinfo.md). 
 
-##### TODO:REVIEW (Gate B) — Startseiten-Vorlage, Narrativ noch nicht migriert
+### Beispiele
 
-Dies ist die **Vorlagenseite des MII-KDS-Modul-Templates**, unveraendert uebernommen. Es ist **nicht** das Narrativ des MII-KDS-Moduls Consent.
+**Nur synthetische Daten** — in Beispielen werden niemals echte oder realistisch wirkende Patientendaten verwendet.
 
-Der Leitfadentext des Moduls existiert nur als gerenderter Simplifier-Guide (`simplifier.net/guide/miiigmodulconsent`) und liegt **nicht im Quell-Repository**. Es gab daher nichts, was in diese Seite haette migriert werden koennen, und es wurde nichts erfunden. Seitenstruktur, Menue und Artefakt-Rendering sind echt; der Fliesstext ist ein Platzhalter, bis das Narrativ von Simplifier migriert ist.
+#### Consent
 
-Diese Seite führt die Beispielinstanzen des Moduls **Consent** auf. Es sind die Beispiele des Moduls selbst, aus dem Quell-Repository migriert und im Artefakt-Index dieses Leitfadens aufgeführt. (Die Beispiel-Artefakte der Vorlage wurden bei der Migration gelöscht, damit sie nicht mit den eigenen kollidieren.)
+| | |
+| :--- | :--- |
+| [34150a23-b1c8-404f-874f-e042a30435d2](Consent-34150a23-b1c8-404f-874f-e042a30435d2.md) | Beispiel (vollständig) |
+| [Example-MII-Consent-ResultType-document](Consent-Example-MII-Consent-ResultType-document.md) | Beispiel für eine Einwilligung (ResultType`document`) |
+| [5143266b-8d60-4b28-8ee9-635140ffa5bb](Consent-5143266b-8d60-4b28-8ee9-635140ffa5bb.md) | Beispiel für eine MII-Einwilligung (ResultType`consent-status`) |
 
-**Nur synthetische Daten** — niemals echte oder realistisch wirkende Patientendaten in Beispielen verwenden.
+#### Provenance
 
-> [TODO: Ergänzen Sie aussagekräftige Beispielinstanzen zu Ihren Profilen.]
+| | |
+| :--- | :--- |
+| [55219d12-6245-4de4-8b50-ddf6f16a789b](Provenance-55219d12-6245-4de4-8b50-ddf6f16a789b.md) | Beispiel (vollständig) |
+
+#### DocumentReference
+
+| | |
+| :--- | :--- |
+| [8a3d1799-2463-405e-b49c-6a16c8692b01](DocumentReference-8a3d1799-2463-405e-b49c-6a16c8692b01.md) | Beispiel (vollständig) |
+
+> **TODO:REVIEW (Gate B) — ein Beispiel der Quelle fehlt im Modul.** Die gerenderte Consent-Seite des Quell-Leitfadens zeigt ein viertes Beispiel, „Beispiel mit mehrere Codes in einer Provision“ mit der Id `89f494a3-cd75-44f5-a78a-581dfdd47a94`. Diese Instanz liegt **weder im Quell-Repository noch im publizierten Paket** und konnte deshalb nicht migriert werden; sie wurde auch nicht nachgebaut. Es ist eine Lücke der Quelle, kein Migrationsverlust.
 

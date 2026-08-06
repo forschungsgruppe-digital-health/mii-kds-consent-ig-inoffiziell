@@ -5,13 +5,9 @@
 
 ## Metadata Overview
 
-##### TODO:REVIEW (Gate B) — starter page, narrative not yet migrated
-
-This is the **MII KDS module template's starter page**, carried over as-is. It is **not** the narrative of the MII KDS Modul Consent.
-
-The module's guide text exists only as a rendered Simplifier guide (`simplifier.net/guide/miiigmodulconsent`); it is **not in the source repository**, so there was nothing to migrate into this page and nothing was invented for it. The page **structure**, the menu and the artifact rendering below are real; the prose is a placeholder until the narrative is migrated from Simplifier.
-
 ### Metadata Overview
+
+**Migration note (2026-08-06):** the source guide has no metadata page; this page describes this repository's CRMI metadata. The `[TODO ...]` prompts below are **template setup items for the module owners**, not missing narrative.
 
 This page documents the computable metadata of the **Consent** module. The metadata exists so that the artifacts of this guide can be discovered, evaluated, validated, cited, governed and reused — by people and by software alike.
 

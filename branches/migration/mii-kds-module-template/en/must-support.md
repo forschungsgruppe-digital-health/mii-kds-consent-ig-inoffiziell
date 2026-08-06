@@ -6,11 +6,9 @@
 
 ## Must Support
 
-##### TODO:REVIEW (Gate B) — starter page, narrative not yet migrated
+##### TODO:REVIEW (Gate C) — mixed page: MII-wide English text plus an unreviewed machine translation
 
-This is the **MII KDS module template's starter page**, carried over as-is. It is **not** the narrative of the MII KDS Modul Consent.
-
-The module's guide text exists only as a rendered Simplifier guide (`simplifier.net/guide/miiigmodulconsent`); it is **not in the source repository**, so there was nothing to migrate into this page and nothing was invented for it. The page **structure**, the menu and the artifact rendering below are real; the prose is a placeholder until the narrative is migrated from Simplifier.
+The MII-wide requirements on this page were authored in English (the German mirror `input/translations/de/pagecontent/must-support.md` is their translation). The section(s) marked **“migrated from the source guide”** below are the opposite direction: their authoritative text is **German**, migrated from the Simplifier-rendered guide (version 2026.0.0, harvested 2026-08-06), and the English wording of those sections is an **unreviewed machine translation**. Where the two differ, the German page applies for those sections.
 
 ### Must Support
 
@@ -117,7 +115,13 @@ For example, if `identifier` is a Must Support slicer defining slices for severa
 * clients **SHALL** be capable of processing them,
 * systems **MAY** support further slices, but are not required to.
 
-> [TODO: Only add anything here if YOUR module defines additional or deviating Must Support rules — and state the reason for the deviation. Delete this prompt afterwards.]
+#### What this module states about Must Support
+
+**Migrated from the source guide — source of record: the German page, harvested from `.../TechnischeImplementierung/FHIRProfile` (version 2026.0.0, 2026-08-06).**
+
+For elements marked **mandatory** or **must-support**, the source guide refers to the [rules of the IPS](https://build.fhir.org/ig/HL7/fhir-ips/design.html#must-support), which apply to this implementation guide as well.
+
+The per-element Must Support statements of the module's three profiles are on the profile pages themselves — see [Profiles and Extensions](profiles-and-extensions.md).
 
 #### See also
 

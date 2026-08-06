@@ -235,14 +235,14 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <!-- markdownlint-disable MD041 -->
 <div class="mii-highlight mii-highlight-orange">
-<h5>TODO:REVIEW (Gate B) &mdash; starter page, narrative not yet migrated</h5>
-<p>This is the <strong>MII KDS module template's starter page</strong>, carried over as-is.
-It is <strong>not</strong> the narrative of the MII KDS Modul Consent.</p>
-<p>The module's guide text exists only as a rendered Simplifier guide
-(<code>simplifier.net/guide/miiigmodulconsent</code>); it is <strong>not in the source
-repository</strong>, so there was nothing to migrate into this page and nothing was
-invented for it. The page <em>structure</em>, the menu and the artifact rendering below are
-real; the prose is a placeholder until the narrative is migrated from Simplifier.</p>
+<h5>TODO:REVIEW (Gate C) &mdash; mixed page: MII-wide English text plus an unreviewed machine translation</h5>
+<p>The authoritative text of this module is <strong>German</strong>. This English page is an
+<strong>unreviewed machine translation</strong> of
+<code>input/translations/de/pagecontent/security-and-privacy.md</code>, migrated from the Simplifier-rendered
+guide (version 2026.0.0, harvested 2026-08-06). Consent policy wording, policy display names
+and the names of the MII Broad Consent form modules are <strong>deliberately left in
+German</strong>: they are legally binding text and identifiers, not prose. Where the two
+language variants differ, the German page applies.</p>
 </div>
 
 <!-- English rendering of input/pagecontent/security-and-privacy.md. -->
@@ -264,34 +264,66 @@ repeat them; it states only what is <strong>specific to this module</strong>.</p
 minimisation, accuracy, storage limitation and integrity/confidentiality
 (GDPR Art. 5). In the MII context, use is based on the MII Broad Consent.</p>
 
-<blockquote class="mii-highlight mii-highlight-grey">
-  <p>[TODO: Describe the data categories your module carries and the applicable
-purpose limitation / legal basis in the MII context.]</p>
-</blockquote>
+<h5 id="privacy-aspects-of-the-consent-resource">Privacy aspects of the Consent resource</h5>
+
+<p><em>Migrated from the source guide — source of record: the German page, harvested
+from <code class="language-plaintext highlighter-rouge">.../TechnischeImplementierung/FHIRProfile/Consent</code>, section
+"Datenschutz-Aspekte" (version 2026.0.0, 2026-08-06). Linked from the profile
+page <a href="StructureDefinition-e0e166b4-0f77-478d-9062-de0034d98ce0.html">MII_PR_Consent_Einwilligung</a>.</em></p>
+
+<p>Because the FHIR Consent resource likewise contains <strong>no person-identifying
+information</strong> about the consenting person, the
+<a href="https://ig.fhir.de/einwilligungsmanagement/stable/Patient.html"><strong>pseudonymous person reference</strong></a>
+should be established through corresponding
+<a href="https://ig.fhir.de/einwilligungsmanagement/stable/ContextIdentifier.html"><strong>pseudonymous identifiers</strong></a>.
+Any person-identifying information (e.g. date of birth, sex, address), as well as
+references — for example to clear-text patient profiles — should be replaced
+suitably before export.</p>
+
+<p><em>Technically, Patient resources and derived profiles may be used, such as the
+profiles of the
+<a href="https://ig.fhir.de/einwilligungsmanagement/stable/Patient.html">AG Einwilligungsmanagement</a>
+or of the
+<a href="https://simplifier.net/medizininformatikinitiative-modulperson/sdmiipersonpatientpseudonymisiert">MII</a>.</em>
+Independently of that, in order to distinguish pseudonyms, case numbers and so
+on, the identifier used has to be categorised by means of
+<a href="https://ig.fhir.de/einwilligungsmanagement/stable/ContextIdentifierType.html"><code class="language-plaintext highlighter-rouge">Patient.identifier.type</code></a>.</p>
+
+<p>The FHIR Consent resource contains <strong>no document scans and/or signatures</strong>. Where
+transmitting them is required for a given use case, separate resources have to be
+created per the
+<a href="https://ig.fhir.de/einwilligungsmanagement/stable/DocumentReference.html">requirements of the AG Einwilligungsmanagement</a>
+(consent bundles) — in this module the profiles
+<a href="StructureDefinition-f675b1e8-9f3f-44e8-bb59-9681f78eb464.html">Provenance</a> and
+<a href="StructureDefinition-56375452-bfa1-4111-af7c-5b5ba9a1857c.html">DocumentReference</a>.</p>
 
 <h4 id="security-considerations">Security considerations</h4>
 
 <p>Security is risk management against risks to confidentiality, integrity and
 availability.</p>
 
-<blockquote class="mii-highlight mii-highlight-grey">
-  <p>[TODO: Name the attacks/risks considered and the countermeasures — e.g. FHIR
-API access control, pseudonymisation, transport encryption, audit logging.]</p>
-</blockquote>
+<div class="mii-highlight mii-highlight-grey">
+<h5>TODO:REVIEW (Gate B) &mdash; not present in the source guide</h5>
+<p>The migrated source guide contains no attack or risk analysis. Nothing was invented; the
+gap is recorded in the migration report. Everything the source says about data protection is
+in the section above.</p>
+</div>
 
 <h4 id="module-specific-conformance-requirements">Module-specific conformance requirements</h4>
 
-<blockquote class="mii-highlight mii-highlight-grey">
-  <p>[TODO: If your module defines security- or privacy-related SHALL/SHOULD/MAY
-requirements, list them here and say which risk each one addresses.]</p>
-</blockquote>
+<div class="mii-highlight mii-highlight-grey">
+<h5>TODO:REVIEW (Gate B) &mdash; not present in the source guide</h5>
+<p>The source guide states no security or privacy conformance statements as such. The
+pseudonymisation guidance above is phrased as a recommendation, not as SHALL/SHOULD/MAY; it
+was not rewritten into conformance statements.</p>
+</div>
 
 <h4 id="residual-risks">Residual risks</h4>
 
-<blockquote class="mii-highlight mii-highlight-grey">
-  <p>[TODO: Name risks NOT addressed by this specification, which must therefore be
-handled in system design, deployment or policy.]</p>
-</blockquote>
+<div class="mii-highlight mii-highlight-grey">
+<h5>TODO:REVIEW (Gate B) &mdash; not present in the source guide</h5>
+<p>The source guide names no residual risks. Not supplied.</p>
+</div>
 
 
 
@@ -318,7 +350,7 @@ handled in system design, deployment or policy.]</p>
 
           IG © 2019+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.medizininformatik-initiative.de">Medical Informatics Initiative (MII)</a>.  
           Package de.medizininformatikinitiative.kerndatensatz.consent#2026.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
-          Generated <span title="Thu, Aug 6, 2026 10:59+0000">2026-08-06</span>
+          Generated <span title="Thu, Aug 6, 2026 13:20+0000">2026-08-06</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
             <!-- MII branding override for the fhir2.base.template footer fragment.
