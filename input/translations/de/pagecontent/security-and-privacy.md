@@ -1,0 +1,63 @@
+<!-- markdownlint-disable MD041 -->
+<div class="mii-highlight mii-highlight-orange" markdown="0">
+<h5>TODO:REVIEW (Gate B) &mdash; Startseiten-Vorlage, Narrativ noch nicht migriert</h5>
+<p>Dies ist die <strong>Vorlagenseite des MII-KDS-Modul-Templates</strong>, unveraendert
+uebernommen. Es ist <strong>nicht</strong> das Narrativ des MII-KDS-Moduls Consent.</p>
+<p>Der Leitfadentext des Moduls existiert nur als gerenderter Simplifier-Guide
+(<code>simplifier.net/guide/miiigmodulconsent</code>) und liegt <strong>nicht im
+Quell-Repository</strong>. Es gab daher nichts, was in diese Seite haette migriert werden
+koennen, und es wurde nichts erfunden. Seitenstruktur, Menue und Artefakt-Rendering sind
+echt; der Fliesstext ist ein Platzhalter, bis das Narrativ von Simplifier migriert ist.</p>
+</div>
+
+<!-- Sicherheit & Datenschutz. Diese Seite ist von den HL7-Best-Practices für
+     Implementation Guides ausdrücklich gefordert ("Security and Privacy
+     Considerations"). Sie richtet sich an Sicherheits- und
+     Datenschutz-Fachleute. Ersetzen Sie die [TODO]-Hinweise durch die Aussagen
+     Ihres Moduls; entfernen Sie die Seite NICHT. -->
+
+### Sicherheit und Datenschutz
+
+Dieser Abschnitt richtet sich an Sicherheits- und Datenschutz-Fachleute. Er
+beschreibt, welche Angriffe und Risiken für das Modul **Consent**
+betrachtet wurden und welche Gegenmaßnahmen vorgesehen sind.
+
+Grundlagen und allgemeine Anforderungen stehen in der FHIR-Kernspezifikation:
+[Security & Privacy Module](https://build.fhir.org/secpriv-module.html) und die
+[Security-Checkliste](https://build.fhir.org/security.html). Dieser Abschnitt
+wiederholt sie nicht, sondern nennt nur die **modul-spezifischen** Aspekte.
+
+#### Datenschutzgrundsätze
+
+Für die Verarbeitung personenbezogener Daten gelten Transparenz, Zweckbindung,
+Datenminimierung, Richtigkeit, Speicherbegrenzung und Integrität/Vertraulichkeit
+(DSGVO Art. 5). Im MII-Kontext erfolgt die Nutzung auf Basis der
+MII-Broad-Consent-Regelungen.
+
+> [TODO: Beschreiben Sie, welche Datenkategorien Ihr Modul führt und welche
+> Zweckbindung bzw. Rechtsgrundlage im MII-Kontext gilt.]
+{: .mii-highlight .mii-highlight-grey}
+
+#### Sicherheitsbetrachtung
+
+Sicherheit ist Risikomanagement bezüglich Vertraulichkeit, Integrität und
+Verfügbarkeit.
+
+> [TODO: Nennen Sie die betrachteten Angriffe/Risiken und die Gegenmaßnahmen —
+> z. B. Zugriffsschutz der FHIR-API, Pseudonymisierung, Transportverschlüsselung,
+> Protokollierung.]
+{: .mii-highlight .mii-highlight-grey}
+
+#### Modul-spezifische Konformitätsanforderungen
+
+> [TODO: Falls Ihr Modul sicherheits- oder datenschutzbezogene
+> SHALL/SHOULD/MAY-Anforderungen definiert, führen Sie sie hier auf und benennen
+> Sie, welchem Risiko sie begegnen.]
+{: .mii-highlight .mii-highlight-grey}
+
+#### Verbleibende Risiken
+
+> [TODO: Nennen Sie Risiken, die NICHT durch diese Spezifikation adressiert
+> werden und daher im Systemdesign, im Betrieb oder per Policy behandelt werden
+> müssen.]
+{: .mii-highlight .mii-highlight-grey}

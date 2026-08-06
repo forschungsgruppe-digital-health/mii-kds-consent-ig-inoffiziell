@@ -1,0 +1,73 @@
+== first-run-bootstrap (mode: APPLY) ==
+
+-- Step 1: create 'dev' from 'main' and protect both branches --
+   # create dev from main:
+   gh api -X POST repos/:owner/:repo/git/refs -f ref=refs/heads/dev \
+     -f sha="$(gh api repos/:owner/:repo/git/refs/heads/main --jq .object.sha)"
+   # protect main (require PR + 1 approval(s), no force-push/deletion) and
+   # dev (require PR + 0 approval(s)); keep main the default branch.
+   #   PUT repos/:owner/:repo/branches/{main,dev}/protection
+   #   PATCH repos/:owner/:repo -f default_branch=main
+   ERROR: cannot read main; is this the new module repo and are you authenticated?
+   (branch setup incomplete — see errors above; you can run the gh commands manually)
+
+-- Step 2: remove the template's release automation (reversible git rm) --
+   remove: .github/workflows/release-please.yml
+           why: Release Please = SemVer automation for the TEMPLATE repo; a module releases via MII CalVer — two release systems on one repo corrupt the version history
+   remove: .github/workflows/notify-zulip.yml
+           why: announces the TEMPLATE repo's SemVer releases; a module announces its own CalVer release via the module release workflow
+   remove: .github/workflows/release-demo.yml
+           why: renders the TEMPLATE repo's Pages demo from a SemVer tag; a module has no demo — its Pages surface is the gated formal-publication output
+   remove: release-please-config.json
+           why: Release Please = SemVer automation for the TEMPLATE repo; a module releases via MII CalVer — two release systems on one repo corrupt the version history
+   remove: .release-please-manifest.json
+           why: Release Please = SemVer automation for the TEMPLATE repo; a module releases via MII CalVer — two release systems on one repo corrupt the version history
+   remove: CHANGELOG.md
+           why: the template's Release-Please-generated SemVer changelog; a module keeps its own release notes
+   removed: .github/workflows/release-please.yml
+   removed: .github/workflows/notify-zulip.yml
+   removed: .github/workflows/release-demo.yml
+   removed: release-please-config.json
+   removed: .release-please-manifest.json
+   removed: CHANGELOG.md
+
+== Post-bootstrap checklist (do these by hand) ==
+
+1. Replace every {{PLACEHOLDER}} in the scaffold. Start here and follow the
+   comments — the module does NOT build until they are all replaced:
+     - sushi-config.yaml   ({{MODULE_SLUG}}, {{MODULE_NAME}}, {{MODULE_TITLE}},
+                            {{MODULE_DESCRIPTION}}, {{CALVER_VERSION}}, dates, …)
+     - ig.ini              (the {{MODULE_SLUG}} in the ig path; LEAVE
+                            `template = #ig-template` as it is until the MII
+                            template package is published — see
+                            docs/recipes/switch-template-to-published.md)
+     - publication-request.json, .github/workflows/go-publish.yml
+       ({{GITHUB_ORG}}, {{REPO_NAME}}, canonical, …)
+     - qc/custom.rules.yaml, tests/, the pages and the FSH sources
+   Run `node scripts/convention-check.mjs` — it must be green (parameterized
+   fields are OK until you resolve them; a release branch requires them all set).
+
+2. Enable GitHub Pages: Settings → Pages → Build and deployment → "GitHub
+   Actions". Then set the repository variable PAGES_ACTIONS_ENABLED=true only
+   once that is done (the publication workflow checks it).
+
+3. Terminology (optional): to build against the MII SU-TermServ, add the
+   repository secrets SU_TERMSERV_CLIENT_CERT / SU_TERMSERV_CLIENT_KEY /
+   SU_TERMSERV_CLIENT_PASSWORD. Without them the build falls back to the
+   public HL7 server https://tx.fhir.org (it does not hard-fail).
+
+4. Release announcements (optional): add ZULIP_API_KEY to announce your
+   module's CalVer releases to the MII Zulip.
+
+5. CI pipeline toggles are ON by default. To require CI as a merge gate, add the
+   relevant checks (e.g. convention-check, the IG preview build) as required
+   status checks under Settings → Branches once they have run once.
+
+6. Verify the branch model: `main` (stable, default) and `dev` (integration)
+   both exist and are protected. Open your first change as a PR into `dev`.
+
+The file removals are STAGED (git rm). Review with 'git status' and
+'git diff --cached', then commit them on a branch, e.g.:
+   git checkout -b chore/first-run-bootstrap
+   git commit -m 'chore: first-run bootstrap (remove the template's release automation)'
+To undo a removal before committing: git restore --staged --worktree <path>

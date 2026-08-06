@@ -1,0 +1,68 @@
+{
+  "resourceType" : "Requirements",
+  "id" : "fromNarrative",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/modul-consent/Requirements/fromNarrative",
+  "name" : "FromNarrative",
+  "title" : "Narrative Conformance Statements",
+  "status" : "active",
+  "experimental" : false,
+  "description" : "Conformance statements found throughout the narrative of the IG consolidated into this computable resource for traceability purposes",
+  "statement" : [{
+    "key" : "general-1",
+    "conformance" : ["SHALL"],
+    "requirement" : "Servers **SHALL** be able to populate all profile data elements that are mandatory or flagged as **Must Support** in that profile's StructureDefinition"
+  },
+  {
+    "key" : "general-2",
+    "conformance" : ["SHOULD"],
+    "requirement" : "Servers **SHOULD** declare support for a profile by including its official URL in `CapabilityStatement.rest.resource.supportedProfile`"
+  },
+  {
+    "key" : "general-3",
+    "conformance" : ["SHALL"],
+    "requirement" : "A conformant server **SHALL** be able to populate all profile data elements that are mandatory and/or flagged as **Must Support**"
+  },
+  {
+    "key" : "missing-data-1",
+    "conformance" : ["SHALL"],
+    "requirement" : "if the source system has no data instance for an element with a minimum cardinality of `0` — including elements flagged Must Support — the data element **SHALL** be omitted from the resource"
+  },
+  {
+    "key" : "missing-data-2",
+    "conformance" : ["SHALL"],
+    "requirement" : "if the data element is mandatory (minimum cardinality > 0) it **SHALL** be present even when the source system holds no data, or does not know the reason for the absence"
+  },
+  {
+    "key" : "missing-data-3",
+    "conformance" : ["SHALL"],
+    "requirement" : "For non-coded data elements (e.g. `string`, `HumanName`, `Address`), the [DataAbsentReason extension](http://hl7.org/fhir/R4/extension-data-absent-reason.html) **SHALL** be used on the datatype with the code `unknown`"
+  },
+  {
+    "key" : "missing-data-4",
+    "conformance" : ["SHALL"],
+    "requirement" : "If the ValueSet has no such concept, a concept from the ValueSet **SHALL** nevertheless be used — otherwise the instance is **not conformant**"
+  },
+  {
+    "key" : "must-support-1",
+    "conformance" : ["SHALL"],
+    "requirement" : "**Must Support (MS)** means that systems **SHALL** support the element even where its cardinality is `0..*` — systems **SHALL** be capable of populating, storing, displaying and correctly processing it"
+  },
+  {
+    "key" : "must-support-2",
+    "conformance" : ["SHALL"],
+    "requirement" : "A conformant data-providing system **SHALL** be capable of populating a Must Support element with locally available data, storing it in the resource, and making it retrievable on request"
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementshallnot",
+      "valueBoolean" : true
+    }],
+    "key" : "must-support-3",
+    "requirement" : "Where no information is present for a data element and the reason for its absence is unknown, servers **SHALL NOT** include the element in the returned resource instance"
+  },
+  {
+    "key" : "must-support-4",
+    "conformance" : ["SHALL"],
+    "requirement" : "Clients **SHALL** interpret a missing data element in a resource instance as \"not present in the server's system\""
+  }]
+}

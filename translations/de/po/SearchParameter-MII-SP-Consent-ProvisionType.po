@@ -1,0 +1,26 @@
+
+# SearchParameter.name
+#: SearchParameter.name
+msgid "MII_SP_Consent_ProvisionType"
+msgstr ""
+
+# SearchParameter.publisher
+#: SearchParameter.publisher
+msgid "Medical Informatics Initiative (MII)"
+msgstr "Medizininformatik-Initiative (MII)"
+
+# ContactDetail.name
+#: ContactDetail.name
+msgid "Medical Informatics Initiative (MII)"
+msgstr ""
+
+# SearchParameter.description
+#: SearchParameter.description
+msgid "Suche im Typ der Provison (permit, deny)."
+msgstr ""
+
+# Coding.display
+#: Coding.display
+msgid "Germany"
+msgstr ""
+

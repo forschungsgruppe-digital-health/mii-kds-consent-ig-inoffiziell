@@ -1,0 +1,123 @@
+<!-- markdownlint-disable MD041 -->
+<div class="mii-highlight mii-highlight-orange" markdown="0">
+<h5>TODO:REVIEW (Gate B) &mdash; starter page, narrative not yet migrated</h5>
+<p>This is the <strong>MII KDS module template's starter page</strong>, carried over as-is.
+It is <strong>not</strong> the narrative of the MII KDS Modul Consent.</p>
+<p>The module's guide text exists only as a rendered Simplifier guide
+(<code>simplifier.net/guide/miiigmodulconsent</code>); it is <strong>not in the source
+repository</strong>, so there was nothing to migrate into this page and nothing was
+invented for it. The page <em>structure</em>, the menu and the artifact rendering below are
+real; the prose is a placeholder until the narrative is migrated from Simplifier.</p>
+</div>
+
+<!--
+  HOME PAGE — English is the IG's DEFAULT language, so this file is the source.
+  Structure follows the standard MII module IG page set (kerndatensatz-basis
+  input/pagecontent/index.md). Replace the {{...}} placeholders and the bracketed
+  [TODO ...] prompts with your module's real content, then delete these HTML
+  comments. Keep the section headings — a reviewer expects them. The German
+  translation of this page lives at input/translations/de/pagecontent/index.md
+  (see docs/recipes/add-translation.md) — keep both in step.
+-->
+
+### Introduction
+
+This specification describes the FHIR representation of the Core Dataset (CDS)
+module **Consent** of the Medical Informatics Initiative (MII). It
+covers the module's use cases and the associated FHIR profiles, extensions and
+terminology resources in their normative form. The MII Core Dataset enables the
+standardized secondary use of routine clinical data for medical research.
+
+> [TODO: In one or two sentences, describe what your module covers and what the
+> data is used for.]
+{: .mii-highlight .mii-highlight-grey}
+
+| Publication |               |
+|-------------|---------------|
+| Date        | 2026-08-06 |
+| Version     | 2026.0.0 (CalVer `YYYY.n.n`) |
+| Status      | active        |
+| Realm       | DE            |
+
+### Target audience
+
+<div class="mii-highlight mii-highlight-blue">
+<h5>Implementers</h5>
+<p>Data Integration Centers (DIC), software developers and system architects building FHIR-based solutions.<br/>
+→ see <a href="profiles-and-extensions.html">Profiles and Extensions</a> and <a href="logical-models.html">Logical Models</a>.</p>
+</div>
+
+<div class="mii-highlight mii-highlight-green">
+<h5>Researchers</h5>
+<p>Scientists using MII data for medical research.<br/>
+→ see <a href="researcher-guidance.html">Guidance for Researchers</a>.</p>
+</div>
+
+### Contents
+
+- **[Guidance](guidance.html)** — getting started and domain notes.
+- **[Conformance](conformance.html)** — normative requirements, Must-Support and
+  handling missing data.
+- **[Profiles and Extensions](profiles-and-extensions.html)** and
+  **[Terminology](terminology.html)** — the technical artifacts.
+- **[Examples](examples.html)** — example instances.
+
+### Related guides
+
+This module is part of the MII Core Dataset; the other KDS modules and their
+dependencies are described at
+[medizininformatik-initiative.de](https://www.medizininformatik-initiative.de/).
+
+> [TODO: Name your module's formal dependencies (see `dependencies` in
+> `sushi-config.yaml`) and any related guides.]
+{: .mii-highlight .mii-highlight-grey}
+
+More FHIR implementation guides can be found in the official
+**[FHIR IG Registry](https://fhir.org/guides/registry/)** (source:
+[`FHIR/ig-registry`](https://github.com/FHIR/ig-registry)).
+
+### Imprint
+
+This guide was created within the Medical Informatics Initiative and is subject,
+by its governance process, to the coordination procedure of the Interoperability
+Forum and the technical committees of HL7 Germany.
+
+### Contact
+
+Questions about this publication can be asked on the HL7 FHIR Zulip
+[chat.fhir.org](https://chat.fhir.org) in the `german/mi-initiative` stream, or
+on the MII Zulip [mii.zulipchat.com](https://mii.zulipchat.com/) in the
+`MII-Kerndatensatz` stream.
+Comments and issues are welcome as *Issues* on
+[GitHub](https://github.com/forschungsgruppe-digital-health/mii-kds-consent-ig-inoffiziell/issues).
+
+> [TODO: Name your module's domain contacts.]
+{: .mii-highlight .mii-highlight-grey}
+
+### Authors (in alphabetical order)
+
+> [TODO: List the module's authors with their institution.]
+{: .mii-highlight .mii-highlight-grey}
+
+### Copyright and License
+
+© 2019+ TMF e. V., Charlottenstraße 42, 10117 Berlin
+
+This work is licensed under the
+[Creative Commons Attribution 4.0 International License (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/).
+
+For the usage rights of the underlying FHIR technology, see the FHIR base
+specification.
+
+Some of the code systems used are published and maintained by other
+organizations; the copyright of the respective publishers applies.
+
+### Disclaimer
+
+The content of this document is public. Please note that parts of this
+document are based on FHIR version R4, which is copyrighted by
+HL7 International.
+
+Although this publication was prepared with the greatest care, the authors
+cannot accept any liability for direct or indirect damage that may arise from
+the content of this specification.
