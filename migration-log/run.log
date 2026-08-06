@@ -950,3 +950,8 @@
 2026-08-06T13:16:58Z  INFO   5.1c  harvest-evidence-committed  committed the harvest manifest + the 14 narrative pages; dropped the raw HTML and truncated the 4 artefact-view pages
     migration-log/guide-harvest.tsv and guide-harvest-assets.tsv are the per-page account; migration-log/guide-harvest/pagecontent/ holds the 14 narrative pages in full.
     Dropped: --keep-html output (18 raw Simplifier pages) and the bodies of the 4 kind=artefact-view pages (425/103/102/23 KB of regenerated element trees). Both are reproducible by re-running guide-harvest.sh against the same pinned URL; the manifest keeps their counts.
+2026-08-06T13:25:21Z  INFO   7  verify-placeholders  grep -rn '{{' over yaml/yml/md/json/fsh/ini = 109 hits, ALL accounted for (was 110 before the narrative migration; the difference is the template starter prose that was replaced)
+    Every hit is a documentation/comment line naming the placeholders, or one of the template's two commented-out OPTIONAL blocks (CITATION_*, SPECIAL_URL_1), or the commented-out manifest.fsh alternative. NO active line carries a placeholder, and none of the 56 migrated narrative files contains '{{' or '{%' (guardrail 8 re-checked after the rewrite).
+2026-08-06T13:25:21Z  INFO   5.6  ci-build  CI build after the narrative migration: err = 83, warn = 137, info = 465, Broken Links: 0  run=31105388740 conclusion=success
+    Against the pre-narrative CI build (83/137/466/0): errors and warnings unchanged, info -1 — the same delta the local build shows.
+    'FHIR validation' stays red for the same environmental reason as before (MII's reusable Simplifier QC workflow needs SIMPLIFIER_USERNAME/SIMPLIFIER_PASSWORD; this repository has neither). No secret was added.
