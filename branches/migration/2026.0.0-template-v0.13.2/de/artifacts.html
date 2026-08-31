@@ -67,8 +67,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"19"}
-    h3,h4,h5,h6{--heading-prefix:"19.0"}</style>
+    <style type="text/css">h2{--heading-prefix:"16"}
+    h3,h4,h5,h6{--heading-prefix:"16.0"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -181,8 +181,6 @@
     <a data-toggle="dropdown" href="guidance.html" class="dropdown-toggle">Anleitung<b class="caret"> </b></a>
     <ul class="dropdown-menu">
       <li><a href="guidance.html">Anleitung</a></li>
-      <!-- OPTIONAL (0..1) — siehe docs/optional-pages.md -->
-      <li><a href="researcher-guidance.html">Anleitung für Forschende (optional)</a></li>
       <li><a href="implementer-guidance.html">Anleitung für Implementierende</a></li>
       <!-- Nur-Link-Eintrag: die Seite "Logische Modelle" (Begründung im Quell-Menü) -->
       <li><a href="logical-models.html">Datensätze und Beschreibungen</a></li>
@@ -207,13 +205,9 @@
     <ul class="dropdown-menu">
       <li><a href="artifacts.html">Artefakt-Übersicht</a></li>
       <li><a href="profiles.html">Profile</a></li>
-      <!-- OPTIONAL (0..1) — siehe docs/optional-pages.md -->
-      <li><a href="extensions.html">Extensions (optional)</a></li>
       <li><a href="capability-statements.html">CapabilityStatements</a></li>
       <!-- OPTIONAL (0..1) — siehe docs/optional-pages.md -->
       <li><a href="search-parameters.html">Suchparameter (optional)</a></li>
-      <!-- OPTIONAL (0..1) — siehe docs/optional-pages.md -->
-      <li><a href="operations.html">Operationen (optional)</a></li>
       <li><a href="logical-models.html">Logische Modelle</a></li>
       <!-- OPTIONAL (0..1) — siehe docs/optional-pages.md -->
       <li><a href="value-sets.html">ValueSets (optional)</a></li>
@@ -229,8 +223,6 @@
          die Metadaten-Übersicht ist optional. -->
     <a data-toggle="dropdown" href="version-history.html" class="dropdown-toggle">Metadaten<b class="caret"> </b></a>
     <ul class="dropdown-menu">
-      <!-- OPTIONAL (0..1) — siehe docs/optional-pages.md -->
-      <li><a href="metadata.html">Metadaten-Übersicht (optional)</a></li>
       <li><a href="version-history.html">Versionierung</a></li>
     </ul>
   </li>
@@ -301,22 +293,25 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
    <p>Inhalt:</p>
    <ul>
       <li>
-         <a href="#1">Verhalten: Suchparameter (SearchParameter)</a>
+         <a href="#1">Verhalten: CapabilityStatements</a>
       </li>
       <li>
-         <a href="#2">Strukturen: Ressourcenprofile</a>
+         <a href="#2">Verhalten: Suchparameter (SearchParameter)</a>
       </li>
       <li>
-         <a href="#3">Terminologie: ValueSets</a>
+         <a href="#3">Strukturen: Ressourcenprofile</a>
       </li>
       <li>
-         <a href="#4">Terminologie: CodeSysteme</a>
+         <a href="#4">Terminologie: ValueSets</a>
       </li>
       <li>
-         <a href="#5">Beispiel: Beispielinstanzen</a>
+         <a href="#5">Terminologie: CodeSysteme</a>
       </li>
       <li>
-         <a href="#6">Sonstige</a>
+         <a href="#6">Beispiel: Beispielinstanzen</a>
+      </li>
+      <li>
+         <a href="#7">Sonstige</a>
       </li>
    </ul>
 </div>
@@ -325,6 +320,26 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
      xmlns:html="http://www.w3.org/1999/xhtml">
    <p>Diese Seite bietet eine Liste der FHIR-Artefakte, die in diesem Implementierungsleitfaden definiert sind.</p>
    <a name="1"> </a>
+   <h3>Verhalten: CapabilityStatements </h3>
+    <p>Die folgenden Artefakte definieren die spezifischen Fähigkeiten, die verschiedene Systemtypen haben müssen, um diesem Implementierungsleitfaden zu entsprechen. Von Systemen, die mit dem Implementierungsleitfaden konform sind, wird erwartet, dass sie die Konformität mit einem oder mehreren der folgenden Capability Statements deklarieren.</p>
+<table class="grid">
+      <col style="width:20%"/>
+      <tbody>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CapabilityStatement-mii-cap-consent-server.html"
+                  title="CapabilityStatement/mii-cap-consent-server">
+                  <span title="CapabilityStatement/mii-cap-consent-server">MII KDS Modul Consent — CapabilityStatement (Migrationsvorschlag)
+</span>
+               </a>
+            </td>
+            <td>
+<p>MIGRATION-GENERATED PROPOSAL (not part of the published 2026.0.0 release): server capabilities derived from the module's profiles and search parameters during the migration onto the MII KDS module template. The module team confirms, amends or deletes this artefact at Gate A.</p>
+</td>
+         </tr>
+      </tbody>
+   </table>
+   <a name="2"> </a>
    <h3>Verhalten: Suchparameter (SearchParameter) </h3>
     <p>Diese definieren die Eigenschaften, nach denen ein RESTful-Server durchsucht werden kann. Sie können auch zum Sortieren und Einbeziehen verwandter Ressourcen verwendet werden.</p>
 <table class="grid">
@@ -404,7 +419,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          </tr>
       </tbody>
    </table>
-   <a name="2"> </a>
+   <a name="3"> </a>
    <h3>Strukturen: Ressourcenprofile </h3>
     <p>Diese definieren Einschränkungen für FHIR-Ressourcen für Systeme, die mit dem Implementierungsleitfaden konform sind.</p>
 <table class="grid">
@@ -449,7 +464,7 @@ Diese müssen im PDF-Format vorliegen.</p>
          </tr>
       </tbody>
    </table>
-   <a name="3"> </a>
+   <a name="4"> </a>
    <h3>Terminologie: ValueSets </h3>
     <p>Diese definieren Wertemengen, die von Systemen verwendet werden, die mit dem Implementierungsleitfaden konform sind.</p>
 <table class="grid">
@@ -521,7 +536,7 @@ Um die in diesem ValueSet enthaltenen Codes in IHE BPPC verwenden zu können, is
          </tr>
       </tbody>
    </table>
-   <a name="4"> </a>
+   <a name="5"> </a>
    <h3>Terminologie: CodeSysteme </h3>
     <p>Diese definieren neue CodeSysteme, die von Systemen verwendet werden, die mit diesem Implementierungsleitfaden konform sind.</p>
 <table class="grid">
@@ -565,7 +580,7 @@ Um die in diesem ValueSet enthaltenen Codes in IHE BPPC verwenden zu können, is
          </tr>
       </tbody>
    </table>
-   <a name="5"> </a>
+   <a name="6"> </a>
    <h3>Beispiel: Beispielinstanzen </h3>
     <p>Dies sind Beispielinstanzen, die zeigen, wie Daten aussehen könnten, die von Systemen produziert und konsumiert werden, die mit diesem Implementierungsleitfaden konform sind.</p>
 <table class="grid">
@@ -627,7 +642,7 @@ Um die in diesem ValueSet enthaltenen Codes in IHE BPPC verwenden zu können, is
          </tr>
       </tbody>
    </table>
-   <a name="6"> </a>
+   <a name="7"> </a>
    <h3>Sonstige </h3>
     <p>Dies sind Ressourcen, die in diesem Implementierungsleitfaden verwendet werden, die in keine der anderen Kategorien passen.</p>
 <table class="grid">
@@ -668,7 +683,7 @@ Um die in diesem ValueSet enthaltenen Codes in IHE BPPC verwenden zu können, is
 
           IG © 2019+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.netzwerk-universitaetsmedizin.de">NUM-DIZ</a>.  
           Package de.medizininformatikinitiative.kerndatensatz.consent#2026.0.0 basiert auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
-          Erstellt <span title="Mon, Aug 31, 2026 18:29+0000">2026-08-31</span>
+          Erstellt <span title="Mon, Aug 31, 2026 18:40+0000">2026-08-31</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
             <!-- Branding override for the fhir2.base.template footer fragment.

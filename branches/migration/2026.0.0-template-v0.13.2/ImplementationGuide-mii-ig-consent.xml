@@ -1058,6 +1058,17 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CapabilityStatement"/>
+      </extension>
+      <reference>
+        <reference value="CapabilityStatement/mii-cap-consent-server"/>
+      </reference>
+      <name value="MII KDS Modul Consent — CapabilityStatement (Migrationsvorschlag)"/>
+      <description value="MIGRATION-GENERATED PROPOSAL (not part of the published 2026.0.0 release): server capabilities derived from the module's profiles and search parameters during the migration onto the MII KDS module template. The module team confirms, amends or deletes this artefact at Gate A."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="Parameters"/>
       </extension>
       <reference>
@@ -1198,14 +1209,6 @@
         <generation value="markdown"/>
         <page>
           <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-            <valueUrl value="researcher-guidance.html"/>
-          </extension>
-          <nameUrl value="researcher-guidance.html"/>
-          <title value="Anleitung für Forschende"/>
-          <generation value="markdown"/>
-        </page>
-        <page>
-          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
             <valueUrl value="implementer-guidance.html"/>
           </extension>
           <nameUrl value="implementer-guidance.html"/>
@@ -1218,6 +1221,14 @@
           </extension>
           <nameUrl value="uml-diagrams.html"/>
           <title value="UML-Diagramme"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+            <valueUrl value="frageboegen.html"/>
+          </extension>
+          <nameUrl value="frageboegen.html"/>
+          <title value="Fragebögen"/>
           <generation value="markdown"/>
         </page>
       </page>
@@ -1239,23 +1250,6 @@
       </page>
       <page>
         <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-          <valueUrl value="extensions.html"/>
-        </extension>
-        <nameUrl value="extensions.html"/>
-        <title value="Extensions">
-          <extension url="http://hl7.org/fhir/StructureDefinition/translation">
-            <extension url="lang">
-              <valueCode value="en"/>
-            </extension>
-            <extension url="content">
-              <valueString value="Extensions"/>
-            </extension>
-          </extension>
-        </title>
-        <generation value="markdown"/>
-      </page>
-      <page>
-        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
           <valueUrl value="capability-statements.html"/>
         </extension>
         <nameUrl value="capability-statements.html"/>
@@ -1268,14 +1262,6 @@
         </extension>
         <nameUrl value="search-parameters.html"/>
         <title value="Suchparameter"/>
-        <generation value="markdown"/>
-      </page>
-      <page>
-        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-          <valueUrl value="operations.html"/>
-        </extension>
-        <nameUrl value="operations.html"/>
-        <title value="Operationen"/>
         <generation value="markdown"/>
       </page>
       <page>
@@ -1333,14 +1319,6 @@
         </extension>
         <nameUrl value="changes.html"/>
         <title value="Änderungshistorie"/>
-        <generation value="markdown"/>
-      </page>
-      <page>
-        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-          <valueUrl value="metadata.html"/>
-        </extension>
-        <nameUrl value="metadata.html"/>
-        <title value="Metadaten-Übersicht"/>
         <generation value="markdown"/>
       </page>
       <page>

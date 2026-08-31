@@ -1,4 +1,5 @@
 
+
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE HTML>
 
@@ -6,7 +7,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en" dir="ltr">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Extensions - MII Implementation Guide Consent v2026.0.0</title>
+    <title>MII KDS Modul Consent — CapabilityStatement (Migrationsvorschlag) - MII Implementation Guide Consent v2026.0.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -67,8 +68,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"5"}
-    h3,h4,h5,h6{--heading-prefix:"5"}</style>
+    <style type="text/css">h2{--heading-prefix:"16.1"}
+    h3,h4,h5,h6{--heading-prefix:"16.1"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -209,8 +210,6 @@
     <a data-toggle="dropdown" href="guidance.html" class="dropdown-toggle">Guidance<b class="caret"> </b></a>
     <ul class="dropdown-menu">
       <li><a href="guidance.html">Guidance</a></li>
-      <!-- OPTIONAL (0..1) — see docs/optional-pages.md -->
-      <li><a href="researcher-guidance.html">Guidance for Researchers (optional)</a></li>
       <li><a href="implementer-guidance.html">Guidance for Implementers</a></li>
       <!-- link-only entry: Logical-Models section of the Artifacts Summary (see header note) -->
       <li><a href="logical-models.html">Datasets and Descriptions</a></li>
@@ -234,13 +233,9 @@
     <ul class="dropdown-menu">
       <li><a href="artifacts.html">Artifacts Summary</a></li>
       <li><a href="profiles.html">Profiles</a></li>
-      <!-- OPTIONAL (0..1) — see docs/optional-pages.md -->
-      <li><a href="extensions.html">Extensions (optional)</a></li>
       <li><a href="capability-statements.html">Capability Statements</a></li>
       <!-- OPTIONAL (0..1) — see docs/optional-pages.md -->
       <li><a href="search-parameters.html">Search Parameters (optional)</a></li>
-      <!-- OPTIONAL (0..1) — see docs/optional-pages.md -->
-      <li><a href="operations.html">Operations (optional)</a></li>
       <li><a href="logical-models.html">Logical Models</a></li>
       <!-- OPTIONAL (0..1) — see docs/optional-pages.md -->
       <li><a href="value-sets.html">Value Sets (optional)</a></li>
@@ -257,8 +252,6 @@
          have to be re-targeted when that page is removed. -->
     <a data-toggle="dropdown" href="version-history.html" class="dropdown-toggle">Metadata<b class="caret"> </b></a>
     <ul class="dropdown-menu">
-      <!-- OPTIONAL (0..1) — see docs/optional-pages.md -->
-      <li><a href="metadata.html">Metadata Overview (optional)</a></li>
       <li><a href="version-history.html">Versioning</a></li>
     </ul>
   </li>
@@ -279,7 +272,7 @@
  	<div id="flaglist" class="flaglist" style="display: none;position: absolute;right: 0;z-index: 100;background-image: url(assets/images/icon_arrow_up.png);background-position: 133px 3px;">
     <div><img class="flag" alt="flag en" src="assets/images/lang-en.png"/>English</div>
 
-    <div><a href="../de/extensions.html"><img class="flag" src="assets/images/lang-de.png" alt="flag de"/>Deutsch</a></div>
+    <div><a href="../de/CapabilityStatement-mii-cap-consent-server.html"><img class="flag" src="assets/images/lang-de.png" alt="flag de"/>Deutsch</a></div>
 
   </div>
 </div>
@@ -296,7 +289,7 @@
     <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
       <div class="container">  <!-- container -->
         <ul class="breadcrumb">
-          <li><a href='toc.html'><b>Inhaltsverzeichnis</b></a></li><li><b>Extensions</b></li>
+          <li><a href='toc.html'><b>Inhaltsverzeichnis</b></a></li><li><a href='artifacts.html'><b>Artifacts Summary</b></a></li><li><b>MII KDS Modul Consent — CapabilityStatement (Migrationsvorschlag)</b></li>
 
         </ul>
       </div>  <!-- /container -->
@@ -308,16 +301,9 @@
         <div class="row">
           <div class="inner-wrapper">
 
-<style type="text/css">
-h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
-h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
-h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
-h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
-h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
-</style>
+<!-- layouts\layout-canonical -->
 <div class="col-12">
   <!--ReleaseHeader--><p id="publish-box">MII Implementation Guide Consent - Local Development build (v2026.0.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://www.medizininformatik-initiative.de/fhir/modul-consent/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
-  <h2>Extensions</h2>
   
 
 
@@ -328,51 +314,110 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 
 
+<ul class="nav nav-tabs">
+
+  <li class="active">
+    <a href="#">Narrative Content</a>
+  </li>
 
 
 
-    <p><!-- white space is critical inside of capture --></p>
-<div>
-<!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
-</div>
+  
+    <li>
+      <a href="CapabilityStatement-mii-cap-consent-server.xml.html">XML</a>
+    </li>
+  
 
-<p style="border:var(--translation-box-border);background-color:var(--translation-background-color);padding: 5px 5px 5px 5px;">
 
-This page includes translations from the original source language in which the guide was authored.  Information on these translations and instructions on how to provide feedback on the translations can be found [here](translationinfo.html).
+  
+    <li>
+      <a href="CapabilityStatement-mii-cap-consent-server.json.html">JSON</a>
+    </li>
+  
+
+
+
+
+</ul>
+
+  <a name="root"> </a>
+
+
+  <h2 id="root">CapabilityStatement: MII KDS Modul Consent — CapabilityStatement (Migrationsvorschlag)
+(Experimental)
+  </h2>
+
+  <table class="colsd">
+
+    <tr>
+      <td colspan="4"><i>Official URL</i>: <span class="copy-text">https://www.medizininformatik-initiative.de/fhir/modul-consent/CapabilityStatement/mii-cap-consent-server<button title="Click to copy URL" class="btn-copy" data-clipboard-text="https://www.medizininformatik-initiative.de/fhir/modul-consent/CapabilityStatement/mii-cap-consent-server"/></span>
+      </td>
+      <td><i>Version</i>:
+      <span class="copy-text">2026.0.0<button title="Click to copy versioned URL" class="btn-copy" data-clipboard-text="https://www.medizininformatik-initiative.de/fhir/modul-consent/CapabilityStatement/mii-cap-consent-server|2026.0.0"/></span>
+      </td>
+    </tr>
+
+    <tr>
+
+
+
+
+
+
+
+      <td colspan="4">
+        
+          Draft
+          
+
+            as of 
+2026-08-31
+
+          
+        
+      </td>
+
+
+
+      <td><i>Computable Name</i>: <span style="font-family: monospace;">MII_CAP_Consent_Server</span></td>
+    </tr>
+
+
+
+
+  </table>
+
+
+<p>
+<p>MIGRATION-GENERATED PROPOSAL (not part of the published 2026.0.0 release): server capabilities derived from the module's profiles and search parameters during the migration onto the MII KDS module template. The module team confirms, amends or deletes this artefact at Gate A.</p>
 
 </p>
 
-<!-- markdownlint-disable MD041 -->
-<!-- Split from the former combined profiles-and-extensions.md per the TF-KDS-agreed
-     menu structure (one page per artifact type).
-     German mirror: input/translations/de/pagecontent/extensions.md. -->
-<!-- OPTIONAL-PAGE (0..1) — remove this marker when you KEEP the page; remove
-     the page per docs/optional-pages.md when you don't. The convention check
-     (M9) fails a release while this marker is present. -->
 
-<blockquote class="ig-highlight ig-highlight-grey">
-  <p><strong>Optional page (0..1).</strong> The KDS module menu lists this page as <em>optional</em>.
-Decide for your module: <strong>keep</strong> it — fill it in and delete this banner and
-the <code class="language-plaintext highlighter-rouge">OPTIONAL-PAGE</code> marker comment (in this file AND the German mirror) — or
-<strong>remove</strong> it, following the per-entry procedure in <a href="https://github.com/forschungsgruppe-digital-health/mii-kds-consent-ig-inoffiziell/blob/main/docs/optional-pages.md"><code class="language-plaintext highlighter-rouge">docs/optional-pages.md</code></a>
-of this repository. A release must not ship with this banner (convention
-check M9).</p>
-</blockquote>
-
-<h3 id="extensions">Extensions</h3>
-
-<p>This page lists the FHIR extensions defined by the <strong>Consent</strong> module
-(naming convention <code class="language-plaintext highlighter-rouge">MII_EX_&lt;Module&gt;_&lt;Name&gt;</code>). Extensions carry information the
-base resources and profiles cannot express; the profiles that use them are on
-the <a href="profiles.html">Profiles</a> page.</p>
-
-<blockquote class="ig-highlight ig-highlight-grey">
-  <p>[TODO: List and describe your module's extensions — or remove this page if
-your module defines none.]</p>
-</blockquote>
+  <!-- insert intro if present -->
+  
 
 
 
+<!--  <p>
+  Formats: <a href="CapabilityStatement-mii-cap-consent-server.xml.html">XML</a>, <a href="CapabilityStatement-mii-cap-consent-server.json.html">JSON</a>, <a href="CapabilityStatement-mii-cap-consent-server.ttl.html">Turtle</a>
+  </p>-->
+
+  
+  <p>
+      <a href="../mii-cap-consent-server.openapi.json" no-download="true">Raw OpenAPI-Swagger Definition file</a> | <a href="../mii-cap-consent-server.openapi.json" download>Download</a>
+  </p>
+  
+
+
+  <div data-fhir="generated"><p class="res-header-id"/><a name="mii-cap-consent-server"> </a><a name="hcmii-cap-consent-server"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Language: en</p></div><h2 id="title">MII KDS Modul Consent — CapabilityStatement (Migrationsvorschlag)</h2><ul><li>Implementation Guide Version: 2026.0.0 </li><li>FHIR Version: 4.0.1 </li><li>Supported Formats: <code>json</code>, <code>xml</code></li><li>Published on: 2026-08-31 </li><li>Published by: NUM-DIZ </li></ul><blockquote class="impl-note"><p><strong>Note to Implementers: FHIR Capabilities</strong></p><p>Any FHIR capability may be 'allowed' by the system unless explicitly marked as 'SHALL NOT'. A few items are marked as MAY in the Implementation Guide to highlight their potential relevance to the use case.</p></blockquote><h2 id="rest">FHIR RESTful Capabilities</h2><div class="panel panel-default"><div class="panel-heading"><h3 id="mode1" class="panel-title">Mode: <code>server</code></h3></div><div class="panel-body"/></div><h3 id="resourcesCap1">Capabilities by Resource/Profile</h3><h4 id="resourcesSummary1">Summary</h4><p>The summary table lists the resources that are part of this configuration, and for each resource it lists:</p><ul><li>The relevant profiles (if any)</li><li>The interactions supported by each resource (<b><span class="bg-info">R</span></b>ead, <b><span class="bg-info">S</span></b>earch, <b><span class="bg-info">U</span></b>pdate, and <b><span class="bg-info">C</span></b>reate, are always shown, while <b><span class="bg-info">VR</span></b>ead, <b><span class="bg-info">P</span></b>atch, <b><span class="bg-info">D</span></b>elete, <b><span class="bg-info">H</span></b>istory on <b><span class="bg-info">I</span></b>nstance, or <b><span class="bg-info">H</span></b>istory on <b><span class="bg-info">T</span></b>ype are only present if at least one of the resources has support for them.</li><li><span>The required, recommended, and some optional search parameters (if any). </span></li><li>The linked resources enabled for <code>_include</code></li><li>The other resources enabled for <code>_revinclude</code></li><li>The operations on the resource (if any)</li></ul><div class="table-responsive"><table class="table table-condensed table-hover"><thead><tr><th><b>Resource Type</b></th><th><b>Profile</b></th><th class="text-center"><b title="GET a resource (read interaction)">R</b></th><th class="text-center"><b title="GET all set of resources of the type (search interaction)">S</b></th><th class="text-center"><b title="PUT a new resource version (update interaction)">U</b></th><th class="text-center"><b title="POST a new resource (create interaction)">C</b></th><th><b title="Required and recommended search parameters">Searches</b></th><th><code><b>_include</b></code></th><th><code><b>_revinclude</b></code></th><th><b>Operations</b></th></tr></thead><tbody><tr><td><a href="#Consent1-1">Consent</a></td><td>Supported Profiles<br/>  <a href="StructureDefinition-e0e166b4-0f77-478d-9062-de0034d98ce0.html">Profile - MI-I - Consent - Einwilligung</a></td><td class="text-center"/><td class="text-center"/><td class="text-center"/><td class="text-center"/><td>mii-policy-uri, mii-provision-provision-code, mii-provision-provision-code-period, mii-provision-provision-code-type, mii-provision-provision-period, mii-provision-provision-type</td><td/><td/><td/></tr><tr><td><a href="#Provenance1-2">Provenance</a></td><td>Supported Profiles<br/>  <a href="StructureDefinition-f675b1e8-9f3f-44e8-bb59-9681f78eb464.html">Profile - MI-I - Consent - Provenance</a></td><td class="text-center"/><td class="text-center"/><td class="text-center"/><td class="text-center"/><td></td><td/><td/><td/></tr><tr><td><a href="#DocumentReference1-3">DocumentReference</a></td><td>Supported Profiles<br/>  <a href="StructureDefinition-56375452-bfa1-4111-af7c-5b5ba9a1857c.html">Profile - MI-I - Consent - DocumentReference</a></td><td class="text-center"/><td class="text-center"/><td class="text-center"/><td class="text-center"/><td></td><td/><td/><td/></tr></tbody></table></div><hr/><div class="panel panel-default"><div role="tab" id="heading1-1" class="panel-heading"><h4 id="Consent1-1" class="panel-title"><a data-toggle="collapse" role="button" aria-controls="collapse1-1" aria-expanded="true" href="#collapse1-1"><span style="float: right;">Resource Conformance: unspecified</span>Consent</a></h4></div><div role="tabpanel" aria-labelledby="heading1-1" id="collapse1-1" class="panel-collapse in"><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-4"><span class="lead">Core FHIR Resource</span><br/><a href="http://hl7.org/fhir/R4/consent.html">Consent</a></div><div class="col-lg-4"><span class="lead">Reference Policy</span><br/></div><div class="col-lg-4"><span class="lead">Interaction summary</span><br/><ul/></div></div><p/><div class="row"><div class="col-6"><span class="lead">Supported Profiles</span><p><a href="StructureDefinition-e0e166b4-0f77-478d-9062-de0034d98ce0.html">Profile - MI-I - Consent - Einwilligung</a></p></div></div><p/><div class="row"><div class="col-lg-7"><span class="lead">Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td><a href="SearchParameter-MII-SP-Consent-PolicyUri.html">mii-policy-uri</a></td><td><code>uri</code></td><td><div/></td></tr><tr><td><b>SHALL</b></td><td><a href="SearchParameter-MII-SP-Consent-ProvisionCode.html">mii-provision-provision-code</a></td><td><code>token</code></td><td><div/></td></tr><tr><td><b>SHALL</b></td><td><a href="SearchParameter-MII-SP-Consent-ProvisionCodePeriod.html">mii-provision-provision-code-period</a></td><td><code>composite</code></td><td><div/></td></tr><tr><td><b>SHALL</b></td><td><a href="SearchParameter-MII-SP-Consent-ProvisionCodeType.html">mii-provision-provision-code-type</a></td><td><code>composite</code></td><td><div/></td></tr><tr><td><b>SHALL</b></td><td><a href="SearchParameter-MII-SP-Consent-ProvisionPeriod.html">mii-provision-provision-period</a></td><td><code>date</code></td><td><div/></td></tr><tr><td><b>SHALL</b></td><td><a href="SearchParameter-MII-SP-Consent-ProvisionType.html">mii-provision-provision-type</a></td><td><code>token</code></td><td><div/></td></tr></tbody></table></div><div class="col-lg-5"> </div></div></div></div></div></div><div class="panel panel-default"><div role="tab" id="heading1-2" class="panel-heading"><h4 id="Provenance1-2" class="panel-title"><a data-toggle="collapse" role="button" aria-controls="collapse1-2" aria-expanded="true" href="#collapse1-2"><span style="float: right;">Resource Conformance: unspecified</span>Provenance</a></h4></div><div role="tabpanel" aria-labelledby="heading1-2" id="collapse1-2" class="panel-collapse in"><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-4"><span class="lead">Core FHIR Resource</span><br/><a href="http://hl7.org/fhir/R4/provenance.html">Provenance</a></div><div class="col-lg-4"><span class="lead">Reference Policy</span><br/></div><div class="col-lg-4"><span class="lead">Interaction summary</span><br/><ul/></div></div><p/><div class="row"><div class="col-6"><span class="lead">Supported Profiles</span><p><a href="StructureDefinition-f675b1e8-9f3f-44e8-bb59-9681f78eb464.html">Profile - MI-I - Consent - Provenance</a></p></div></div><p/></div></div></div></div><div class="panel panel-default"><div role="tab" id="heading1-3" class="panel-heading"><h4 id="DocumentReference1-3" class="panel-title"><a data-toggle="collapse" role="button" aria-controls="collapse1-3" aria-expanded="true" href="#collapse1-3"><span style="float: right;">Resource Conformance: unspecified</span>DocumentReference</a></h4></div><div role="tabpanel" aria-labelledby="heading1-3" id="collapse1-3" class="panel-collapse in"><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-4"><span class="lead">Core FHIR Resource</span><br/><a href="http://hl7.org/fhir/R4/documentreference.html">DocumentReference</a></div><div class="col-lg-4"><span class="lead">Reference Policy</span><br/></div><div class="col-lg-4"><span class="lead">Interaction summary</span><br/><ul/></div></div><p/><div class="row"><div class="col-6"><span class="lead">Supported Profiles</span><p><a href="StructureDefinition-56375452-bfa1-4111-af7c-5b5ba9a1857c.html">Profile - MI-I - Consent - DocumentReference</a></p></div></div><p/></div></div></div></div></div>
+
+  <!-- insert notes if present -->
+  
+
+
+
+  
 
 </div>
         </div>  <!-- /inner-wrapper -->
@@ -396,7 +441,7 @@ your module defines none.]</p>
 
           IG © 2019+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.netzwerk-universitaetsmedizin.de">NUM-DIZ</a>.  
           Package de.medizininformatikinitiative.kerndatensatz.consent#2026.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
-          Generated <span title="Mon, Aug 31, 2026 18:29+0000">2026-08-31</span>
+          Generated <span title="Mon, Aug 31, 2026 18:40+0000">2026-08-31</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
             <!-- Branding override for the fhir2.base.template footer fragment.

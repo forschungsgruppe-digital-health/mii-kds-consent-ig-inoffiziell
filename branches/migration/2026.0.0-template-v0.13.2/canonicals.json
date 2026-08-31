@@ -1,4 +1,11 @@
 [{
+  "id" : "mii-cap-consent-server",
+  "type" : "CapabilityStatement",
+  "url" : "https://www.medizininformatik-initiative.de/fhir/modul-consent/CapabilityStatement/mii-cap-consent-server",
+  "version" : "2026.0.0",
+  "name" : "MII_CAP_Consent_Server"
+},
+{
   "id" : "mii-cs-consent-version-modules",
   "type" : "CodeSystem",
   "url" : "https://www.medizininformatik-initiative.de/fhir/modul-consent/CodeSystem/mii-cs-consent-version-modules",

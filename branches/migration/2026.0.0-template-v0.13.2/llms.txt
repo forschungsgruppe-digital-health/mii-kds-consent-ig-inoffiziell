@@ -4,12 +4,10 @@
 
 * [Startseite](de/index.md)
 * [Beispiele](de/examples.md)
+* [Fragebögen](de/frageboegen.md)
 * [ValueSets](de/value-sets.md)
 * [CodeSystems](de/code-systems.md)
 * [Versionierung](de/version-history.md)
-* [Extensions](de/extensions.md)
-* [Anleitung für Forschende](de/researcher-guidance.md)
-* [Metadaten-Übersicht](de/metadata.md)
 * [Anleitung für Implementierende](de/implementer-guidance.md)
 * [Profile](de/profiles.md)
 * [Artefaktübersicht](de/artifacts.md)
@@ -17,7 +15,6 @@
 * [Hinweise zur Übersetzung](de/translationinfo.md)
 * [Änderungshistorie](de/changes.md)
 * [Logische Modelle](de/logical-models.md)
-* [Operationen](de/operations.md)
 * [Anleitung](de/guidance.md)
 * [Downloads](de/downloads.md)
 * [Sicherheit und Datenschutz](de/security-and-privacy.md)
@@ -43,6 +40,10 @@
 * [Profile - MI-I - Consent - DocumentReference](de/StructureDefinition-56375452-bfa1-4111-af7c-5b5ba9a1857c.md)
 * [Profile - MI-I - Consent - Einwilligung](de/StructureDefinition-e0e166b4-0f77-478d-9062-de0034d98ce0.md)
 * [Profile - MI-I - Consent - Provenance](de/StructureDefinition-f675b1e8-9f3f-44e8-bb59-9681f78eb464.md)
+
+### CapabilityStatements
+
+* [MII KDS Modul Consent — CapabilityStatement (Migrationsvorschlag)](de/CapabilityStatement-mii-cap-consent-server.md)
 
 ### ImplementationGuides
 

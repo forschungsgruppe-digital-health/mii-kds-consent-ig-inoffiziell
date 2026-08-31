@@ -33,7 +33,7 @@ Data Integration Centers (DIC), software developers and system architects buildi
 ##### Researchers
 
 Scientists using KDS data for medical research.
- → see [Guidance for Researchers](researcher-guidance.md).
+ → see [Guidance for Researchers](guidance.md).
 
 ### Contents
 

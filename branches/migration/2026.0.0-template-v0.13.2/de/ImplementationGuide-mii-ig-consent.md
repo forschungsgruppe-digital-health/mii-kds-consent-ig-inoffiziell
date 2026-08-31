@@ -1495,6 +1495,22 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`- `$expand`-Oper
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CapabilityStatement"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "CapabilityStatement-mii-cap-consent-server.html"
+      }],
+      "reference" : {
+        "reference" : "CapabilityStatement/mii-cap-consent-server"
+      },
+      "name" : "MII KDS Modul Consent — CapabilityStatement (Migrationsvorschlag)",
+      "description" : "MIGRATION-GENERATED PROPOSAL (not part of the published 2026.0.0 release): server capabilities derived from the module's profiles and search parameters during the migration onto the MII KDS module template. The module team confirms, amends or deletes this artefact at Gate A.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Parameters"
       },
       {
@@ -1692,15 +1708,6 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`- `$expand`-Oper
         "page" : [{
           "extension" : [{
             "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-            "valueUrl" : "researcher-guidance.html"
-          }],
-          "nameUrl" : "researcher-guidance.html",
-          "title" : "Anleitung für Forschende",
-          "generation" : "markdown"
-        },
-        {
-          "extension" : [{
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
             "valueUrl" : "implementer-guidance.html"
           }],
           "nameUrl" : "implementer-guidance.html",
@@ -1714,6 +1721,15 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`- `$expand`-Oper
           }],
           "nameUrl" : "uml-diagrams.html",
           "title" : "UML-Diagramme",
+          "generation" : "markdown"
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "frageboegen.html"
+          }],
+          "nameUrl" : "frageboegen.html",
+          "title" : "Fragebögen",
           "generation" : "markdown"
         }]
       },
@@ -1738,28 +1754,6 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`- `$expand`-Oper
       {
         "extension" : [{
           "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "extensions.html"
-        }],
-        "nameUrl" : "extensions.html",
-        "title" : "Extensions",
-        "_title" : {
-          "extension" : [{
-            "extension" : [{
-              "url" : "lang",
-              "valueCode" : "en"
-            },
-            {
-              "url" : "content",
-              "valueString" : "Extensions"
-            }],
-            "url" : "http://hl7.org/fhir/StructureDefinition/translation"
-          }]
-        },
-        "generation" : "markdown"
-      },
-      {
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
           "valueUrl" : "capability-statements.html"
         }],
         "nameUrl" : "capability-statements.html",
@@ -1773,15 +1767,6 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`- `$expand`-Oper
         }],
         "nameUrl" : "search-parameters.html",
         "title" : "Suchparameter",
-        "generation" : "markdown"
-      },
-      {
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "operations.html"
-        }],
-        "nameUrl" : "operations.html",
-        "title" : "Operationen",
         "generation" : "markdown"
       },
       {
@@ -1849,15 +1834,6 @@ Expansionsparameter sind Query-Parameter, die an eine `ValueSet`- `$expand`-Oper
         }],
         "nameUrl" : "changes.html",
         "title" : "Änderungshistorie",
-        "generation" : "markdown"
-      },
-      {
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "metadata.html"
-        }],
-        "nameUrl" : "metadata.html",
-        "title" : "Metadaten-Übersicht",
         "generation" : "markdown"
       },
       {

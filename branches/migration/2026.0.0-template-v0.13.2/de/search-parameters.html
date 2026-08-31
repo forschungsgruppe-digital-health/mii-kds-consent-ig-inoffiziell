@@ -67,8 +67,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"7"}
-    h3,h4,h5,h6{--heading-prefix:"7"}</style>
+    <style type="text/css">h2{--heading-prefix:"6"}
+    h3,h4,h5,h6{--heading-prefix:"6"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -181,8 +181,6 @@
     <a data-toggle="dropdown" href="guidance.html" class="dropdown-toggle">Anleitung<b class="caret"> </b></a>
     <ul class="dropdown-menu">
       <li><a href="guidance.html">Anleitung</a></li>
-      <!-- OPTIONAL (0..1) — siehe docs/optional-pages.md -->
-      <li><a href="researcher-guidance.html">Anleitung für Forschende (optional)</a></li>
       <li><a href="implementer-guidance.html">Anleitung für Implementierende</a></li>
       <!-- Nur-Link-Eintrag: die Seite "Logische Modelle" (Begründung im Quell-Menü) -->
       <li><a href="logical-models.html">Datensätze und Beschreibungen</a></li>
@@ -207,13 +205,9 @@
     <ul class="dropdown-menu">
       <li><a href="artifacts.html">Artefakt-Übersicht</a></li>
       <li><a href="profiles.html">Profile</a></li>
-      <!-- OPTIONAL (0..1) — siehe docs/optional-pages.md -->
-      <li><a href="extensions.html">Extensions (optional)</a></li>
       <li><a href="capability-statements.html">CapabilityStatements</a></li>
       <!-- OPTIONAL (0..1) — siehe docs/optional-pages.md -->
       <li><a href="search-parameters.html">Suchparameter (optional)</a></li>
-      <!-- OPTIONAL (0..1) — siehe docs/optional-pages.md -->
-      <li><a href="operations.html">Operationen (optional)</a></li>
       <li><a href="logical-models.html">Logische Modelle</a></li>
       <!-- OPTIONAL (0..1) — siehe docs/optional-pages.md -->
       <li><a href="value-sets.html">ValueSets (optional)</a></li>
@@ -229,8 +223,6 @@
          die Metadaten-Übersicht ist optional. -->
     <a data-toggle="dropdown" href="version-history.html" class="dropdown-toggle">Metadaten<b class="caret"> </b></a>
     <ul class="dropdown-menu">
-      <!-- OPTIONAL (0..1) — siehe docs/optional-pages.md -->
-      <li><a href="metadata.html">Metadaten-Übersicht (optional)</a></li>
       <li><a href="version-history.html">Versionierung</a></li>
     </ul>
   </li>
@@ -309,33 +301,158 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </div>
 
 <!-- markdownlint-disable MD041 -->
-<!-- Deutsche Übersetzung von input/pagecontent/search-parameters.md
-     (aufgeteilt aus der früheren Kombi-Seite
-     search-parameters-and-operations.md). -->
-<!-- OPTIONAL-PAGE (0..1) — Marker entfernen, wenn die Seite BLEIBT; andernfalls
-     die Seite gemäß docs/optional-pages.md entfernen. Der Konventions-Check
-     (M9) lässt ein Release mit diesem Marker fehlschlagen. -->
-
-<blockquote class="ig-highlight ig-highlight-grey">
-  <p><strong>Optionale Seite (0..1).</strong> Das KDS-Modulmenü führt diese Seite als
-<em>optional</em>. Entscheiden Sie für Ihr Modul: Seite <strong>behalten</strong> — Inhalte
-ausfüllen und dieses Banner samt <code class="language-plaintext highlighter-rouge">OPTIONAL-PAGE</code>-Marker-Kommentar löschen (in
-dieser Datei UND in der englischen Quellseite) — oder Seite <strong>entfernen</strong>,
-nach der Schritt-für-Schritt-Anleitung in <a href="https://github.com/forschungsgruppe-digital-health/mii-kds-consent-ig-inoffiziell/blob/main/docs/optional-pages.md"><code class="language-plaintext highlighter-rouge">docs/optional-pages.md</code></a> dieses
-Repositories. Ein Release darf dieses Banner nicht enthalten
-(Konventions-Check M9).</p>
-</blockquote>
-
+<!-- Wortgetreu übertragen aus der Simplifier-Quellseite
+     https://simplifier.net/guide/miiigmodulconsent/MIIIGModulConsent/TechnischeImplementierung/FHIRProfile/Consent?version=2026.0.0
+     (Harvest 2026-08-31); Links umgeschrieben (page-map). -->
+<!-- SPLIT gemäß page-map: die Abschnitte "Suchparameter" und "Komplexere
+     Beispiele (Suchanfragen)" der Consent-Profilseite stehen hier; die
+     Profil-Erläuterungen stehen als Intro-Note auf der Profilseite. -->
 <h3 id="suchparameter">Suchparameter</h3>
 
-<p>Diese Seite listet die modul-spezifischen FHIR-Suchparameter des Moduls
-<strong>Consent</strong> (Namenskonvention <code class="language-plaintext highlighter-rouge">MII_SP_&lt;Modul&gt;_&lt;Name&gt;</code>), sofern
-definiert. Modulübergreifende Suchparameter definiert das Meta-Modul.</p>
+<h4 id="kategorie">Kategorie</h4>
 
-<blockquote class="ig-highlight ig-highlight-grey">
-  <p>[TODO: Listen Sie die Suchparameter auf — oder entfernen Sie diese Seite,
-wenn Ihr Modul keine definiert.]</p>
-</blockquote>
+<p>Im Kontext dieses Leitfadens muss der Standard-Suchparameter <strong>Consent.category</strong> unterstützt werden (vgl. <a href="https://www.hl7.org/fhir/consent.html#search">https://www.hl7.org/fhir/consent.html#search</a>)</p>
+
+<p>Beispiel hierzu:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET [base]/Consent?category=2.16.840.1.113883.3.1937.777.24.2.184
+</code></pre></div></div>
+
+<p>findet alle (gültige und nicht mehr gültige) Consent-Ressourcen zum Zeitpunkt der Anfrage, die einer beliebigen Version des MII Broad Consent (z.B. 1.6d, 1.7.2, etc.) entsprechen.</p>
+
+<h4 id="provision-code">Provision-Code</h4>
+
+<p>Invocations<code class="language-plaintext highlighter-rouge">\[base\]/Consent?mii-provision-provision-code=\[system\]|\[value\]</code>DetailsResourceConsentCodemii-provision-provision-codeType<a href="https://hl7.org/fhir/r4/search.html#token">token</a>FhirPathConsent.provision.provision.code</p>
+
+<p>Beispiel:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET [base]/Consent?mii-provision-provision-code=urn:oid:2.16.840.1.113883.3.1937.777.24.5.3|2.16.840.1.113883.3.1937.777.24.5.3.8
+</code></pre></div></div>
+
+<h4 id="typ-der-provision-permit-deny">Typ der Provision (permit, deny)</h4>
+
+<p>Invocations<code class="language-plaintext highlighter-rouge">\[base\]/Consent?mii-provision-provision-type=\[system\]|\[value\]</code>DetailsResourceConsentCodemii-provision-provision-typeType<a href="https://hl7.org/fhir/r4/search.html#token">token</a>FhirPathConsent.provision.provision.type</p>
+
+<p>Beispiel:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET [base]/Consent?mii-provision-provision-type=permit
+</code></pre></div></div>
+
+<h4 id="typ-der-provision-einer-bestimmten-durch-einen-code-definierten-provision">Typ der Provision einer bestimmten, durch einen Code definierten, Provision</h4>
+
+<p>Invocations<code class="language-plaintext highlighter-rouge">\[base\]/Consent?mii-provision-provision-code-type=(state$)\[value\],(state$)\[value\]</code>DetailsResourceConsentCodemii-provision-provision-code-typeType<a href="https://hl7.org/fhir/r4/search.html#composite">composite</a>FhirPathConsent.provision.provision</p>
+
+<p>Beispiel:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET [base]/Consent?mii-provision-provision-code-type=urn:oid:2.16.840.1.113883.3.1937.777.24.5.3|2.16.840.1.113883.3.1937.777.24.5.3.8$permit
+</code></pre></div></div>
+
+<h4 id="provisions-zeitraum">Provisions-Zeitraum</h4>
+
+<p>Invocations<code class="language-plaintext highlighter-rouge">\[base\]/Consent?mii-provision-provision-period=(comparator)\[date\]</code>DetailsResourceConsentCodemii-provision-provision-periodType<a href="https://hl7.org/fhir/r4/search.html#date">date</a>FhirPathConsent.provision.provision.period</p>
+
+<p>Beispiel:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET [base]/Consent?mii-provision-provision-period=2020-12-15
+</code></pre></div></div>
+
+<h4 id="provisions-zeitraum-einer-bestimmten-durch-einen-code-definierten-provision">Provisions-Zeitraum einer bestimmten, durch einen Code definierten, Provision</h4>
+
+<p>Invocations<code class="language-plaintext highlighter-rouge">\[base\]/Consent?mii-provision-provision-code-period=(state$)\[value\],(state$)\[value\]</code>DetailsResourceConsentCodemii-provision-provision-code-periodType<a href="https://hl7.org/fhir/r4/search.html#composite">composite</a>FhirPathConsent.provision.provision</p>
+
+<p>Beispiel:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET [base]/Consent?mii-provision-provision-code-period=urn:oid:2.16.840.1.113883.3.1937.777.24.5.3|2.16.840.1.113883.3.1937.777.24.5.3.8$2020-12-15
+</code></pre></div></div>
+
+<h4 id="policy-uri-versionsspezifischer-mii-broad-consent">Policy URI (versionsspezifischer MII Broad Consent)</h4>
+
+<p>Invocations<code class="language-plaintext highlighter-rouge">\[base\]/Consent?mii-policy-uri=\[url\]</code>DetailsResourceConsentCodemii-policy-uriType<a href="https://hl7.org/fhir/r4/search.html#uri">uri</a>FhirPathConsent.policy.uri</p>
+
+<p>Beispiel:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET [base]/Consent?mii-policy-uri=urn:oid:2.16.840.1.113883.3.1937.777.24.2.1791
+</code></pre></div></div>
+
+<h4 id="mitgeltende-suchparameter-gemäß-hl7-d-standard-einwilligungsmanagement">Mitgeltende Suchparameter gemäß HL7-D Standard Einwilligungsmanagement</h4>
+
+<p>Im Kontext der Suche nach Consent-Ressourcen sind nach <a href="https://ig.fhir.de/einwilligungsmanagement/stable/Consent.html">HL7-D Standard für Einwilligungsmanagement</a> (Version 2.0) folgende Suchparameter zur Filterung von Consent-Ressourcen definiert. Diese werden ebenfalls durch den MII KDS Consent unterstützt. Konkrete Beispiele sind im IG der HL7-D Arbeitsgruppe dokumentiert.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td><strong>Suchparameter</strong></td>
+      <td><strong>Erläuterung</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>| — | — |</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>domain</td>
+      <td>Einwilligungsdomäne. Insbesondere wird empfohlen, logische Referenzen (Reference by Identifier, im Suchparameter: modifier ":identifier") zu unterstützen.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>category</td>
+      <td>Art des Dokuments (Einwilligung, Widerruf,etc)</td>
+    </tr>
+    <tr>
+      <td>ResultType (Dokument, Consent-Status, etc.)</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>patient.identifier</td>
+      <td>Die betroffene Person identifiziert über Identifier</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><em>Anmerkung: Da eine Dependency auf das Paket der HL7-D AG Einwilligungsmanagement besteht, existiert der Suchparameter <code class="language-plaintext highlighter-rouge">domain</code> automatisch und muss nicht explizit für das KDS-Modul definiert werden. Er wird technisch 'einfach übernommen'.</em></p>
+
+<h4 id="komplexere-beispiele-suchanfragen">Komplexere Beispiele (Suchanfragen)</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET [base]/Consent?mii-provision-provision-type=permit&amp;mii-provision-provision-code=urn:oid:2.16.840.1.113883.3.1937.777.24.5.3|2.16.840.1.113883.3.1937.777.24.5.3.8&amp;mii-provision-provision-code=urn:oid:2.16.840.1.113883.3.1937.777.24.5.3|2.16.840.1.113883.3.1937.777.24.5.3.9
+</code></pre></div></div>
+
+<p>findet alle Consent-Ressourcen mit Permit-Provision, bei denen sowohl der Provison-Code 2.16.840.1.113883.3.1937.777.24.5.3.8 als auch der Provison-Code 2.16.840.1.113883.3.1937.777.24.5.3.9 gesetzt sind.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET [base]/Consent?mii-provision-provision-type=permit&amp;mii-provision-provision-code=urn:oid:2.16.840.1.113883.3.1937.777.24.5.3|2.16.840.1.113883.3.1937.777.24.5.3.8,mii-provision-provision-code=urn:oid:2.16.840.1.113883.3.1937.777.24.5.3|2.16.840.1.113883.3.1937.777.24.5.3.9
+</code></pre></div></div>
+
+<p>findet alle Consent-Ressourcen mit Permit-Provision, bei denen der Provison-Code 2.16.840.1.113883.3.1937.777.24.5.3.8 oder auch der Provison-Code 2.16.840.1.113883.3.1937.777.24.5.3.9 gesetzt sind.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET [base]/Consent?domain:identifier=MII&amp;category=http://fhir.de/ConsentManagement/CodeSystem/TemplateType|CONSENT-OPT-IN&amp;category=http://fhir.de/ConsentManagement/CodeSystem/ResultType|document
+</code></pre></div></div>
+
+<p>findet alle Consent-Ressourcen vom Typ "Einwilligung" in einer Domäne <code class="language-plaintext highlighter-rouge">mii</code>. Eine Consent-Ressource je Einwilligungssdokument. Das Bundle.Total gibt Aufschluss über die Anzahl der Einwilligungen.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET [base]/Consent?category=http://fhir.de/ConsentManagement/CodeSystem/TemplateType|WITHDRAWAL&amp;category=http://fhir.de/ConsentManagement/CodeSystem/ResultType|document
+</code></pre></div></div>
+
+<p>findet alle Consent-Ressourcen vom Typ "Widerruf". Eine Consent-Ressource je Widerrufsdokument. Das Bundle.Total gibt Aufschluss über die Anzahl der Widerrufe.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET [base]/Consent?category=http://fhir.de/ConsentManagement/CodeSystem/TemplateType|REFUSAL&amp;category=http://fhir.de/ConsentManagement/CodeSystem/ResultType|document
+</code></pre></div></div>
+
+<p>findet alle Consent-Ressourcen vom Typ "Ablehnung". Eine Consent-Ressource je Ablehnungsdokument. Das Bundle.Total gibt Aufschluss über die Anzahl der Ablehnungen.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET [base]/Consent?domain:identifier=MII&amp;category=http://fhir.de/ConsentManagement/CodeSystem/ResultType|consent-status
+</code></pre></div></div>
+
+<p>findet alle Consent-Ressourcen in der Domäne <code class="language-plaintext highlighter-rouge">mii</code>. Jede Consent-Ressource <strong>berücksichtigt alle relevanten Einwilligungs-, Widerrufs- und Ablehnungsdokumente für einen (!) Patienten</strong>. Die Consent Ressource mit ResultType <code class="language-plaintext highlighter-rouge">consent-status</code> aggregiert Einwilligungsinformationen und bezieht sich auf exakt einen Patienten und repräsentiert den aktuellen Einwilligungsstand des Patienten. **Gleichzeitig entspricht das Bundle.Total der Anzahl der Patienten für die mind. ein Dokument mit Einwilligungsinformationen (Einwilligung, Widerruf, Ablehnung) vorliegt.</p>
 
 
 
@@ -362,7 +479,7 @@ wenn Ihr Modul keine definiert.]</p>
 
           IG © 2019+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.netzwerk-universitaetsmedizin.de">NUM-DIZ</a>.  
           Package de.medizininformatikinitiative.kerndatensatz.consent#2026.0.0 basiert auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
-          Erstellt <span title="Mon, Aug 31, 2026 18:29+0000">2026-08-31</span>
+          Erstellt <span title="Mon, Aug 31, 2026 18:40+0000">2026-08-31</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
             <!-- Branding override for the fhir2.base.template footer fragment.

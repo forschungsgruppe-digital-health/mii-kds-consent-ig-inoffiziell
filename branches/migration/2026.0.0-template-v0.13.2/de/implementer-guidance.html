@@ -67,8 +67,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"2.2"}
-    h3,h4,h5,h6{--heading-prefix:"2.2"}</style>
+    <style type="text/css">h2{--heading-prefix:"2.1"}
+    h3,h4,h5,h6{--heading-prefix:"2.1"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -181,8 +181,6 @@
     <a data-toggle="dropdown" href="guidance.html" class="dropdown-toggle">Anleitung<b class="caret"> </b></a>
     <ul class="dropdown-menu">
       <li><a href="guidance.html">Anleitung</a></li>
-      <!-- OPTIONAL (0..1) — siehe docs/optional-pages.md -->
-      <li><a href="researcher-guidance.html">Anleitung für Forschende (optional)</a></li>
       <li><a href="implementer-guidance.html">Anleitung für Implementierende</a></li>
       <!-- Nur-Link-Eintrag: die Seite "Logische Modelle" (Begründung im Quell-Menü) -->
       <li><a href="logical-models.html">Datensätze und Beschreibungen</a></li>
@@ -207,13 +205,9 @@
     <ul class="dropdown-menu">
       <li><a href="artifacts.html">Artefakt-Übersicht</a></li>
       <li><a href="profiles.html">Profile</a></li>
-      <!-- OPTIONAL (0..1) — siehe docs/optional-pages.md -->
-      <li><a href="extensions.html">Extensions (optional)</a></li>
       <li><a href="capability-statements.html">CapabilityStatements</a></li>
       <!-- OPTIONAL (0..1) — siehe docs/optional-pages.md -->
       <li><a href="search-parameters.html">Suchparameter (optional)</a></li>
-      <!-- OPTIONAL (0..1) — siehe docs/optional-pages.md -->
-      <li><a href="operations.html">Operationen (optional)</a></li>
       <li><a href="logical-models.html">Logische Modelle</a></li>
       <!-- OPTIONAL (0..1) — siehe docs/optional-pages.md -->
       <li><a href="value-sets.html">ValueSets (optional)</a></li>
@@ -229,8 +223,6 @@
          die Metadaten-Übersicht ist optional. -->
     <a data-toggle="dropdown" href="version-history.html" class="dropdown-toggle">Metadaten<b class="caret"> </b></a>
     <ul class="dropdown-menu">
-      <!-- OPTIONAL (0..1) — siehe docs/optional-pages.md -->
-      <li><a href="metadata.html">Metadaten-Übersicht (optional)</a></li>
       <li><a href="version-history.html">Versionierung</a></li>
     </ul>
   </li>
@@ -304,17 +296,122 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 
     <p><!-- white space is critical inside of capture --></p>
-<div>
-<!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#technische-implementierung" id="markdown-toc-technische-implementierung">Technische Implementierung</a></li>
+  <li><a href="#kontext-im-gesamtprojekt--bezüge-zu-anderen-modulen" id="markdown-toc-kontext-im-gesamtprojekt--bezüge-zu-anderen-modulen">Kontext im Gesamtprojekt / Bezüge zu anderen Modulen</a></li>
+  <li><a href="#verweise-auf-andere-vorhaben" id="markdown-toc-verweise-auf-andere-vorhaben">Verweise auf andere Vorhaben</a></li>
+  <li><a href="#referenzen" id="markdown-toc-referenzen">Referenzen</a></li>
+  <li><a href="#empfehlungen-zur-praktischen-anwendung" id="markdown-toc-empfehlungen-zur-praktischen-anwendung">Empfehlungen zur praktischen Anwendung</a></li>
+  <li><a href="#bedeutung-der-kategorisierung-von-consent-ressourcen-mittels-resulttype" id="markdown-toc-bedeutung-der-kategorisierung-von-consent-ressourcen-mittels-resulttype">Bedeutung der Kategorisierung von Consent-Ressourcen mittels ResultType</a></li>
+  <li><a href="#nutzungsempfehlung-zur-verwendung-der-consentcategory-resulttype" id="markdown-toc-nutzungsempfehlung-zur-verwendung-der-consentcategory-resulttype">Nutzungsempfehlung zur Verwendung der Consent.category ResultType</a></li>
+</ul>
+
 </div>
-
 <!-- markdownlint-disable MD041 -->
+<!-- Zusammengeführt aus VIER Quellseiten des Simplifier-Leitfadens (page-map,
+     [MAP-EDIT]-Zeilen; Harvest 2026-08-31): TechnischeImplementierung,
+     KontextimGesamtprojektBezgezuanderenModulen, Referenzen und
+     FHIRProfile/Empfehlungen-zur-praktischen-Anwendung. Wortgetreue Übernahme;
+     nur die Zwischenüberschriften-Hierarchie wurde an die Zielseite angepasst. -->
 
-<p>Technische Hinweise für DIZ-Implementierende zur Umsetzung der Profile des Moduls <strong>Consent</strong> (ETL aus Primärsystemen, FHIR-API, Validierung).</p>
-
-<blockquote class="ig-highlight ig-highlight-grey">
-  <p>[TODO: Beschreiben Sie die technischen Umsetzungsschritte für Ihr Modul.]</p>
+<!-- DERIVED:bridge source=technischeimplementierung.md gate=B -->
+<blockquote class="ig-highlight ig-highlight-blue">
+  <p><strong>Written during migration - review before release.</strong> Diese Seite bündelt die implementierungsbezogenen Abschnitte des ursprünglichen Leitfadens: die technische Implementierung, den Kontext im Gesamtprojekt, die Referenzen und die Empfehlungen zur praktischen Anwendung.</p>
 </blockquote>
+
+<h3 id="technische-implementierung">Technische Implementierung</h3>
+
+<p>Dieser Abschnitt beschreibt die syntaktischen und semantischen Vorgaben zur Implementierung des Consent-Moduls.</p>
+
+<p>Weiterhin sind auch Suchparameter definiert, die bei Verwendung der FHIR RESTful API durch die jeweiligen Systeme implementiert werden müssen. Grundsätzlich werden logische AND- und OR-Verknüpfungen der FHIR-Search unterstützt, vgl. <a href="https://www.hl7.org/fhir/search.html">https://www.hl7.org/fhir/search.html</a> .</p>
+
+<p>Grundlagen und weitere Details zur Suche und zur FHIR RESTful API werden zum Zeitpunkt der Erstellung dieses Implementierungsleitfadens im Rahmen der Basismodule erarbeitet und können zu einem späteren Zeitpunkt die hier gemachten Vorgaben ergänzen. Ggf. wird dann auch eine neue Version dieses Leitfadens veröffentlicht.</p>
+
+<h3 id="kontext-im-gesamtprojekt--bezüge-zu-anderen-modulen">Kontext im Gesamtprojekt / Bezüge zu anderen Modulen</h3>
+
+<p>Das Modul Consent dient der Unterstützung von standortübergreifenden Datennutzunganfragen basierend auf dem jeweils aktuellen Einwilligungsstatus des Patienten am Standort.</p>
+
+<p>Um den Bezug zwischen Person und Einwilligung herzustellen, wird die Einwilligung mit mindestens einem eindeutigen Personenidentifikator versehen (Basismodul: Person). Dies ist im Regelfall ein <a href="https://ig.fhir.de/einwilligungsmanagement/stable/Patient.html">pseudonymer Identifikator</a>.</p>
+
+<h3 id="verweise-auf-andere-vorhaben">Verweise auf andere Vorhaben</h3>
+
+<p>In der <a href="https://www.bfarm.de/SharedDocs/Downloads/DE/Forschung/modellvorhaben-genomsequenzierung/Handreichung-zur-Implementierung-beim-LE.pdf?__blob=publicationFile">Handreichung</a> zur Patienteninformation &amp; Teilnahmeerklärung zum <strong>„Modellvorhaben Genomsequenzierung bei seltenen und bei onkologischen Erkrankungen“</strong> nach § 64e SGB in der Version V1 wird unter Kapitel 2.1.4 Forschungseinwilligung die Nutzung des MII-Broad Consent ab der Version 1.6d empfohlen und im gesetzlichen Sinn mindestens der Basisversion ohne Zusatzmodule entspricht.</p>
+
+<h3 id="referenzen">Referenzen</h3>
+
+<p>Die Modellierung des Datensatzes zum Modul Consent enthält Referenzen zu folgenden Projekten:</p>
+
+<ul>
+  <li>
+    <p><a href="https://ig.fhir.de/einwilligungsmanagement/stable/">Implementation Guide der Arbeitsgruppe Einwilligungsmanagement des Interop-Forum, Version 1.0</a></p>
+  </li>
+  <li>
+    <p><a href="https://art-decor.org/art-decor/decor-datasets--mide-?conceptId=2.16.840.1.113883.3.1937.777.24.2.184">Kerndatensatzbeschreibung im ART-DECOR</a></p>
+  </li>
+</ul>
+
+<p>Es wurden außerdem die <a href="https://hl7.org/fhir/">Kernspezifikation von HL7 FHIR</a>, hierunter die entsprechende Ressource <a href="https://hl7.org/fhir/consent.html">Consent</a>, und die bisherigen Arbeiten zu den Deutschen Basisprofilen in <a href="https://simplifier.net/basisprofilde">STU3</a> und <a href="https://simplifier.net/basisprofil-de-r4">R4</a> berücksichtigt.</p>
+
+<p>Die vorliegende Spezifikation wurde gestaltet auf Basis der Beschreibung des MII-Kerndatensatzes in der Version vom 10.3.2017 (<a href="https://www.medizininformatik-initiative.de/sites/default/files/inline-files/MII_04_Kerndatensatz_1-0.pdf">PDF</a>), sowie der Datensatzbeschreibung in <a href="https://art-decor.org/art-decor/decor-project--mide-">ART-DECOR</a>.</p>
+
+<h3 id="empfehlungen-zur-praktischen-anwendung">Empfehlungen zur praktischen Anwendung</h3>
+
+<h3 id="bedeutung-der-kategorisierung-von-consent-ressourcen-mittels-resulttype">Bedeutung der Kategorisierung von Consent-Ressourcen mittels ResultType</h3>
+
+<p>Im IG der <strong>HL7-D AG Einwilligungsmanagement</strong> und der korrespondierenden <a href="https://ebooks.iospress.nl/doi/10.3233/SHTI251389">Publikation</a> wird die Bedeutung des Parameters <code class="language-plaintext highlighter-rouge">ResultType</code> umfassend erläutert.</p>
+
+<p>Besonderes Augenmerk sei an dieser Stelle auf die Codes <code class="language-plaintext highlighter-rouge">consent-status</code> und <code class="language-plaintext highlighter-rouge">document</code> gelegt. Weitere Details und Zusammenhänge sind <a href="https://simplifier.net/guide/Einwilligungsmanagement/Mitgeltende-Erl-uterungen?version=current">hier</a> beschrieben.</p>
+
+<h3 id="nutzungsempfehlung-zur-verwendung-der-consentcategory-resulttype">Nutzungsempfehlung zur Verwendung der Consent.category ResultType</h3>
+
+<p>Konkrete verpflichtende Projektvorgaben zur Verwendung des Suchparameters ResultType sind in der Praxis aufgrund heterogener technischer Gegebenheiten an den MII-Standorten nur bedingt zielführend. Die <strong>technische Umsetzung der Vorgaben ist abhängig von der konkreten Implementierung</strong>.</p>
+
+<p>Das Einwilligungsmanagement <a href="https://ths-greifswald.de/gics">gICS</a> stellt die aktuelle <a href="https://ebooks.iospress.nl/doi/10.3233/SHTI251389">Referenzimplementierung</a> des HL7-D FHIR Standards für Einwilligungsmanagement (Version 2.0) dar.</p>
+
+<p>Alle Implementierungen sollten <strong>mindestens folgende Varianten unterstützen</strong>. Die Kardinalität von <code class="language-plaintext highlighter-rouge">Consent.category</code> ist mit <code class="language-plaintext highlighter-rouge">2..\*</code> definiert und ermöglicht die notwendige Abwärtskompatibilität.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>ResultType</td>
+      <td>Bedeutung für die Consent-Ressource</td>
+      <td>Aggregation von Informationen</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>| — | — | — |</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">document</code></td>
+      <td>Die Consent-Ressource bezieht sich auf  <strong>ein (!) ausgefülltes Dokument</strong>  (QuestionnaireResponse).  <em>Dies sollte der Default in einem (MII) FHIR-Server sein.</em></td>
+      <td>nein</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">consent-status</code></td>
+      <td>Die Consent-Ressource  <strong>berücksichtigt alle relevanten Einwilligungs- und Widerrufsdokumente</strong>  im Kontext der MII  <strong>für einen (!) Patienten</strong> . Die Consent Ressource mit ResultType  <code class="language-plaintext highlighter-rouge">consent-status</code>  bezieht sich immer auf einen Patienten und enthält den aktuellen Einwilligungsstand.  <em>Dies sollte idealerweise durch den (MII) FHIR-Server unterstützt werden.</em></td>
+      <td>Ja, berechnet durch entsprechende Business-Logik zum Zeitpunkt der Abfrage oder für einen bestimmten Zeitraum.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Idealerweise sollte der FHIR-Server je Patient stets nur eine Consent-Ressource mit den aktuellen aggregierten Einwilligungsinformationen (ResultType <code class="language-plaintext highlighter-rouge">consent-status</code>) vorhalten.</p>
+
+<p><em>Ist dies aus dritten Gründen nicht möglich, sollte mindestens je ausgefülltem Dokument (Einwilligung, aktualisierte Einwilligung,Teil-Widerruf, Vollständiger Widerruf) eine Dokument-spezifische Ausleitung ermöglicht werden (ResultType <code class="language-plaintext highlighter-rouge">document</code>). Es bleibt in diesem Fall in der Verantwortung des Standortes, diese Informationen</em> <strong>in der vom FDPG geforderten Form</strong> <em>bereitzustellen.</em></p>
+
+<h4 id="empfehlungen-für-gics-anwender-bezogen-auf-kennzahlen-ermittlung-und-fdpg">Empfehlungen für gICS-Anwender bezogen auf Kennzahlen-Ermittlung und FDPG</h4>
+
+<p>Die Datenintegrationzentren stellen die erforderlichen Informationen zur Ermittlung von Kerndatensatzspezifischen Kennzahlen für das DIZ-Dashboard bereit. Die Ermittlung der Kennzahlen wird auf Seiten des DIZ-Dashboard durch entsprechende Aufrufe an die Standorte auch für das MII KDS Consent Modul getriggert.</p>
+
+<p>Standorte, die das <a href="https://ths-greifswald.de/gics">Einwilligungsmanagement gICS</a> verwenden, sollten bei der <strong>Kennzahlen-Ermittlung</strong> sowie bei der Bereitstellung der Consent-Ressourcen für das <strong>FDPG</strong> den präzisen <a href="https://www.ths-greifswald.de/diz-dashboard-empfehlung-gics-kds-consent-status/"><strong>Hersteller-Empfehlungen</strong></a> folgen.</p>
 
 
 
@@ -341,7 +438,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
           IG © 2019+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.netzwerk-universitaetsmedizin.de">NUM-DIZ</a>.  
           Package de.medizininformatikinitiative.kerndatensatz.consent#2026.0.0 basiert auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
-          Erstellt <span title="Mon, Aug 31, 2026 18:29+0000">2026-08-31</span>
+          Erstellt <span title="Mon, Aug 31, 2026 18:40+0000">2026-08-31</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
             <!-- Branding override for the fhir2.base.template footer fragment.

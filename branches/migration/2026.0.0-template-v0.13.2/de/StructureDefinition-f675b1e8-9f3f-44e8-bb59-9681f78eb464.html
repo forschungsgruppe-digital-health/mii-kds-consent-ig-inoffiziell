@@ -68,8 +68,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"19.9"}
-    h3,h4,h5,h6{--heading-prefix:"19.9"}</style>
+    <style type="text/css">h2{--heading-prefix:"16.10"}
+    h3,h4,h5,h6{--heading-prefix:"16.10"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -182,8 +182,6 @@
     <a data-toggle="dropdown" href="guidance.html" class="dropdown-toggle">Anleitung<b class="caret"> </b></a>
     <ul class="dropdown-menu">
       <li><a href="guidance.html">Anleitung</a></li>
-      <!-- OPTIONAL (0..1) — siehe docs/optional-pages.md -->
-      <li><a href="researcher-guidance.html">Anleitung für Forschende (optional)</a></li>
       <li><a href="implementer-guidance.html">Anleitung für Implementierende</a></li>
       <!-- Nur-Link-Eintrag: die Seite "Logische Modelle" (Begründung im Quell-Menü) -->
       <li><a href="logical-models.html">Datensätze und Beschreibungen</a></li>
@@ -208,13 +206,9 @@
     <ul class="dropdown-menu">
       <li><a href="artifacts.html">Artefakt-Übersicht</a></li>
       <li><a href="profiles.html">Profile</a></li>
-      <!-- OPTIONAL (0..1) — siehe docs/optional-pages.md -->
-      <li><a href="extensions.html">Extensions (optional)</a></li>
       <li><a href="capability-statements.html">CapabilityStatements</a></li>
       <!-- OPTIONAL (0..1) — siehe docs/optional-pages.md -->
       <li><a href="search-parameters.html">Suchparameter (optional)</a></li>
-      <!-- OPTIONAL (0..1) — siehe docs/optional-pages.md -->
-      <li><a href="operations.html">Operationen (optional)</a></li>
       <li><a href="logical-models.html">Logische Modelle</a></li>
       <!-- OPTIONAL (0..1) — siehe docs/optional-pages.md -->
       <li><a href="value-sets.html">ValueSets (optional)</a></li>
@@ -230,8 +224,6 @@
          die Metadaten-Übersicht ist optional. -->
     <a data-toggle="dropdown" href="version-history.html" class="dropdown-toggle">Metadaten<b class="caret"> </b></a>
     <ul class="dropdown-menu">
-      <!-- OPTIONAL (0..1) — siehe docs/optional-pages.md -->
-      <li><a href="metadata.html">Metadaten-Übersicht (optional)</a></li>
       <li><a href="version-history.html">Versionierung</a></li>
     </ul>
   </li>
@@ -414,9 +406,26 @@ Profile - MI-I - Consent - Provenance
 
 
 
+<div style="display:inline-block" markdown="1">
+
+<!-- Wortgetreu übertragen aus der Simplifier-Quellseite
+     https://simplifier.net/guide/miiigmodulconsent/MIIIGModulConsent/TechnischeImplementierung/FHIRProfile/Provenance?version=2026.0.0
+     (Harvest 2026-08-31); Links umgeschrieben (page-map). -->
+<!-- Der gerenderte Abschnitt "Darstellung" wird vom IG Publisher neu erzeugt;
+     Abschnitt "Beispiele": siehe Seite Beispiele (der XML-Render der Quellseite
+     war dort defekt — "Command 'xml' could not render", Gate-B-Befund). -->
+<p>Basierend auf den <a href="https://ig.fhir.de/einwilligungsmanagement/stable/Provenance.html">Empfehlungen</a> der AG Einwilligungsmanagement, beschreibt das Profile <em>MIIConsentProvenance</em> die Herkunfsinformationen eines Einwilligungsdokuments.</p>
+
+
+</div>
+
+
+
+
 <p><b>Usages:</b></p>
 <ul>
  <li>Examples for this Profile: <a href="Provenance-55219d12-6245-4de4-8b50-ddf6f16a789b.html">Provenance/55219d12-6245-4de4-8b50-ddf6f16a789b</a></li>
+ <li>CapabilityStatements using this Profile: <a href="CapabilityStatement-mii-cap-consent-server.html">MII KDS Modul Consent — CapabilityStatement (Migrationsvorschlag)</a></li>
 </ul>
 <p>You can also check for <a href="https://packages2.fhir.org/xig/resource/de.medizininformatikinitiative.kerndatensatz.consent|current/StructureDefinition/StructureDefinition-f675b1e8-9f3f-44e8-bb59-9681f78eb464.json">usages in the FHIR IG Statistics</a></p>
 
@@ -602,7 +611,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#base64Binary">base64Binary</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">The actual signature content (XML DigSig. JWS, picture, etc.)</td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // cdff926a-fb2a-488a-9c84-aa5a0948ac9f
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // f66006b4-8ac7-43bd-b401-5b18320b1685
 document.getElementById('cbf675b1e8-9f3f-44e8-bb59-9681f78eb464K-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('f675b1e8-9f3f-44e8-bb59-9681f78eb464K'), 'binding', document.getElementById('cbf675b1e8-9f3f-44e8-bb59-9681f78eb464K-binding').checked, document.getElementById('ppf675b1e8-9f3f-44e8-bb59-9681f78eb464K'));
 document.getElementById('cbf675b1e8-9f3f-44e8-bb59-9681f78eb464K-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -796,7 +805,7 @@ filterDesc(document.getElementById('f675b1e8-9f3f-44e8-bb59-9681f78eb464K'), 'ob
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">1</span><span style="opacity: 0.5">..</span><span style="opacity: 0.5">*</span></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a style="opacity: 0.5; opacity: 0.5" href="http://hl7.org/fhir/R4/datatypes.html#Coding">Coding</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">Indication of the reason the entity signed the object(s)</span><br class="binding"/><span style="font-weight:bold" title="null" class="binding">Binding: </span><a href="ValueSet-88464c5b-5338-4c2b-9c07-b42fef2ada64.html" title="https://www.medizininformatik-initiative.de/fhir/modul-consent/ValueSet/mii-vs-consent-signaturetypes" class="binding">MII Consent: Signature Types</a><span title="null" class="binding"> (</span><a href="http://hl7.org/fhir/R4/terminologies.html#required" title="To be conformant, the concept in this element SHALL be from the specified value set." class="binding">required</a><span title="null" class="binding">)</span></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // cdff926a-fb2a-488a-9c84-aa5a0948ac9f
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // f66006b4-8ac7-43bd-b401-5b18320b1685
 document.getElementById('cbf675b1e8-9f3f-44e8-bb59-9681f78eb464D-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('f675b1e8-9f3f-44e8-bb59-9681f78eb464D'), 'binding', document.getElementById('cbf675b1e8-9f3f-44e8-bb59-9681f78eb464D-binding').checked, document.getElementById('ppf675b1e8-9f3f-44e8-bb59-9681f78eb464D'));
 document.getElementById('cbf675b1e8-9f3f-44e8-bb59-9681f78eb464D-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -1208,7 +1217,7 @@ The type is the Canonical URL of Resource Definition that is the type this refer
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#base64Binary">base64Binary</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">The actual signature content (XML DigSig. JWS, picture, etc.)</td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // cdff926a-fb2a-488a-9c84-aa5a0948ac9f
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // f66006b4-8ac7-43bd-b401-5b18320b1685
 document.getElementById('cbf675b1e8-9f3f-44e8-bb59-9681f78eb464S-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('f675b1e8-9f3f-44e8-bb59-9681f78eb464S'), 'binding', document.getElementById('cbf675b1e8-9f3f-44e8-bb59-9681f78eb464S-binding').checked, document.getElementById('ppf675b1e8-9f3f-44e8-bb59-9681f78eb464S'));
 document.getElementById('cbf675b1e8-9f3f-44e8-bb59-9681f78eb464S-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -1778,7 +1787,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#base64Binary">base64Binary</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">The actual signature content (XML DigSig. JWS, picture, etc.)</td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // cdff926a-fb2a-488a-9c84-aa5a0948ac9f
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // f66006b4-8ac7-43bd-b401-5b18320b1685
 document.getElementById('cbf675b1e8-9f3f-44e8-bb59-9681f78eb464KA-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('f675b1e8-9f3f-44e8-bb59-9681f78eb464KA'), 'binding', document.getElementById('cbf675b1e8-9f3f-44e8-bb59-9681f78eb464KA-binding').checked, document.getElementById('ppf675b1e8-9f3f-44e8-bb59-9681f78eb464KA'));
 document.getElementById('cbf675b1e8-9f3f-44e8-bb59-9681f78eb464KA-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -1971,7 +1980,7 @@ filterDesc(document.getElementById('f675b1e8-9f3f-44e8-bb59-9681f78eb464KA'), 'o
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">1</span><span style="opacity: 0.5">..</span><span style="opacity: 0.5">*</span></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a style="opacity: 0.5; opacity: 0.5" href="http://hl7.org/fhir/R4/datatypes.html#Coding">Coding</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">Indication of the reason the entity signed the object(s)</span><br class="binding"/><span style="font-weight:bold" title="null" class="binding">Binding: </span><a href="ValueSet-88464c5b-5338-4c2b-9c07-b42fef2ada64.html" title="https://www.medizininformatik-initiative.de/fhir/modul-consent/ValueSet/mii-vs-consent-signaturetypes" class="binding">MII Consent: Signature Types</a><span title="null" class="binding"> (</span><a href="http://hl7.org/fhir/R4/terminologies.html#required" title="To be conformant, the concept in this element SHALL be from the specified value set." class="binding">required</a><span title="null" class="binding">)</span></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // cdff926a-fb2a-488a-9c84-aa5a0948ac9f
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // f66006b4-8ac7-43bd-b401-5b18320b1685
 document.getElementById('cbf675b1e8-9f3f-44e8-bb59-9681f78eb464DA-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('f675b1e8-9f3f-44e8-bb59-9681f78eb464DA'), 'binding', document.getElementById('cbf675b1e8-9f3f-44e8-bb59-9681f78eb464DA-binding').checked, document.getElementById('ppf675b1e8-9f3f-44e8-bb59-9681f78eb464DA'));
 document.getElementById('cbf675b1e8-9f3f-44e8-bb59-9681f78eb464DA-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -2380,7 +2389,7 @@ The type is the Canonical URL of Resource Definition that is the type this refer
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#base64Binary">base64Binary</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">The actual signature content (XML DigSig. JWS, picture, etc.)</td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // cdff926a-fb2a-488a-9c84-aa5a0948ac9f
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // f66006b4-8ac7-43bd-b401-5b18320b1685
 document.getElementById('cbf675b1e8-9f3f-44e8-bb59-9681f78eb464SA-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('f675b1e8-9f3f-44e8-bb59-9681f78eb464SA'), 'binding', document.getElementById('cbf675b1e8-9f3f-44e8-bb59-9681f78eb464SA-binding').checked, document.getElementById('ppf675b1e8-9f3f-44e8-bb59-9681f78eb464SA'));
 document.getElementById('cbf675b1e8-9f3f-44e8-bb59-9681f78eb464SA-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -2837,7 +2846,7 @@ Summary
 
           IG © 2019+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.netzwerk-universitaetsmedizin.de">NUM-DIZ</a>.  
           Package de.medizininformatikinitiative.kerndatensatz.consent#2026.0.0 basiert auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
-          Erstellt <span title="Mon, Aug 31, 2026 18:29+0000">2026-08-31</span>
+          Erstellt <span title="Mon, Aug 31, 2026 18:40+0000">2026-08-31</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
             <!-- Branding override for the fhir2.base.template footer fragment.

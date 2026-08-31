@@ -23,7 +23,7 @@ Stable releases can be compared by reading the numeric components as SemVer-styl
 
 #### Artifact versions
 
-All released FHIR artifacts in the package carry the same version as the guide and its package. An artifact may therefore receive a new version on release even when the artifact itself did not change. The computable metadata that declares the version algorithm, the versioning policy, the package source and the manifest parameters is described on the [Metadata Overview](metadata.md) page.
+All released FHIR artifacts in the package carry the same version as the guide and its package. An artifact may therefore receive a new version on release even when the artifact itself did not change. The computable metadata that declares the version algorithm, the versioning policy, the package source and the
 
 #### Release process
 

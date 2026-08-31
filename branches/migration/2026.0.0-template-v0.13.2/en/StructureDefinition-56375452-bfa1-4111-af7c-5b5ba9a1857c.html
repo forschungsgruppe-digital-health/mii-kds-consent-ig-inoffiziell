@@ -68,8 +68,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"19.7"}
-    h3,h4,h5,h6{--heading-prefix:"19.7"}</style>
+    <style type="text/css">h2{--heading-prefix:"16.8"}
+    h3,h4,h5,h6{--heading-prefix:"16.8"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -210,8 +210,6 @@
     <a data-toggle="dropdown" href="guidance.html" class="dropdown-toggle">Guidance<b class="caret"> </b></a>
     <ul class="dropdown-menu">
       <li><a href="guidance.html">Guidance</a></li>
-      <!-- OPTIONAL (0..1) — see docs/optional-pages.md -->
-      <li><a href="researcher-guidance.html">Guidance for Researchers (optional)</a></li>
       <li><a href="implementer-guidance.html">Guidance for Implementers</a></li>
       <!-- link-only entry: Logical-Models section of the Artifacts Summary (see header note) -->
       <li><a href="logical-models.html">Datasets and Descriptions</a></li>
@@ -235,13 +233,9 @@
     <ul class="dropdown-menu">
       <li><a href="artifacts.html">Artifacts Summary</a></li>
       <li><a href="profiles.html">Profiles</a></li>
-      <!-- OPTIONAL (0..1) — see docs/optional-pages.md -->
-      <li><a href="extensions.html">Extensions (optional)</a></li>
       <li><a href="capability-statements.html">Capability Statements</a></li>
       <!-- OPTIONAL (0..1) — see docs/optional-pages.md -->
       <li><a href="search-parameters.html">Search Parameters (optional)</a></li>
-      <!-- OPTIONAL (0..1) — see docs/optional-pages.md -->
-      <li><a href="operations.html">Operations (optional)</a></li>
       <li><a href="logical-models.html">Logical Models</a></li>
       <!-- OPTIONAL (0..1) — see docs/optional-pages.md -->
       <li><a href="value-sets.html">Value Sets (optional)</a></li>
@@ -258,8 +252,6 @@
          have to be re-targeted when that page is removed. -->
     <a data-toggle="dropdown" href="version-history.html" class="dropdown-toggle">Metadata<b class="caret"> </b></a>
     <ul class="dropdown-menu">
-      <!-- OPTIONAL (0..1) — see docs/optional-pages.md -->
-      <li><a href="metadata.html">Metadata Overview (optional)</a></li>
       <li><a href="version-history.html">Versioning</a></li>
     </ul>
   </li>
@@ -443,10 +435,28 @@ Diese müssen im PDF-Format vorliegen.</p>
 
 
 
+<div style="display:inline-block" markdown="1">
+
+<!-- Wortgetreu übertragen aus der Simplifier-Quellseite
+     https://simplifier.net/guide/miiigmodulconsent/MIIIGModulConsent/TechnischeImplementierung/FHIRProfile/DocumentReference?version=2026.0.0
+     (Harvest 2026-08-31); Links umgeschrieben (page-map). -->
+<!-- Der gerenderte Abschnitt "Darstellung" wird vom IG Publisher neu erzeugt;
+     Abschnitt "Beispiele": siehe Seite Beispiele. -->
+<p>Basierend auf den <a href="https://ig.fhir.de/einwilligungsmanagement/stable/DocumentReference.html">Empfehlungen</a> der AG Einwilligungsmanagement, zielt das Profile <em>MIIConsentDocumentReference</em> auf ein real existierendes Dokument mit Bezug zum Einwilligungsdokument ab.</p>
+
+<p>Jedoch beschränkt auf Scans von Einwilligungsdokumenten im PDF-Format.</p>
+
+
+</div>
+
+
+
+
 <p><b>Usages:</b></p>
 <ul>
  <li>Refer to this Profile: <a href="StructureDefinition-f675b1e8-9f3f-44e8-bb59-9681f78eb464.html">Profile - MI-I - Consent - Provenance</a></li>
  <li>Examples for this Profile: <a href="DocumentReference-8a3d1799-2463-405e-b49c-6a16c8692b01.html">DocumentReference/8a3d1799-2463-405e-b49c-6a16c8692b01</a></li>
+ <li>CapabilityStatements using this Profile: <a href="CapabilityStatement-mii-cap-consent-server.html">MII KDS Modul Consent — CapabilityStatement (Migrationsvorschlag)</a></li>
 </ul>
 <p>You can also check for <a href="https://packages2.fhir.org/xig/resource/de.medizininformatikinitiative.kerndatensatz.consent|current/StructureDefinition/StructureDefinition-56375452-bfa1-4111-af7c-5b5ba9a1857c.json">usages in the FHIR IG Statistics</a></p>
 
@@ -553,7 +563,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#url">url</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Uri where the data can be found<br/><span style="font-weight:bold">Example General: </span><span style="color: darkgreen">http://www.acme.com/logo-small.png</span></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // cdff926a-fb2a-488a-9c84-aa5a0948ac9f
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // f66006b4-8ac7-43bd-b401-5b18320b1685
 document.getElementById('cb56375452-bfa1-4111-af7c-5b5ba9a1857cK-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('56375452-bfa1-4111-af7c-5b5ba9a1857cK'), 'binding', document.getElementById('cb56375452-bfa1-4111-af7c-5b5ba9a1857cK-binding').checked, document.getElementById('pp56375452-bfa1-4111-af7c-5b5ba9a1857cK'));
 document.getElementById('cb56375452-bfa1-4111-af7c-5b5ba9a1857cK-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -742,7 +752,7 @@ filterDesc(document.getElementById('56375452-bfa1-4111-af7c-5b5ba9a1857cK'), 'ob
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">1</span><span style="opacity: 0.5">..</span><span style="opacity: 0.5">1</span></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a style="opacity: 0.5; opacity: 0.5" href="http://hl7.org/fhir/R4/datatypes.html#code">code</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">Mime type of the content, with charset etc.</span><br/><span style="font-weight:bold">Required Pattern: </span><span style="color: darkgreen">application/pdf</span></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // cdff926a-fb2a-488a-9c84-aa5a0948ac9f
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // f66006b4-8ac7-43bd-b401-5b18320b1685
 document.getElementById('cb56375452-bfa1-4111-af7c-5b5ba9a1857cD-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('56375452-bfa1-4111-af7c-5b5ba9a1857cD'), 'binding', document.getElementById('cb56375452-bfa1-4111-af7c-5b5ba9a1857cD-binding').checked, document.getElementById('pp56375452-bfa1-4111-af7c-5b5ba9a1857cD'));
 document.getElementById('cb56375452-bfa1-4111-af7c-5b5ba9a1857cD-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -1089,7 +1099,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..*</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/references.html">Reference</a>(<a href="http://hl7.org/fhir/R4/resource.html">Resource</a>)</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Related identifiers or resources<br/></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // cdff926a-fb2a-488a-9c84-aa5a0948ac9f
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // f66006b4-8ac7-43bd-b401-5b18320b1685
 document.getElementById('cb56375452-bfa1-4111-af7c-5b5ba9a1857cS-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('56375452-bfa1-4111-af7c-5b5ba9a1857cS'), 'binding', document.getElementById('cb56375452-bfa1-4111-af7c-5b5ba9a1857cS-binding').checked, document.getElementById('pp56375452-bfa1-4111-af7c-5b5ba9a1857cS'));
 document.getElementById('cb56375452-bfa1-4111-af7c-5b5ba9a1857cS-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -1607,7 +1617,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#url">url</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Uri where the data can be found<br/><span style="font-weight:bold">Example General: </span><span style="color: darkgreen">http://www.acme.com/logo-small.png</span></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // cdff926a-fb2a-488a-9c84-aa5a0948ac9f
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // f66006b4-8ac7-43bd-b401-5b18320b1685
 document.getElementById('cb56375452-bfa1-4111-af7c-5b5ba9a1857cKA-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('56375452-bfa1-4111-af7c-5b5ba9a1857cKA'), 'binding', document.getElementById('cb56375452-bfa1-4111-af7c-5b5ba9a1857cKA-binding').checked, document.getElementById('pp56375452-bfa1-4111-af7c-5b5ba9a1857cKA'));
 document.getElementById('cb56375452-bfa1-4111-af7c-5b5ba9a1857cKA-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -1795,7 +1805,7 @@ filterDesc(document.getElementById('56375452-bfa1-4111-af7c-5b5ba9a1857cKA'), 'o
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">1</span><span style="opacity: 0.5">..</span><span style="opacity: 0.5">1</span></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a style="opacity: 0.5; opacity: 0.5" href="http://hl7.org/fhir/R4/datatypes.html#code">code</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">Mime type of the content, with charset etc.</span><br/><span style="font-weight:bold">Required Pattern: </span><span style="color: darkgreen">application/pdf</span></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // cdff926a-fb2a-488a-9c84-aa5a0948ac9f
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // f66006b4-8ac7-43bd-b401-5b18320b1685
 document.getElementById('cb56375452-bfa1-4111-af7c-5b5ba9a1857cDA-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('56375452-bfa1-4111-af7c-5b5ba9a1857cDA'), 'binding', document.getElementById('cb56375452-bfa1-4111-af7c-5b5ba9a1857cDA-binding').checked, document.getElementById('pp56375452-bfa1-4111-af7c-5b5ba9a1857cDA'));
 document.getElementById('cb56375452-bfa1-4111-af7c-5b5ba9a1857cDA-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -2139,7 +2149,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..*</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/references.html">Reference</a>(<a href="http://hl7.org/fhir/R4/resource.html">Resource</a>)</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Related identifiers or resources<br/></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // cdff926a-fb2a-488a-9c84-aa5a0948ac9f
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // f66006b4-8ac7-43bd-b401-5b18320b1685
 document.getElementById('cb56375452-bfa1-4111-af7c-5b5ba9a1857cSA-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('56375452-bfa1-4111-af7c-5b5ba9a1857cSA'), 'binding', document.getElementById('cb56375452-bfa1-4111-af7c-5b5ba9a1857cSA-binding').checked, document.getElementById('pp56375452-bfa1-4111-af7c-5b5ba9a1857cSA'));
 document.getElementById('cb56375452-bfa1-4111-af7c-5b5ba9a1857cSA-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -2623,7 +2633,7 @@ Summary
 
           IG © 2019+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.netzwerk-universitaetsmedizin.de">NUM-DIZ</a>.  
           Package de.medizininformatikinitiative.kerndatensatz.consent#2026.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
-          Generated <span title="Mon, Aug 31, 2026 18:29+0000">2026-08-31</span>
+          Generated <span title="Mon, Aug 31, 2026 18:40+0000">2026-08-31</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
             <!-- Branding override for the fhir2.base.template footer fragment.

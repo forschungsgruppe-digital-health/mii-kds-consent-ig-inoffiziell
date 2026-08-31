@@ -1,10 +1,11 @@
 MII_IG_Consent : Validation Results
 =========================================
 
-err = 94, warn = 137, info = 507
+err = 94, warn = 137, info = 519
 $--
 Generated $--. FHIR version $-- for de.medizininformatikinitiative.kerndatensatz.consent#$-- (canonical = https://www.medizininformatik-initiative.de/fhir/modul-consent)
- Build Errors : 4 / 9 / 0
+ Build Errors : 2 / 10 / 0
+ /home/runner/work/mii-kds-consent-ig-inoffiziell/mii-kds-consent-ig-inoffiziell/fsh-generated/resources/CapabilityStatement-mii-cap-consent-server : 0 / 0 / 12
  /home/runner/work/mii-kds-consent-ig-inoffiziell/mii-kds-consent-ig-inoffiziell/fsh-generated/resources/CodeSystem-2.16.840.1.113883.3.1937.777.24.5.2--20210423105554 : 1 / 13 / 3
  /home/runner/work/mii-kds-consent-ig-inoffiziell/mii-kds-consent-ig-inoffiziell/fsh-generated/resources/CodeSystem-2.16.840.1.113883.3.1937.777.24.5.3--20251211153003 : 1 / 15 / 4
  /home/runner/work/mii-kds-consent-ig-inoffiziell/mii-kds-consent-ig-inoffiziell/fsh-generated/resources/CodeSystem-mii-cs-consent-version-modules : 0 / 44 / 4
@@ -13,7 +14,7 @@ Generated $--. FHIR version $-- for de.medizininformatikinitiative.kerndatensatz
  /home/runner/work/mii-kds-consent-ig-inoffiziell/mii-kds-consent-ig-inoffiziell/fsh-generated/resources/Consent-89f494a3-cd75-44f5-a78a-581dfdd47a94 : 15 / 2 / 4
  /home/runner/work/mii-kds-consent-ig-inoffiziell/mii-kds-consent-ig-inoffiziell/fsh-generated/resources/Consent-Example-MII-Consent-ResultType-document : 15 / 2 / 4
  /home/runner/work/mii-kds-consent-ig-inoffiziell/mii-kds-consent-ig-inoffiziell/fsh-generated/resources/DocumentReference-8a3d1799-2463-405e-b49c-6a16c8692b01 : 1 / 0 / 1
- /home/runner/work/mii-kds-consent-ig-inoffiziell/mii-kds-consent-ig-inoffiziell/fsh-generated/resources/ImplementationGuide-mii-ig-consent : 0 / 5 / 69
+ /home/runner/work/mii-kds-consent-ig-inoffiziell/mii-kds-consent-ig-inoffiziell/fsh-generated/resources/ImplementationGuide-mii-ig-consent : 0 / 5 / 70
  /home/runner/work/mii-kds-consent-ig-inoffiziell/mii-kds-consent-ig-inoffiziell/fsh-generated/resources/Provenance-55219d12-6245-4de4-8b50-ddf6f16a789b : 1 / 0 / 3
  /home/runner/work/mii-kds-consent-ig-inoffiziell/mii-kds-consent-ig-inoffiziell/fsh-generated/resources/SearchParameter-MII-SP-Consent-PolicyUri : 4 / 0 / 3
  /home/runner/work/mii-kds-consent-ig-inoffiziell/mii-kds-consent-ig-inoffiziell/fsh-generated/resources/SearchParameter-MII-SP-Consent-ProvisionCode : 4 / 0 / 3
@@ -38,11 +39,22 @@ WARNING: Unable to find ImplementationGuide.definition.resource.description for 
 WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource DocumentReference/8a3d1799-2463-405e-b49c-6a16c8692b01.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
 WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Consent/Example-MII-Consent-ResultType-document.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
 WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Parameters/mii-param-consent-manifest.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
-ERROR: de/examples.html#/html/body/div/div/div/div/div/p/a at Line 314, column 2: The link 'Patient-ExamplePatientInstance.html' for "Max Mustermann-Testpatient" cannot be resolved
-ERROR: de/profiles.html#/html/body/div/div/div/div/div/p/a at Line 317, column 2: The link 'StructureDefinition-example-patient.html' for "Example Patient" cannot be resolved
-ERROR: en/examples.html#/html/body/div/div/div/div/div/p/a at Line 350, column 2: The link 'Patient-ExamplePatientInstance.html' for "Max Mustermann-Testpatient" cannot be resolved
-ERROR: en/profiles.html#/html/body/div/div/div/div/div/p/a at Line 352, column 2: The link 'StructureDefinition-example-patient.html' for "Example Patient" cannot be resolved
+WARNING: de/value-sets.html#/html/body/div/div/div/div/div/p/a at Line 328, column 5: The link 'https://www.medizininformatik-initiative.de/fhir/modul-consent/ValueSet/mii-vs-consent-signaturetypes' for "https://www.medizininformatik-initiative.de/fhir/modul-consent/ValueSet/mii-vs-consent-signaturetypes" is a canonical link and is therefore unsafe with regard to versions
+ERROR: en/examples.html#/html/body/div/div/div/div/div/p/a at Line 342, column 2: The link 'Patient-ExamplePatientInstance.html' for "Max Mustermann-Testpatient" cannot be resolved
+ERROR: en/profiles.html#/html/body/div/div/div/div/div/p/a at Line 344, column 2: The link 'StructureDefinition-example-patient.html' for "Example Patient" cannot be resolved
 WARNING: 5: An HTML fragment from the set [expansion-params.xhtml, expansion-params.xhtml] is not included anywhere in the produced implementation guide
+== fsh-generated/resources/CapabilityStatement-mii-cap-consent-server.json ==
+INFORMATION: CapabilityStatement.rest[0].resource[0].supportedProfile[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/modul-consent/StructureDefinition/mii-pr-consent-einwilligung to 2026.0.0
+INFORMATION: CapabilityStatement.rest[0].resource[0].searchParam[0].definition: Pinned the version of https://www.medizininformatik-initiative.de/fhir/modul-consent/SearchParameter/mii-sp-consent-policyuri to 2026.0.0
+INFORMATION: CapabilityStatement.rest[0].resource[0].searchParam[1].definition: Pinned the version of https://www.medizininformatik-initiative.de/fhir/modul-consent/SearchParameter/mii-sp-consent-provisioncode to 2026.0.0
+INFORMATION: CapabilityStatement.rest[0].resource[0].searchParam[2].definition: Pinned the version of https://www.medizininformatik-initiative.de/fhir/modul-consent/SearchParameter/mii-sp-consent-provisioncodeperiod to 2026.0.0
+INFORMATION: CapabilityStatement.rest[0].resource[0].searchParam[3].definition: Pinned the version of https://www.medizininformatik-initiative.de/fhir/modul-consent/SearchParameter/mii-sp-consent-provisioncodetype to 2026.0.0
+INFORMATION: CapabilityStatement.rest[0].resource[0].searchParam[4].definition: Pinned the version of https://www.medizininformatik-initiative.de/fhir/modul-consent/SearchParameter/mii-sp-consent-provisionperiod to 2026.0.0
+INFORMATION: CapabilityStatement.rest[0].resource[0].searchParam[5].definition: Pinned the version of https://www.medizininformatik-initiative.de/fhir/modul-consent/SearchParameter/mii-sp-consent-provisiontype to 2026.0.0
+INFORMATION: CapabilityStatement.rest[0].resource[1].supportedProfile[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/modul-consent/StructureDefinition/mii-pr-consent-provenance to 2026.0.0
+INFORMATION: CapabilityStatement.rest[0].resource[2].supportedProfile[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/modul-consent/StructureDefinition/mii-pr-consent-documentreference to 2026.0.0
+INFORMATION: CapabilityStatement/mii-cap-consent-server: CapabilityStatement.jurisdiction[0].coding[0].display: There are no valid display names found for the code urn:iso:std:iso:3166#DE for language(s) 'de'. The display is 'Germany' which is a valid display for the default language
+INFORMATION: Resource: The resource CapabilityStatement/mii-cap-consent-server could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
 == fsh-generated/resources/CodeSystem-2.16.840.1.113883.3.1937.777.24.5.2--20210423105554.json ==
 INFORMATION: CodeSystem.meta.profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/shareablecodesystem to 4.0.2
 INFORMATION: CodeSystem/2.16.840.1.113883.3.1937.777.24.5.2--20210423105554: CodeSystem.jurisdiction[0].coding[0].display: There are no valid display names found for the code urn:iso:std:iso:3166#DE for language(s) 'de'. The display is 'Germany' which is a valid display for the default language
@@ -248,6 +260,7 @@ INFORMATION: ImplementationGuide.definition.page.title: Unused 'en' translation 
 INFORMATION: ImplementationGuide.definition.page.title: Unused 'en' translation 'UML Diagrams' -> 'UML-Diagramme'
 INFORMATION: ImplementationGuide.definition.page.title: Unused 'en' translation 'Security and Privacy' -> 'Sicherheit und Datenschutz'
 INFORMATION: ImplementationGuide.definition.page.title: Unused 'en' translation 'Profiles' -> 'Profile'
+INFORMATION: ImplementationGuide.definition.page.title: Unused 'en' translation 'Extensions' -> 'Extensions'
 INFORMATION: ImplementationGuide.definition.page.title: Unused 'en' translation 'Capability Statements' -> 'CapabilityStatements'
 INFORMATION: ImplementationGuide.definition.page.title: Unused 'en' translation 'Search Parameters' -> 'Suchparameter'
 INFORMATION: ImplementationGuide.definition.page.title: Unused 'en' translation 'Operations' -> 'Operationen'

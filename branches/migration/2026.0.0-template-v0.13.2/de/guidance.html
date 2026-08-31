@@ -181,8 +181,6 @@
     <a data-toggle="dropdown" href="guidance.html" class="dropdown-toggle">Anleitung<b class="caret"> </b></a>
     <ul class="dropdown-menu">
       <li><a href="guidance.html">Anleitung</a></li>
-      <!-- OPTIONAL (0..1) — siehe docs/optional-pages.md -->
-      <li><a href="researcher-guidance.html">Anleitung für Forschende (optional)</a></li>
       <li><a href="implementer-guidance.html">Anleitung für Implementierende</a></li>
       <!-- Nur-Link-Eintrag: die Seite "Logische Modelle" (Begründung im Quell-Menü) -->
       <li><a href="logical-models.html">Datensätze und Beschreibungen</a></li>
@@ -207,13 +205,9 @@
     <ul class="dropdown-menu">
       <li><a href="artifacts.html">Artefakt-Übersicht</a></li>
       <li><a href="profiles.html">Profile</a></li>
-      <!-- OPTIONAL (0..1) — siehe docs/optional-pages.md -->
-      <li><a href="extensions.html">Extensions (optional)</a></li>
       <li><a href="capability-statements.html">CapabilityStatements</a></li>
       <!-- OPTIONAL (0..1) — siehe docs/optional-pages.md -->
       <li><a href="search-parameters.html">Suchparameter (optional)</a></li>
-      <!-- OPTIONAL (0..1) — siehe docs/optional-pages.md -->
-      <li><a href="operations.html">Operationen (optional)</a></li>
       <li><a href="logical-models.html">Logische Modelle</a></li>
       <!-- OPTIONAL (0..1) — siehe docs/optional-pages.md -->
       <li><a href="value-sets.html">ValueSets (optional)</a></li>
@@ -229,8 +223,6 @@
          die Metadaten-Übersicht ist optional. -->
     <a data-toggle="dropdown" href="version-history.html" class="dropdown-toggle">Metadaten<b class="caret"> </b></a>
     <ul class="dropdown-menu">
-      <!-- OPTIONAL (0..1) — siehe docs/optional-pages.md -->
-      <li><a href="metadata.html">Metadaten-Übersicht (optional)</a></li>
       <li><a href="version-history.html">Versionierung</a></li>
     </ul>
   </li>
@@ -308,11 +300,12 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <ul id="markdown-toc">
   <li><a href="#allgemeine-umsetzungshinweise" id="markdown-toc-allgemeine-umsetzungshinweise">Allgemeine Umsetzungshinweise</a></li>
   <li><a href="#zielgruppenspezifische-hinweise" id="markdown-toc-zielgruppenspezifische-hinweise">Zielgruppenspezifische Hinweise</a></li>
+  <li><a href="#beschreibung-von-szenarien-für-die-anwendung-des-moduls" id="markdown-toc-beschreibung-von-szenarien-für-die-anwendung-des-moduls">Beschreibung von Szenarien für die Anwendung des Moduls</a></li>
 </ul>
 
 </div>
 <!-- markdownlint-disable MD041 -->
-<!-- Übersichtsseite "Anleitung". Ersetzen Sie die [TODO]-Hinweise; die
+<!-- Übersichtsseite "Anleitung" (Szenarien-Inhalt aus dem Quell-Leitfaden übernommen); die
      Unterseiten-Struktur folgt kerndatensatz-basis. -->
 
 <p>Dieser Abschnitt bündelt die fachlichen Hinweise zur Umsetzung und Nutzung des
@@ -333,21 +326,32 @@ und ihrer Beziehungen.</li>
 <h3 id="zielgruppenspezifische-hinweise">Zielgruppenspezifische Hinweise</h3>
 
 <ul>
-  <li><strong><a href="researcher-guidance.html">Anleitung für Forschende</a></strong> — für Forschende, die
-Moduldaten nutzen.</li>
   <li><strong><a href="implementer-guidance.html">Anleitung für Implementierende</a></strong> — technische
 Hinweise für DIZ-Implementierende.</li>
 </ul>
-
-<blockquote class="ig-highlight ig-highlight-grey">
-  <p>[TODO: Ergänzen Sie modul-spezifische Hinweise, die für alle Zielgruppen
-relevant sind — z. B. den fachlichen Geltungsbereich oder Abgrenzungen.]</p>
-</blockquote>
 
 <hr />
 <p>Für die KDS-weiten Konformitätsanforderungen siehe die
 <a href="https://github.com/medizininformatik-initiative/kerndatensatz-meta/wiki/Conformance">Konformitätsregeln des Meta-Moduls</a>;
 für die technischen Artefakte siehe <a href="profiles.html">Profile</a>.</p>
+
+<!-- Wortgetreu übertragen aus der Simplifier-Quellseite
+     https://simplifier.net/guide/miiigmodulconsent/MIIIGModulConsent/AnwendungsflleInformationsmodell/BeschreibungvonSzenarienfrdieAnwendungdesModuls?version=2026.0.0
+     (Harvest 2026-08-31, migration-log/guide-harvest/); interne Links auf die
+     Zielseiten dieser IG-Struktur umgeschrieben (migration-log/page-map.tsv). -->
+
+<h3 id="beschreibung-von-szenarien-für-die-anwendung-des-moduls">Beschreibung von Szenarien für die Anwendung des Moduls</h3>
+
+<p>Das Erweiterungsmodul Consent stellt die elektronische Abbildung des <a href="https://www.medizininformatik-initiative.de/de/mustertext-zur-patienteneinwilligung">MII Consent</a> bereit, kann darüber hinaus aber auch für die Abbildung weiterer Einwilligungen ermöglichen. Dies ist eine Voraussetzung für die Berücksichtigung des Patientenwillens bei der Verwendung der im Rahmen der Versorgung erfassten medizinischen Daten des Patienten für Forschungszwecke. Die Einwilligung ist vor allem dann erforderlich, wenn der Nutzungszweck über die Forschungsklauseln der jeweiligen anwendbaren Gesetze hinausgeht.</p>
+
+<p>Eine wichtige Maßzahl für die medizinische Forschung ist u.a., wie viele Patienten bestimmten Kriterien genügen (Fallzahl) und ob diese Patienten der Verwendung ihrer Daten für Forschungszwecke zugestimmt haben. Entsprechende Anfragen können nur effizient elektronisch verarbeitet bzw. beantwortet werden, wenn der Einwilligungsstatus elektronisch geprüft werden kann. Derartige Fallzahlabfragen unter Berücksichtigung des Einwilligungsstatus sind essentiell für Anwendungsfälle, wie ‘Fallzahl-Schätzung’, ‘Feasibility-Abfragen’ und ‘Data Sharing’, für die MII übergreifenden Use Cases CORD und POLAR, sowie für die <a href="https://www.medizininformatik-initiative.de/de/use-cases-und-projekte">Use Cases</a> der <a href="https://www.medizininformatik-initiative.de/index.php/de/konsortien">MII-Konsortien</a>.</p>
+
+<p>Die standardisierte Abbildung der Consentinformationen im Kerndatensatz ist erforderlich, damit diese als Suchkriterium insbesondere bei standortübergreifenden Anfragen einbezogen werden können.</p>
+
+<!-- DERIVED:bridge source=anwendungsflleinformationsmodell-fragebgen.md gate=B -->
+<blockquote class="ig-highlight ig-highlight-blue">
+  <p><strong>Written during migration - review before release.</strong> Die Abbildung der Einwilligungs-Fragebögen (Questionnaire-basierte Inhalte) beschreibt die Unterseite <a href="frageboegen.html">Fragebögen</a>.</p>
+</blockquote>
 
 
 
@@ -374,7 +378,7 @@ für die technischen Artefakte siehe <a href="profiles.html">Profile</a>.</p>
 
           IG © 2019+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.netzwerk-universitaetsmedizin.de">NUM-DIZ</a>.  
           Package de.medizininformatikinitiative.kerndatensatz.consent#2026.0.0 basiert auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
-          Erstellt <span title="Mon, Aug 31, 2026 18:29+0000">2026-08-31</span>
+          Erstellt <span title="Mon, Aug 31, 2026 18:40+0000">2026-08-31</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
             <!-- Branding override for the fhir2.base.template footer fragment.

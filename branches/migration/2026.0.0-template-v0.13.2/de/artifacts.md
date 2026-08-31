@@ -7,6 +7,14 @@
 
 Diese Seite bietet eine Liste der FHIR-Artefakte, die in diesem Implementierungsleitfaden definiert sind.
 
+### Verhalten: CapabilityStatements 
+
+Die folgenden Artefakte definieren die spezifischen Fähigkeiten, die verschiedene Systemtypen haben müssen, um diesem Implementierungsleitfaden zu entsprechen. Von Systemen, die mit dem Implementierungsleitfaden konform sind, wird erwartet, dass sie die Konformität mit einem oder mehreren der folgenden Capability Statements deklarieren.
+
+| | |
+| :--- | :--- |
+| [ MII KDS Modul Consent — CapabilityStatement (Migrationsvorschlag)  ](CapabilityStatement-mii-cap-consent-server.md) | MIGRATION-GENERATED PROPOSAL (not part of the published 2026.0.0 release): server capabilities derived from the module's profiles and search parameters during the migration onto the MII KDS module template. The module team confirms, amends or deletes this artefact at Gate A. |
+
 ### Verhalten: Suchparameter (SearchParameter) 
 
 Diese definieren die Eigenschaften, nach denen ein RESTful-Server durchsucht werden kann. Sie können auch zum Sortieren und Einbeziehen verwandter Ressourcen verwendet werden.

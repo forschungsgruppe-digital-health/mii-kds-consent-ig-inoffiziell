@@ -14,7 +14,6 @@ This section collects the domain guidance for implementing and using the **Conse
 
 ### Audience-Specific Guidance
 
-* **[Guidance for Researchers](researcher-guidance.md)** — for researchers using the module's data.
 * **[Guidance for Implementers](implementer-guidance.md)** — technical guidance for DIC implementers.
 
 > [TODO: Add the module-specific guidance that is relevant to all audiences — e.g. the domain scope or its delimitations.]

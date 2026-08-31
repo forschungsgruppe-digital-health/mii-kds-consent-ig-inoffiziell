@@ -5,13 +5,43 @@
 
 ## ValueSets
 
-> **Optionale Seite (0..1).** Das KDS-Modulmenü führt diese Seite als **optional**. Entscheiden Sie für Ihr Modul: Seite **behalten** — Inhalte ausfüllen und dieses Banner samt `OPTIONAL-PAGE`-Marker-Kommentar löschen (in dieser Datei UND in der englischen Quellseite) — oder Seite **entfernen**, nach der Schritt-für-Schritt-Anleitung in [`docs/optional-pages.md`](https://github.com/forschungsgruppe-digital-health/mii-kds-consent-ig-inoffiziell/blob/main/docs/optional-pages.md) dieses Repositories. Ein Release darf dieses Banner nicht enthalten (Konventions-Check M9).
-
 ### ValueSets
 
-Diese Seite beschreibt die ValueSets des Moduls **Consent** (Namenskonvention `MII_VS_<Modul>_<Name>`). Allgemeine Hinweise zur Verwendung von Codes: siehe [FHIR Terminology](http://hl7.org/fhir/R4/terminologies.html); die zugrunde liegenden CodeSystems beschreibt die Seite [CodeSystems](code-systems.md).
+Diese Seite beschreibt die ValueSets des Moduls **Consent**; die zugrunde liegenden CodeSystems beschreibt die Seite [CodeSystems](code-systems.md).
 
-**Expansionen:** ValueSet-Expansionen dieses Leitfadens werden über einen FHIR-Terminologieserver erzeugt — über SU-TermServ, sofern das Client-Zertifikat konfiguriert ist, sonst über den öffentlichen HL7-Server `tx.fhir.org` (dann expandieren einige KDS-spezifische ValueSets ggf. nicht vollständig).
+### MII_VS_Consent_Policy
 
-> [TODO: Falls Ihr Modul SNOMED CT nutzt, geben Sie die verwendete Edition/Version an. Listen Sie die modul-eigenen ValueSets auf oder verweisen Sie auf die automatisch erzeugte Artefakt-Liste — oder entfernen Sie diese Seite, wenn Ihr Modul keine definiert.]
+Erweiterungen des PolicyValueSets im ART-DECOR werden zeitnah durch die TFCU in diesem IG eingepflegt. Eine erneute Ballotierung ist nicht erforderlich.
+
+Siehe die Artefaktseite [MII_VS_Consent_Policy](ValueSet-2.16.840.1.113883.3.1937.777.24.11.36--20230331232804.md).
+
+### mii-vs-consent-signaturetypes
+
+Gemäß HL7-D AG Einwilligungsmanagement-Empfehlung
+
+[https://www.medizininformatik-initiative.de/fhir/modul-consent/ValueSet/mii-vs-consent-signaturetypes](https://www.medizininformatik-initiative.de/fhir/modul-consent/ValueSet/mii-vs-consent-signaturetypes)
+
+| | | | |
+| :--- | :--- | :--- | :--- |
+| Art der Unterschrift | System | Code | Display |
+
+| — | — | — | — |
+
+| | | | |
+| :--- | :--- | :--- | :--- |
+| Unterschrift der einwilligenden Person | urn:iso-astm:E1762-95:2013 | 1.2.840.10065.1.12.1.7 | Consent Signature |
+
+| | | | |
+| :--- | :--- | :--- | :--- |
+| Unterschrift der (gesetzlich) vertretenden Person | urn:iso-astm:E1762-95:2013 | 1.2.840.10065.1.12.1.11 | Consent Witness Signature |
+
+| | | | |
+| :--- | :--- | :--- | :--- |
+| Unterschrift der aufklärenden Person | urn:iso-astm:E1762-95:2013 | 1.2.840.10065.1.12.1.5 | Verification Signature |
+
+### mii-vs-consent-answer
+
+Dieses ValueSet findet ausschließlich im Kontext von Questionnaires Verwendung.
+
+Siehe die Artefaktseite [mii-vs-consent-answer](ValueSet-2.16.840.1.113883.3.1937.777.24.11.30--20210323234509.md).
 

@@ -67,8 +67,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"9"}
-    h3,h4,h5,h6{--heading-prefix:"9"}</style>
+    <style type="text/css">h2{--heading-prefix:"7"}
+    h3,h4,h5,h6{--heading-prefix:"7"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -181,8 +181,6 @@
     <a data-toggle="dropdown" href="guidance.html" class="dropdown-toggle">Anleitung<b class="caret"> </b></a>
     <ul class="dropdown-menu">
       <li><a href="guidance.html">Anleitung</a></li>
-      <!-- OPTIONAL (0..1) — siehe docs/optional-pages.md -->
-      <li><a href="researcher-guidance.html">Anleitung für Forschende (optional)</a></li>
       <li><a href="implementer-guidance.html">Anleitung für Implementierende</a></li>
       <!-- Nur-Link-Eintrag: die Seite "Logische Modelle" (Begründung im Quell-Menü) -->
       <li><a href="logical-models.html">Datensätze und Beschreibungen</a></li>
@@ -207,13 +205,9 @@
     <ul class="dropdown-menu">
       <li><a href="artifacts.html">Artefakt-Übersicht</a></li>
       <li><a href="profiles.html">Profile</a></li>
-      <!-- OPTIONAL (0..1) — siehe docs/optional-pages.md -->
-      <li><a href="extensions.html">Extensions (optional)</a></li>
       <li><a href="capability-statements.html">CapabilityStatements</a></li>
       <!-- OPTIONAL (0..1) — siehe docs/optional-pages.md -->
       <li><a href="search-parameters.html">Suchparameter (optional)</a></li>
-      <!-- OPTIONAL (0..1) — siehe docs/optional-pages.md -->
-      <li><a href="operations.html">Operationen (optional)</a></li>
       <li><a href="logical-models.html">Logische Modelle</a></li>
       <!-- OPTIONAL (0..1) — siehe docs/optional-pages.md -->
       <li><a href="value-sets.html">ValueSets (optional)</a></li>
@@ -229,8 +223,6 @@
          die Metadaten-Übersicht ist optional. -->
     <a data-toggle="dropdown" href="version-history.html" class="dropdown-toggle">Metadaten<b class="caret"> </b></a>
     <ul class="dropdown-menu">
-      <!-- OPTIONAL (0..1) — siehe docs/optional-pages.md -->
-      <li><a href="metadata.html">Metadaten-Übersicht (optional)</a></li>
       <li><a href="version-history.html">Versionierung</a></li>
     </ul>
   </li>
@@ -304,18 +296,50 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 
     <p><!-- white space is critical inside of capture --></p>
-<div>
-<!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
-</div>
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#logische-modelle" id="markdown-toc-logische-modelle">Logische Modelle</a></li>
+  <li><a href="#datensätze-inkl-beschreibungen" id="markdown-toc-datensätze-inkl-beschreibungen">Datensätze inkl. Beschreibungen</a></li>
+</ul>
 
+</div>
 <!-- markdownlint-disable MD041 -->
+<!-- Wortgetreu übertragen aus der Simplifier-Quellseite
+     https://simplifier.net/guide/miiigmodulconsent/MIIIGModulConsent/AnwendungsflleInformationsmodell/Datenstzeinkl.Beschreibungen?version=2026.0.0
+     (Harvest 2026-08-31, migration-log/guide-harvest/); interne Links auf die
+     Zielseiten dieser IG-Struktur umgeschrieben (migration-log/page-map.tsv). -->
+<!-- Der Ordnerknoten "Anwendungsfälle / Informationsmodell" der Quelle trug nur
+     den Satz "Diese Seite wurde absichtlich leer gelassen." — als Quelltextlauf
+     hier konserviert, nicht gerendert (page-map: Ordner-Stub). -->
 <h3 id="logische-modelle">Logische Modelle</h3>
 
-<p>Die logischen Datenmodelle des Moduls <strong>Consent</strong> beschreiben den fachlichen Datensatz unabhängig von der konkreten FHIR-Repräsentation.</p>
+<p>Das Modul <strong>Consent</strong> definiert keine eigenen FHIR Logical Models; die
+fachliche Datensatzbeschreibung ist vollständig in ART-DECOR hinterlegt
+(siehe unten).</p>
 
-<blockquote class="ig-highlight ig-highlight-grey">
-  <p>[TODO: Fügen Sie die logischen Modelle ein, oder entfernen Sie diese Seite.]</p>
-</blockquote>
+<h3 id="datensätze-inkl-beschreibungen">Datensätze inkl. Beschreibungen</h3>
+
+<p>Die Datensatzbeschreibung des KDS Modul Consent ist vollumfänglich im ART-DECOR hinterlegt:</p>
+
+<ul>
+  <li>
+    <p><a href="https://art-decor.org/art-decor/decor-datasets--mide-?conceptId=2.16.840.1.113883.3.1937.777.24.2.184">formularbasierte Beschreibung MII Dataset, Concept 'Consent'</a></p>
+  </li>
+  <li>
+    <p><a href="https://art-decor.org/decor/services/RetrieveDataSet?conceptId=2.16.840.1.113883.3.1937.777.24.2.184">tabellarische Beschreibung MII Dataset, Concept 'Consent'</a></p>
+  </li>
+</ul>
+
+<p>Dies umfasst die Beschreibungen des MII Broad Consent in folgenden Versionen:</p>
+
+<ul>
+  <li>
+    <p>MII Broad Consent Version 1.6.d</p>
+  </li>
+  <li>
+    <p>MII Broad Consent Version 1.6.f</p>
+  </li>
+</ul>
 
 
 
@@ -342,7 +366,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
           IG © 2019+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.netzwerk-universitaetsmedizin.de">NUM-DIZ</a>.  
           Package de.medizininformatikinitiative.kerndatensatz.consent#2026.0.0 basiert auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
-          Erstellt <span title="Mon, Aug 31, 2026 18:29+0000">2026-08-31</span>
+          Erstellt <span title="Mon, Aug 31, 2026 18:40+0000">2026-08-31</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
             <!-- Branding override for the fhir2.base.template footer fragment.

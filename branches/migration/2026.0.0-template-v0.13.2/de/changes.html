@@ -67,8 +67,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"14"}
-    h3,h4,h5,h6{--heading-prefix:"14"}</style>
+    <style type="text/css">h2{--heading-prefix:"12"}
+    h3,h4,h5,h6{--heading-prefix:"12"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -181,8 +181,6 @@
     <a data-toggle="dropdown" href="guidance.html" class="dropdown-toggle">Anleitung<b class="caret"> </b></a>
     <ul class="dropdown-menu">
       <li><a href="guidance.html">Anleitung</a></li>
-      <!-- OPTIONAL (0..1) — siehe docs/optional-pages.md -->
-      <li><a href="researcher-guidance.html">Anleitung für Forschende (optional)</a></li>
       <li><a href="implementer-guidance.html">Anleitung für Implementierende</a></li>
       <!-- Nur-Link-Eintrag: die Seite "Logische Modelle" (Begründung im Quell-Menü) -->
       <li><a href="logical-models.html">Datensätze und Beschreibungen</a></li>
@@ -207,13 +205,9 @@
     <ul class="dropdown-menu">
       <li><a href="artifacts.html">Artefakt-Übersicht</a></li>
       <li><a href="profiles.html">Profile</a></li>
-      <!-- OPTIONAL (0..1) — siehe docs/optional-pages.md -->
-      <li><a href="extensions.html">Extensions (optional)</a></li>
       <li><a href="capability-statements.html">CapabilityStatements</a></li>
       <!-- OPTIONAL (0..1) — siehe docs/optional-pages.md -->
       <li><a href="search-parameters.html">Suchparameter (optional)</a></li>
-      <!-- OPTIONAL (0..1) — siehe docs/optional-pages.md -->
-      <li><a href="operations.html">Operationen (optional)</a></li>
       <li><a href="logical-models.html">Logische Modelle</a></li>
       <!-- OPTIONAL (0..1) — siehe docs/optional-pages.md -->
       <li><a href="value-sets.html">ValueSets (optional)</a></li>
@@ -229,8 +223,6 @@
          die Metadaten-Übersicht ist optional. -->
     <a data-toggle="dropdown" href="version-history.html" class="dropdown-toggle">Metadaten<b class="caret"> </b></a>
     <ul class="dropdown-menu">
-      <!-- OPTIONAL (0..1) — siehe docs/optional-pages.md -->
-      <li><a href="metadata.html">Metadaten-Übersicht (optional)</a></li>
       <li><a href="version-history.html">Versionierung</a></li>
     </ul>
   </li>
@@ -393,27 +385,97 @@ werden können.</p>
 
 <hr />
 
+<!-- Ab hier: wortgetreue Übernahme der Release Notes der Quelle
+     (https://simplifier.net/guide/miiigmodulconsent/MIIIGModulConsent/Release-Notes?version=2026.0.0, Harvest 2026-08-31).
+     Historische Abschnitte behalten das Format der Quelle (keine nachträgliche
+     Keep-a-Changelog-Umgruppierung veröffentlichter Einträge). -->
+
 <h4 id="version-202600">Version 2026.0.0</h4>
 
-<p><strong>Datum:</strong> 2025-12-18</p>
-
-<h5 id="hinzugefügt">Hinzugefügt</h5>
+<p>Datum 18.12.2025</p>
 
 <ul>
-  <li>Erstveröffentlichung des Moduls <strong>Consent</strong>.</li>
+  <li>
+    <p>ValueSet <em>MII_VS_Consent_SignatureTypes</em> um den Code <em>1.2.840.10065.1.12.1.5</em> "Verification Signature" erweitert</p>
+  </li>
+  <li>
+    <p>CodeSystem <em>MII Consent: Policy CodeSystem</em>   - ergänzt um Gültigkeitsdauer je Policy (Property <em>period-of-validity</em> mit ISO 8601:2004 date String bzw. 'einmalig')   - Policy <em>2.16.840.1.113883.3.1937.777.24.5.3.46</em> "MDAT retrospektiv wissenschaftlich nutzen" ist nun als veraltet markiert (deprecated) und soll nicht mehr verwendet werden   - Policy <em>2.16.840.1.113883.3.1937.777.24.5.3.47</em> "MDAT retrospektiv zusammenfuehren Dritte" ist nun als veraltet markiert (deprecated) und soll nicht mehr verwendet werden   - Policy <em>2.16.840.1.113883.3.1937.777.24.5.3.16</em> "KKDAT 5J prospektiv speichern verarbeiten" ist nun als veraltet markiert (deprecated) und soll nicht mehr verwendet werden   - Policy <em>2.16.840.1.113883.3.1937.777.24.5.3.17</em> "KKDAT 5J prospektiv wissenschaftlich nutzen" ist nun als veraltet markiert (deprecated) und soll nicht mehr verwendet werden   - Markdown Repräsentation in Tabellenform zur Darstellung des CodeSystems unter 'Terminologie' im IG erstellt</p>
+  </li>
+  <li>
+    <p>CodeSystem <em>mii-cs-consent-version-modules</em> für die BC-Versionen und Zusatzmodule erstellt   - Ergänzung von OIDs für Ablehnungen (BC v1.6d und v1.7.2)</p>
+  </li>
+  <li>
+    <p><em>Consent.provision.period.end</em> und <em>Consent.provision.provision.period.end</em> sind nun Kardinalität 0..1, also nicht mehr verpflichtend</p>
+  </li>
+  <li>
+    <p>Beispiele überarbeitet und ergänzt</p>
+  </li>
+  <li>
+    <p>IG: redaktionelle Überarbeitung und Erläuterungen verbessert   - neue Seite <em>Empfehlungen zur praktischen Anwendung</em> hinzugefügt (ResultType)   - Umgang mit Widerrufen bei Einwilligungen von Minderjährigen (Gültigkeitsdauer bzw. Ablauf der Einwilligung)   - Hinweise zur Verwendung im Modellvorhaben Genomsequenzierung (§64e)   - Erläuterung zu neuen Suchparametern ergänzt</p>
+  </li>
 </ul>
 
-<blockquote class="ig-highlight ig-highlight-grey">
-  <p>[TODO: Ersetzen Sie diesen Abschnitt durch die echten Einträge Ihres ersten
-Releases und ergänzen Sie für jede weitere Version oben einen neuen Abschnitt.
-Bei einem Modul mit mehreren Teilbereichen gruppiert <code class="language-plaintext highlighter-rouge">kerndatensatz-basis</code> die
-Einträge einer Version thematisch (etwa <em>Dokumentation</em>,
-<em>Terminologie-Aktualisierungen</em> und je eine Überschrift pro Teilmodul) und
-stellt jedem Stichpunkt <strong>Hinzugefügt:</strong> / <strong>Geändert:</strong> / <strong>Entfernt:</strong>
-voran — nutzen Sie die für Ihr Modul passende der beiden Gruppierungen,
-bleiben Sie dabei aber über alle Versionen hinweg und in beiden Sprachen
-einheitlich.]</p>
-</blockquote>
+<p>Full Changelog: <a href="https://github.com/medizininformatik-initiative/kerndatensatzmodul-consent/compare/2025.0.3...2026.0.0">https://github.com/medizininformatik-initiative/kerndatensatzmodul-consent/compare/2025.0.3…2026.0.0</a></p>
+
+<h4 id="version-202504">Version 2025.0.4</h4>
+
+<p>Datum 16.06.2025</p>
+
+<ul>
+  <li>
+    <p>Terminologien:   - Policy CodeSystem Ressource display angepasst (Abkürzung-&gt;sprechende Bezeichner)</p>
+  </li>
+  <li>
+    <p>Bugfix:   - pagelink-Fehler behoben</p>
+  </li>
+</ul>
+
+<h4 id="version-202503">Version 2025.0.3</h4>
+
+<p>Datum 12.06.2025</p>
+
+<ul>
+  <li>IG/Consent:   - Unterstützung von Zusatzmodul Fachnetzwerk Infektion - SNID (Z4) hinzugefügt   - Unterstützung von Zusatzmodul Deutsche Zentrum für Psychische Gesundheit - DZPG (Z5) hinzugefügt   - Consent: Liste der verfügbaren MII Consents zur Verwendung in Consent.policy.uri aktualisiert   - Terminologies: Policy CodeSystem um SNID und DZPG Policies erweitert</li>
+</ul>
+
+<p>Full Changelog: <a href="https://github.com/medizininformatik-initiative/kerndatensatzmodul-consent/compare/2025.0.0...2025.0.3">https://github.com/medizininformatik-initiative/kerndatensatzmodul-consent/compare/2025.0.0…2025.0.3</a></p>
+
+<h4 id="version-202502">Version 2025.0.2</h4>
+
+<p>Datum 11.06.2025</p>
+
+<ul>
+  <li>IG/Consent:   - Unterstützung von Zusatzmodul Fachnetzwerk Infektion - SNID (Z4) hinzugefügt     - Consent: Liste der verfügbaren MII Consents zur Verwendung in Consent.policy.uri aktualisiert     - Terminologies: Policy CodeSystem um SNID Policies erweitert</li>
+</ul>
+
+<h4 id="version-202501">Version 2025.0.1</h4>
+
+<p>Datum 21.01.2025</p>
+
+<ul>
+  <li>IG/Consent:   - Liste der verfügbaren MII Consents zur Verwendung in Consent.policy.uri aktualisiert:     - Zusatzmodul ACRIBiS (Z2)     - Zusatzmodul Patientenbefragung (Z3)</li>
+</ul>
+
+<h4 id="version-202500">Version 2025.0.0</h4>
+
+<p>Datum 17.12.2024</p>
+
+<ul>
+  <li>
+    <p>Consent-Ressource   - Consent.category -&gt; max value="*"   - Consent.provision.type -&gt;fixedCode deny entfernt   - Consent.provision.provision.type -&gt;fixedCode permit entfernt￼   - IG/Consent entspr. angepasst</p>
+  </li>
+  <li>
+    <p>IG/Consent   - Liste der verfügbaren MII Consents zur Verwendung in Consent.policy.uri aktualisiert (Widerrufe und Minderjährige)</p>
+  </li>
+  <li>
+    <p>Policy-CodeSystem: acribis und PROM Policies hinzugefügt</p>
+  </li>
+  <li>
+    <p>IG/Terminologie:   - Level-Angaben korrigiert   - Formatierung Hinweis-Text korrigiert   - Hinweis 1 (FHIR+Policies) korrigiert</p>
+  </li>
+</ul>
+
+<p>Full Changelog: <a href="https://github.com/medizininformatik-initiative/kerndatensatzmodul-consent/compare/1.0.7...2025.0.0">https://github.com/medizininformatik-initiative/kerndatensatzmodul-consent/compare/1.0.7…2025.0.0</a></p>
 
 
 
@@ -440,7 +502,7 @@ einheitlich.]</p>
 
           IG © 2019+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.netzwerk-universitaetsmedizin.de">NUM-DIZ</a>.  
           Package de.medizininformatikinitiative.kerndatensatz.consent#2026.0.0 basiert auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
-          Erstellt <span title="Mon, Aug 31, 2026 18:29+0000">2026-08-31</span>
+          Erstellt <span title="Mon, Aug 31, 2026 18:40+0000">2026-08-31</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
             <!-- Branding override for the fhir2.base.template footer fragment.

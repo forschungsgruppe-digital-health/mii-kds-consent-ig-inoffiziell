@@ -14,10 +14,15 @@
  
 Dieses Profil beschreibt die Abbildung von Originaldokumenten zu Einwilligungen in der Medizininformatik-Initiative. Diese müssen im PDF-Format vorliegen. 
 
+Basierend auf den [Empfehlungen](https://ig.fhir.de/einwilligungsmanagement/stable/DocumentReference.html) der AG Einwilligungsmanagement, zielt das Profile **MIIConsentDocumentReference** auf ein real existierendes Dokument mit Bezug zum Einwilligungsdokument ab.
+
+Jedoch beschränkt auf Scans von Einwilligungsdokumenten im PDF-Format.
+
 **Usages:**
 
 * Refer to this Profile: [Profile - MI-I - Consent - Provenance](StructureDefinition-f675b1e8-9f3f-44e8-bb59-9681f78eb464.md)
 * Examples for this Profile: [DocumentReference/8a3d1799-2463-405e-b49c-6a16c8692b01](DocumentReference-8a3d1799-2463-405e-b49c-6a16c8692b01.md)
+* CapabilityStatements using this Profile: [MII KDS Modul Consent — CapabilityStatement (Migrationsvorschlag)](CapabilityStatement-mii-cap-consent-server.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/de.medizininformatikinitiative.kerndatensatz.consent|current/StructureDefinition/StructureDefinition-56375452-bfa1-4111-af7c-5b5ba9a1857c.json)
 

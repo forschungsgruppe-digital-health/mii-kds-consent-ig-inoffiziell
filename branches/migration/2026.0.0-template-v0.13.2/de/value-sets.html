@@ -67,8 +67,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"10"}
-    h3,h4,h5,h6{--heading-prefix:"10"}</style>
+    <style type="text/css">h2{--heading-prefix:"8"}
+    h3,h4,h5,h6{--heading-prefix:"8"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -181,8 +181,6 @@
     <a data-toggle="dropdown" href="guidance.html" class="dropdown-toggle">Anleitung<b class="caret"> </b></a>
     <ul class="dropdown-menu">
       <li><a href="guidance.html">Anleitung</a></li>
-      <!-- OPTIONAL (0..1) — siehe docs/optional-pages.md -->
-      <li><a href="researcher-guidance.html">Anleitung für Forschende (optional)</a></li>
       <li><a href="implementer-guidance.html">Anleitung für Implementierende</a></li>
       <!-- Nur-Link-Eintrag: die Seite "Logische Modelle" (Begründung im Quell-Menü) -->
       <li><a href="logical-models.html">Datensätze und Beschreibungen</a></li>
@@ -207,13 +205,9 @@
     <ul class="dropdown-menu">
       <li><a href="artifacts.html">Artefakt-Übersicht</a></li>
       <li><a href="profiles.html">Profile</a></li>
-      <!-- OPTIONAL (0..1) — siehe docs/optional-pages.md -->
-      <li><a href="extensions.html">Extensions (optional)</a></li>
       <li><a href="capability-statements.html">CapabilityStatements</a></li>
       <!-- OPTIONAL (0..1) — siehe docs/optional-pages.md -->
       <li><a href="search-parameters.html">Suchparameter (optional)</a></li>
-      <!-- OPTIONAL (0..1) — siehe docs/optional-pages.md -->
-      <li><a href="operations.html">Operationen (optional)</a></li>
       <li><a href="logical-models.html">Logische Modelle</a></li>
       <!-- OPTIONAL (0..1) — siehe docs/optional-pages.md -->
       <li><a href="value-sets.html">ValueSets (optional)</a></li>
@@ -229,8 +223,6 @@
          die Metadaten-Übersicht ist optional. -->
     <a data-toggle="dropdown" href="version-history.html" class="dropdown-toggle">Metadaten<b class="caret"> </b></a>
     <ul class="dropdown-menu">
-      <!-- OPTIONAL (0..1) — siehe docs/optional-pages.md -->
-      <li><a href="metadata.html">Metadaten-Übersicht (optional)</a></li>
       <li><a href="version-history.html">Versionierung</a></li>
     </ul>
   </li>
@@ -304,50 +296,89 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 
     <p><!-- white space is critical inside of capture --></p>
-<div>
-<!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#valuesets" id="markdown-toc-valuesets">ValueSets</a></li>
+  <li><a href="#mii_vs_consent_policy" id="markdown-toc-mii_vs_consent_policy">MII_VS_Consent_Policy</a></li>
+  <li><a href="#mii-vs-consent-signaturetypes" id="markdown-toc-mii-vs-consent-signaturetypes">mii-vs-consent-signaturetypes</a></li>
+  <li><a href="#mii-vs-consent-answer" id="markdown-toc-mii-vs-consent-answer">mii-vs-consent-answer</a></li>
+</ul>
+
 </div>
-
 <!-- markdownlint-disable MD041 -->
-<!-- Deutsche Übersetzung von input/pagecontent/value-sets.md (aufgeteilt aus
-     der früheren Seite terminology.md gemäß der TF-KDS-abgestimmten Menüstruktur).
-     Der IG-Publisher listet die ValueSets auf den Artefakt-Seiten automatisch;
-     hier stehen die MII-Hinweise dazu. -->
-<!-- OPTIONAL-PAGE (0..1) — Marker entfernen, wenn die Seite BLEIBT; andernfalls
-     die Seite gemäß docs/optional-pages.md entfernen. Der Konventions-Check
-     (M9) lässt ein Release mit diesem Marker fehlschlagen. -->
-
-<blockquote class="ig-highlight ig-highlight-grey">
-  <p><strong>Optionale Seite (0..1).</strong> Das KDS-Modulmenü führt diese Seite als
-<em>optional</em>. Entscheiden Sie für Ihr Modul: Seite <strong>behalten</strong> — Inhalte
-ausfüllen und dieses Banner samt <code class="language-plaintext highlighter-rouge">OPTIONAL-PAGE</code>-Marker-Kommentar löschen (in
-dieser Datei UND in der englischen Quellseite) — oder Seite <strong>entfernen</strong>,
-nach der Schritt-für-Schritt-Anleitung in <a href="https://github.com/forschungsgruppe-digital-health/mii-kds-consent-ig-inoffiziell/blob/main/docs/optional-pages.md"><code class="language-plaintext highlighter-rouge">docs/optional-pages.md</code></a> dieses
-Repositories. Ein Release darf dieses Banner nicht enthalten
-(Konventions-Check M9).</p>
-</blockquote>
-
+<!-- Quellseite (page-map SPLIT): Terminologien — Abschnitt "ValueSets". Die
+     gerenderten Kompositions-/Expansionszeilen der Quellseite erzeugt der IG
+     Publisher auf den Artefaktseiten neu. -->
 <h3 id="valuesets">ValueSets</h3>
 
-<p>Diese Seite beschreibt die ValueSets des Moduls <strong>Consent</strong>
-(Namenskonvention <code class="language-plaintext highlighter-rouge">MII_VS_&lt;Modul&gt;_&lt;Name&gt;</code>). Allgemeine Hinweise zur Verwendung
-von Codes: siehe
-<a href="http://hl7.org/fhir/R4/terminologies.html">FHIR Terminology</a>; die
-zugrunde liegenden CodeSystems beschreibt die Seite
-<a href="code-systems.html">CodeSystems</a>.</p>
+<p>Diese Seite beschreibt die ValueSets des Moduls <strong>Consent</strong>; die zugrunde
+liegenden CodeSystems beschreibt die Seite <a href="code-systems.html">CodeSystems</a>.</p>
 
-<p class="bg-info"><strong>Expansionen:</strong> ValueSet-Expansionen dieses Leitfadens werden über einen
-FHIR-Terminologieserver erzeugt — über SU-TermServ, sofern das
-Client-Zertifikat konfiguriert ist, sonst über den öffentlichen HL7-Server
-<code class="language-plaintext highlighter-rouge">tx.fhir.org</code> (dann expandieren einige KDS-spezifische ValueSets ggf. nicht
-vollständig).</p>
+<h3 id="mii_vs_consent_policy">MII_VS_Consent_Policy</h3>
 
-<blockquote class="ig-highlight ig-highlight-grey">
-  <p>[TODO: Falls Ihr Modul SNOMED CT nutzt, geben Sie die verwendete
-Edition/Version an. Listen Sie die modul-eigenen ValueSets auf oder verweisen
-Sie auf die automatisch erzeugte Artefakt-Liste — oder entfernen Sie diese
-Seite, wenn Ihr Modul keine definiert.]</p>
-</blockquote>
+<p>Erweiterungen des PolicyValueSets im ART-DECOR werden zeitnah durch die TFCU in diesem IG eingepflegt. Eine erneute Ballotierung ist nicht erforderlich.</p>
+
+<p>Siehe die Artefaktseite
+<a href="ValueSet-2.16.840.1.113883.3.1937.777.24.11.36--20230331232804.html">MII_VS_Consent_Policy</a>.</p>
+
+<h3 id="mii-vs-consent-signaturetypes">mii-vs-consent-signaturetypes</h3>
+
+<p>Gemäß HL7-D AG Einwilligungsmanagement-Empfehlung</p>
+
+<p><a href="https://www.medizininformatik-initiative.de/fhir/modul-consent/ValueSet/mii-vs-consent-signaturetypes">https://www.medizininformatik-initiative.de/fhir/modul-consent/ValueSet/mii-vs-consent-signaturetypes</a></p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Art der Unterschrift</td>
+      <td>System</td>
+      <td>Code</td>
+      <td>Display</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>| — | — | — | — |</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Unterschrift der einwilligenden Person</td>
+      <td>urn:iso-astm:E1762-95:2013</td>
+      <td>1.2.840.10065.1.12.1.7</td>
+      <td>Consent Signature</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Unterschrift der (gesetzlich) vertretenden Person</td>
+      <td>urn:iso-astm:E1762-95:2013</td>
+      <td>1.2.840.10065.1.12.1.11</td>
+      <td>Consent Witness Signature</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Unterschrift der aufklärenden Person</td>
+      <td>urn:iso-astm:E1762-95:2013</td>
+      <td>1.2.840.10065.1.12.1.5</td>
+      <td>Verification Signature</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="mii-vs-consent-answer">mii-vs-consent-answer</h3>
+
+<p>Dieses ValueSet findet ausschließlich im Kontext von Questionnaires Verwendung.</p>
+
+<p>Siehe die Artefaktseite
+<a href="ValueSet-2.16.840.1.113883.3.1937.777.24.11.30--20210323234509.html">mii-vs-consent-answer</a>.</p>
 
 
 
@@ -374,7 +405,7 @@ Seite, wenn Ihr Modul keine definiert.]</p>
 
           IG © 2019+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.netzwerk-universitaetsmedizin.de">NUM-DIZ</a>.  
           Package de.medizininformatikinitiative.kerndatensatz.consent#2026.0.0 basiert auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
-          Erstellt <span title="Mon, Aug 31, 2026 18:29+0000">2026-08-31</span>
+          Erstellt <span title="Mon, Aug 31, 2026 18:40+0000">2026-08-31</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
             <!-- Branding override for the fhir2.base.template footer fragment.
