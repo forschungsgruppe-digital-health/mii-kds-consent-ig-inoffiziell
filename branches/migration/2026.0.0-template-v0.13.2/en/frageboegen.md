@@ -1,56 +1,54 @@
-# Fragebögen - MII Implementation Guide Consent v2026.0.0
+# Questionnaires - MII Implementation Guide Consent v2026.0.0
 
-* [**Inhaltsverzeichnis**](toc.md)
-* [**Anleitung**](guidance.md)
-* **Fragebögen**
+* [**Table of Contents**](toc.md)
+* [**Guidance**](guidance.md)
+* **Questionnaires**
 
-## Fragebögen
+## Questionnaires
 
-### Fragebögen
+The [AG Einwilligungsmanagement](https://ig.fhir.de/einwilligungsmanagement/stable/) has dealt comprehensively with the modeling of consents and consent templates.
 
-Die [AG Einwilligungsmanagement](https://ig.fhir.de/einwilligungsmanagement/stable/) hat sich umfassend mit der Modellierung von Einwilligungen und Einwilligungsvorlagen befasst.
+This Implementation Guide builds substantially on that preliminary work.
 
-Der vorliegende Implementation Guide setzt wesentlich auf diesen Vorarbeiten auf.
+### The structured consent template
 
-### Die strukturierte Einwilligungsvorlage
+The profiles [Questionnaire Composed](https://ig.fhir.de/einwilligungsmanagement/stable/QuestionnaireComposed.html), [Template Frame](https://ig.fhir.de/einwilligungsmanagement/stable/TemplateFrame.html) and [Template Module](https://ig.fhir.de/einwilligungsmanagement/stable/TemplateModule.html) are based on the FHIR resource Questionnaire and serve to represent the consent form (here: MII Broad Consent).
 
-Die Profile [Questionnaire Composed](https://ig.fhir.de/einwilligungsmanagement/stable/QuestionnaireComposed.html), [Template Frame](https://ig.fhir.de/einwilligungsmanagement/stable/TemplateFrame.html) und [Template Module](https://ig.fhir.de/einwilligungsmanagement/stable/TemplateModule.html) basieren auf der FHIR Ressource Questionnaire und dienen der Abbildung des Einwilligungsformulars (hier: MII Broad Consent).
+The Template Module constitutes a reusable basic building block that is used or embedded in one or more form sections (TemplateFrames). One or more TemplateFrames can be composed into a complete, renderable form (QuestionnaireComposed).
 
-Dabei stellt das Template Module einen wiederverwendbaren basalen Bestandteil dar, welcher in einem oder mehreren Formularabschnitten (TemplateFrames) verwendet bzw. eingebunden wird. Ein oder mehrere TemplateFrames können zu einem vollständigen, render-fähigen Formular (QuestionnaireComposed) zusammengesetzt werden.
+### The completed consent
 
-### Die ausgefüllte Einwilligung
+The profile [QuestionnaireResponse](https://ig.fhir.de/einwilligungsmanagement/stable/QuestionnaireResponse.html) electronically represents the questionnaire completed by the patient. Here the patient's answers to the referenced questionnaire (QuestionnaireComposed) of the MII Broad Consent are documented.
 
-Das Profil [QuestionnaireResponse](https://ig.fhir.de/einwilligungsmanagement/stable/QuestionnaireResponse.html) bildet den vom Patienten ausgefüllten Fragebogen elektronisch ab. Hier werden die Antworten des Patienten auf den referenzierten Fragebogen (QuestionnaireComposed) des MII Broad Consent dokumentiert.
-
-Zur Abbildung der Antworten sollte das Value Set “[MII Consent: Answer ValueSet](https://art-decor.org/art-decor/decor-valuesets--mide-?id=2.16.840.1.113883.3.1937.777.24.11.30)” verwendet werden:
+To represent the answers, the value set "[MII Consent: Answer ValueSet](https://art-decor.org/art-decor/decor-valuesets--mide-?id=2.16.840.1.113883.3.1937.777.24.11.30)" should be used:
 
 | | | |
 | :--- | :--- | :--- |
-| Checkbox | Code-Bezeichner | Code (OID) |
+| Checkbox | Code designator | Code (OID) |
 
 | — | — | — |
 
 | | | |
 | :--- | :--- | :--- |
-| ‘Ja‘ angekreuzt | gültig | 2.16.840.1.113883.3.1937.777.24.5.2.1 |
+| 'Yes' checked | gültig | 2.16.840.1.113883.3.1937.777.24.5.2.1 |
 
 | | | |
 | :--- | :--- | :--- |
-| ‘Nein’ angekreuzt | nicht gültig | 2.16.840.1.113883.3.1937.777.24.5.2.2 |
+| 'No' checked | nicht gültig | 2.16.840.1.113883.3.1937.777.24.5.2.2 |
 
 | | | |
 | :--- | :--- | :--- |
-| nicht angekreuzt | unbekannt | 2.16.840.1.113883.3.1937.777.24.5.2.3 |
+| not checked | unbekannt | 2.16.840.1.113883.3.1937.777.24.5.2.3 |
 
-**Antworten (Checkbox), Code-Bezeichner und OIDs**
+**Answers (checkbox), code designators and OIDs**
 
-### Abbildung des MII Broad Consent
+### Representation of the MII Broad Consent
 
-Die Datenelemente des MII Broad Consent Formulars in Version [1.6d](https://art-decor.org/art-decor/decor-datasets--mide-?conceptId=2.16.840.1.113883.3.1937.777.24.2.1790) und [1.6f](https://art-decor.org/art-decor/decor-datasets--mide-?conceptId=2.16.840.1.113883.3.1937.777.24.2.1791) sind als Dataset in ART-DECOR modelliert, siehe Abschnitt [Datensätze inkl. Beschreibungen](logical-models.md).
+The data elements of the MII Broad Consent form in versions [1.6d](https://art-decor.org/art-decor/decor-datasets--mide-?conceptId=2.16.840.1.113883.3.1937.777.24.2.1790) and [1.6f](https://art-decor.org/art-decor/decor-datasets--mide-?conceptId=2.16.840.1.113883.3.1937.777.24.2.1791) are modeled as a dataset in ART-DECOR; see the section [Datasets incl. descriptions](logical-models.md).
 
-### Verwendung einheitlicher Policies
+### Use of uniform policies
 
-Die benötigten Value Sets sind ebenfalls in ART-DECOR modelliert) und mit den entspr. Datenelementen assoziert. Die Kompatibilität zu IHE BPPC (Integrating the Healthcare Enterprise, [Profil „Basic Patient Privacy Consent“](https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_TF_Vol1.pdf#nameddest=19_Basic_Patient_Privacy_Consen)) wird über Policies adressiert.
+The required value sets are likewise modeled in ART-DECOR) and associated with the corresponding data elements. Compatibility with IHE BPPC (Integrating the Healthcare Enterprise, ["Basic Patient Privacy Consent" profile](https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_TF_Vol1.pdf#nameddest=19_Basic_Patient_Privacy_Consen)) is addressed via policies.
 
-Die **Operationalisierung bzw. Durchsetzung (Enforcement) der Consent Informationen** wird durch ein [einheitliches Policy-Valueset](https://art-decor.org/decor/services/RetrieveValueSet?id=2.16.840.1.113883.3.1937.777.24.11.36&effectiveDate=2021-04-23T10:55:54&prefix=mide-&format=html&collapsable=true&language=de-DE&ui=en-US) unterstützt. Dies kann interoperabel in IHE BPPC verwendet werden.
+The **operationalization and enforcement of the consent information** is supported by a [uniform policy value set](https://art-decor.org/decor/services/RetrieveValueSet?id=2.16.840.1.113883.3.1937.777.24.11.36&effectiveDate=2021-04-23T10:55:54&prefix=mide-&format=html&collapsable=true&language=de-DE&ui=en-US). This can be used interoperably in IHE BPPC.
 

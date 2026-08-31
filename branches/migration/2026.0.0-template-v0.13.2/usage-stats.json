@@ -107,6 +107,7 @@
     "http://hl7.org/fhir/StructureDefinition/translation": [
       "CapabilityStatement.publisher",
       "CodeSystem.publisher",
+      "ImplementationGuide.definition.page.page.page.title",
       "ImplementationGuide.definition.page.page.title",
       "ImplementationGuide.definition.page.title",
       "ImplementationGuide.publisher",

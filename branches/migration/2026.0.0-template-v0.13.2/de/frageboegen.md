@@ -6,8 +6,6 @@
 
 ## Fragebögen
 
-### Fragebögen
-
 Die [AG Einwilligungsmanagement](https://ig.fhir.de/einwilligungsmanagement/stable/) hat sich umfassend mit der Modellierung von Einwilligungen und Einwilligungsvorlagen befasst.
 
 Der vorliegende Implementation Guide setzt wesentlich auf diesen Vorarbeiten auf.

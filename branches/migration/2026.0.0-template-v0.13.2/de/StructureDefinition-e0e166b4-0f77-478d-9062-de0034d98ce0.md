@@ -266,19 +266,19 @@ Sollten einzelne Bestandteile der Einwilligung jedoch bereits frühzeitig ablauf
 
 | | |
 | :--- | :--- |
-| Consent.provision.provision.code | 1-n Angabe zur Semantik der Einwilligungspolicy.**Mindestens aber gemäß MII TFCU Konzept**(vgl. MiiConsentPolicyValueSet im Abschnitt Command 'pagelink' could not render: Page not found. ), Must-support |
+| Consent.provision.provision.code | 1-n Angabe zur Semantik der Einwilligungspolicy.**Mindestens aber gemäß MII TFCU Konzept**(vgl. MiiConsentPolicyValueSet im Abschnitt[CodeSystems](code-systems.md)), Must-support |
 
 | | |
 | :--- | :--- |
-| Consent.provision.provision.code.coding.system | Systemangabe, idealerweise gemäß**MII TFCU Konzept**(vgl. MiiConsentPolicyValueSet im Abschnitt Command 'pagelink' could not render: Page not found. ):`urn:oid:2.16.840.1.113883.3.1937.777.24.5.3`, Must-support |
+| Consent.provision.provision.code.coding.system | Systemangabe, idealerweise gemäß**MII TFCU Konzept**(vgl. MiiConsentPolicyValueSet im Abschnitt[CodeSystems](code-systems.md)):`urn:oid:2.16.840.1.113883.3.1937.777.24.5.3`, Must-support |
 
 | | |
 | :--- | :--- |
-| Consent.provision.provision.code.coding.code | Codeangabe, idealerweise gemäß**MII TFCU Konzept**(vgl. MiiConsentPolicyValueSet im Abschnitt Command 'pagelink' could not render: Page not found. ) z.B.`2.16.840.1.113883.3.1937.777.24.5.3.6`, Must-support |
+| Consent.provision.provision.code.coding.code | Codeangabe, idealerweise gemäß**MII TFCU Konzept**(vgl. MiiConsentPolicyValueSet im Abschnitt[CodeSystems](code-systems.md)) z.B.`2.16.840.1.113883.3.1937.777.24.5.3.6`, Must-support |
 
 | | |
 | :--- | :--- |
-| Consent.provision.provision.code.coding.display | Optionale Displayangabe, idealerweise gemäß**MII TFCU Konzept**(vgl. MiiConsentPolicyValueSet im Abschnitt Command 'pagelink' could not render: Page not found. ) z.B.`MDAT\_erheben` |
+| Consent.provision.provision.code.coding.display | Optionale Displayangabe, idealerweise gemäß**MII TFCU Konzept**(vgl. MiiConsentPolicyValueSet im Abschnitt[CodeSystems](code-systems.md)) z.B.`MDAT\_erheben` |
 
 | | |
 | :--- | :--- |

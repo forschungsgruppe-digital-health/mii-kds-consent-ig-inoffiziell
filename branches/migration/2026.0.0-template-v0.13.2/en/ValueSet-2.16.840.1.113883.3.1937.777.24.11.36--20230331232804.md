@@ -1,6 +1,6 @@
 # MII Consent: Policy ValueSet - MII Implementation Guide Consent v2026.0.0
 
-* [**Inhaltsverzeichnis**](toc.md)
+* [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
 * **MII Consent: Policy ValueSet**
 
@@ -70,7 +70,7 @@ Beispiel 2:
   "title" : "MII Consent: Policy ValueSet",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-08-31T18:40:24+00:00",
+  "date" : "2026-08-31T19:25:28+00:00",
   "publisher" : "NUM-DIZ",
   "_publisher" : {
     "extension" : [{

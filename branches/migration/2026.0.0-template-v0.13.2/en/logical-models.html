@@ -6,7 +6,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en" dir="ltr">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Logische Modelle - MII Implementation Guide Consent v2026.0.0</title>
+    <title>Logical Models - MII Implementation Guide Consent v2026.0.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -139,7 +139,7 @@
 
 
         <div id="ig-status">
-          <p><span style="font-size:12pt;font-weight:bold">MII Implementierungsleitfaden Consent</span>
+          <p><span style="font-size:12pt;font-weight:bold">MII Implementation Guide Consent</span>
             <br/>
             <span style="display:inline-block;">2026.0.0 - 
 
@@ -288,7 +288,7 @@
     <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
       <div class="container">  <!-- container -->
         <ul class="breadcrumb">
-          <li><a href='toc.html'><b>Inhaltsverzeichnis</b></a></li><li><b>Logische Modelle</b></li>
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Logical Models</b></li>
 
         </ul>
       </div>  <!-- /container -->
@@ -309,7 +309,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </style>
 <div class="col-12">
   <!--ReleaseHeader--><p id="publish-box">MII Implementation Guide Consent - Local Development build (v2026.0.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://www.medizininformatik-initiative.de/fhir/modul-consent/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
-  <h2>Logische Modelle</h2>
+  <h2>Logical Models</h2>
   
 
 
@@ -324,26 +324,51 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 
     <p><!-- white space is critical inside of capture --></p>
-<div>
-<!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#logical-models" id="markdown-toc-logical-models">Logical Models</a></li>
+  <li><a href="#data-sets-incl-descriptions" id="markdown-toc-data-sets-incl-descriptions">Data sets incl. descriptions</a></li>
+</ul>
+
 </div>
-
-<p style="border:var(--translation-box-border);background-color:var(--translation-background-color);padding: 5px 5px 5px 5px;">
-
-This page includes translations from the original source language in which the guide was authored.  Information on these translations and instructions on how to provide feedback on the translations can be found [here](translationinfo.html).
-
-</p>
-
 <!-- markdownlint-disable MD041 -->
-<!-- Source: kerndatensatz-basis input/pagecontent/logical-models.md.
-     German mirror: input/translations/de/pagecontent/logical-models.md. -->
+<!-- machine translation of source page logical-models.md (de). TODO:REVIEW — Gate C. -->
+<!-- Wortgetreu übertragen aus der Simplifier-Quellseite
+     https://simplifier.net/guide/miiigmodulconsent/MIIIGModulConsent/AnwendungsflleInformationsmodell/Datenstzeinkl.Beschreibungen?version=2026.0.0
+     (Harvest 2026-08-31, migration-log/guide-harvest/); interne Links auf die
+     Zielseiten dieser IG-Struktur umgeschrieben (migration-log/page-map.tsv). -->
+<!-- Der Ordnerknoten "Anwendungsfälle / Informationsmodell" der Quelle trug nur
+     den Satz "Diese Seite wurde absichtlich leer gelassen." — als Quelltextlauf
+     hier konserviert, nicht gerendert (page-map: Ordner-Stub). -->
 <h3 id="logical-models">Logical Models</h3>
 
-<p>The logical data models of the <strong>Consent</strong> module describe the domain dataset independently of its concrete FHIR representation.</p>
+<p>The <strong>Consent</strong> module does not define any FHIR Logical Models of its own; the
+domain data set description is maintained entirely in ART-DECOR
+(see below).</p>
 
-<blockquote class="ig-highlight ig-highlight-grey">
-  <p>[TODO: Add the logical models, or delete this page.]</p>
-</blockquote>
+<h3 id="data-sets-incl-descriptions">Data sets incl. descriptions</h3>
+
+<p>The data set description of the KDS Modul Consent is maintained in full in ART-DECOR:</p>
+
+<ul>
+  <li>
+    <p><a href="https://art-decor.org/art-decor/decor-datasets--mide-?conceptId=2.16.840.1.113883.3.1937.777.24.2.184">form-based description MII Dataset, Concept 'Consent'</a></p>
+  </li>
+  <li>
+    <p><a href="https://art-decor.org/decor/services/RetrieveDataSet?conceptId=2.16.840.1.113883.3.1937.777.24.2.184">tabular description MII Dataset, Concept 'Consent'</a></p>
+  </li>
+</ul>
+
+<p>This covers the descriptions of the MII Broad Consent in the following versions:</p>
+
+<ul>
+  <li>
+    <p>MII Broad Consent Version 1.6.d</p>
+  </li>
+  <li>
+    <p>MII Broad Consent Version 1.6.f</p>
+  </li>
+</ul>
 
 
 
@@ -370,7 +395,7 @@ This page includes translations from the original source language in which the g
 
           IG © 2019+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.netzwerk-universitaetsmedizin.de">NUM-DIZ</a>.  
           Package de.medizininformatikinitiative.kerndatensatz.consent#2026.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
-          Generated <span title="Mon, Aug 31, 2026 18:40+0000">2026-08-31</span>
+          Generated <span title="Mon, Aug 31, 2026 19:25+0000">2026-08-31</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
             <!-- Branding override for the fhir2.base.template footer fragment.

@@ -1,10 +1,10 @@
 MII_IG_Consent : Validation Results
 =========================================
 
-err = 94, warn = 137, info = 519
+err = 94, warn = 137, info = 498
 IG Publisher Version: 2.3.2 Out of date - current version is 2.3.3
-Generated Mon Aug 31 18:42:08 UTC 2026. FHIR version 4.0.1 for de.medizininformatikinitiative.kerndatensatz.consent#2026.0.0 (canonical = https://www.medizininformatik-initiative.de/fhir/modul-consent)
- Build Errors : 2 / 10 / 0
+Generated Mon Aug 31 19:31:53 UTC 2026. FHIR version 4.0.1 for de.medizininformatikinitiative.kerndatensatz.consent#2026.0.0 (canonical = https://www.medizininformatik-initiative.de/fhir/modul-consent)
+ Build Errors : 0 / 11 / 0
  /home/runner/work/mii-kds-consent-ig-inoffiziell/mii-kds-consent-ig-inoffiziell/fsh-generated/resources/CapabilityStatement-mii-cap-consent-server : 0 / 0 / 12
  /home/runner/work/mii-kds-consent-ig-inoffiziell/mii-kds-consent-ig-inoffiziell/fsh-generated/resources/CodeSystem-2.16.840.1.113883.3.1937.777.24.5.2--20210423105554 : 1 / 13 / 3
  /home/runner/work/mii-kds-consent-ig-inoffiziell/mii-kds-consent-ig-inoffiziell/fsh-generated/resources/CodeSystem-2.16.840.1.113883.3.1937.777.24.5.3--20251211153003 : 1 / 15 / 4
@@ -14,7 +14,7 @@ Generated Mon Aug 31 18:42:08 UTC 2026. FHIR version 4.0.1 for de.medizininforma
  /home/runner/work/mii-kds-consent-ig-inoffiziell/mii-kds-consent-ig-inoffiziell/fsh-generated/resources/Consent-89f494a3-cd75-44f5-a78a-581dfdd47a94 : 15 / 2 / 4
  /home/runner/work/mii-kds-consent-ig-inoffiziell/mii-kds-consent-ig-inoffiziell/fsh-generated/resources/Consent-Example-MII-Consent-ResultType-document : 15 / 2 / 4
  /home/runner/work/mii-kds-consent-ig-inoffiziell/mii-kds-consent-ig-inoffiziell/fsh-generated/resources/DocumentReference-8a3d1799-2463-405e-b49c-6a16c8692b01 : 1 / 0 / 1
- /home/runner/work/mii-kds-consent-ig-inoffiziell/mii-kds-consent-ig-inoffiziell/fsh-generated/resources/ImplementationGuide-mii-ig-consent : 0 / 5 / 70
+ /home/runner/work/mii-kds-consent-ig-inoffiziell/mii-kds-consent-ig-inoffiziell/fsh-generated/resources/ImplementationGuide-mii-ig-consent : 0 / 5 / 49
  /home/runner/work/mii-kds-consent-ig-inoffiziell/mii-kds-consent-ig-inoffiziell/fsh-generated/resources/Provenance-55219d12-6245-4de4-8b50-ddf6f16a789b : 1 / 0 / 3
  /home/runner/work/mii-kds-consent-ig-inoffiziell/mii-kds-consent-ig-inoffiziell/fsh-generated/resources/SearchParameter-MII-SP-Consent-PolicyUri : 4 / 0 / 3
  /home/runner/work/mii-kds-consent-ig-inoffiziell/mii-kds-consent-ig-inoffiziell/fsh-generated/resources/SearchParameter-MII-SP-Consent-ProvisionCode : 4 / 0 / 3
@@ -40,8 +40,7 @@ WARNING: Unable to find ImplementationGuide.definition.resource.description for 
 WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Consent/Example-MII-Consent-ResultType-document.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
 WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Parameters/mii-param-consent-manifest.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
 WARNING: de/value-sets.html#/html/body/div/div/div/div/div/p/a at Line 328, column 5: The link 'https://www.medizininformatik-initiative.de/fhir/modul-consent/ValueSet/mii-vs-consent-signaturetypes' for "https://www.medizininformatik-initiative.de/fhir/modul-consent/ValueSet/mii-vs-consent-signaturetypes" is a canonical link and is therefore unsafe with regard to versions
-ERROR: en/examples.html#/html/body/div/div/div/div/div/p/a at Line 342, column 2: The link 'Patient-ExamplePatientInstance.html' for "Max Mustermann-Testpatient" cannot be resolved
-ERROR: en/profiles.html#/html/body/div/div/div/div/div/p/a at Line 344, column 2: The link 'StructureDefinition-example-patient.html' for "Example Patient" cannot be resolved
+WARNING: en/value-sets.html#/html/body/div/div/div/div/div/p/a at Line 357, column 5: The link 'https://www.medizininformatik-initiative.de/fhir/modul-consent/ValueSet/mii-vs-consent-signaturetypes' for "https://www.medizininformatik-initiative.de/fhir/modul-consent/ValueSet/mii-vs-consent-signaturetypes" is a canonical link and is therefore unsafe with regard to versions
 WARNING: 5: An HTML fragment from the set [expansion-params.xhtml, expansion-params.xhtml] is not included anywhere in the produced implementation guide
 == fsh-generated/resources/CapabilityStatement-mii-cap-consent-server.json ==
 INFORMATION: CapabilityStatement.rest[0].resource[0].supportedProfile[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/modul-consent/StructureDefinition/mii-pr-consent-einwilligung to 2026.0.0
@@ -253,27 +252,6 @@ INFORMATION: ImplementationGuide.definition.resource[2].profile[0]: Pinned the v
 INFORMATION: ImplementationGuide.definition.resource[3].profile[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/modul-consent/StructureDefinition/mii-pr-consent-einwilligung to 2026.0.0
 INFORMATION: ImplementationGuide.definition.resource[4].profile[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/modul-consent/StructureDefinition/mii-pr-consent-documentreference to 2026.0.0
 INFORMATION: ImplementationGuide.definition.resource[5].profile[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/modul-consent/StructureDefinition/mii-pr-consent-einwilligung to 2026.0.0
-INFORMATION: ImplementationGuide.definition.page.title: Unused 'en' translation 'Home' -> 'Startseite'
-INFORMATION: ImplementationGuide.definition.page.title: Unused 'en' translation 'Guidance' -> 'Anleitung'
-INFORMATION: ImplementationGuide.definition.page.title: Unused 'en' translation 'Guidance for Researchers' -> 'Anleitung für Forschende'
-INFORMATION: ImplementationGuide.definition.page.title: Unused 'en' translation 'Guidance for Implementers' -> 'Anleitung für Implementierende'
-INFORMATION: ImplementationGuide.definition.page.title: Unused 'en' translation 'UML Diagrams' -> 'UML-Diagramme'
-INFORMATION: ImplementationGuide.definition.page.title: Unused 'en' translation 'Security and Privacy' -> 'Sicherheit und Datenschutz'
-INFORMATION: ImplementationGuide.definition.page.title: Unused 'en' translation 'Profiles' -> 'Profile'
-INFORMATION: ImplementationGuide.definition.page.title: Unused 'en' translation 'Extensions' -> 'Extensions'
-INFORMATION: ImplementationGuide.definition.page.title: Unused 'en' translation 'Capability Statements' -> 'CapabilityStatements'
-INFORMATION: ImplementationGuide.definition.page.title: Unused 'en' translation 'Search Parameters' -> 'Suchparameter'
-INFORMATION: ImplementationGuide.definition.page.title: Unused 'en' translation 'Operations' -> 'Operationen'
-INFORMATION: ImplementationGuide.definition.page.title: Unused 'en' translation 'Logical Models' -> 'Logische Modelle'
-INFORMATION: ImplementationGuide.definition.page.title: Unused 'en' translation 'Value Sets' -> 'ValueSets'
-INFORMATION: ImplementationGuide.definition.page.title: Unused 'en' translation 'Code Systems' -> 'CodeSystems'
-INFORMATION: ImplementationGuide.definition.page.title: Unused 'en' translation 'Examples' -> 'Beispiele'
-INFORMATION: ImplementationGuide.definition.page.title: Unused 'en' translation 'Changelog' -> 'Änderungshistorie'
-INFORMATION: ImplementationGuide.definition.page.title: Unused 'en' translation 'Metadata Overview' -> 'Metadaten-Übersicht'
-INFORMATION: ImplementationGuide.definition.page.title: Unused 'en' translation 'Versioning' -> 'Versionierung'
-INFORMATION: ImplementationGuide.definition.page.title: Unused 'en' translation 'Translation Information' -> 'Hinweise zur Übersetzung'
-INFORMATION: ImplementationGuide.definition.page.title: Unused 'en' translation 'Rendering Artifacts (demo)' -> 'Artefakt-Rendering (Demo)'
-INFORMATION: ImplementationGuide.definition.page.title: Unused 'en' translation 'MII ImplementationGuide Resource' -> 'MII ImplementationGuide Ressource'
 INFORMATION: ImplementationGuide/mii-ig-consent: ImplementationGuide.extension[3].value.ofType(CodeableConcept).coding[0].display: There are no valid display names found for the code http://terminology.hl7.org/CodeSystem/artifact-version-policy-codes#package for language(s) 'de'. The display is 'Package' which is a valid display for the default language
 WARNING: ImplementationGuide/mii-ig-consent: ImplementationGuide.extension[4].extension[2].value.ofType(uri): URL-Wert 'https://www.medizininformatik-initiative.de/fhir/modul-consent' löst nicht auf
 WARNING: ImplementationGuide/mii-ig-consent: ImplementationGuide.extension[16].value.ofType(CodeableConcept).coding[0].code: Unknown Code 'C16735' in the CodeSystem 'http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl' version 'null' - note that the code system is labeled as a fragment, so the code may be valid in some other fragment

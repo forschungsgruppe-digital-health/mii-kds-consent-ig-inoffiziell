@@ -6,7 +6,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en" dir="ltr">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Anleitung - MII Implementation Guide Consent v2026.0.0</title>
+    <title>Guidance - MII Implementation Guide Consent v2026.0.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -139,7 +139,7 @@
 
 
         <div id="ig-status">
-          <p><span style="font-size:12pt;font-weight:bold">MII Implementierungsleitfaden Consent</span>
+          <p><span style="font-size:12pt;font-weight:bold">MII Implementation Guide Consent</span>
             <br/>
             <span style="display:inline-block;">2026.0.0 - 
 
@@ -288,7 +288,7 @@
     <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
       <div class="container">  <!-- container -->
         <ul class="breadcrumb">
-          <li><a href='toc.html'><b>Inhaltsverzeichnis</b></a></li><li><b>Anleitung</b></li>
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Guidance</b></li>
 
         </ul>
       </div>  <!-- /container -->
@@ -309,7 +309,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </style>
 <div class="col-12">
   <!--ReleaseHeader--><p id="publish-box">MII Implementation Guide Consent - Local Development build (v2026.0.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://www.medizininformatik-initiative.de/fhir/modul-consent/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
-  <h2>Anleitung</h2>
+  <h2>Guidance</h2>
   
 
 
@@ -328,46 +328,59 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <ul id="markdown-toc">
   <li><a href="#general-implementation-guidance" id="markdown-toc-general-implementation-guidance">General Implementation Guidance</a></li>
   <li><a href="#audience-specific-guidance" id="markdown-toc-audience-specific-guidance">Audience-Specific Guidance</a></li>
+  <li><a href="#description-of-scenarios-for-the-application-of-the-module" id="markdown-toc-description-of-scenarios-for-the-application-of-the-module">Description of Scenarios for the Application of the Module</a></li>
 </ul>
 
 </div>
 <!-- markdownlint-disable MD041 -->
-<!-- Source: kerndatensatz-basis input/pagecontent/guidance.md (MII module page set).
-     "Guidance" overview page. Replace the [TODO] prompts; the sub-page structure
-     follows kerndatensatz-basis. German mirror:
-     input/translations/de/pagecontent/guidance.md — keep both in step. -->
+<!-- machine translation of source page guidance.md (de). TODO:REVIEW — Gate C. -->
+<!-- Übersichtsseite "Anleitung" (Szenarien-Inhalt aus dem Quell-Leitfaden übernommen); die
+     Unterseiten-Struktur folgt kerndatensatz-basis. -->
 
-<p>This section collects the domain guidance for implementing and using the
+<p>This section bundles the domain guidance on implementing and using the
 <strong>Consent</strong> module.</p>
 
 <h3 id="general-implementation-guidance">General Implementation Guidance</h3>
 
 <ul>
-  <li><strong><a href="logical-models.html">Datasets and Descriptions</a></strong> — the module's data
-elements, described as logical models. (This entry shares its target with
-<em>Artifacts → Logical Models</em>; neither Artifacts-Summary anchor is usable as
-a link target — see
+  <li><strong><a href="logical-models.html">Data Sets and Descriptions</a></strong> — the module's data
+elements, described as logical models. (This entry shares its target
+with <em>Artifacts → Logical Models</em>; none of the anchors of the artifact overview
+can be used as a link target — see
 <a href="https://github.com/forschungsgruppe-digital-health/mii-kds-consent-ig-inoffiziell/blob/main/docs/page-structure.md"><code class="language-plaintext highlighter-rouge">docs/page-structure.md</code></a> in this repository.)</li>
-  <li><strong><a href="uml-diagrams.html">UML Diagrams</a></strong> — visual representation of the data
-models and their relationships.</li>
+  <li><strong><a href="uml-diagrams.html">UML Diagrams</a></strong> — visual representation of the data models
+and their relationships.</li>
 </ul>
 
 <h3 id="audience-specific-guidance">Audience-Specific Guidance</h3>
 
 <ul>
   <li><strong><a href="implementer-guidance.html">Guidance for Implementers</a></strong> — technical
-guidance for DIC implementers.</li>
+guidance for DIZ implementers.</li>
 </ul>
 
-<blockquote class="ig-highlight ig-highlight-grey">
-  <p>[TODO: Add the module-specific guidance that is relevant to all audiences —
-e.g. the domain scope or its delimitations.]</p>
-</blockquote>
-
 <hr />
-<p>For the KDS-wide conformance requirements see the
-<a href="https://github.com/medizininformatik-initiative/kerndatensatz-meta/wiki/Conformance">Conformance rules of the Meta module</a>;
-for the technical artifacts see <a href="profiles.html">Profiles</a>.</p>
+<p>For the KDS-wide conformance requirements, see the
+<a href="https://github.com/medizininformatik-initiative/kerndatensatz-meta/wiki/Conformance">conformance rules of the Meta module</a>;
+for the technical artifacts, see <a href="profiles.html">Profiles</a>.</p>
+
+<!-- Wortgetreu übertragen aus der Simplifier-Quellseite
+     https://simplifier.net/guide/miiigmodulconsent/MIIIGModulConsent/AnwendungsflleInformationsmodell/BeschreibungvonSzenarienfrdieAnwendungdesModuls?version=2026.0.0
+     (Harvest 2026-08-31, migration-log/guide-harvest/); interne Links auf die
+     Zielseiten dieser IG-Struktur umgeschrieben (migration-log/page-map.tsv). -->
+
+<h3 id="description-of-scenarios-for-the-application-of-the-module">Description of Scenarios for the Application of the Module</h3>
+
+<p>The Consent extension module provides the electronic representation of the <a href="https://www.medizininformatik-initiative.de/de/mustertext-zur-patienteneinwilligung">MII Consent</a> and, beyond that, can also enable the representation of further consents. This is a prerequisite for taking the patient's will into account when the patient's medical data collected in the course of care is used for research purposes. Consent is required above all when the purpose of use goes beyond the research clauses of the respective applicable laws.</p>
+
+<p>An important measure for medical research is, among other things, how many patients meet certain criteria (case count) and whether these patients have consented to the use of their data for research purposes. Such queries can only be processed and answered efficiently by electronic means if the consent status can be checked electronically. Case-count queries of this kind that take the consent status into account are essential for use cases such as 'case-count estimation', 'feasibility queries', and 'data sharing', for the MII cross-consortium use cases CORD and POLAR, as well as for the <a href="https://www.medizininformatik-initiative.de/de/use-cases-und-projekte">use cases</a> of the <a href="https://www.medizininformatik-initiative.de/index.php/de/konsortien">MII consortia</a>.</p>
+
+<p>The standardized representation of the consent information in the Core Data Set is required so that it can be included as a search criterion, in particular for cross-site queries.</p>
+
+<!-- DERIVED:bridge source=anwendungsflleinformationsmodell-fragebgen.md gate=B -->
+<blockquote class="ig-highlight ig-highlight-blue">
+  <p><strong>Written during migration - review before release.</strong> The representation of the consent questionnaires (Questionnaire-based content) is described on the subpage <a href="frageboegen.html">Questionnaires</a>.</p>
+</blockquote>
 
 
 
@@ -394,7 +407,7 @@ for the technical artifacts see <a href="profiles.html">Profiles</a>.</p>
 
           IG © 2019+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.netzwerk-universitaetsmedizin.de">NUM-DIZ</a>.  
           Package de.medizininformatikinitiative.kerndatensatz.consent#2026.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
-          Generated <span title="Mon, Aug 31, 2026 18:40+0000">2026-08-31</span>
+          Generated <span title="Mon, Aug 31, 2026 19:25+0000">2026-08-31</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
             <!-- Branding override for the fhir2.base.template footer fragment.

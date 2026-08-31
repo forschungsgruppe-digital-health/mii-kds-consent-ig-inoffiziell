@@ -142,7 +142,7 @@
   "url" : "https://www.medizininformatik-initiative.de/fhir/modul-consent/ImplementationGuide/mii-ig-consent",
   "version" : "2026.0.0",
   "name" : "MII_IG_Consent",
-  "title" : "MII Implementierungsleitfaden Consent",
+  "title" : "MII Implementation Guide Consent",
   "status" : "active",
   "experimental" : false,
   "date" : "2025-12-18",
@@ -1487,7 +1487,7 @@
         "valueUrl" : "toc.html"
       }],
       "nameUrl" : "toc.html",
-      "title" : "Inhaltsverzeichnis",
+      "title" : "Table of Contents",
       "generation" : "html",
       "page" : [{
         "extension" : [{
@@ -1495,7 +1495,7 @@
           "valueUrl" : "index.html"
         }],
         "nameUrl" : "index.html",
-        "title" : "Startseite",
+        "title" : "Home",
         "generation" : "markdown"
       },
       {
@@ -1504,7 +1504,7 @@
           "valueUrl" : "guidance.html"
         }],
         "nameUrl" : "guidance.html",
-        "title" : "Anleitung",
+        "title" : "Guidance",
         "generation" : "markdown",
         "page" : [{
           "extension" : [{
@@ -1512,7 +1512,7 @@
             "valueUrl" : "implementer-guidance.html"
           }],
           "nameUrl" : "implementer-guidance.html",
-          "title" : "Anleitung für Implementierende",
+          "title" : "Guidance for Implementers",
           "generation" : "markdown"
         },
         {
@@ -1521,7 +1521,7 @@
             "valueUrl" : "uml-diagrams.html"
           }],
           "nameUrl" : "uml-diagrams.html",
-          "title" : "UML-Diagramme",
+          "title" : "UML Diagrams",
           "generation" : "markdown"
         },
         {
@@ -1530,7 +1530,7 @@
             "valueUrl" : "frageboegen.html"
           }],
           "nameUrl" : "frageboegen.html",
-          "title" : "Fragebögen",
+          "title" : "Questionnaires",
           "generation" : "markdown"
         }]
       },
@@ -1540,7 +1540,7 @@
           "valueUrl" : "security-and-privacy.html"
         }],
         "nameUrl" : "security-and-privacy.html",
-        "title" : "Sicherheit und Datenschutz",
+        "title" : "Security and Privacy",
         "generation" : "markdown"
       },
       {
@@ -1549,7 +1549,7 @@
           "valueUrl" : "profiles.html"
         }],
         "nameUrl" : "profiles.html",
-        "title" : "Profile",
+        "title" : "Profiles",
         "generation" : "markdown"
       },
       {
@@ -1558,7 +1558,7 @@
           "valueUrl" : "capability-statements.html"
         }],
         "nameUrl" : "capability-statements.html",
-        "title" : "CapabilityStatements",
+        "title" : "Capability Statements",
         "generation" : "markdown"
       },
       {
@@ -1567,7 +1567,7 @@
           "valueUrl" : "search-parameters.html"
         }],
         "nameUrl" : "search-parameters.html",
-        "title" : "Suchparameter",
+        "title" : "Search Parameters",
         "generation" : "markdown"
       },
       {
@@ -1576,7 +1576,7 @@
           "valueUrl" : "logical-models.html"
         }],
         "nameUrl" : "logical-models.html",
-        "title" : "Logische Modelle",
+        "title" : "Logical Models",
         "generation" : "markdown"
       },
       {
@@ -1585,7 +1585,7 @@
           "valueUrl" : "value-sets.html"
         }],
         "nameUrl" : "value-sets.html",
-        "title" : "ValueSets",
+        "title" : "Value Sets",
         "generation" : "markdown"
       },
       {
@@ -1594,7 +1594,7 @@
           "valueUrl" : "code-systems.html"
         }],
         "nameUrl" : "code-systems.html",
-        "title" : "CodeSystems",
+        "title" : "Code Systems",
         "generation" : "markdown"
       },
       {
@@ -1603,7 +1603,7 @@
           "valueUrl" : "examples.html"
         }],
         "nameUrl" : "examples.html",
-        "title" : "Beispiele",
+        "title" : "Examples",
         "generation" : "markdown"
       },
       {
@@ -1621,7 +1621,7 @@
           "valueUrl" : "changes.html"
         }],
         "nameUrl" : "changes.html",
-        "title" : "Änderungshistorie",
+        "title" : "Changelog",
         "generation" : "markdown"
       },
       {
@@ -1630,7 +1630,7 @@
           "valueUrl" : "version-history.html"
         }],
         "nameUrl" : "version-history.html",
-        "title" : "Versionierung",
+        "title" : "Versioning",
         "generation" : "markdown"
       },
       {
@@ -1639,7 +1639,7 @@
           "valueUrl" : "ImplementationGuide-mii-ig-consent.html"
         }],
         "nameUrl" : "ImplementationGuide-mii-ig-consent.html",
-        "title" : "MII ImplementationGuide Ressource",
+        "title" : "MII ImplementationGuide Resource",
         "generation" : "markdown"
       },
       {
@@ -1648,7 +1648,7 @@
           "valueUrl" : "translationinfo.html"
         }],
         "nameUrl" : "translationinfo.html",
-        "title" : "Hinweise zur Übersetzung",
+        "title" : "Translation Information",
         "generation" : "markdown"
       }]
     },

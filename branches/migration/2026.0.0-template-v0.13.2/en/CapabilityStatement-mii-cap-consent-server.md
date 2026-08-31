@@ -1,6 +1,6 @@
 # MII KDS Modul Consent — CapabilityStatement (Migrationsvorschlag) - MII Implementation Guide Consent v2026.0.0
 
-* [**Inhaltsverzeichnis**](toc.md)
+* [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
 * **MII KDS Modul Consent — CapabilityStatement (Migrationsvorschlag)**
 

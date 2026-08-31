@@ -1,15 +1,23 @@
-# Logische Modelle - MII Implementation Guide Consent v2026.0.0
+# Logical Models - MII Implementation Guide Consent v2026.0.0
 
-* [**Inhaltsverzeichnis**](toc.md)
-* **Logische Modelle**
+* [**Table of Contents**](toc.md)
+* **Logical Models**
 
-## Logische Modelle
-
- This page includes translations from the original source language in which the guide was authored. Information on these translations and instructions on how to provide feedback on the translations can be found [here](translationinfo.html). 
+## Logical Models
 
 ### Logical Models
 
-The logical data models of the **Consent** module describe the domain dataset independently of its concrete FHIR representation.
+The **Consent** module does not define any FHIR Logical Models of its own; the domain data set description is maintained entirely in ART-DECOR (see below).
 
-> [TODO: Add the logical models, or delete this page.]
+### Data sets incl. descriptions
+
+The data set description of the KDS Modul Consent is maintained in full in ART-DECOR:
+
+* [form-based description MII Dataset, Concept 'Consent'](https://art-decor.org/art-decor/decor-datasets--mide-?conceptId=2.16.840.1.113883.3.1937.777.24.2.184)
+* [tabular description MII Dataset, Concept 'Consent'](https://art-decor.org/decor/services/RetrieveDataSet?conceptId=2.16.840.1.113883.3.1937.777.24.2.184)
+
+This covers the descriptions of the MII Broad Consent in the following versions:
+
+* MII Broad Consent Version 1.6.d
+* MII Broad Consent Version 1.6.f
 

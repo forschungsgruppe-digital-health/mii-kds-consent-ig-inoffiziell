@@ -6,7 +6,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en" dir="ltr">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Anleitung für Implementierende - MII Implementation Guide Consent v2026.0.0</title>
+    <title>Guidance for Implementers - MII Implementation Guide Consent v2026.0.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -139,7 +139,7 @@
 
 
         <div id="ig-status">
-          <p><span style="font-size:12pt;font-weight:bold">MII Implementierungsleitfaden Consent</span>
+          <p><span style="font-size:12pt;font-weight:bold">MII Implementation Guide Consent</span>
             <br/>
             <span style="display:inline-block;">2026.0.0 - 
 
@@ -288,7 +288,7 @@
     <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
       <div class="container">  <!-- container -->
         <ul class="breadcrumb">
-          <li><a href='toc.html'><b>Inhaltsverzeichnis</b></a></li><li><a href='guidance.html'><b>Anleitung</b></a></li><li><b>Anleitung für Implementierende</b></li>
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='guidance.html'><b>Guidance</b></a></li><li><b>Guidance for Implementers</b></li>
 
         </ul>
       </div>  <!-- /container -->
@@ -309,7 +309,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </style>
 <div class="col-12">
   <!--ReleaseHeader--><p id="publish-box">MII Implementation Guide Consent - Local Development build (v2026.0.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://www.medizininformatik-initiative.de/fhir/modul-consent/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
-  <h2>Anleitung für Implementierende</h2>
+  <h2>Guidance for Implementers</h2>
   
 
 
@@ -324,25 +324,123 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 
     <p><!-- white space is critical inside of capture --></p>
-<div>
-<!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#technical-implementation" id="markdown-toc-technical-implementation">Technical Implementation</a></li>
+  <li><a href="#context-in-the-overall-project--relations-to-other-modules" id="markdown-toc-context-in-the-overall-project--relations-to-other-modules">Context in the Overall Project / Relations to Other Modules</a></li>
+  <li><a href="#references-to-other-initiatives" id="markdown-toc-references-to-other-initiatives">References to Other Initiatives</a></li>
+  <li><a href="#references" id="markdown-toc-references">References</a></li>
+  <li><a href="#recommendations-for-practical-use" id="markdown-toc-recommendations-for-practical-use">Recommendations for Practical Use</a></li>
+  <li><a href="#significance-of-categorising-consent-resources-via-resulttype" id="markdown-toc-significance-of-categorising-consent-resources-via-resulttype">Significance of Categorising Consent Resources via ResultType</a></li>
+  <li><a href="#usage-recommendation-for-the-consentcategory-resulttype" id="markdown-toc-usage-recommendation-for-the-consentcategory-resulttype">Usage Recommendation for the Consent.category ResultType</a></li>
+</ul>
+
 </div>
-
-<p style="border:var(--translation-box-border);background-color:var(--translation-background-color);padding: 5px 5px 5px 5px;">
-
-This page includes translations from the original source language in which the guide was authored.  Information on these translations and instructions on how to provide feedback on the translations can be found [here](translationinfo.html).
-
-</p>
-
 <!-- markdownlint-disable MD041 -->
-<!-- Source: kerndatensatz-basis input/pagecontent/implementer-guidance.md.
-     German mirror: input/translations/de/pagecontent/implementer-guidance.md. -->
+<!-- machine translation of source page implementer-guidance.md (de). TODO:REVIEW — Gate C. -->
+<!-- Zusammengeführt aus VIER Quellseiten des Simplifier-Leitfadens (page-map,
+     [MAP-EDIT]-Zeilen; Harvest 2026-08-31): TechnischeImplementierung,
+     KontextimGesamtprojektBezgezuanderenModulen, Referenzen und
+     FHIRProfile/Empfehlungen-zur-praktischen-Anwendung. Wortgetreue Übernahme;
+     nur die Zwischenüberschriften-Hierarchie wurde an die Zielseite angepasst. -->
 
-<p>Technical guidance for DIC implementers on implementing the profiles of the <strong>Consent</strong> module (ETL from primary systems, FHIR API, validation).</p>
-
-<blockquote class="ig-highlight ig-highlight-grey">
-  <p>[TODO: Describe the technical implementation steps for your module.]</p>
+<!-- DERIVED:bridge source=technischeimplementierung.md gate=B -->
+<blockquote class="ig-highlight ig-highlight-blue">
+  <p><strong>Written during migration - review before release.</strong> This page bundles the implementation-related sections of the original guide: the technical implementation, the context within the overall project, the references, and the recommendations for practical use.</p>
 </blockquote>
+
+<h3 id="technical-implementation">Technical Implementation</h3>
+
+<p>This section describes the syntactic and semantic requirements for implementing the Consent module.</p>
+
+<p>Furthermore, search parameters are defined that must be implemented by the respective systems when using the FHIR RESTful API. In general, logical AND and OR combinations of the FHIR search are supported, cf. <a href="https://www.hl7.org/fhir/search.html">https://www.hl7.org/fhir/search.html</a> .</p>
+
+<p>Fundamentals and further details on search and on the FHIR RESTful API are, at the time this implementation guide was created, being developed within the scope of the base modules and may supplement the specifications made here at a later point in time. If necessary, a new version of this guide will then also be published.</p>
+
+<h3 id="context-in-the-overall-project--relations-to-other-modules">Context in the Overall Project / Relations to Other Modules</h3>
+
+<p>The Consent module serves to support cross-site data use requests based on the patient's current consent status at the respective site.</p>
+
+<p>To establish the relation between person and consent, the consent is assigned at least one unique person identifier (base module: Person). As a rule, this is a <a href="https://ig.fhir.de/einwilligungsmanagement/stable/Patient.html">pseudonymous identifier</a>.</p>
+
+<h3 id="references-to-other-initiatives">References to Other Initiatives</h3>
+
+<p>In version V1 of the <a href="https://www.bfarm.de/SharedDocs/Downloads/DE/Forschung/modellvorhaben-genomsequenzierung/Handreichung-zur-Implementierung-beim-LE.pdf?__blob=publicationFile">guidance document</a> on the patient information &amp; declaration of participation for the <strong>"Modellvorhaben Genomsequenzierung bei seltenen und bei onkologischen Erkrankungen"</strong> pursuant to § 64e SGB, chapter 2.1.4 Research Consent recommends using the MII Broad Consent from version 1.6d onwards, which in the legal sense corresponds at least to the base version without additional modules.</p>
+
+<h3 id="references">References</h3>
+
+<p>The modelling of the data set for the Consent module contains references to the following projects:</p>
+
+<ul>
+  <li>
+    <p><a href="https://ig.fhir.de/einwilligungsmanagement/stable/">Implementation Guide of the Consent Management working group of the Interop-Forum, Version 1.0</a></p>
+  </li>
+  <li>
+    <p><a href="https://art-decor.org/art-decor/decor-datasets--mide-?conceptId=2.16.840.1.113883.3.1937.777.24.2.184">Core data set description in ART-DECOR</a></p>
+  </li>
+</ul>
+
+<p>In addition, the <a href="https://hl7.org/fhir/">core specification of HL7 FHIR</a>, including the corresponding resource <a href="https://hl7.org/fhir/consent.html">Consent</a>, and the previous work on the German base profiles in <a href="https://simplifier.net/basisprofilde">STU3</a> and <a href="https://simplifier.net/basisprofil-de-r4">R4</a> were taken into account.</p>
+
+<p>The present specification was designed on the basis of the description of the MII core data set in the version dated 10.3.2017 (<a href="https://www.medizininformatik-initiative.de/sites/default/files/inline-files/MII_04_Kerndatensatz_1-0.pdf">PDF</a>), as well as the data set description in <a href="https://art-decor.org/art-decor/decor-project--mide-">ART-DECOR</a>.</p>
+
+<h3 id="recommendations-for-practical-use">Recommendations for Practical Use</h3>
+
+<h3 id="significance-of-categorising-consent-resources-via-resulttype">Significance of Categorising Consent Resources via ResultType</h3>
+
+<p>The significance of the <code class="language-plaintext highlighter-rouge">ResultType</code> parameter is explained comprehensively in the IG of the <strong>HL7-D AG Einwilligungsmanagement</strong> and the corresponding <a href="https://ebooks.iospress.nl/doi/10.3233/SHTI251389">publication</a>.</p>
+
+<p>Particular attention should be drawn here to the codes <code class="language-plaintext highlighter-rouge">consent-status</code> and <code class="language-plaintext highlighter-rouge">document</code>. Further details and interrelations are described <a href="https://simplifier.net/guide/Einwilligungsmanagement/Mitgeltende-Erl-uterungen?version=current">here</a>.</p>
+
+<h3 id="usage-recommendation-for-the-consentcategory-resulttype">Usage Recommendation for the Consent.category ResultType</h3>
+
+<p>In practice, concrete mandatory project requirements for the use of the ResultType search parameter are only of limited benefit due to the heterogeneous technical conditions at the MII sites. The <strong>technical realisation of the requirements depends on the concrete implementation</strong>.</p>
+
+<p>The consent management system <a href="https://ths-greifswald.de/gics">gICS</a> constitutes the current <a href="https://ebooks.iospress.nl/doi/10.3233/SHTI251389">reference implementation</a> of the HL7-D FHIR standard for consent management (version 2.0).</p>
+
+<p>All implementations should <strong>support at least the following variants</strong>. The cardinality of <code class="language-plaintext highlighter-rouge">Consent.category</code> is defined as <code class="language-plaintext highlighter-rouge">2..\*</code> and enables the necessary backwards compatibility.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>ResultType</td>
+      <td>Meaning for the Consent resource</td>
+      <td>Aggregation of information</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>| — | — | — |</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">document</code></td>
+      <td>The Consent resource refers to  <strong>one (!) completed document</strong>  (QuestionnaireResponse).  <em>This should be the default in an (MII) FHIR server.</em></td>
+      <td>no</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">consent-status</code></td>
+      <td>The Consent resource  <strong>takes into account all relevant consent and withdrawal documents</strong>  in the context of the MII  <strong>for one (!) patient</strong> . The Consent resource with ResultType  <code class="language-plaintext highlighter-rouge">consent-status</code>  always refers to one patient and contains the current consent status.  <em>This should ideally be supported by the (MII) FHIR server.</em></td>
+      <td>Yes, computed by appropriate business logic at the time of the query or for a specific period.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Ideally, the FHIR server should always hold only one Consent resource per patient containing the current aggregated consent information (ResultType <code class="language-plaintext highlighter-rouge">consent-status</code>).</p>
+
+<p><em>If this is not possible for other reasons, a document-specific export should be enabled at least per completed document (consent, updated consent, partial withdrawal, complete withdrawal) (ResultType <code class="language-plaintext highlighter-rouge">document</code>). In this case, it remains the responsibility of the site to provide this information</em> <strong>in the form required by the FDPG</strong><em>.</em></p>
+
+<h4 id="recommendations-for-gics-users-regarding-metrics-determination-and-the-fdpg">Recommendations for gICS Users Regarding Metrics Determination and the FDPG</h4>
+
+<p>The data integration centres provide the information required to determine core-data-set-specific metrics for the DIZ Dashboard. On the DIZ Dashboard side, the determination of the metrics is triggered by corresponding calls to the sites, including for the MII KDS Consent module.</p>
+
+<p>Sites using the <a href="https://ths-greifswald.de/gics">gICS consent management system</a> should follow the precise <a href="https://www.ths-greifswald.de/diz-dashboard-empfehlung-gics-kds-consent-status/"><strong>vendor recommendations</strong></a> for <strong>metrics determination</strong> as well as when providing the Consent resources for the <strong>FDPG</strong>.</p>
 
 
 
@@ -369,7 +467,7 @@ This page includes translations from the original source language in which the g
 
           IG © 2019+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.netzwerk-universitaetsmedizin.de">NUM-DIZ</a>.  
           Package de.medizininformatikinitiative.kerndatensatz.consent#2026.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
-          Generated <span title="Mon, Aug 31, 2026 18:40+0000">2026-08-31</span>
+          Generated <span title="Mon, Aug 31, 2026 19:25+0000">2026-08-31</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
             <!-- Branding override for the fhir2.base.template footer fragment.

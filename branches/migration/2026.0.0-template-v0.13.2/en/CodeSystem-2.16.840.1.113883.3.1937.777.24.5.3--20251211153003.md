@@ -1,6 +1,6 @@
 # MII Consent: Policy CodeSystem - MII Implementation Guide Consent v2026.0.0
 
-* [**Inhaltsverzeichnis**](toc.md)
+* [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
 * **MII Consent: Policy CodeSystem**
 

@@ -1,6 +1,6 @@
 # Profile - MI-I - Consent - DocumentReference - MII Implementation Guide Consent v2026.0.0
 
-* [**Inhaltsverzeichnis**](toc.md)
+* [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
 * **Profile - MI-I - Consent - DocumentReference**
 
@@ -14,9 +14,9 @@
  
 Dieses Profil beschreibt die Abbildung von Originaldokumenten zu Einwilligungen in der Medizininformatik-Initiative. Diese müssen im PDF-Format vorliegen. 
 
-Basierend auf den [Empfehlungen](https://ig.fhir.de/einwilligungsmanagement/stable/DocumentReference.html) der AG Einwilligungsmanagement, zielt das Profile **MIIConsentDocumentReference** auf ein real existierendes Dokument mit Bezug zum Einwilligungsdokument ab.
+Based on the [recommendations](https://ig.fhir.de/einwilligungsmanagement/stable/DocumentReference.html) of the AG Einwilligungsmanagement, the profile **MIIConsentDocumentReference** targets a real, existing document related to the consent document.
 
-Jedoch beschränkt auf Scans von Einwilligungsdokumenten im PDF-Format.
+However, it is restricted to scans of consent documents in PDF format.
 
 **Usages:**
 

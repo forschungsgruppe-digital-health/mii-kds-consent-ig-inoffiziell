@@ -6,7 +6,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en" dir="ltr">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>UML-Diagramme - MII Implementation Guide Consent v2026.0.0</title>
+    <title>UML Diagrams - MII Implementation Guide Consent v2026.0.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -139,7 +139,7 @@
 
 
         <div id="ig-status">
-          <p><span style="font-size:12pt;font-weight:bold">MII Implementierungsleitfaden Consent</span>
+          <p><span style="font-size:12pt;font-weight:bold">MII Implementation Guide Consent</span>
             <br/>
             <span style="display:inline-block;">2026.0.0 - 
 
@@ -288,7 +288,7 @@
     <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
       <div class="container">  <!-- container -->
         <ul class="breadcrumb">
-          <li><a href='toc.html'><b>Inhaltsverzeichnis</b></a></li><li><a href='guidance.html'><b>Anleitung</b></a></li><li><b>UML-Diagramme</b></li>
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='guidance.html'><b>Guidance</b></a></li><li><b>UML Diagrams</b></li>
 
         </ul>
       </div>  <!-- /container -->
@@ -309,7 +309,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </style>
 <div class="col-12">
   <!--ReleaseHeader--><p id="publish-box">MII Implementation Guide Consent - Local Development build (v2026.0.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://www.medizininformatik-initiative.de/fhir/modul-consent/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
-  <h2>UML-Diagramme</h2>
+  <h2>UML Diagrams</h2>
   
 
 
@@ -324,25 +324,61 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 
     <p><!-- white space is critical inside of capture --></p>
-<div>
-<!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#consent" id="markdown-toc-consent">Consent</a></li>
+  <li><a href="#provenance" id="markdown-toc-provenance">Provenance</a></li>
+  <li><a href="#representation-of-questionnaires" id="markdown-toc-representation-of-questionnaires">Representation of questionnaires</a></li>
+  <li><a href="#relevant-profiles" id="markdown-toc-relevant-profiles">Relevant profiles</a></li>
+</ul>
+
 </div>
-
-<p style="border:var(--translation-box-border);background-color:var(--translation-background-color);padding: 5px 5px 5px 5px;">
-
-This page includes translations from the original source language in which the guide was authored.  Information on these translations and instructions on how to provide feedback on the translations can be found [here](translationinfo.html).
-
-</p>
-
 <!-- markdownlint-disable MD041 -->
-<!-- Source: kerndatensatz-basis input/pagecontent/uml-diagrams.md.
-     German mirror: input/translations/de/pagecontent/uml-diagrams.md. -->
+<!-- machine translation of source page uml-diagrams.md (de). TODO:REVIEW — Gate C. -->
+<!-- Wortgetreu übertragen aus der Simplifier-Quellseite
+     https://simplifier.net/guide/miiigmodulconsent/MIIIGModulConsent/AnwendungsflleInformationsmodell/UML?version=2026.0.0
+     (Harvest 2026-08-31, migration-log/guide-harvest/); interne Links auf die
+     Zielseiten dieser IG-Struktur umgeschrieben (migration-log/page-map.tsv). -->
+<!-- Die UML-Grafik wird lokal aus input/images/ ausgeliefert (Quelle: figures/
+     des Quell-Repositories; der Simplifier-Leitfaden verlinkte sie hot auf den
+     master-Branch). Die .graphml-Quelle liegt unter figures/. -->
 
-<p>UML overviews of the data models of the <strong>Consent</strong> module and their relationships. Editable sources (e.g. PlantUML) belong in <code class="language-plaintext highlighter-rouge">input/images-source/</code>, the rendered images in <code class="language-plaintext highlighter-rouge">input/images/</code>.</p>
+<h3 id="consent"><a href="StructureDefinition-e0e166b4-0f77-478d-9062-de0034d98ce0.html">Consent</a></h3>
 
-<blockquote class="ig-highlight ig-highlight-grey">
-  <p>[TODO: Add your module's UML diagrams, or delete this page if there are none.]</p>
-</blockquote>
+<p>The Consent resource is a purely machine-readable representation of a person's real-world consent and is used for the enforcement (implementation, execution) of the consent policies.</p>
+
+<p>The consent is obtained in a concrete context (e.g. MII), which is modeled in FHIR in the form of a reference to the responsible organization (<a href="https://ig.fhir.de/einwilligungsmanagement/stable/Organization.html">Organization</a>) and/or to a research project (<a href="https://ig.fhir.de/einwilligungsmanagement/stable/ResearchStudy.html">ResearchStudy</a>).</p>
+
+<h3 id="provenance"><a href="StructureDefinition-f675b1e8-9f3f-44e8-bb59-9681f78eb464.html">Provenance</a></h3>
+
+<p>The Provenance resource describes the origin of the consent contents (including signatures) and links them to the persons involved (<a href="https://ig.fhir.de/einwilligungsmanagement/stable/Patient.html">Patient</a>, Consent Witness) and to any existing document scans (<a href="StructureDefinition-56375452-bfa1-4111-af7c-5b5ba9a1857c.html">DocumentReference</a>). Likewise, the application systems used for capturing the consent can be named (display) or referenced, as well as the patient identifiers valid in the application system.</p>
+
+<h3 id="representation-of-questionnaires">Representation of <a href="frageboegen.html">questionnaires</a></h3>
+
+<p>The use of <em>all</em> profiles developed in the AG Einwilligungsmanagement is <em>not mandatory</em>. For the representation of the Questionnaire-based contents (<a href="frageboegen.html">questionnaires</a>), the recommendations of the TFCU must be taken into account.</p>
+
+<h3 id="relevant-profiles">Relevant profiles</h3>
+
+<p>Notes on the UML class diagram of the Consent extension module:</p>
+
+<ul>
+  <li>
+    <p>Classes colored <em>blue</em> are taken into account in the FHIR representation and profiling, are profiled in this IG, and are required for the MII implementation.</p>
+  </li>
+  <li>
+    <p>Classes colored <em>orange</em> are profiled in the IG of the AG Einwilligungsmanagement and are required for the MII implementation.</p>
+  </li>
+  <li>
+    <p>Classes colored <em>gray</em> are profiled in the IG of the AG Einwilligungsmanagement and are optional for the MII implementation.</p>
+  </li>
+  <li>
+    <p>Classes colored <em>light gray</em> are referenced. They are, however, not taken into account in the FHIR representation and profiling.</p>
+  </li>
+</ul>
+
+<p>The attributes listed in the classes of the diagram are mandatory. In addition, further optional attributes may be specified.</p>
+
+<p><img src="information-model_UML-Diagramm_MII-spez.png" alt="" /></p>
 
 
 
@@ -369,7 +405,7 @@ This page includes translations from the original source language in which the g
 
           IG © 2019+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.netzwerk-universitaetsmedizin.de">NUM-DIZ</a>.  
           Package de.medizininformatikinitiative.kerndatensatz.consent#2026.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
-          Generated <span title="Mon, Aug 31, 2026 18:40+0000">2026-08-31</span>
+          Generated <span title="Mon, Aug 31, 2026 19:25+0000">2026-08-31</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
             <!-- Branding override for the fhir2.base.template footer fragment.

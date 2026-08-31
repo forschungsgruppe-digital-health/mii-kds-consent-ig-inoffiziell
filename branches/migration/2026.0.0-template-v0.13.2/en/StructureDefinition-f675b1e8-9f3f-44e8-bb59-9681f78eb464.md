@@ -1,6 +1,6 @@
 # Profile - MI-I - Consent - Provenance - MII Implementation Guide Consent v2026.0.0
 
-* [**Inhaltsverzeichnis**](toc.md)
+* [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
 * **Profile - MI-I - Consent - Provenance**
 
@@ -14,7 +14,7 @@
  
 Dieses Profil beschreibt Herkunftsinformationen zu Einwilligungen in der Medizininformatik-Initiative. 
 
-Basierend auf den [Empfehlungen](https://ig.fhir.de/einwilligungsmanagement/stable/Provenance.html) der AG Einwilligungsmanagement, beschreibt das Profile **MIIConsentProvenance** die Herkunfsinformationen eines Einwilligungsdokuments.
+Based on the [recommendations](https://ig.fhir.de/einwilligungsmanagement/stable/Provenance.html) of the AG Einwilligungsmanagement, the profile **MIIConsentProvenance** describes the provenance information of a consent document.
 
 **Usages:**
 

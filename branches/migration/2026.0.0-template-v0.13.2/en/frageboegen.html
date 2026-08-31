@@ -6,7 +6,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en" dir="ltr">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Fragebögen - MII Implementation Guide Consent v2026.0.0</title>
+    <title>Questionnaires - MII Implementation Guide Consent v2026.0.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -139,7 +139,7 @@
 
 
         <div id="ig-status">
-          <p><span style="font-size:12pt;font-weight:bold">MII Implementierungsleitfaden Consent</span>
+          <p><span style="font-size:12pt;font-weight:bold">MII Implementation Guide Consent</span>
             <br/>
             <span style="display:inline-block;">2026.0.0 - 
 
@@ -288,7 +288,7 @@
     <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
       <div class="container">  <!-- container -->
         <ul class="breadcrumb">
-          <li><a href='toc.html'><b>Inhaltsverzeichnis</b></a></li><li><a href='guidance.html'><b>Anleitung</b></a></li><li><b>Fragebögen</b></li>
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='guidance.html'><b>Guidance</b></a></li><li><b>Questionnaires</b></li>
 
         </ul>
       </div>  <!-- /container -->
@@ -309,7 +309,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </style>
 <div class="col-12">
   <!--ReleaseHeader--><p id="publish-box">MII Implementation Guide Consent - Local Development build (v2026.0.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://www.medizininformatik-initiative.de/fhir/modul-consent/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
-  <h2>Fragebögen</h2>
+  <h2>Questionnaires</h2>
   
 
 
@@ -326,42 +326,41 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <p><!-- white space is critical inside of capture --></p>
 <div class="markdown-toc">
 <ul id="markdown-toc">
-  <li><a href="#fragebögen" id="markdown-toc-fragebögen">Fragebögen</a></li>
-  <li><a href="#die-strukturierte-einwilligungsvorlage" id="markdown-toc-die-strukturierte-einwilligungsvorlage">Die strukturierte Einwilligungsvorlage</a></li>
-  <li><a href="#die-ausgefüllte-einwilligung" id="markdown-toc-die-ausgefüllte-einwilligung">Die ausgefüllte Einwilligung</a></li>
-  <li><a href="#abbildung-des-mii-broad-consent" id="markdown-toc-abbildung-des-mii-broad-consent">Abbildung des MII Broad Consent</a></li>
-  <li><a href="#verwendung-einheitlicher-policies" id="markdown-toc-verwendung-einheitlicher-policies">Verwendung einheitlicher Policies</a></li>
+  <li><a href="#the-structured-consent-template" id="markdown-toc-the-structured-consent-template">The structured consent template</a></li>
+  <li><a href="#the-completed-consent" id="markdown-toc-the-completed-consent">The completed consent</a></li>
+  <li><a href="#representation-of-the-mii-broad-consent" id="markdown-toc-representation-of-the-mii-broad-consent">Representation of the MII Broad Consent</a></li>
+  <li><a href="#use-of-uniform-policies" id="markdown-toc-use-of-uniform-policies">Use of uniform policies</a></li>
 </ul>
 
 </div>
 <!-- markdownlint-disable MD041 -->
+<!-- machine translation of source page frageboegen.md (de). TODO:REVIEW — Gate C. -->
 <!-- Wortgetreu übertragen aus der Simplifier-Quellseite
      https://simplifier.net/guide/miiigmodulconsent/MIIIGModulConsent/AnwendungsflleInformationsmodell/Fragebgen?version=2026.0.0
      (Harvest 2026-08-31, migration-log/guide-harvest/); interne Links auf die
      Zielseiten dieser IG-Struktur umgeschrieben (migration-log/page-map.tsv). -->
-<h3 id="fragebögen">Fragebögen</h3>
 
-<p>Die <a href="https://ig.fhir.de/einwilligungsmanagement/stable/">AG Einwilligungsmanagement</a> hat sich umfassend mit der Modellierung von Einwilligungen und Einwilligungsvorlagen befasst.</p>
+<p>The <a href="https://ig.fhir.de/einwilligungsmanagement/stable/">AG Einwilligungsmanagement</a> has dealt comprehensively with the modeling of consents and consent templates.</p>
 
-<p>Der vorliegende Implementation Guide setzt wesentlich auf diesen Vorarbeiten auf.</p>
+<p>This Implementation Guide builds substantially on that preliminary work.</p>
 
-<h3 id="die-strukturierte-einwilligungsvorlage">Die strukturierte Einwilligungsvorlage</h3>
+<h3 id="the-structured-consent-template">The structured consent template</h3>
 
-<p>Die Profile <a href="https://ig.fhir.de/einwilligungsmanagement/stable/QuestionnaireComposed.html">Questionnaire Composed</a>, <a href="https://ig.fhir.de/einwilligungsmanagement/stable/TemplateFrame.html">Template Frame</a> und <a href="https://ig.fhir.de/einwilligungsmanagement/stable/TemplateModule.html">Template Module</a> basieren auf der FHIR Ressource Questionnaire und dienen der Abbildung des Einwilligungsformulars (hier: MII Broad Consent).</p>
+<p>The profiles <a href="https://ig.fhir.de/einwilligungsmanagement/stable/QuestionnaireComposed.html">Questionnaire Composed</a>, <a href="https://ig.fhir.de/einwilligungsmanagement/stable/TemplateFrame.html">Template Frame</a> and <a href="https://ig.fhir.de/einwilligungsmanagement/stable/TemplateModule.html">Template Module</a> are based on the FHIR resource Questionnaire and serve to represent the consent form (here: MII Broad Consent).</p>
 
-<p>Dabei stellt das Template Module einen wiederverwendbaren basalen Bestandteil dar, welcher in einem oder mehreren Formularabschnitten (TemplateFrames) verwendet bzw. eingebunden wird. Ein oder mehrere TemplateFrames können zu einem vollständigen, render-fähigen Formular (QuestionnaireComposed) zusammengesetzt werden.</p>
+<p>The Template Module constitutes a reusable basic building block that is used or embedded in one or more form sections (TemplateFrames). One or more TemplateFrames can be composed into a complete, renderable form (QuestionnaireComposed).</p>
 
-<h3 id="die-ausgefüllte-einwilligung">Die ausgefüllte Einwilligung</h3>
+<h3 id="the-completed-consent">The completed consent</h3>
 
-<p>Das Profil <a href="https://ig.fhir.de/einwilligungsmanagement/stable/QuestionnaireResponse.html">QuestionnaireResponse</a> bildet den vom Patienten ausgefüllten Fragebogen elektronisch ab. Hier werden die Antworten des Patienten auf den referenzierten Fragebogen (QuestionnaireComposed) des MII Broad Consent dokumentiert.</p>
+<p>The profile <a href="https://ig.fhir.de/einwilligungsmanagement/stable/QuestionnaireResponse.html">QuestionnaireResponse</a> electronically represents the questionnaire completed by the patient. Here the patient's answers to the referenced questionnaire (QuestionnaireComposed) of the MII Broad Consent are documented.</p>
 
-<p>Zur Abbildung der Antworten sollte das Value Set “<a href="https://art-decor.org/art-decor/decor-valuesets--mide-?id=2.16.840.1.113883.3.1937.777.24.11.30">MII Consent: Answer ValueSet</a>” verwendet werden:</p>
+<p>To represent the answers, the value set "<a href="https://art-decor.org/art-decor/decor-valuesets--mide-?id=2.16.840.1.113883.3.1937.777.24.11.30">MII Consent: Answer ValueSet</a>" should be used:</p>
 
 <table>
   <tbody>
     <tr>
       <td>Checkbox</td>
-      <td>Code-Bezeichner</td>
+      <td>Code designator</td>
       <td>Code (OID)</td>
     </tr>
   </tbody>
@@ -372,7 +371,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <table>
   <tbody>
     <tr>
-      <td>‘Ja‘ angekreuzt</td>
+      <td>'Yes' checked</td>
       <td>gültig</td>
       <td>2.16.840.1.113883.3.1937.777.24.5.2.1</td>
     </tr>
@@ -382,7 +381,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <table>
   <tbody>
     <tr>
-      <td>‘Nein’ angekreuzt</td>
+      <td>'No' checked</td>
       <td>nicht gültig</td>
       <td>2.16.840.1.113883.3.1937.777.24.5.2.2</td>
     </tr>
@@ -392,24 +391,24 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <table>
   <tbody>
     <tr>
-      <td>nicht angekreuzt</td>
+      <td>not checked</td>
       <td>unbekannt</td>
       <td>2.16.840.1.113883.3.1937.777.24.5.2.3</td>
     </tr>
   </tbody>
 </table>
 
-<p><em>Antworten (Checkbox), Code-Bezeichner und OIDs</em></p>
+<p><em>Answers (checkbox), code designators and OIDs</em></p>
 
-<h3 id="abbildung-des-mii-broad-consent">Abbildung des MII Broad Consent</h3>
+<h3 id="representation-of-the-mii-broad-consent">Representation of the MII Broad Consent</h3>
 
-<p>Die Datenelemente des MII Broad Consent Formulars in Version <a href="https://art-decor.org/art-decor/decor-datasets--mide-?conceptId=2.16.840.1.113883.3.1937.777.24.2.1790">1.6d</a> und <a href="https://art-decor.org/art-decor/decor-datasets--mide-?conceptId=2.16.840.1.113883.3.1937.777.24.2.1791">1.6f</a> sind als Dataset in ART-DECOR modelliert, siehe Abschnitt <a href="logical-models.html">Datensätze inkl. Beschreibungen</a>.</p>
+<p>The data elements of the MII Broad Consent form in versions <a href="https://art-decor.org/art-decor/decor-datasets--mide-?conceptId=2.16.840.1.113883.3.1937.777.24.2.1790">1.6d</a> and <a href="https://art-decor.org/art-decor/decor-datasets--mide-?conceptId=2.16.840.1.113883.3.1937.777.24.2.1791">1.6f</a> are modeled as a dataset in ART-DECOR; see the section <a href="logical-models.html">Datasets incl. descriptions</a>.</p>
 
-<h3 id="verwendung-einheitlicher-policies">Verwendung einheitlicher Policies</h3>
+<h3 id="use-of-uniform-policies">Use of uniform policies</h3>
 
-<p>Die benötigten Value Sets sind ebenfalls in ART-DECOR modelliert) und mit den entspr. Datenelementen assoziert. Die Kompatibilität zu IHE BPPC (Integrating the Healthcare Enterprise, <a href="https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_TF_Vol1.pdf#nameddest=19_Basic_Patient_Privacy_Consen">Profil „Basic Patient Privacy Consent“</a>) wird über Policies adressiert.</p>
+<p>The required value sets are likewise modeled in ART-DECOR) and associated with the corresponding data elements. Compatibility with IHE BPPC (Integrating the Healthcare Enterprise, <a href="https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_TF_Vol1.pdf#nameddest=19_Basic_Patient_Privacy_Consen">"Basic Patient Privacy Consent" profile</a>) is addressed via policies.</p>
 
-<p>Die <strong>Operationalisierung bzw. Durchsetzung (Enforcement) der Consent Informationen</strong> wird durch ein <a href="https://art-decor.org/decor/services/RetrieveValueSet?id=2.16.840.1.113883.3.1937.777.24.11.36&amp;effectiveDate=2021-04-23T10:55:54&amp;prefix=mide-&amp;format=html&amp;collapsable=true&amp;language=de-DE&amp;ui=en-US">einheitliches Policy-Valueset</a> unterstützt. Dies kann interoperabel in IHE BPPC verwendet werden.</p>
+<p>The <strong>operationalization and enforcement of the consent information</strong> is supported by a <a href="https://art-decor.org/decor/services/RetrieveValueSet?id=2.16.840.1.113883.3.1937.777.24.11.36&amp;effectiveDate=2021-04-23T10:55:54&amp;prefix=mide-&amp;format=html&amp;collapsable=true&amp;language=de-DE&amp;ui=en-US">uniform policy value set</a>. This can be used interoperably in IHE BPPC.</p>
 
 
 
@@ -436,7 +435,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
           IG © 2019+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.netzwerk-universitaetsmedizin.de">NUM-DIZ</a>.  
           Package de.medizininformatikinitiative.kerndatensatz.consent#2026.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
-          Generated <span title="Mon, Aug 31, 2026 18:40+0000">2026-08-31</span>
+          Generated <span title="Mon, Aug 31, 2026 19:25+0000">2026-08-31</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
             <!-- Branding override for the fhir2.base.template footer fragment.

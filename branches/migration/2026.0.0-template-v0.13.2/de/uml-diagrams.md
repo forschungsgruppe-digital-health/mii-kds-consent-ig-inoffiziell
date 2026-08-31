@@ -6,8 +6,6 @@
 
 ## UML-Diagramme
 
-### UML-Diagramme
-
 ### Consent
 
 Die Consent-Resource stellt eine rein maschinen-lesbare Repräsentation der real existierenden Einwilligung einer Person dar und wird für das Enforcement (Durchsetzung, Umsetzung) der Consent-Policies verwendet.

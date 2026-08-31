@@ -5,8 +5,6 @@
 
 ## Änderungshistorie
 
-### Änderungshistorie
-
 Diese Seite hält die Änderungen zwischen den veröffentlichten Versionen des Moduls **Consent** fest, die neueste Version zuerst. Sie folgt [Keep a Changelog](https://keepachangelog.com/de/1.1.0/) und dem KDS-CalVer-Schema, das die Seite [Versionierung](version-history.md) beschreibt.
 
 Jede Version erhält einen eigenen Abschnitt mit dem Release-Datum und den nach Kategorien gruppierten Änderungen:

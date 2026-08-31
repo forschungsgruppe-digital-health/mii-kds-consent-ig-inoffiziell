@@ -1,15 +1,13 @@
-# CapabilityStatements - MII Implementation Guide Consent v2026.0.0
+# Capability Statements - MII Implementation Guide Consent v2026.0.0
 
-* [**Inhaltsverzeichnis**](toc.md)
-* **CapabilityStatements**
+* [**Table of Contents**](toc.md)
+* **Capability Statements**
 
-## CapabilityStatements
+## Capability Statements
 
- This page includes translations from the original source language in which the guide was authored. Information on these translations and instructions on how to provide feedback on the translations can be found [here](translationinfo.html). 
+### CapabilityStatements
 
-### Capability Statements
+TODO:REVIEW — The source (KDS Modul Consent 2026.0.0) declares **no** CapabilityStatement. The CapabilityStatement rendered below is a **migration proposal** (spec 9b), derived from the profiles and search parameters of this module; the module team confirms, changes, or deletes it at Gate A.
 
-The CapabilityStatements of the **Consent** module describe the expected server/client capabilities (supported resources and interactions).
-
-> [TODO: Link to your module's CapabilityStatement(s), or delete this page.]
+> **Written during migration - review before release.** The following CapabilityStatement was generated during the migration from the module's profiles and search parameters (each element references a package artifact); the source contained none.
 
