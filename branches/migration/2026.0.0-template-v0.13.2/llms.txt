@@ -55,12 +55,12 @@
 
 ### SearchParameters
 
-* [MII_SP_Consent_PolicyUri](de/SearchParameter-MII-SP-Consent-PolicyUri.md)
-* [MII_SP_Consent_ProvisionCode](de/SearchParameter-MII-SP-Consent-ProvisionCode.md)
-* [MII_SP_Consent_ProvisionCodePeriod](de/SearchParameter-MII-SP-Consent-ProvisionCodePeriod.md)
-* [MII_SP_Consent_ProvisionCodeType](de/SearchParameter-MII-SP-Consent-ProvisionCodeType.md)
-* [MII_SP_Consent_ProvisionPeriod](de/SearchParameter-MII-SP-Consent-ProvisionPeriod.md)
-* [MII_SP_Consent_ProvisionType](de/SearchParameter-MII-SP-Consent-ProvisionType.md)
+* [MII_SP_Consent_PolicyUri](de/SearchParameter-mii-sp-consent-policyuri.md)
+* [MII_SP_Consent_ProvisionCode](de/SearchParameter-mii-sp-consent-provisioncode.md)
+* [MII_SP_Consent_ProvisionCodePeriod](de/SearchParameter-mii-sp-consent-provisioncodeperiod.md)
+* [MII_SP_Consent_ProvisionCodeType](de/SearchParameter-mii-sp-consent-provisioncodetype.md)
+* [MII_SP_Consent_ProvisionPeriod](de/SearchParameter-mii-sp-consent-provisionperiod.md)
+* [MII_SP_Consent_ProvisionType](de/SearchParameter-mii-sp-consent-provisiontype.md)
 
 ### Examples
 

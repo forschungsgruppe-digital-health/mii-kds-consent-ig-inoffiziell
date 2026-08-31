@@ -105,18 +105,6 @@
       <code value="2.16.840.1.113883.3.1937.777.24.2.184"/>
     </coding>
   </category>
-  <category>
-    <coding>
-      <system value="http://loinc.org"/>
-      <code value="57016-8"/>
-    </coding>
-  </category>
-  <category>
-    <coding>
-      <system value="https://www.medizininformatik-initiative.de/fhir/modul-consent/CodeSystem/mii-cs-consent-version-modules"/>
-      <code value="2.16.840.1.113883.3.1937.777.24.2.184"/>
-    </coding>
-  </category>
   <patient>
     <reference value="Patient/531cef77-2a30-4283-944d-affaf9ae234e"/>
   </patient>

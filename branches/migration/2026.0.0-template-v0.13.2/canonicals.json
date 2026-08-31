@@ -21,42 +21,42 @@
   "name" : "MII_IG_Consent"
 },
 {
-  "id" : "MII-SP-Consent-PolicyUri",
+  "id" : "mii-sp-consent-policyuri",
   "type" : "SearchParameter",
   "url" : "https://www.medizininformatik-initiative.de/fhir/modul-consent/SearchParameter/mii-sp-consent-policyuri",
   "version" : "2026.0.0",
   "name" : "MII_SP_Consent_PolicyUri"
 },
 {
-  "id" : "MII-SP-Consent-ProvisionCode",
+  "id" : "mii-sp-consent-provisioncode",
   "type" : "SearchParameter",
   "url" : "https://www.medizininformatik-initiative.de/fhir/modul-consent/SearchParameter/mii-sp-consent-provisioncode",
   "version" : "2026.0.0",
   "name" : "MII_SP_Consent_ProvisionCode"
 },
 {
-  "id" : "MII-SP-Consent-ProvisionCodePeriod",
+  "id" : "mii-sp-consent-provisioncodeperiod",
   "type" : "SearchParameter",
   "url" : "https://www.medizininformatik-initiative.de/fhir/modul-consent/SearchParameter/mii-sp-consent-provisioncodeperiod",
   "version" : "2026.0.0",
   "name" : "MII_SP_Consent_ProvisionCodePeriod"
 },
 {
-  "id" : "MII-SP-Consent-ProvisionCodeType",
+  "id" : "mii-sp-consent-provisioncodetype",
   "type" : "SearchParameter",
   "url" : "https://www.medizininformatik-initiative.de/fhir/modul-consent/SearchParameter/mii-sp-consent-provisioncodetype",
   "version" : "2026.0.0",
   "name" : "MII_SP_Consent_ProvisionCodeType"
 },
 {
-  "id" : "MII-SP-Consent-ProvisionPeriod",
+  "id" : "mii-sp-consent-provisionperiod",
   "type" : "SearchParameter",
   "url" : "https://www.medizininformatik-initiative.de/fhir/modul-consent/SearchParameter/mii-sp-consent-provisionperiod",
   "version" : "2026.0.0",
   "name" : "MII_SP_Consent_ProvisionPeriod"
 },
 {
-  "id" : "MII-SP-Consent-ProvisionType",
+  "id" : "mii-sp-consent-provisiontype",
   "type" : "SearchParameter",
   "url" : "https://www.medizininformatik-initiative.de/fhir/modul-consent/SearchParameter/mii-sp-consent-provisiontype",
   "version" : "2026.0.0",

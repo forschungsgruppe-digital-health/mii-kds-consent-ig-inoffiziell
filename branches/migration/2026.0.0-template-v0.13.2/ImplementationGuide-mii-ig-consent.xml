@@ -1082,9 +1082,9 @@
         <valueString value="SearchParameter"/>
       </extension>
       <reference>
-        <reference value="SearchParameter/MII-SP-Consent-PolicyUri"/>
+        <reference value="SearchParameter/mii-sp-consent-policyuri"/>
       </reference>
-      <name value="MII-SP-Consent-PolicyUri"/>
+      <name value="mii-sp-consent-policyuri"/>
       <description value="Suche in der Policy URI (versionsspezifische Policy / Broad Consent)"/>
       <exampleBoolean value="false"/>
     </resource>
@@ -1093,9 +1093,9 @@
         <valueString value="SearchParameter"/>
       </extension>
       <reference>
-        <reference value="SearchParameter/MII-SP-Consent-ProvisionCode"/>
+        <reference value="SearchParameter/mii-sp-consent-provisioncode"/>
       </reference>
-      <name value="MII-SP-Consent-ProvisionCode"/>
+      <name value="mii-sp-consent-provisioncode"/>
       <description value="Suche im Code der Provison"/>
       <exampleBoolean value="false"/>
     </resource>
@@ -1104,9 +1104,9 @@
         <valueString value="SearchParameter"/>
       </extension>
       <reference>
-        <reference value="SearchParameter/MII-SP-Consent-ProvisionCodePeriod"/>
+        <reference value="SearchParameter/mii-sp-consent-provisioncodeperiod"/>
       </reference>
-      <name value="MII-SP-Consent-ProvisionCodePeriod"/>
+      <name value="mii-sp-consent-provisioncodeperiod"/>
       <description value="Composite-Suche nach Zeitraum (period) einer bestimmten, durch einen Code definierten, Provision."/>
       <exampleBoolean value="false"/>
     </resource>
@@ -1115,9 +1115,9 @@
         <valueString value="SearchParameter"/>
       </extension>
       <reference>
-        <reference value="SearchParameter/MII-SP-Consent-ProvisionCodeType"/>
+        <reference value="SearchParameter/mii-sp-consent-provisioncodetype"/>
       </reference>
-      <name value="MII-SP-Consent-ProvisionCodeType"/>
+      <name value="mii-sp-consent-provisioncodetype"/>
       <description value="Composite-Suche nach Typ (type) einer bestimmten, durch einen Code definierten, Provision."/>
       <exampleBoolean value="false"/>
     </resource>
@@ -1126,9 +1126,9 @@
         <valueString value="SearchParameter"/>
       </extension>
       <reference>
-        <reference value="SearchParameter/MII-SP-Consent-ProvisionPeriod"/>
+        <reference value="SearchParameter/mii-sp-consent-provisionperiod"/>
       </reference>
-      <name value="MII-SP-Consent-ProvisionPeriod"/>
+      <name value="mii-sp-consent-provisionperiod"/>
       <description value="Suche im Zeitraum der Provision. Dieser Suchparameter bezieht sich explizit auf die zweite Verschachtelungsebene von provison."/>
       <exampleBoolean value="false"/>
     </resource>
@@ -1137,9 +1137,9 @@
         <valueString value="SearchParameter"/>
       </extension>
       <reference>
-        <reference value="SearchParameter/MII-SP-Consent-ProvisionType"/>
+        <reference value="SearchParameter/mii-sp-consent-provisiontype"/>
       </reference>
-      <name value="MII-SP-Consent-ProvisionType"/>
+      <name value="mii-sp-consent-provisiontype"/>
       <description value="Suche im Typ der Provison (permit, deny)."/>
       <exampleBoolean value="false"/>
     </resource>

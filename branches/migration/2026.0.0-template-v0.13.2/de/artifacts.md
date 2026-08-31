@@ -21,12 +21,12 @@ Diese definieren die Eigenschaften, nach denen ein RESTful-Server durchsucht wer
 
 | | |
 | :--- | :--- |
-| [ MII-SP-Consent-PolicyUri  ](SearchParameter-MII-SP-Consent-PolicyUri.md) | Suche in der Policy URI (versionsspezifische Policy / Broad Consent) |
-| [ MII-SP-Consent-ProvisionCode  ](SearchParameter-MII-SP-Consent-ProvisionCode.md) | Suche im Code der Provison |
-| [ MII-SP-Consent-ProvisionCodePeriod  ](SearchParameter-MII-SP-Consent-ProvisionCodePeriod.md) | Composite-Suche nach Zeitraum (period) einer bestimmten, durch einen Code definierten, Provision. |
-| [ MII-SP-Consent-ProvisionCodeType  ](SearchParameter-MII-SP-Consent-ProvisionCodeType.md) | Composite-Suche nach Typ (type) einer bestimmten, durch einen Code definierten, Provision. |
-| [ MII-SP-Consent-ProvisionPeriod  ](SearchParameter-MII-SP-Consent-ProvisionPeriod.md) | Suche im Zeitraum der Provision. Dieser Suchparameter bezieht sich explizit auf die zweite Verschachtelungsebene von provison. |
-| [ MII-SP-Consent-ProvisionType  ](SearchParameter-MII-SP-Consent-ProvisionType.md) | Suche im Typ der Provison (permit, deny). |
+| [ mii-sp-consent-policyuri  ](SearchParameter-mii-sp-consent-policyuri.md) | Suche in der Policy URI (versionsspezifische Policy / Broad Consent) |
+| [ mii-sp-consent-provisioncode  ](SearchParameter-mii-sp-consent-provisioncode.md) | Suche im Code der Provison |
+| [ mii-sp-consent-provisioncodeperiod  ](SearchParameter-mii-sp-consent-provisioncodeperiod.md) | Composite-Suche nach Zeitraum (period) einer bestimmten, durch einen Code definierten, Provision. |
+| [ mii-sp-consent-provisioncodetype  ](SearchParameter-mii-sp-consent-provisioncodetype.md) | Composite-Suche nach Typ (type) einer bestimmten, durch einen Code definierten, Provision. |
+| [ mii-sp-consent-provisionperiod  ](SearchParameter-mii-sp-consent-provisionperiod.md) | Suche im Zeitraum der Provision. Dieser Suchparameter bezieht sich explizit auf die zweite Verschachtelungsebene von provison. |
+| [ mii-sp-consent-provisiontype  ](SearchParameter-mii-sp-consent-provisiontype.md) | Suche im Typ der Provison (permit, deny). |
 
 ### Strukturen: Ressourcenprofile 
 

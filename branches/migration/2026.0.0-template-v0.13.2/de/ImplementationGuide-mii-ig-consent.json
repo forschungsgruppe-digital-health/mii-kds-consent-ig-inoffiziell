@@ -1379,9 +1379,9 @@
         "valueString" : "SearchParameter"
       }],
       "reference" : {
-        "reference" : "SearchParameter/MII-SP-Consent-PolicyUri"
+        "reference" : "SearchParameter/mii-sp-consent-policyuri"
       },
-      "name" : "MII-SP-Consent-PolicyUri",
+      "name" : "mii-sp-consent-policyuri",
       "description" : "Suche in der Policy URI (versionsspezifische Policy / Broad Consent)",
       "exampleBoolean" : false
     },
@@ -1391,9 +1391,9 @@
         "valueString" : "SearchParameter"
       }],
       "reference" : {
-        "reference" : "SearchParameter/MII-SP-Consent-ProvisionCode"
+        "reference" : "SearchParameter/mii-sp-consent-provisioncode"
       },
-      "name" : "MII-SP-Consent-ProvisionCode",
+      "name" : "mii-sp-consent-provisioncode",
       "description" : "Suche im Code der Provison",
       "exampleBoolean" : false
     },
@@ -1403,9 +1403,9 @@
         "valueString" : "SearchParameter"
       }],
       "reference" : {
-        "reference" : "SearchParameter/MII-SP-Consent-ProvisionCodePeriod"
+        "reference" : "SearchParameter/mii-sp-consent-provisioncodeperiod"
       },
-      "name" : "MII-SP-Consent-ProvisionCodePeriod",
+      "name" : "mii-sp-consent-provisioncodeperiod",
       "description" : "Composite-Suche nach Zeitraum (period) einer bestimmten, durch einen Code definierten, Provision.",
       "exampleBoolean" : false
     },
@@ -1415,9 +1415,9 @@
         "valueString" : "SearchParameter"
       }],
       "reference" : {
-        "reference" : "SearchParameter/MII-SP-Consent-ProvisionCodeType"
+        "reference" : "SearchParameter/mii-sp-consent-provisioncodetype"
       },
-      "name" : "MII-SP-Consent-ProvisionCodeType",
+      "name" : "mii-sp-consent-provisioncodetype",
       "description" : "Composite-Suche nach Typ (type) einer bestimmten, durch einen Code definierten, Provision.",
       "exampleBoolean" : false
     },
@@ -1427,9 +1427,9 @@
         "valueString" : "SearchParameter"
       }],
       "reference" : {
-        "reference" : "SearchParameter/MII-SP-Consent-ProvisionPeriod"
+        "reference" : "SearchParameter/mii-sp-consent-provisionperiod"
       },
-      "name" : "MII-SP-Consent-ProvisionPeriod",
+      "name" : "mii-sp-consent-provisionperiod",
       "description" : "Suche im Zeitraum der Provision. Dieser Suchparameter bezieht sich explizit auf die zweite Verschachtelungsebene von provison.",
       "exampleBoolean" : false
     },
@@ -1439,9 +1439,9 @@
         "valueString" : "SearchParameter"
       }],
       "reference" : {
-        "reference" : "SearchParameter/MII-SP-Consent-ProvisionType"
+        "reference" : "SearchParameter/mii-sp-consent-provisiontype"
       },
-      "name" : "MII-SP-Consent-ProvisionType",
+      "name" : "mii-sp-consent-provisiontype",
       "description" : "Suche im Typ der Provison (permit, deny).",
       "exampleBoolean" : false
     },
