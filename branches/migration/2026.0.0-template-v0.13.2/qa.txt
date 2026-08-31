@@ -3,7 +3,7 @@ MII_IG_Consent : Validation Results
 
 err = 70, warn = 137, info = 498
 IG Publisher Version: 2.3.2 Out of date - current version is 2.3.3
-Generated Mon Aug 31 19:41:44 UTC 2026. FHIR version 4.0.1 for de.medizininformatikinitiative.kerndatensatz.consent#2026.0.0 (canonical = https://www.medizininformatik-initiative.de/fhir/modul-consent)
+Generated Mon Aug 31 20:04:52 UTC 2026. FHIR version 4.0.1 for de.medizininformatikinitiative.kerndatensatz.consent#2026.0.0 (canonical = https://www.medizininformatik-initiative.de/fhir/modul-consent)
  Build Errors : 0 / 11 / 0
  /home/runner/work/mii-kds-consent-ig-inoffiziell/mii-kds-consent-ig-inoffiziell/fsh-generated/resources/CapabilityStatement-mii-cap-consent-server : 0 / 0 / 12
  /home/runner/work/mii-kds-consent-ig-inoffiziell/mii-kds-consent-ig-inoffiziell/fsh-generated/resources/CodeSystem-2.16.840.1.113883.3.1937.777.24.5.2--20210423105554 : 1 / 13 / 3
@@ -39,8 +39,8 @@ WARNING: Unable to find ImplementationGuide.definition.resource.description for 
 WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource DocumentReference/8a3d1799-2463-405e-b49c-6a16c8692b01.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
 WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Consent/Example-MII-Consent-ResultType-document.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
 WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Parameters/mii-param-consent-manifest.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
-WARNING: de/value-sets.html#/html/body/div/div/div/div/div/p/a at Line 328, column 5: The link 'https://www.medizininformatik-initiative.de/fhir/modul-consent/ValueSet/mii-vs-consent-signaturetypes' for "https://www.medizininformatik-initiative.de/fhir/modul-consent/ValueSet/mii-vs-consent-signaturetypes" is a canonical link and is therefore unsafe with regard to versions
-WARNING: en/value-sets.html#/html/body/div/div/div/div/div/p/a at Line 357, column 5: The link 'https://www.medizininformatik-initiative.de/fhir/modul-consent/ValueSet/mii-vs-consent-signaturetypes' for "https://www.medizininformatik-initiative.de/fhir/modul-consent/ValueSet/mii-vs-consent-signaturetypes" is a canonical link and is therefore unsafe with regard to versions
+WARNING: de/value-sets.html#/html/body/div/div/div/div/div/p/a at Line 329, column 5: The link 'https://www.medizininformatik-initiative.de/fhir/modul-consent/ValueSet/mii-vs-consent-signaturetypes' for "https://www.medizininformatik-initiative.de/fhir/modul-consent/ValueSet/mii-vs-consent-signaturetypes" is a canonical link and is therefore unsafe with regard to versions
+WARNING: en/value-sets.html#/html/body/div/div/div/div/div/p/a at Line 358, column 5: The link 'https://www.medizininformatik-initiative.de/fhir/modul-consent/ValueSet/mii-vs-consent-signaturetypes' for "https://www.medizininformatik-initiative.de/fhir/modul-consent/ValueSet/mii-vs-consent-signaturetypes" is a canonical link and is therefore unsafe with regard to versions
 WARNING: 5: An HTML fragment from the set [expansion-params.xhtml, expansion-params.xhtml] is not included anywhere in the produced implementation guide
 == fsh-generated/resources/CapabilityStatement-mii-cap-consent-server.json ==
 INFORMATION: CapabilityStatement.rest[0].resource[0].supportedProfile[0]: Pinned the version of https://www.medizininformatik-initiative.de/fhir/modul-consent/StructureDefinition/mii-pr-consent-einwilligung to 2026.0.0
