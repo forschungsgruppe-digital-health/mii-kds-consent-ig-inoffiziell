@@ -1,0 +1,35 @@
+# de.medizininformatikinitiative.kerndatensatz.consent#2026.0.0: MII Implementation Guide Consent(en)
+
+## Pages
+
+* [Startseite](index.md)
+* [Beispiele](examples.md)
+* [ValueSets](value-sets.md)
+* [CodeSystems](code-systems.md)
+* [Versionierung](version-history.md)
+* [Extensions](extensions.md)
+* [Anleitung für Forschende](researcher-guidance.md)
+* [Metadaten-Übersicht](metadata.md)
+* [Anleitung für Implementierende](implementer-guidance.md)
+* [Profile](profiles.md)
+* [Artifacts Summary](artifacts.md)
+* [Suchparameter](search-parameters.md)
+* [Hinweise zur Übersetzung](translationinfo.md)
+* [Änderungshistorie](changes.md)
+* [Logische Modelle](logical-models.md)
+* [Operationen](operations.md)
+* [Anleitung](guidance.md)
+* [Downloads](downloads.md)
+* [Sicherheit und Datenschutz](security-and-privacy.md)
+* [CapabilityStatements](capability-statements.md)
+* [UML-Diagramme](uml-diagrams.md)
+
+## Resources
+
+### ImplementationGuides
+
+* [MII Implementation Guide Consent](ImplementationGuide-mii-ig-consent.md)
+
+### Parameters
+
+* [mii-param-consent-manifest](Parameters-mii-param-consent-manifest.md)

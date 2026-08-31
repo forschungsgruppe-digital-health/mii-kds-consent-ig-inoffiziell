@@ -1,0 +1,89 @@
+MII_IG_Consent : Validation Results
+=========================================
+
+err = 0, warn = 7, info = 59
+IG Publisher Version: 2.3.2 Out of date - current version is 2.3.3
+Generated Mon Aug 31 18:23:58 UTC 2026. FHIR version 4.0.1 for de.medizininformatikinitiative.kerndatensatz.consent#2026.0.0 (canonical = https://www.medizininformatik-initiative.de/fhir/modul-consent)
+ Build Errors : 10 / 3 / 0
+ /home/runner/work/mii-kds-consent-ig-inoffiziell/mii-kds-consent-ig-inoffiziell/fsh-generated/resources/ImplementationGuide-mii-ig-consent : 0 / 4 / 63
+ /home/runner/work/mii-kds-consent-ig-inoffiziell/mii-kds-consent-ig-inoffiziell/input/resources/Parameters-expansion-manifest : 0 / 0 / 1
+</table>
+== n/a ==
+WARNING: ImplementationGuide.id: The Implementation Guide Resource id should be de.medizininformatikinitiative.kerndatensatz.consent
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Parameters/mii-param-consent-manifest.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+ERROR: de/downloads.html#/html/body/div/div/div/div/div/ul/li/a at Line 355, column 8: The link '../examples.xml.zip' for "XML (komprimierter Ordner)" cannot be resolved
+ERROR: de/downloads.html#/html/body/div/div/div/div/div/ul/li/a at Line 356, column 8: The link '../examples.json.zip' for "JSON (komprimierter Ordner)" cannot be resolved
+ERROR: de/downloads.html#/html/body/div/div/div/div/div/ul/li/a at Line 373, column 8: The link '../schematrons.zip' for "Schematrons (komprimierter Ordner)" cannot be resolved
+ERROR: de/examples.html#/html/body/div/div/div/div/div/p/a at Line 314, column 2: The link 'Patient-ExamplePatientInstance.html' for "Max Mustermann-Testpatient" cannot be resolved
+ERROR: de/profiles.html#/html/body/div/div/div/div/div/p/a at Line 317, column 2: The link 'StructureDefinition-example-patient.html' for "Example Patient" cannot be resolved
+ERROR: en/downloads.html#/html/body/div/div/div/div/div/ul/li/a at Line 388, column 8: The link '../examples.xml.zip' for "XML (compressed folder)" cannot be resolved
+ERROR: en/downloads.html#/html/body/div/div/div/div/div/ul/li/a at Line 389, column 8: The link '../examples.json.zip' for "JSON (compressed folder)" cannot be resolved
+ERROR: en/downloads.html#/html/body/div/div/div/div/div/ul/li/a at Line 406, column 8: The link '../schematrons.zip' for "Schematrons (compressed folder)" cannot be resolved
+ERROR: en/examples.html#/html/body/div/div/div/div/div/p/a at Line 350, column 2: The link 'Patient-ExamplePatientInstance.html' for "Max Mustermann-Testpatient" cannot be resolved
+ERROR: en/profiles.html#/html/body/div/div/div/div/div/p/a at Line 352, column 2: The link 'StructureDefinition-example-patient.html' for "Example Patient" cannot be resolved
+WARNING: 5: An HTML fragment from the set [expansion-params.xhtml, expansion-params.xhtml] is not included anywhere in the produced implementation guide
+== fsh-generated/resources/ImplementationGuide-mii-ig-consent.json ==
+INFORMATION: ImplementationGuide.meta.profile[0]: Pinned the version of http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareableimplementationguide to 2.0.0
+INFORMATION: ImplementationGuide.meta.profile[1]: Pinned the version of http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishableimplementationguide to 2.0.0
+INFORMATION: ImplementationGuide.meta.profile[2]: Pinned the version of http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-implementationguide to 2.0.0
+INFORMATION: ImplementationGuide.definition.page.title: Unused 'en' translation 'Home' -> 'Startseite'
+INFORMATION: ImplementationGuide.definition.page.title: Unused 'en' translation 'Guidance' -> 'Anleitung'
+INFORMATION: ImplementationGuide.definition.page.title: Unused 'en' translation 'Guidance for Researchers' -> 'Anleitung für Forschende'
+INFORMATION: ImplementationGuide.definition.page.title: Unused 'en' translation 'Guidance for Implementers' -> 'Anleitung für Implementierende'
+INFORMATION: ImplementationGuide.definition.page.title: Unused 'en' translation 'UML Diagrams' -> 'UML-Diagramme'
+INFORMATION: ImplementationGuide.definition.page.title: Unused 'en' translation 'Security and Privacy' -> 'Sicherheit und Datenschutz'
+INFORMATION: ImplementationGuide.definition.page.title: Unused 'en' translation 'Profiles' -> 'Profile'
+INFORMATION: ImplementationGuide.definition.page.title: Unused 'en' translation 'Capability Statements' -> 'CapabilityStatements'
+INFORMATION: ImplementationGuide.definition.page.title: Unused 'en' translation 'Search Parameters' -> 'Suchparameter'
+INFORMATION: ImplementationGuide.definition.page.title: Unused 'en' translation 'Operations' -> 'Operationen'
+INFORMATION: ImplementationGuide.definition.page.title: Unused 'en' translation 'Logical Models' -> 'Logische Modelle'
+INFORMATION: ImplementationGuide.definition.page.title: Unused 'en' translation 'Value Sets' -> 'ValueSets'
+INFORMATION: ImplementationGuide.definition.page.title: Unused 'en' translation 'Code Systems' -> 'CodeSystems'
+INFORMATION: ImplementationGuide.definition.page.title: Unused 'en' translation 'Examples' -> 'Beispiele'
+INFORMATION: ImplementationGuide.definition.page.title: Unused 'en' translation 'Changelog' -> 'Änderungshistorie'
+INFORMATION: ImplementationGuide.definition.page.title: Unused 'en' translation 'Metadata Overview' -> 'Metadaten-Übersicht'
+INFORMATION: ImplementationGuide.definition.page.title: Unused 'en' translation 'Versioning' -> 'Versionierung'
+INFORMATION: ImplementationGuide.definition.page.title: Unused 'en' translation 'Translation Information' -> 'Hinweise zur Übersetzung'
+INFORMATION: ImplementationGuide.definition.page.title: Unused 'en' translation 'Rendering Artifacts (demo)' -> 'Artefakt-Rendering (Demo)'
+INFORMATION: ImplementationGuide.definition.page.title: Unused 'en' translation 'MII ImplementationGuide Resource' -> 'MII ImplementationGuide Ressource'
+INFORMATION: ImplementationGuide/mii-ig-consent: ImplementationGuide.extension[3].value.ofType(CodeableConcept).coding[0].display: There are no valid display names found for the code http://terminology.hl7.org/CodeSystem/artifact-version-policy-codes#package for language(s) 'de'. The display is 'Package' which is a valid display for the default language
+WARNING: ImplementationGuide/mii-ig-consent: ImplementationGuide.extension[4].extension[2].value.ofType(uri): URL-Wert 'https://www.medizininformatik-initiative.de/fhir/modul-consent' löst nicht auf
+WARNING: ImplementationGuide/mii-ig-consent: ImplementationGuide.extension[16].value.ofType(CodeableConcept).coding[0].code: Unknown Code 'C16735' in the CodeSystem 'http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl' version 'null' - note that the code system is labeled as a fragment, so the code may be valid in some other fragment
+INFORMATION: ImplementationGuide/mii-ig-consent: ImplementationGuide.jurisdiction[0].coding[0].display: There are no valid display names found for the code urn:iso:std:iso:3166#DE for language(s) 'de'. The display is 'Germany' which is a valid display for the default language
+WARNING: ImplementationGuide/mii-ig-consent: ImplementationGuide.dependsOn[0].uri: Canonical URL 'http://fhir.org/packages/de.einwilligungsmanagement/ImplementationGuide/de.einwilligungsmanagement' kann nicht aufgelöst werden
+WARNING: ImplementationGuide/mii-ig-consent: ImplementationGuide.dependsOn[0]: The canonical URL http://fhir.org/packages/de.einwilligungsmanagement/ImplementationGuide/de.einwilligungsmanagement doesn't point to an actual ImplementationGuide resource
+INFORMATION: ImplementationGuide/mii-ig-consent: ImplementationGuide.extension[0]: Dieses Element stimmt mit keinem bekannten Slicedefined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareableimplementationguide|2.0.0 überein.
+INFORMATION: ImplementationGuide/mii-ig-consent: ImplementationGuide.extension[4]: Dieses Element stimmt mit keinem bekannten Slicedefined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareableimplementationguide|2.0.0 überein.
+INFORMATION: ImplementationGuide/mii-ig-consent: ImplementationGuide.extension[5]: Dieses Element stimmt mit keinem bekannten Slicedefined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareableimplementationguide|2.0.0 überein.
+INFORMATION: ImplementationGuide/mii-ig-consent: ImplementationGuide.extension[6]: Dieses Element stimmt mit keinem bekannten Slicedefined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareableimplementationguide|2.0.0 überein.
+INFORMATION: ImplementationGuide/mii-ig-consent: ImplementationGuide.extension[7]: Dieses Element stimmt mit keinem bekannten Slicedefined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareableimplementationguide|2.0.0 überein.
+INFORMATION: ImplementationGuide/mii-ig-consent: ImplementationGuide.extension[8]: Dieses Element stimmt mit keinem bekannten Slicedefined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareableimplementationguide|2.0.0 überein.
+INFORMATION: ImplementationGuide/mii-ig-consent: ImplementationGuide.extension[9]: Dieses Element stimmt mit keinem bekannten Slicedefined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareableimplementationguide|2.0.0 überein.
+INFORMATION: ImplementationGuide/mii-ig-consent: ImplementationGuide.extension[10]: Dieses Element stimmt mit keinem bekannten Slicedefined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareableimplementationguide|2.0.0 überein.
+INFORMATION: ImplementationGuide/mii-ig-consent: ImplementationGuide.extension[11]: Dieses Element stimmt mit keinem bekannten Slicedefined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareableimplementationguide|2.0.0 überein.
+INFORMATION: ImplementationGuide/mii-ig-consent: ImplementationGuide.extension[12]: Dieses Element stimmt mit keinem bekannten Slicedefined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareableimplementationguide|2.0.0 überein.
+INFORMATION: ImplementationGuide/mii-ig-consent: ImplementationGuide.extension[14]: Dieses Element stimmt mit keinem bekannten Slicedefined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareableimplementationguide|2.0.0 überein.
+INFORMATION: ImplementationGuide/mii-ig-consent: ImplementationGuide.extension[15]: Dieses Element stimmt mit keinem bekannten Slicedefined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareableimplementationguide|2.0.0 überein.
+INFORMATION: ImplementationGuide/mii-ig-consent: ImplementationGuide.extension[16]: Dieses Element stimmt mit keinem bekannten Slicedefined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareableimplementationguide|2.0.0 überein.
+INFORMATION: ImplementationGuide/mii-ig-consent: ImplementationGuide.extension[3]: Dieses Element stimmt mit keinem bekannten Slicedefined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishableimplementationguide|2.0.0 überein.
+INFORMATION: ImplementationGuide/mii-ig-consent: ImplementationGuide.extension[4]: Dieses Element stimmt mit keinem bekannten Slicedefined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishableimplementationguide|2.0.0 überein.
+INFORMATION: ImplementationGuide/mii-ig-consent: ImplementationGuide.extension[12]: Dieses Element stimmt mit keinem bekannten Slicedefined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishableimplementationguide|2.0.0 überein.
+INFORMATION: ImplementationGuide/mii-ig-consent: ImplementationGuide.extension[13]: Dieses Element stimmt mit keinem bekannten Slicedefined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishableimplementationguide|2.0.0 überein.
+INFORMATION: ImplementationGuide/mii-ig-consent: ImplementationGuide.extension[0]: Dieses Element stimmt mit keinem bekannten Slicedefined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-implementationguide|2.0.0 überein.
+INFORMATION: ImplementationGuide/mii-ig-consent: ImplementationGuide.extension[1]: Dieses Element stimmt mit keinem bekannten Slicedefined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-implementationguide|2.0.0 überein.
+INFORMATION: ImplementationGuide/mii-ig-consent: ImplementationGuide.extension[2]: Dieses Element stimmt mit keinem bekannten Slicedefined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-implementationguide|2.0.0 überein.
+INFORMATION: ImplementationGuide/mii-ig-consent: ImplementationGuide.extension[3]: Dieses Element stimmt mit keinem bekannten Slicedefined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-implementationguide|2.0.0 überein.
+INFORMATION: ImplementationGuide/mii-ig-consent: ImplementationGuide.extension[4]: Dieses Element stimmt mit keinem bekannten Slicedefined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-implementationguide|2.0.0 überein.
+INFORMATION: ImplementationGuide/mii-ig-consent: ImplementationGuide.extension[5]: Dieses Element stimmt mit keinem bekannten Slicedefined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-implementationguide|2.0.0 überein.
+INFORMATION: ImplementationGuide/mii-ig-consent: ImplementationGuide.extension[6]: Dieses Element stimmt mit keinem bekannten Slicedefined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-implementationguide|2.0.0 überein.
+INFORMATION: ImplementationGuide/mii-ig-consent: ImplementationGuide.extension[7]: Dieses Element stimmt mit keinem bekannten Slicedefined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-implementationguide|2.0.0 überein.
+INFORMATION: ImplementationGuide/mii-ig-consent: ImplementationGuide.extension[8]: Dieses Element stimmt mit keinem bekannten Slicedefined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-implementationguide|2.0.0 überein.
+INFORMATION: ImplementationGuide/mii-ig-consent: ImplementationGuide.extension[9]: Dieses Element stimmt mit keinem bekannten Slicedefined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-implementationguide|2.0.0 überein.
+INFORMATION: ImplementationGuide/mii-ig-consent: ImplementationGuide.extension[10]: Dieses Element stimmt mit keinem bekannten Slicedefined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-implementationguide|2.0.0 überein.
+INFORMATION: ImplementationGuide/mii-ig-consent: ImplementationGuide.extension[11]: Dieses Element stimmt mit keinem bekannten Slicedefined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-implementationguide|2.0.0 überein.
+INFORMATION: ImplementationGuide/mii-ig-consent: ImplementationGuide.extension[13]: Dieses Element stimmt mit keinem bekannten Slicedefined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-implementationguide|2.0.0 überein.
+INFORMATION: ImplementationGuide/mii-ig-consent: ImplementationGuide.extension[14]: Dieses Element stimmt mit keinem bekannten Slicedefined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-implementationguide|2.0.0 überein.
+INFORMATION: ImplementationGuide/mii-ig-consent: ImplementationGuide.extension[15]: Dieses Element stimmt mit keinem bekannten Slicedefined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-implementationguide|2.0.0 überein.
+INFORMATION: ImplementationGuide/mii-ig-consent: ImplementationGuide.extension[16]: Dieses Element stimmt mit keinem bekannten Slicedefined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-implementationguide|2.0.0 überein.
+INFORMATION: Resource: The resource ImplementationGuide/mii-ig-consent could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+== input/resources/Parameters-expansion-manifest.json ==
