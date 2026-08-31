@@ -70,7 +70,7 @@ Beispiel 2:
   "title" : "MII Consent: Policy ValueSet",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-08-31T20:03:15+00:00",
+  "date" : "2026-08-31T20:24:02+00:00",
   "publisher" : "NUM-DIZ",
   "_publisher" : {
     "extension" : [{
