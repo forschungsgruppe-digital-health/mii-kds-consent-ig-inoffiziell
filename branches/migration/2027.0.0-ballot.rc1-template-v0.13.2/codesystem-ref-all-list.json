@@ -12,6 +12,28 @@
     "http://hl7.org/fhir/R4/valueset-security-role-type.html" : "SecurityRoleType"
   },
   {
+    "url" : "http://fhir.de/ConsentManagement/CodeSystem/ResultType",
+    "version" : "2.0.3",
+    "status" : "active",
+    "name" : "ResultType",
+    "title" : null,
+    "description" : "Ergebnistypen des Einwilligungsdokuments",
+    "uses" : {
+    },
+    "https://simplifier.net/resolve?scope=de.einwilligungsmanagement@2.0.3-snapshots&canonical=http://fhir.de/ConsentManagement/ValueSet/ResultType" : "ConsentManagementResultType"
+  },
+  {
+    "url" : "http://fhir.de/ConsentManagement/CodeSystem/TemplateType",
+    "version" : "2.0.3",
+    "status" : "active",
+    "name" : "TemplateType",
+    "title" : null,
+    "description" : "Typen des Einwilligungsdokuments",
+    "uses" : {
+    },
+    "https://simplifier.net/resolve?scope=de.einwilligungsmanagement@2.0.3-snapshots&canonical=http://fhir.de/ConsentManagement/ValueSet/TemplateType" : "ConsentManagementTemplateType"
+  },
+  {
     "url" : "http://hl7.org/fhir/composition-status",
     "version" : "4.0.1",
     "status" : "draft",
@@ -141,8 +163,8 @@
     "oids" : ["2.16.840.1.113883.6.96"],
     "uses" : {
     },
-    "http://hl7.org/fhir/R4/valueset-c80-facilitycodes.html" : "Facility Type Code Value Set",
-    "http://hl7.org/fhir/R4/valueset-c80-practice-codes.html" : "Practice Setting Code Value Set"
+    "http://hl7.org/fhir/R4/valueset-c80-practice-codes.html" : "Practice Setting Code Value Set",
+    "http://hl7.org/fhir/R4/valueset-c80-facilitycodes.html" : "Facility Type Code Value Set"
   },
   {
     "url" : "http://terminology.hl7.org/CodeSystem/common-tags",
