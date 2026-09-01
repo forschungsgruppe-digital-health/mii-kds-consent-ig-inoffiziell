@@ -19,7 +19,7 @@ Every error was classified into one of two categories the release decision needs
 
 | Class | Count | Category | One-line fix | Origin | Effort |
 |---|---|---|---|---|---|
-| A — id/url mismatch (3 SDs + 3 VSs) | 18 | **PACKAGE-AFFECTING** (identity-level, not semantic) | Rename 6 resource `id`s to their canonical tails (upstream #97/#101) | Inherited from source baseline (identical 6 errors in `qa-baseline-source.txt`) | 1–2 h mechanical; real cost = upstream governance |
+| A — id/url mismatch (3 SDs + 3 VSs) | 18 | **PACKAGE-AFFECTING** (identity-level, not semantic) | Rename 6 resource `id`s to their canonical tails (id modernization — needs a NEW upstream issue; #97/#101 are adjacent only) | Inherited from source baseline (identical 6 errors in `qa-baseline-source.txt`) | 1–2 h mechanical; real cost = upstream governance |
 | B — unresolvable example references | 10 | **NO-CONSEQUENCE** | Add 4 synthetic instances (2 pseudonymous Patients, 2 Domain/ResearchStudy) with the exact referenced UUIDs | Inherited upstream gap (Simplifier never enforced intra-IG resolvability) | 30–60 min |
 | C — `Consent.category` slicing not evaluable | 15 | **PACKAGE-AFFECTING** | Give the inherited `templateType` slice (and ideally `resultType`) a system-only `patternCodeableConcept` in the child profile | develop-inherent (parent + develop re-parent construct; any *correct* build surfaces it) | 1–2 FSH lines + upstream issue |
 | D — Answer CS "all system" ValueSet | 1 | **PACKAGE-AFFECTING** (form) / effect-neutral (substance) | Make `mii-vs-consent-answer` a bare all-system include (or drop `CodeSystem.valueSet`) | Inherited from source baseline (`qa-baseline-source.txt:423`) | ~15 min |
@@ -34,7 +34,11 @@ Key release facts:
   because its own snapshot build was defective).
 - Fixing **B alone** (examples only) brings qa to **34** with zero package
   consequences. Fixing **B + C + D** reaches **18**; the last 18 (A) are the
-  id-modernization question upstream already owns (#97/#101).
+  id-modernization question, which upstream has NOT yet formally opened —
+  adjacent hygiene issues #97 (CS naming) and #101 (CS/VS XML→JSON) show the
+  terminology identities are under rework, but neither requests the id rename;
+  a new upstream issue is needed. *(Corrected 2026-09-01 — an earlier revision
+  of this document overstated #97/#101.)*
 - ERROR-severity messages cannot be waived via `ignoreWarnings.txt` — a
   qa-err=0 ballot build requires actual fixes for all four classes.
 - Even the PACKAGE-AFFECTING fixes are *validation-outcome-neutral for
@@ -85,11 +89,16 @@ shows the identical 6 "Resource id/url mismatch" errors
 published upstream package
 (`de.medizininformatikinitiative.kerndatensatz.consent#dev`) ships the same
 UUID/ART-DECOR-keyed file names. The migration deliberately preserved upstream
-identity; upstream issues **#97/#101** already request the id modernization.
+identity. **Correction (2026-09-01):** upstream issues #97 ("'MII CS Consent
+Policy' in 'MII_CS_Consent_Policy' umbennen" — CS naming) and #101 ("CodeSysteme
+und ValueSet einheitlich nach JSON transformieren") do NOT request this id
+modernization — it must be filed as a new upstream issue; #97/#101 are natural
+anchors to reference from it.
 
 ### Fix proposals (ranked)
 
-1. **id := canonical tail (the #97/#101 modernization), coordinated with
+1. **id := canonical tail (the id modernization — file as a new upstream issue,
+   referencing adjacent #97/#101), coordinated with
    upstream, shipped in the ballot package.** Clears all 18. Touch list in this
    tree: 6 FSH `Id:` lines (the `^url` caret lines become redundant-but-harmless
    since SUSHI then derives the same url); rename 6 filename-keyed intro notes
@@ -105,7 +114,7 @@ identity; upstream issues **#97/#101** already request the id modernization.
 2. **Keep the errors for the RC (do nothing).** Defensible under the migration
    guardrail of identity fidelity: the class exists byte-for-byte in the
    upstream baseline; fixing it unilaterally makes the migrated package diverge
-   from the official one before upstream decides #97/#101.
+   from the official one before upstream decides the id question.
 3. **Not recommended — extend `special-url` with the 6 slug canonicals.**
    Misuses the parameter (the template's own comment restricts it to canonicals
    NOT starting with the module base — these DO); at best silences flavor 1 and
@@ -143,9 +152,10 @@ which do not change; validation results for instances are byte-identical.
 
 ### Effort
 
-Mechanical: ~26 file touches (6 FSH edits, 18 renames, 6 page-link edits) +
+Mechanical: ~30 file touches (6 FSH `Id:` edits + 6 intro-note renames +
+12 overlay renames + 6 page-link edits) +
 rebuild + qa re-run — 1–2 h. The real cost is governance: alignment with
-upstream #97/#101 so the official 2027 package makes the same rename;
+upstream (new issue) so the official 2027 package makes the same rename;
 otherwise prefer option 2 for the RC.
 
 ---
@@ -192,7 +202,9 @@ legitimate inside a consent-management context; replacement is an export-time
    `input/fsh/instances/`, `Usage: #example`, conforming to the parent
    profiles: Patient = one pseudonymous identifier (type `ANON`/`PI`,
    synthetic system+value — inherently PII-free, matching the privacy
-   guidance); ResearchStudy = synthetic identifier + title + status.
+   guidance); ResearchStudy = synthetic identifier + title + status **plus the
+   parent-mandated `description` (1..1) and ConsentManagement ContextIdentifier
+   extension (1..*)** — verified in profile-ConsentManagement-Domain-ResearchStudy.
    Precedent: the Symptome migration added 2 synthetic Patients and reached
    qa err=0. Resolves all 10 errors, keeps the 6 upstream-harvested examples
    byte-faithful (incl. the "literale Referenz" demonstration). Caveat: the
@@ -301,7 +313,10 @@ invalid (slice min=0, all package examples keep validating), but the
 conformance surface changes. Not MIXED: the examples are correct; nothing
 example-only fixes this.
 
-Side effects: qa errors drop 44→29; profile snapshot/HTML/CSV renderings
+Side effects: qa errors expected to drop 44→29 (confirm by rebuild — once
+slicing becomes evaluable, previously-suppressed slice-membership/binding
+checks re-activate; the examples' category codings were spot-verified to match
+their slices); profile snapshot/HTML/CSV renderings
 change; no file renames, no page links affected; instances untouched.
 
 ### Effort
@@ -358,7 +373,10 @@ rebuild + re-QA; plus filing the upstream issue.
    byte-identical to upstream. Information loss negligible: the CS concepts
    already carry the SAME designations; only the 3 documentation-only
    `valueset-concept-comments` extensions disappear; expansion unchanged.
-   Bonus: the two SNOMED designation-`use` WARNINGs on the VS side don't recur.
+   Bonus: the twelve SNOMED designation-`use` warnings on the VS side
+   (qa.txt 714–725: 3 concepts × 2 designations × 2 flavors — the VS block's
+   entire warn count) don't recur; the identical CS-side designations keep
+   their own twelve.
 2. **Remove the `^valueSet` declaration from the CS** — delete
    `MII_CS_Consent_Answer.fsh:16`. Minimal one-line diff, keeps the VS exactly
    as upstream authored it, but drops the useful CS→all-codes-VS
@@ -393,10 +411,90 @@ Trivial: 1 FSH edit + rebuild + QA re-check. ~15 minutes.
    upstream report.
 3. **Class C** (−15): 1–2 FSH lines + upstream issue to HL7-D
    einwilligungsmanagement; changes profile bytes ⇒ new package.
-4. **Class A** last (−18 → qa 0): hold for upstream #97/#101 alignment; the
+4. **Class A** last (−18 → qa 0): hold for the upstream id decision (file a
+   new issue; #97/#101 adjacent); the
    rename is mechanical but its governance (official package identity) is
    upstream's call. Defensible to ship the RC with these 18 documented.
 
 Package verdict: any qa-err=0 build REQUIRES a new release package (C and D
 touch conformance bytes; A touches identity). A "no-new-package" fix pass can
 only reach qa = 34 (B alone).
+
+---
+
+## Comprehensive classification table — audience: profile/IG authors (2026-09-01)
+
+**Subject:** the MII KDS module **Consent** (repo
+`medizininformatik-initiative/kerndatensatzmodul-consent`), migrated from the
+ART-DECOR/Simplifier publication pipeline to the HL7 IG Publisher for the 2027
+ballot. Branch `migration/2027.0.0-ballot.rc1-template-v0.13.2` (v0.13.2 = the
+MII KDS module template used for the IG-Publisher build) @ `fb6a02e`,
+IG Publisher 2.3.2, `output/qa.txt` err = 44. Validator quotes are verbatim
+German-locale output (`[sic]` marks a verbatim typo); English glosses in
+brackets. This table was adversarially verified (3-lens review, 2026-09-01);
+it supersedes wordings above where they differ.
+
+Category definitions (tightened): **PACKAGE-AFFECTING** = the fix edits a
+validation-relevant conformance artifact (StructureDefinition / CodeSystem /
+ValueSet / SearchParameter / CapabilityStatement) or its identity in the
+release package ⇒ a new release package is required and implementers can
+observe the change. **NO-CONSEQUENCE** = only example instances plus
+IG-resource/index bookkeeping change — nothing an implementer validates
+against.
+
+| | **A — resource id ≠ canonical URL (18)** | **B — dangling example references (10)** | **C — Consent.category slicing not evaluable (15)** | **D — "all-system" ValueSet contradiction (1)** |
+|---|---|---|---|---|
+| **Where** | 18 = 3 validator flavors × 6 resources; per-resource blocks in `output/qa.txt` (flavor lines between 285 and 746). | 10 across 6 example instances; 4 distinct dangling targets, referenced 5× / 1× / 3× / 1×; qa.txt 148–259. | 15 = one per `Consent.category` repetition in 4 Consent examples (4+3+4+4; each repetition carries a single coding); qa.txt 144–201 — the range overlaps class B's because qa.txt groups findings per resource and the Consent examples carry both classes. | 1; qa.txt 72. |
+| **What the validator reports** | Three messages per resource: (1) *"Conformance resource … the canonical URL (…/`<Type>`/`<id>`) does not match the URL (…). Use the special-url parameter…"*; (2) *"`<Type>.url`: Resource id/url mismatch: `<id>`/`<url>`"*; (3) *"URL Mismatch `<base/Type/id>` vs `<declared url>`"*. | *"Ressource Patient/9b4a702d-… nicht auffindbar"* [resource … not found] — likewise for the other three targets. | *"Slice $this in Profil Consent.category:templateType … hat keinen fixed Value, kein Binding oder existence assertions — Slicing kann nicht ausgewertet werden"* [the slice offers no usable matching rule — slicing cannot be evaluated] — repeated for every category repetition, even those that plainly match another slice. | *"CodeSystem urn:oid:2.16.840.1.113883.3.1937.777.24.5.2 hat einen 'all system' ValueSet von …/ValueSet/mii-vs-consent-answer, aber das Include beeinhaltet [sic] zusätzliche Details"* [declares an all-system ValueSet, but the include contains additional details]; message id `CODESYSTEM_CS_VS_INCLUDE_DETAILS`. |
+| **The defect — author's view** | The technical `id` and the canonical `url` disagree on 6 conformance resources: 3 StructureDefinitions (Einwilligung, Provenance, DocumentReference) + 3 ValueSets (Answer, Policy, SignatureTypes) still carry ids minted in the ART-DECOR/Simplifier era (UUIDs like `e0e166b4-…`, OID-timestamp composites like `2.16.…24.11.30--2021…`), while the canonicals use the modern slugs (`mii-pr-consent-einwilligung`, …). The IG Publisher derives the expected canonical as IG base + `/<Type>/` + `<id>` and requires equality. The two urn:oid-canonical CodeSystems (Answer `…777.24.5.2`, Policy `…777.24.5.3`) are NOT in this class: their canonicals are not base-derived and are correctly declared under `special-url`. | The 6 shipped examples reference 2 Patients and 2 ResearchStudies via literal references (`Consent.patient`, `DocumentReference.subject`, `Provenance.signature.who`, and the ConsentManagement DomainReference extension's consent-domain target) that are not in the package — and never were. The Simplifier pipeline never enforced intra-IG reference resolvability; the IG Publisher does, so the faithful migration surfaces a latent gap. | The profile inherits `Consent.category` slicing from its parent, the HL7-Deutschland profile `http://fhir.de/ConsentManagement/StructureDefinition/Consent` 2.0.3 (package `de.einwilligungsmanagement`): discriminator `pattern` on `$this`, `rules: open`, parent slices `consentCategory` / `resultType` / `templateType`; the child adds a fourth slice `mii` (pattern on the MII version-modules CodeSystem) and adds the LOINC `57016-8` pattern to `consentCategory` — 4 slices in the child snapshot. As the HL7 validator implements pattern discrimination (R5-aligned value/pattern merge — stricter than the literal R4 text), every slice must be decidable from `fixed[x]`, `pattern[x]`, a REQUIRED binding, or existence assertions. `templateType` has ONLY an EXTENSIBLE binding — undecidable by definition (values outside the VS are legal) — so the validator abandons slicing evaluation for the entire element. The other three slices are decidable (patterns / required binding). | FHIR R4 `CodeSystem.valueSet` must reference the implicit "all codes of this system" ValueSet, whose compose has to be a single bare `include` of the system — ANY extra detail (a concept enumeration, filters, additional includes) triggers the check. The Answer CS (`content: complete`, 3 codes) declares such a VS, but `mii-vs-consent-answer` enumerates its 3 concepts explicitly; the designations (de-DE/en-US) and `valueset-concept-comments` extensions merely ride along on that enumeration. The expansion is identical today, but the VS is a frozen enumeration: a 4th CS code would silently fall outside it — precisely what the rule guards against. Contrast: the Policy pair passes this check (bare include over the 124-code CS; the Policy VS's own 3 qa errors belong to class A). |
+| **Origin** | Inherited from released 2026.0.0 — identical 6 mismatches in the pre-migration baseline QA; the published package ships the same UUID-keyed files. NOT yet requested upstream: adjacent hygiene issues #97 (CS naming) / #101 (CS/VS XML→JSON) do not cover the id rename — a new issue is needed. Not migration-introduced. | Inherited upstream gap — the published package ships the same 6 examples and no targets. Not migration-introduced. | Inherited from the upstream `develop` branch: develop (18 commits to `744f7ba`, 2026-08-21 — predating and independent of this migration) re-parented the profile from the FHIR core Consent resource onto the HL7-D ConsentManagement profile, whose own `templateType` slice is non-discriminable — a design defect in the parent itself. The 2026.0.0 baseline showed zero errors of this class only because its Simplifier-era snapshot was defective (the parent slices never reached it); any build that correctly resolves the 2.0.3 parent surfaces the defect. Not migration-introduced. | Inherited — the identical error is in the pre-migration source baseline. Nothing binds this VS (no StructureDefinition in the IG or the parent package references it; it appears only narratively). Not migration-introduced. |
+| **Suggested improvement** | Set each `id` to its canonical tail (`Id: mii-pr-consent-einwilligung`, …). Lockstep renames, or content silently disappears: 6 intro-note files (3 DE `input/intro-notes/StructureDefinition-<id>-intro.md` + 3 EN `input/translations/en/intro-notes/` — SD intros only; the publisher matches them by the id in the filename); 12 overlays in the repo-root `translations/en/json/` + `translations/en/xliff/` (NOT the separate `input/translations/` tree — rename the files AND update the id fields inside them); id-based `.html` links in `profiles.md`, `uml-diagrams.md`, `value-sets.md` (DE + EN). RC alternative: consciously keep the 18 errors until upstream decides the id question. | Add 4 synthetic example instances whose ids are EXACTLY the referenced UUIDs: 2 Patients conforming to `http://fhir.de/ConsentManagement/StructureDefinition/Patient` (pseudonymous by design: one typed identifier, e.g. type `ANON`/`PI`, synthetic system+value — no name, no birthDate ⇒ PII-free by construction) and 2 ResearchStudies conforming to `http://fhir.de/ConsentManagement/StructureDefinition/Domain/ResearchStudy` — which also mandates `description` 1..1 and the ConsentManagement ContextIdentifier extension 1..*, so the minimum content is identifier + title + description + status + that extension (both profiles from `de.einwilligungsmanagement` 2.0.3, the profile's parent package). | Constrain the inherited slice in the child profile with a system-only pattern: `* category[templateType] ^patternCodeableConcept.coding[0].system = "http://fhir.de/ConsentManagement/CodeSystem/TemplateType"`. Advisably the analogous line for `resultType` (`…/CodeSystem/ResultType`): its required-binding discrimination forces ValueSet expansion at slicing-evaluation time, so slice membership silently depends on terminology-server availability and VS version — a pattern makes it decidable offline and deterministically (zero errors today, but fragile). ALSO file the defect upstream with HL7-D `de.einwilligungsmanagement` — the parent is its true home. | Replace the VS compose with a bare all-system include: `* include codes from system MII_CS_Consent_Answer` (project alias for `urn:oid:2.16.840.1.113883.3.1937.777.24.5.2`). Minimal alternative: delete the CS's `^valueSet` line — keeps the VS byte-exact to upstream but drops the CS→all-codes-VS discoverability link and keeps the change-fragile enumeration. Report upstream as well. |
+| **Why — and the rejected alternatives** | The canonical URL is the public contract — every binding, derivation, `meta.profile`, `supportedProfile` references it, and the MII Namenskonventionen mandate that established URLs of published artifacts are never changed retroactively — so the `id` is the only movable half. The current ids also violate that same wiki's kebab-case id convention, making the rename a correction toward MII's own rules. Rejected: extending `special-url` with the 6 slugs — it would at best silence the publisher's canonical-pattern flavor while the validator's id/url-mismatch flavors remain, and it papers over the identity defect (the parameter's proper use is externally-governed canonicals like the urn:oid CodeSystems, not base-derived slugs whose id is simply stale). Forbidden: `url := base/Type/<uuid>` — breaks every downstream reference. | Keeps the 6 upstream examples byte-faithful — including the deliberate literal-reference demonstration, which the module's own security-and-privacy page legitimizes inside the consent-management context (literal Patient references are replaced by pseudonymous identifiers only when data LEAVES that context). Caveat: the new instances must genuinely conform to the reference targetProfiles, or the not-found errors just become target-profile-conformance errors — hence the mandatory description/ContextIdentifier content. Precedent: the parallel Simplifier→IG-Publisher migration of the MII KDS Symptome module (same error class) reached qa err = 0 exactly this way. Rejected: rewriting the examples to identifier-only logical references — profile-legal (`.reference` and `.identifier` are both 0..1 and mustSupport) but it edits verbatim upstream content = review-relevant drift for the ballot. Rejected: leaving as-is — ERROR-severity messages cannot be waived via `ignoreWarnings.txt`, so err = 0 is unreachable. | A derived profile may constrain inherited slices — legal, and exactly what patterns are for; each of the 4 slices then discriminates on a DISTINCT code system (LOINC / MII version-modules / fhir.de ResultType / fhir.de TemplateType — each parent VS draws on exactly one system). Category repetitions whose codings match none of the patterns fall into the open portion (`rules: open`) — the extensible binding's intent. Note: a single repetition mixing codings from two discriminating systems would match two slices and error ("matches more than one slice") — keep the four axes in separate repetitions, as the shipped examples do. Rejected: changing the discriminator — a derived profile must not alter the discriminator/ordering or loosen the rules of inherited slicing (rejected at snapshot generation; distinct from re-slicing, the legal slice-within-a-slice mechanism, which also cannot help here). Rejected: dropping the FSH slice re-declarations — no effect; the slices arrive via the parent snapshot (SUSHI already emits no differential for them). | Root-cause fix; the VS becomes intensionally the all-codes VS (future-proof). Information loss negligible — the CS concepts already carry the SAME de/en designations; only the 3 documentation-only comment extensions ("valid"/"not valid"/"unknown") leave the compose; expansion membership unchanged. Bonus: the 12 SNOMED `designation.use` warnings in the VS block (3 concepts × 2 designations × 2 message flavors, qa.txt 714–725 — the block's entire warn count; the validator cannot resolve SNOMED CT without a terminology-server edition — infrastructure noise, not a content defect) disappear; the CS-side designations keep their own 12. Rejected: doing nothing — ERRORs are not waivable. |
+| **Release-package impact** | **PACKAGE-AFFECTING** (identity, not semantics): package file names (`StructureDefinition-<uuid>.json` → `-<slug>.json`, plus `.sch`), `.index.json`, IG `Type/id` references, REST `Type/id` addressing on loaded servers, and artifact page URLs all change ⇒ new release package. Validation outcomes for implementer data are byte-identical (canonicals, snapshots, bindings untouched). | **NO-CONSEQUENCE**: `Usage: #example` instances plus IG-resource/index bookkeeping only — nothing an implementer validates against changes. Package grows by 4 example files, the site by 4 pages. | **PACKAGE-AFFECTING**: edits the profile implementers validate against; slice membership becomes system-decidable (that IS the fix). No shipped example changes outcome, nor does any instance that keeps one code system per category repetition; an instance mixing two discriminating systems in one repetition would newly fail multi-slice matching (a theoretical edge under the parent's one-axis-per-repetition design). Expected qa 44 → 29 — to be confirmed by rebuild (re-enabled slice-membership/binding checks are the residual risk). | **PACKAGE-AFFECTING in form, effect-neutral in substance**: a canonical ValueSet's bytes change ⇒ new release package — but nothing binds the VS, the expansion stays the identical 3 codes, and `CodeSystem.valueSet` plays no role in instance validation: no implementer's validation outcome moves. |
+| **MII release classification** | **Patch** (technical correction). Footnote-10 test: no ETL adaptation — canonicals untouched (the Namenskonventionen mandate their stability), validation byte-identical; the ids currently violate MII's own id convention, so this corrects a *"Mangel … intensional anders angedacht"* (§4.5.3). No MII rule governs technical ids of published artifacts at all ⇒ formally a TF-Kerndatensatz adjudication on the module team's assessment — file the new upstream issue; release notes must flag the changed package file names / `Type/id` addressing. Even the most conservative "breaking" reading collapses to patch via §4.5.3's small-effort rule. | **Simple patch** — §4.5.3 *"Klarstellungen"*; zero conformance/ETL impact; precedent: consent 2025.0.4 shipped example/display corrections as a patch. The clearest patch of the four. | **Patch** (profile defect correction) — declare prominently in the release notes. Footnote-10 test: no instance becomes invalid, nothing becomes mandatory, no ETL change is forced; the slicing was INTENDED to be evaluable — the literal §4.5.3 case (*"Mängel in der Spezifikation, die intensional anders angedacht waren"*). Precedent: kerndatensatz-basis v2026.0.1 added an optional slice to a published profile in a PATCH. Conservative fallback: feature/change per §4.5.2 (*"substanzielle Änderungen an … Profilen"*) — defensible, but MII practice never uses the MINOR digit, and even a breaking reading collapses to patch (small effort). TF Kerndatensatz adjudicates if contested. | **Simple patch** — textbook §4.5.3 metadata correction; direct precedent: medikation v2026.0.1 shipped a ValueSet-compose correction as a patch. |
+| **Effort** | ~30 file touches (6 FSH `Id:` edits + 24 lockstep renames/link edits), 1–2 h + rebuild; the real cost is upstream coordination. | 4 short FSH files, 30–60 min + rebuild. | 1–2 FSH lines + rebuild; plus the upstream issue. | 1 FSH edit, ~15 min + rebuild. |
+
+## MII versioning classification — governance basis
+
+The normative source is the **KDS-Governance v4.0** ("Geschäftsordnung für die
+Weiterentwicklung des MII-Kerndatensatzes", NSG-approved, Stand 2026-05-07),
+§4.5 "Versionierung": CalVer `YYYY.MINOR.PATCH`, version per module (never per
+resource). The three change classes:
+
+- **Breaking change** — defined ONLY operationally (§4.5.1 footnote 10):
+  *"Änderung, die zu Anpassung in den ETL-Strecken der Standorte führen muss
+  (weil z.B. neue Datenelemente verpflichtend sind)"*. No enumerated technical
+  list exists anywhere in MII governance; breaking changes must be recorded in
+  the release notes. The year position carries no breaking signal (unlike a
+  SemVer major).
+- **Feature/change (MINOR)** — §4.5.2: *"neue Funktionen, Erweiterungen oder
+  substanzieller Änderungen an bestehenden Objekten wie Informationsmodell
+  oder Profilen"*; no NSG approval needed. In practice virtually unused: every
+  published module version is `YYYY.0.x`.
+- **Patch** — §4.5.3: *"Klarstellungen, Korrekturen von Fehlschreibungen oder
+  Mängel in der Spezifikation, die intensional anders angedacht waren"*.
+  Explicitly: *"Im Einzelfall kann ein Patch auch einen Breaking Change
+  bedeuten … Breaking Changes mit überschaubarem Änderungsaufwand sollen als
+  Patches klassifiziert werden."* The Taskforce Kerndatensatz decides contested
+  cases on the module team's assessment.
+- Observed release practice (implicit governance): patches in the wild carry
+  additive terminology (consent 2025.0.2/2025.0.3 added SNID/DZPG policies),
+  an added optional slice + MS harmonization (basis v2026.0.1), a
+  ValueSet-compose correction (medikation v2026.0.1), packaging cleanups
+  (molgen 2026.0.1–.4).
+
+**Bottom line:** none of the four fixes is a breaking change under the
+official MII definition (footnote-10 ETL test). The genuinely breaking content
+in the 2027 line comes from the develop delta itself (re-parent onto the HL7-D
+consent profile, `category` min 2→0, `loinc`→`consentCategory` slice rename),
+which the changelog already declares as BREAKING. All four fixes are
+patch-class: shipped inside 2027.0.0-ballot.rc1 they simply ride the annual
+release (release notes declare A and C explicitly; B and D as corrections);
+hypothetically back-ported, all four would be legitimate `2026.0.x` patches
+under §4.5.3 and observed practice — A additionally wants TF coordination
+because no MII rule covers id changes of published artifacts.
+
+*Caveat: the "MII_KDS_Best_Practices" document (Governance 4.0 Anhang B, where
+a finer change taxonomy would live if one exists) is SharePoint-internal and
+could not be retrieved; this classification rests on the public governance
+PDF, the kerndatensatz-meta wiki, and observed release practice.*
