@@ -20,7 +20,7 @@
     "description" : "Ergebnistypen des Einwilligungsdokuments",
     "uses" : {
     },
-    "https://simplifier.net/resolve?scope=de.einwilligungsmanagement@2.0.3-snapshots&canonical=http://fhir.de/ConsentManagement/ValueSet/ResultType" : "ConsentManagementResultType"
+    "https://simplifier.net/resolve?scope=de.einwilligungsmanagement@2.0.4-rc1-snapshots&canonical=http://fhir.de/ConsentManagement/ValueSet/ResultType" : "ConsentManagementResultType"
   },
   {
     "url" : "http://fhir.de/ConsentManagement/CodeSystem/TemplateType",
@@ -31,7 +31,7 @@
     "description" : "Typen des Einwilligungsdokuments",
     "uses" : {
     },
-    "https://simplifier.net/resolve?scope=de.einwilligungsmanagement@2.0.3-snapshots&canonical=http://fhir.de/ConsentManagement/ValueSet/TemplateType" : "ConsentManagementTemplateType"
+    "https://simplifier.net/resolve?scope=de.einwilligungsmanagement@2.0.4-rc1-snapshots&canonical=http://fhir.de/ConsentManagement/ValueSet/TemplateType" : "ConsentManagementTemplateType"
   },
   {
     "url" : "http://hl7.org/fhir/composition-status",
@@ -150,8 +150,8 @@
     "description" : "One of the resource types defined as part of this version of FHIR.",
     "uses" : {
     },
-    "http://hl7.org/fhir/R4/valueset-resource-types.html" : "ResourceType",
-    "http://hl7.org/fhir/R4/valueset-consent-content-class.html" : "Consent Content Class"
+    "http://hl7.org/fhir/R4/valueset-consent-content-class.html" : "Consent Content Class",
+    "http://hl7.org/fhir/R4/valueset-resource-types.html" : "ResourceType"
   },
   {
     "url" : "http://snomed.info/sct",
